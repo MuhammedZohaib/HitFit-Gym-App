@@ -179,8 +179,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
  ### Email
  Muhammad Zohaib - <alizuhaib828@gmail.com><br> 
- Muhammad Saad Suleman - (example@gmail.com)<br>
- Syed Ayyan Ali - (syedayaanali789@gmail.com)
+ Muhammad Saad Suleman - <example@gmail.com><br>
+ Syed Ayyan Ali - <syedayaanali789@gmail.com>
 
 Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Project-2022.git)
 
