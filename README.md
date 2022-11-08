@@ -94,7 +94,7 @@ Use the `BLANK_README.md` to get started.
 
 ### Built With
 
-* [![JAVA][JAVA]][JAVA-url]
+* [![JAVA][https://img.shields.io/badge/Programmin%20Langugae-JAVA-red]][https://www.java.com/en/]
 * [![React][React.js]][React-url]
 * [![Vue][Vue.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
