@@ -93,7 +93,7 @@
 ### Built With
 
 * [![JAVA][JAVA]][JAVA-url]
-* [![React][React.js]][React-url]
+* [![JAVAFX][JAVAFX]][JAVAFX-url]
 * [![Vue][Vue.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
 * [![Svelte][Svelte.dev]][Svelte-url]
@@ -217,8 +217,8 @@ Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Proje
 [JAVA]: https://img.shields.io/badge/%20-JAVA-red?style=for-the-badge&logo
 [JAVA-url]: https://www.java.com/en/
 [Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
+[JAVAFX]: https://img.shields.io/badge/-JAVAFx-orange?style=for-the-badge&logo
+[JAVAFX-url]: https://openjfx.io/
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vue-url]: https://vuejs.org/
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
