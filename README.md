@@ -214,7 +214,7 @@ Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Proje
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
-[JAVA]: [https://img.shields.io/badge/PROGRAMMING%20LANGUAGE-JAVA-red?style=for-the-badge&logo=caffeine](https://img.shields.io/badge/JAVA-red?style=for-the-badge&logo=caffeine&logoColor=white)
+[JAVA]: https://img.shields.io/badge/PROGRAMMING%20LANGUAGE-JAVA-red?style=for-the-badge&logo=caffeine](https://img.shields.io/badge/JAVA-red?style=for-the-badge&logo=caffeine&logoColor=white
 [JAVA-url]: https://www.java.com/en/
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
