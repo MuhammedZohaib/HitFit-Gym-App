@@ -178,9 +178,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
  ### Email
- [Muhammad Zohaib](<alizuhaib828@gmail.com>)<br> 
- [Muhammad Saad Suleman]()<br>
- [Syed Ayyan Ali]()
+ [Muhammad Zohaib] - <alizuhaib828@gmail.com><br> 
+ [Muhammad Saad Suleman] - ()<br>
+ [Syed Ayyan Ali] - ()
 
 Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Project-2022.git)
 
