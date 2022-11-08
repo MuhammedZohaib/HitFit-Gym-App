@@ -178,7 +178,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
  ### Email
- [Muhammad Zohaib]<alizuhaib828@gmail.com><br> 
+ [Muhammad Zohaib](<alizuhaib828@gmail.com>)<br> 
  [Muhammad Saad Suleman]()<br>
  [Syed Ayyan Ali]()
 
