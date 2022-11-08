@@ -94,7 +94,7 @@
 
 * [![JAVA][JAVA]][JAVA-url]
 * [![JAVAFX][JAVAFX]][JAVAFX-url]
-* [![Vue][Vue.js]][Vue-url]
+* [![CSS][CSS]][CSS-url]
 * [![Angular][Angular.io]][Angular-url]
 * [![Svelte][Svelte.dev]][Svelte-url]
 * [![Laravel][Laravel.com]][Laravel-url]
@@ -219,8 +219,8 @@ Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Proje
 [Next-url]: https://nextjs.org/
 [JAVAFX]: https://img.shields.io/badge/-JAVAFx-orange?style=for-the-badge&logo
 [JAVAFX-url]: https://openjfx.io/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
+[CSS]: https://img.shields.io/badge/CSS-000000?style=for-the-badge&logo=css3&logoColor=white
+[CSS-url]: https://www.w3schools.com/css/css_intro.asp
 [Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
 [Angular-url]: https://angular.io/
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
