@@ -92,7 +92,7 @@
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
+* [![JAVA][JAVA]<https://www.java.com/en/>
 * [![React][React.js]][React-url]
 * [![Vue][Vue.js]][Vue-url]
 * [![Angular][Angular.io]][Angular-url]
@@ -214,7 +214,7 @@ Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Proje
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[JAVA]: https://img.shields.io/badge/Programmin%20Langugae-JAVA-red
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://reactjs.org/
