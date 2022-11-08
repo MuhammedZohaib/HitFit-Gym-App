@@ -157,7 +157,7 @@ See the [open issues](https://github.com/codefolk/Semester-Project-2022/issues) 
 
 <!-- Team Members -->
 ## Team Members
-[Muhammad Saad Suleman](https://github.com/SAADSULEMAN053)
+<p>[Muhammad Saad Suleman](https://github.com/SAADSULEMAN053)</p>
 [Syed Ayyan Ali](https://github.com/Scr1pt-K1ddie)
 [Muhammad Zohaib](https://github.com/codefolk)
 
