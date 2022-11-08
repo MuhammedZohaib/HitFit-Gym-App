@@ -85,7 +85,6 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -136,7 +135,7 @@ This is an example of how to list things you need to use the software and how to
 
 Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](https://docs.oracle.com/en/java/)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -150,14 +149,17 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/github_username/repo_name/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/codefolk/Semester-Project-2022/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-<!-- CONTRIBUTING -->
-## Contributors
+<!-- Team Members -->
+## Team Members
+[Muhammad Saad Suleman](https://github.com/SAADSULEMAN053)
+[Syed Ayyan Ali](https://github.com/Scr1pt-K1ddie)
+[Muhammad Zohaib](https://github.com/codefolk)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -175,9 +177,12 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Muhammad Zohaib - [@twitter_handle](https://twitter.com/twitter_handle) - alizuhaib828@gmail.com
+ ### Email
+ [Muhammad Zohaib](alizuhaib828@gmail.com) 
+ [Muhammad Saad Suleman]()
+ [Syed Ayyan Ali]()
 
-Project Link: [https://github.com/github_username/repo_name](https://github.com/codefolk/Semester-Project-2022.git)
+Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Project-2022.git)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
