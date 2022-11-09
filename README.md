@@ -96,7 +96,7 @@
 * [![JAVAFX][JAVAFX]][JAVAFX-url]
 * [![CSS][CSS]][CSS-url]
 * [![MS SQL SERVER][MS SQL SERVER]][MS SQL SERVER-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
+* [![Trello][Trello]][Trello-url]
 * [![Laravel][Laravel.com]][Laravel-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 * [![JQuery][JQuery.com]][JQuery-url]
@@ -223,8 +223,8 @@ Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Proje
 [CSS-url]: https://www.w3schools.com/css/css_intro.asp
 [MS SQL SERVER]: https://img.shields.io/badge/Microsoft%20SQL%20Server-DD0031?style=for-the-badge&logo=microsoftsqlserver&logoColor=white
 [MS SQL SERVER-url]: https://www.microsoft.com/en-us/sql-server/sql-server-downloads
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
+[Trello]: https://img.shields.io/badge/Trello-4A4A55?style=for-the-badge&logo=trello&logoColor
+[Trello-url]: https://trello.com/
 [Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
 [Laravel-url]: https://laravel.com
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
