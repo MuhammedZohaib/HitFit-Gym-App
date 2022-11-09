@@ -95,7 +95,7 @@
 * [![JAVA][JAVA]][JAVA-url]
 * [![JAVAFX][JAVAFX]][JAVAFX-url]
 * [![CSS][CSS]][CSS-url]
-* [![Angular][Angular.io]][Angular-url]
+* [![MS SQL SERVER][MS SQL SERVER]][MS SQL SERVER-url]
 * [![Svelte][Svelte.dev]][Svelte-url]
 * [![Laravel][Laravel.com]][Laravel-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
@@ -221,8 +221,8 @@ Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Proje
 [JAVAFX-url]: https://openjfx.io/
 [CSS]: https://img.shields.io/badge/CSS-000000?style=for-the-badge&logo=css3&logoColor=white
 [CSS-url]: https://www.w3schools.com/css/css_intro.asp
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
+[MS SQL SERVER]: https://img.shields.io/badge/Microsoft%20SQL%20Server-DD0031?style=for-the-badge&logo=microsoftsqlserver&logoColor=white
+[MS SQL SERVER-url]: https://www.microsoft.com/en-us/sql-server/sql-server-downloads
 [Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
 [Svelte-url]: https://svelte.dev/
 [Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
