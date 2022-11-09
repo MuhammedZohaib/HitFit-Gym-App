@@ -98,6 +98,7 @@
 * [![MS SQL SERVER][MS SQL SERVER]][MS SQL SERVER-url]
 * [![Trello][Trello]][Trello-url]
 * [![IntelliJ][IntelliJ]][IntelliJ-url]
+* [![GitHub][GitHub]][GitHub-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -216,5 +217,5 @@ Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Proje
 [IntelliJ-url]: https://www.jetbrains.com/idea/
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+[GitHub]: https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white
+[GitHub-url]: https://github.com
