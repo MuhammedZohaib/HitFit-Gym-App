@@ -157,7 +157,7 @@ See the [open issues](https://github.com/codefolk/Semester-Project-2022/issues) 
 <!-- Team Members -->
 ## Team Members
 [Muhammad Saad Suleman](https://github.com/SAADSULEMAN053)</br>
-[Syed Ayyan Ali](https://github.com/Scr1pt-K1ddie)</br>
+[Syed Ayaan Ali](https://github.com/Scr1pt-K1ddie)</br>
 [Muhammad Zohaib](https://github.com/codefolk)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -179,7 +179,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
  ### Email
  Muhammad Zohaib - <alizuhaib828@gmail.com><br> 
  Muhammad Saad Suleman - <saadfacebooks4563@gmail.com><br>
- Syed Ayyan Ali - <syedayaanali789@gmail.com>
+ Syed Ayaan Ali - <syedayaanali789@gmail.com>
 
 Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Project-2022.git)
 
