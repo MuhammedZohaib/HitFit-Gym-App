@@ -221,7 +221,7 @@ Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Proje
 [license-url]: https://github.com/codefolk/Semester-Project-2022/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: https://unsplash.com/photos/LOA2mTj1vhc
 [JAVA]: https://img.shields.io/badge/%20-JAVA-red?style=for-the-badge&logo
 [JAVA-url]: https://www.java.com/en/
 [Next-url]: https://nextjs.org/
