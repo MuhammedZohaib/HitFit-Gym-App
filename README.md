@@ -113,10 +113,15 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+* maven
   ```sh
-  npm install npm@latest -g
+  $ wget https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz
+  $ tar -xvf openjdk-13.0.1_linux-x64_bin.tar.gz
+  $ mv jdk-13.0.1 /opt/
   ```
+* intelliJ
+  Download here:[IntelliJ-Idea]-(https://www.jetbrains.com/idea/download/#section=linux)
+  
 
 ### Installation
 
@@ -124,6 +129,13 @@ This is an example of how to list things you need to use the software and how to
    ```sh
    git clone https://github.com/codefolk/Semester-Project-2022.git
    ```
+2. Open Project in IntelliJ Idea
+3. Run Following command to install all the dependencies
+    ```sh
+    mvn clean compile
+    ```
+
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -189,7 +201,7 @@ Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Proje
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/codefolk/Semester-Project-2022.svg?style=for-the-badge
 [contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
 [forks-url]: https://github.com/github_username/repo_name/network/members
