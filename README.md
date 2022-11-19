@@ -39,14 +39,14 @@
   <p align="center">
     project_description
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/codefolk/"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="https://github.com/codefolk/">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/codefolk/Semester-Project-2022/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/codefolk/Semester-Project-2022/issues">Request Feature</a>
   </p>
 </div>
 
@@ -71,10 +71,8 @@
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
+    <li><a href="#Team Members">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -83,7 +81,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://unsplash.com/photos/LOA2mTj1vhc)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -113,13 +111,23 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* maven
+* JDK
   ```sh
   $ wget https://download.java.net/java/GA/jdk13.0.1/cec27d702aa74d5a8630c65ae61e4305/9/GPL/openjdk-13.0.1_linux-x64_bin.tar.gz
   $ tar -xvf openjdk-13.0.1_linux-x64_bin.tar.gz
   $ mv jdk-13.0.1 /opt/
   ```
-* intelliJ
+  [JDK](https://jdk.java.net/19/)
+  
+* Maven
+  ```sh
+  $ wget https://mirrors.estointernet.in/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+  $ tar -xvf apache-maven-3.6.3-bin.tar.gz
+  $ mv apache-maven-3.6.3 /opt/
+  ```
+  [Maven](https://maven.apache.org/download.cgi)
+
+* IntelliJ-Idea
   Download here: [IntelliJ-Idea](https://www.jetbrains.com/idea/download/#section=linux)
   
 
