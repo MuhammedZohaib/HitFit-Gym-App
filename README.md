@@ -120,7 +120,7 @@ This is an example of how to list things you need to use the software and how to
   $ mv jdk-13.0.1 /opt/
   ```
 * intelliJ
-  Download here:[IntelliJ-Idea](https://www.jetbrains.com/idea/download/#section=linux)
+  Download here: [IntelliJ-Idea](https://www.jetbrains.com/idea/download/#section=linux)
   
 
 ### Installation
@@ -209,7 +209,7 @@ Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Proje
 [stars-url]: https://github.com/codefolk/Semester-Project-2022/stargazers
 [issues-shield]: https://img.shields.io/github/issues/codefolk/Semester-Project-2022.svg?style=for-the-badge
 [issues-url]: https://github.com/codefolk/Semester-Project-2022/issues
-[license-shield]: https://img.shields.io/github/license/codefolke/Semester-Project-2022.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/codefolk/Semester-Project-2022.svg?style=for-the-badge
 [license-url]: https://github.com/codefolk/Semester-Project-2022/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
