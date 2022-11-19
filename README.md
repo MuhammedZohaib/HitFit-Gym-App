@@ -203,7 +203,7 @@ Project Link: [Semester Project 2022](https://github.com/codefolk/Semester-Proje
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 [contributors-shield]: https://img.shields.io/github/contributors/codefolk/Semester-Project-2022.svg?style=for-the-badge
 [contributors-url]: https://github.com/codefolk/Semester-Project-2022/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/codefolk/Semester-Project-2022.svg?style=for-the-badge
 [forks-url]: https://github.com/codefolk/Semester-Project-2022/network/members
 [stars-shield]: https://img.shields.io/github/stars/codefolk/Semester-Project-2022.svg?style=for-the-badge
 [stars-url]: https://github.com/codefolk/Semester-Project-2022/stargazers
