@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="loadingStage" prefHeight="550.0" prefWidth="380.0" stylesheets="@LoadingScreen.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hitfit_v1.LoadingScreen_Controller">
+   <children>
+      <Text fx:id="LoadingText" fill="WHITE" layoutX="128.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starting..." textAlignment="CENTER" wrappingWidth="122.296875">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="LogoImage" fitHeight="206.0" fitWidth="229.0" layoutX="65.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Mask%20group.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
