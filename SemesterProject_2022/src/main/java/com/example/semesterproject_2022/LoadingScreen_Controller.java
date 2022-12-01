@@ -35,6 +35,7 @@ public class LoadingScreen_Controller implements Initializable {
         new LoadingScreen().start();
     }
 
+    // creating a loading screen class so thread can be extended and object can be created to access the start method of Thread
     class LoadingScreen extends Thread
     {
         public void run()
