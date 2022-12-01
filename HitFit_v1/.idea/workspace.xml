@@ -4,9 +4,6 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< Updated upstream
-    <list default="true" id="71d275e5-c97c-4027-b90f-f099b232ad6e" name="Changes" comment="" />
-=======
     <list default="true" id="33339e76-8a2c-49b1-98d4-c8b42c892538" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_linux_18_0_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_linux_18_0_1.xml" beforeDir="false" />
@@ -19,15 +16,11 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/hitfit_v1/LoadingScreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/hitfit_v1/LoadingScreen.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/hitfit_v1/LoadingScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/hitfit_v1/LoadingScreen.fxml" afterDir="false" />
     </list>
->>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-<<<<<<< Updated upstream
-  <component name="ProjectId" id="2IAsncKuig9ZgjqGVxhzD7BBs0o" />
-=======
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -45,31 +38,25 @@
   </component>
   <component name="ProjectId" id="2IDSgZkAV8ht7tFCHnExZfKzpNi" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
->>>>>>> Stashed changes
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-<<<<<<< Updated upstream
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_directory_selection&quot;: &quot;/home/devil47/Documents/Studies Material/Semester 3/OOP/OOP Semester Project/Main Project/Semester-Project-2022/HitFit_v1/src/main/resources/com/example/hitfit_v1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Project/Semester-Project-2022/HitFit_v1&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-=======
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_directory_selection": "/home/devil47/Documents/Studies Material/Semester 3/OOP/OOP Semester Project/Main Project/Semester-Project-2022/HitFit_v1/src/main/resources/com/example/hitfit_v1",
-    "last_opened_file_path": "D:/Project/Semester-Project-2022/HitFit_v1",
-    "list.type.of.created.stylesheet": "CSS",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
-  }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Project\Semester-Project-2022\HitFit_v1\src\main\resources\com\example\hitfit_v1" />
@@ -92,6 +79,7 @@
       <workItem from="1669811663785" duration="2356000" />
       <workItem from="1669845876489" duration="3165000" />
       <workItem from="1669886999803" duration="599000" />
+      <workItem from="1669889869579" duration="394000" />
     </task>
     <servers />
   </component>
@@ -109,5 +97,4 @@
       </map>
     </option>
   </component>
->>>>>>> Stashed changes
 </project>
