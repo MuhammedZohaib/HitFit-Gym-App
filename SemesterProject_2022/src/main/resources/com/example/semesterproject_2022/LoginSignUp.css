@@ -1,0 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,400&display=swap');
+
+
+#Stage{
+    -fx-background-color: linear-gradient(to left, #1b2e44,#354055);
+    -fx-font-family: 'Poppins';
+}
+
+#h1{
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: bold;
+    -fx-text-color: #ffffff;
+}
+#button1,#button2,#button3,#button4 {
+    -fx-border:none;
+    -fx-background-radius:15;
+    -fx-font-family: 'Poppins';
+
+}
+#button1{
+    -fx-background-color: #ffffff;
+    -fx-font-weight: 400;
+}
+#button2{
+    -fx-background-color:  linear-gradient(to left, #1b2e44,#354055);
+    -fx-border-color:#ffffff;
+    -fx-border-radius: 15;
+}
+#button3{
+    -fx-background-color: #ffffff;
+}
+#button4{
+    -fx-background-color:#009FFD;
+}
