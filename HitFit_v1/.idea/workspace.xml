@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33339e76-8a2c-49b1-98d4-c8b42c892538" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_linux_18_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_linux_18_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_fxml_linux_18_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_linux_18_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/HitFit_v1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/HitFit_v1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/hitfit_v1/LoadingScreen_Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/hitfit_v1/LoadingScreen_Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/hitfit_v1/LoadingScreen.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/hitfit_v1/LoadingScreen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/hitfit_v1/LoadingScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/hitfit_v1/LoadingScreen.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="d124073e-cde0-491b-95bd-2d65c8882f01" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
