@@ -31,6 +31,8 @@ public class LoadingScreen_Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
         // anonymous object
         new LoadingScreen().start();
     }

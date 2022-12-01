@@ -8,7 +8,7 @@
 
 <AnchorPane fx:id="loadingStage" prefHeight="500.0" prefWidth="350.0" stylesheets="@LoadingScreen.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.LoadingScreen_Controller">
     <children>
-        <Text fx:id="LoadingText" fill="WHITE" layoutX="114.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starting..." textAlignment="CENTER" wrappingWidth="122.296875">
+        <Text fx:id="LoadingText" fill="WHITE" layoutX="114.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starting" textAlignment="CENTER" wrappingWidth="122.296875">
             <font>
                 <Font name="System Italic" size="16.0" />
             </font>
@@ -18,5 +18,10 @@
                 <Image url="@Mask%20group.png" />
             </image>
         </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="28.0" layoutX="162.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@giphy.gif" />
+         </image>
+      </ImageView>
     </children>
 </AnchorPane>
