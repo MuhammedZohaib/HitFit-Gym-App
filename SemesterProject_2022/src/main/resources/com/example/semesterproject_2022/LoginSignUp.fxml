@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="Stage" prefHeight="500.0" prefWidth="350.0" stylesheets="@LoginSignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.LoginSignUp_Controller">
    <children>
-      <Text fx:id="h1" fill="#fffafa" layoutX="89.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME" textAlignment="CENTER" wrappingWidth="186.35888671875">
+      <Text fx:id="h1" fill="#ffffff" layoutX="89.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME" textAlignment="CENTER" wrappingWidth="186.35888671875">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
@@ -19,7 +19,7 @@
             <Font size="11.0" />
          </font>
       </Text>
-      <Button fx:id="button1" layoutX="54.0" layoutY="127.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="243.0" text="Login As Admin">
+      <Button fx:id="button1" layoutX="53.0" layoutY="115.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="243.0" text="Login As Admin">
          <padding>
             <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
          </padding></Button>
@@ -27,7 +27,7 @@
          <padding>
             <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
          </padding></Button>
-      <Text fx:id="text2" fill="WHITE" layoutX="167.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" />
+      <Text fx:id="text2" fill="WHITE" layoutX="167.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" />
       <Line endX="137.0" layoutX="182.0" layoutY="266.0" startX="-147.0" stroke="WHITE" />
       <Text fx:id="text3" fill="WHITE" layoutX="122.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not A Member Yet?">
          <font>
@@ -39,15 +39,15 @@
             <Font name="System Bold" size="19.0" />
          </font>
       </Text>
-      <Button fx:id="button3" layoutX="53.0" layoutY="342.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="243.0" text="Sign Up">
+      <Button fx:id="button3" layoutX="53.0" layoutY="352.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="243.0" text="Sign Up">
          <padding>
             <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
          </padding></Button>
-      <Button fx:id="button4" layoutX="53.0" layoutY="408.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="243.0" text="Explore" textFill="WHITE">
+      <Button fx:id="button4" layoutX="55.0" layoutY="425.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="243.0" text="Explore" textFill="WHITE">
          <padding>
             <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
          </padding></Button>
-      <Text fx:id="text4" fill="WHITE" layoutX="167.0" layoutY="397.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" />
+      <Text fx:id="text4" fill="WHITE" layoutX="166.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" />
       <Text fx:id="text5" fill="WHITE" layoutX="129.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HitFit App @Copyrights" textAlignment="CENTER">
          <font>
             <Font size="8.0" />

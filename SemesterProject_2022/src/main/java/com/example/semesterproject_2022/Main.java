@@ -5,15 +5,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.stage.Window;
 
 import java.io.IOException;
+import java.security.SecureRandom;
 
 public class Main extends Application {
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException, InterruptedException {
+
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginSignUp.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
