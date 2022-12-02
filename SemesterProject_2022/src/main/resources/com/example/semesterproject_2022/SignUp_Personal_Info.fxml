@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="569.0" prefWidth="627.0" stylesheets="@SignUp_Personal_Info.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
+   <children>
+      <Text fill="WHITE" layoutX="54.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGNUP" wrappingWidth="159.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="54.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To be a Member Create an Account" wrappingWidth="248.0" />
+      <Label layoutX="54.0" layoutY="160.0" text="Phone Number" textFill="WHITE" />
+      <TextField layoutX="54.0" layoutY="182.0" prefHeight="30.0" prefWidth="199.0" />
+      <CheckBox layoutX="372.0" layoutY="373.0" mnemonicParsing="false" text="Male" textFill="WHITE" />
+      <CheckBox layoutX="372.0" layoutY="407.0" mnemonicParsing="false" text="Female" textFill="WHITE" />
+      <Text layoutX="54.0" layoutY="256.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <TextField layoutX="54.0" layoutY="273.0" prefHeight="30.0" prefWidth="481.0" />
+      <Label layoutX="54.0" layoutY="251.0" text="Address (Optional)" textFill="WHITE" />
+      <DatePicker layoutX="54.0" layoutY="361.0" prefHeight="30.0" prefWidth="199.0" />
+      <Label layoutX="52.0" layoutY="333.0" text="Date Of Birth" textFill="WHITE" />
+      <Label layoutX="372.0" layoutY="341.0" text="Gender" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField layoutX="359.0" layoutY="182.0" prefHeight="30.0" prefWidth="199.0" />
+      <Label layoutX="360.0" layoutY="160.0" text="Weight -BMI" textFill="WHITE" />
+      <Button layoutX="54.0" layoutY="481.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="118.0" text="Previous" />
+      <Button layoutX="436.0" layoutY="481.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="118.0" text="Next" />
+   </children>
+</AnchorPane>

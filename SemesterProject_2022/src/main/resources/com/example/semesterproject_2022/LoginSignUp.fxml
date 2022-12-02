@@ -39,7 +39,7 @@
             <Font name="System Bold" size="19.0" />
          </font>
       </Text>
-      <Button fx:id="button3" layoutX="53.0" layoutY="352.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="243.0" text="Sign Up">
+      <Button fx:id="button3" layoutX="53.0" layoutY="352.0" mnemonicParsing="false" onAction="#switchToSignUp" prefHeight="26.0" prefWidth="243.0" text="Sign Up">
          <padding>
             <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
          </padding></Button>

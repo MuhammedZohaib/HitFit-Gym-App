@@ -40,6 +40,9 @@
     -fx-font-weight: 400;
     -fx-text-fill: #ffffff;
 }
+#button2:focused{
+    -fx-text-fill: #ffffff;
+}
 #button3{
     -fx-background-color: #ffffff;
 }

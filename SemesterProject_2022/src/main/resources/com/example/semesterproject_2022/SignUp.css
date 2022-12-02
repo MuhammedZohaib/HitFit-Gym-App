@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,400&display=swap');
+
+#Main{
+    -fx-background-color: #232528;
+}
+#button1,#button2,#button3{
+    -fx-background-color: transparent;
+    -fx-text-fill: #EAF6FF;
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: bold;
+    -fx-border-right: 1px solid #fffff;
+}
+#t1,#t2,#t3,#t4,#t5,#t6{
+    -fx-background-radius: 10px;
+}
+#next{
+    -fx-background-radius:10px;
+    -fx-background-color:#ffffff;
+    -fx-text-fill: #000000;
+}
