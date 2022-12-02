@@ -54,7 +54,7 @@ public class LoadingScreen_Controller implements Initializable {
                             Scene scene = new Scene(fxmlLoader.load());
                             Stage stage = new Stage();
                             stage.setScene(scene);
-                           // stage.initStyle(StageStyle.UNDECORATED);
+                            stage.initStyle(StageStyle.UNDECORATED);
                             stage.show();
                             loadingStage.getScene().getWindow().hide();
                         } catch (IOException e) {

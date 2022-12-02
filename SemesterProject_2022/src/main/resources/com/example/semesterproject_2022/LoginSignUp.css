@@ -27,6 +27,7 @@
     -fx-border-color:#009FFD;
     -fx-border-radius: 15;
     -fx-text-fill: #ffffff;
+    -fx-cursor: hand;
 }
 #button2{
     -fx-background-color:  linear-gradient(to left, #1b2e44,#354055);
