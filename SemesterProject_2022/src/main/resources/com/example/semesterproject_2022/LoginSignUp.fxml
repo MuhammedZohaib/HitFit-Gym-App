@@ -34,7 +34,7 @@
             <Font size="11.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="83.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create An Account" textAlignment="CENTER" wrappingWidth="201.35888671875">
+      <Text fx:id="h2" fill="WHITE" layoutX="83.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create An Account" textAlignment="CENTER" wrappingWidth="201.35888671875">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>

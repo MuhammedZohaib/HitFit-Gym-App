@@ -1,12 +1,10 @@
 package com.example.semesterproject_2022;
 
-import javafx.animation.PauseTransition;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.util.Duration;
 
 import java.io.IOException;
 
