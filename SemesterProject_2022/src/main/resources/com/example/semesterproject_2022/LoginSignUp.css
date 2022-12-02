@@ -7,7 +7,7 @@
     -fx-font-family: 'Poppins';
 }
 
-#h1{
+#h1,#h2{
     -fx-font-family: 'Poppins';
     -fx-font-weight: bold;
     -fx-text-color: #ffffff;
