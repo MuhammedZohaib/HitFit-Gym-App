@@ -1,5 +1,9 @@
 package model_class;
 
+import all_enums.Gender;
+import all_enums.MembershipPlans;
+import all_enums.TimingSlot;
+
 import java.util.Date;
 
 public class Customer extends Person{
@@ -7,10 +11,10 @@ public class Customer extends Person{
     private String address;
     private Date dob;
     private double weight;
-    private String slot;
-    private String membershipType;
+    private TimingSlot slot;
+    private MembershipPlans membershipType;
 
-    public Customer(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String address, Date dob, double weight, String slot, String membershipType) {
+    public Customer(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password, String address, Date dob, double weight, TimingSlot slot, MembershipPlans membershipType) {
         super(firstName, lastName, email, gender, phoneNumber, userName, password);
         this.address = address;
         this.dob = dob;
@@ -44,18 +48,18 @@ public class Customer extends Person{
     }
 
     public String getSlot() {
-        return slot;
+        return slot.toString();
     }
 
-    public void setSlot(String slot) {
+    public void setSlot(TimingSlot slot) {
         this.slot = slot;
     }
 
     public String getMembershipType() {
-        return membershipType;
+        return membershipType.toString();
     }
 
-    public void setMembershipType(String membershipType) {
+    public void setMembershipType(MembershipPlans membershipType) {
         this.membershipType = membershipType;
     }
 }
