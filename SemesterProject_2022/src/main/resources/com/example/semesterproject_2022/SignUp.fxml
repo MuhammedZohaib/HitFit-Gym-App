@@ -58,7 +58,7 @@
             <Label id="l2" layoutX="372.0" layoutY="161.0" text="LastName" textFill="WHITE" />
             <Label id="l4" layoutX="372.0" layoutY="241.0" text="Email" textFill="WHITE" />
             <Label id="l6" layoutX="377.0" layoutY="322.0" text="Confirm Password" textFill="WHITE" />
-            <Button id="next" layoutX="436.0" layoutY="481.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="118.0" text="Next" />
+            <Button id="next" layoutX="436.0" layoutY="481.0" mnemonicParsing="false" onAction="#nextForm" prefHeight="37.0" prefWidth="118.0" text="Next" />
             <PasswordField id="t6" layoutX="372.0" layoutY="347.0" prefHeight="30.0" prefWidth="199.0" />
             <Text fill="WHITE" layoutX="54.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To be a Member Create an Account" wrappingWidth="248.0" />
          </children>
