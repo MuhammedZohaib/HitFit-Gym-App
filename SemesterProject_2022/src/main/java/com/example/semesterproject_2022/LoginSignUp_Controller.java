@@ -8,11 +8,18 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+
+
+
+
 public class LoginSignUp_Controller {
+    public Stage stage;
+    public Scene scene;
+
     public void switchToSignUp(ActionEvent e) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp.fxml"));
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(fxmlLoader.load());
+        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
