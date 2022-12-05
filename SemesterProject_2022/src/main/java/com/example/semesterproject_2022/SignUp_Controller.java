@@ -17,14 +17,20 @@ public class SignUp_Controller {
 
     LoginSignUp_Controller obj = new LoginSignUp_Controller();
     public void nextForm(ActionEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Personal.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Personal_Info.fxml"));
         obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         obj.scene = new Scene(fxmlLoader.load());
         obj.stage.setScene(obj.scene);
         obj.stage.centerOnScreen();
         obj.stage.show();
-
-
+    }
+    public void previousForm(ActionEvent e) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp.fxml"));
+        obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        obj.scene = new Scene(fxmlLoader.load());
+        obj.stage.setScene(obj.scene);
+        obj.stage.centerOnScreen();
+        obj.stage.show();
     }
 
 }

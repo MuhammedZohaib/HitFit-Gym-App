@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="Main" prefHeight="600.0" prefWidth="1024.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
+    <children>
+        <HBox id="hbox" fx:id="hbox" layoutX="403.0" layoutY="568.0" prefHeight="37.0" prefWidth="620.0">
+            <children>
+                <Button fx:id="button1" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Account Info">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Button fx:id="button2" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Personal Info">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Button fx:id="button3" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Additional Info">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+            </children></HBox>
+        <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" stylesheets="@SignUp_Personal_Info.css">
+            <children>
+                <Text fill="WHITE" layoutX="91.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGNUP" wrappingWidth="159.0">
+                    <font>
+                        <Font size="36.0" />
+                    </font>
+                </Text>
+                <TextField id="t2" layoutX="322.0" layoutY="184.0" prefHeight="30.0" prefWidth="199.0" />
+                <TextField id="t1" layoutX="79.0" layoutY="184.0" prefHeight="30.0" prefWidth="199.0" />
+                <TextField id="t3" layoutX="79.0" layoutY="264.0" prefHeight="30.0" prefWidth="439.0" />
+                <TextField id="t4" layoutX="79.0" layoutY="344.0" prefHeight="30.0" prefWidth="199.0" />
+                <Label id="l1" layoutX="91.0" layoutY="161.0" text="Phone Number" textFill="#eaf6ff" />
+                <Label layoutX="91.0" layoutY="241.0" text="Address (Optional)" textFill="#eaf6ff" />
+                <Label id="l5" layoutX="87.0" layoutY="322.0" text="Date Of Birth" textFill="#eaf6ff" />
+                <Label id="l2" layoutX="326.0" layoutY="161.0" text="NIC Number" textFill="#eaf6ff" />
+                <Button id="next" layoutX="270.0" layoutY="474.0" mnemonicParsing="false" onAction="#nextForm" prefHeight="26.0" prefWidth="150.0" text="Next" textFill="#eaf6ff">
+                    <padding>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                    </padding></Button>
+                <Text fill="WHITE" layoutX="87.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To be a Member Create an Account" wrappingWidth="293.0">
+                    <font>
+                        <Font size="16.0" />
+                    </font></Text>
+            <Button id="next" layoutX="79.0" layoutY="474.0" mnemonicParsing="false" onAction="#previousForm" prefHeight="26.0" prefWidth="150.0" text="Previous" textFill="#eaf6ff">
+               <padding>
+                  <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+               </padding>
+            </Button>
+            </children>
+        </AnchorPane>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <ImageView fitHeight="630.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

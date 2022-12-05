@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -14,7 +15,7 @@
 
 <AnchorPane fx:id="Main" prefHeight="600.0" prefWidth="1024.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
    <children>
-      <HBox fx:id="hbox" layoutX="403.0" layoutY="568.0" prefHeight="37.0" prefWidth="620.0">
+      <HBox id="hbox" fx:id="hbox" layoutX="403.0" layoutY="568.0" prefHeight="37.0" prefWidth="620.0">
          <children>
             <Button fx:id="button1" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Account Info">
                <font>
@@ -32,7 +33,7 @@
                </font>
             </Button>
          </children></HBox>
-      <ImageView fitHeight="630.0" fitWidth="403.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="630.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />
          </image>
@@ -40,27 +41,33 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <AnchorPane id="l3" fx:id="child" layoutX="400.0" layoutY="3.0" prefHeight="569.0" prefWidth="627.0">
+      <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="627.0">
          <children>
-            <Text fill="WHITE" layoutX="54.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGNUP" wrappingWidth="159.0">
+            <Text fill="WHITE" layoutX="91.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGNUP" wrappingWidth="159.0">
                <font>
                   <Font size="36.0" />
                </font>
             </Text>
-            <TextField id="t2" layoutX="368.0" layoutY="184.0" prefHeight="30.0" prefWidth="199.0" />
-            <TextField id="t1" layoutX="50.0" layoutY="184.0" prefHeight="30.0" prefWidth="199.0" />
-            <TextField id="t3" layoutX="50.0" layoutY="264.0" prefHeight="30.0" prefWidth="199.0" />
-            <TextField id="t5" layoutX="50.0" layoutY="344.0" prefHeight="30.0" prefWidth="199.0" />
-            <TextField id="t4" layoutX="368.0" layoutY="264.0" prefHeight="30.0" prefWidth="199.0" />
-            <Label id="l1" layoutX="54.0" layoutY="161.0" text="FirstName" textFill="WHITE" />
-            <Label layoutX="54.0" layoutY="241.0" text="Username" textFill="WHITE" />
-            <Label id="l5" layoutX="50.0" layoutY="322.0" text="Password" textFill="WHITE" />
-            <Label id="l2" layoutX="372.0" layoutY="161.0" text="LastName" textFill="WHITE" />
-            <Label id="l4" layoutX="372.0" layoutY="241.0" text="Email" textFill="WHITE" />
-            <Label id="l6" layoutX="377.0" layoutY="322.0" text="Confirm Password" textFill="WHITE" />
-            <Button id="next" layoutX="436.0" layoutY="481.0" mnemonicParsing="false" onAction="#nextForm" prefHeight="37.0" prefWidth="118.0" text="Next" />
-            <PasswordField id="t6" layoutX="372.0" layoutY="347.0" prefHeight="30.0" prefWidth="199.0" />
-            <Text fill="WHITE" layoutX="54.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To be a Member Create an Account" wrappingWidth="248.0" />
+            <TextField id="t2" layoutX="322.0" layoutY="184.0" prefHeight="30.0" prefWidth="199.0" />
+            <TextField id="t1" layoutX="79.0" layoutY="184.0" prefHeight="30.0" prefWidth="199.0" />
+            <TextField id="t3" layoutX="79.0" layoutY="264.0" prefHeight="30.0" prefWidth="199.0" />
+            <TextField id="t5" layoutX="79.0" layoutY="344.0" prefHeight="30.0" prefWidth="199.0" />
+            <TextField id="t4" layoutX="322.0" layoutY="264.0" prefHeight="30.0" prefWidth="199.0" />
+            <Label id="l1" layoutX="91.0" layoutY="161.0" text="FirstName" textFill="#eaf6ff" />
+            <Label layoutX="91.0" layoutY="241.0" text="Username" textFill="#eaf6ff" />
+            <Label id="l5" layoutX="87.0" layoutY="322.0" text="Password" textFill="#eaf6ff" />
+            <Label id="l2" layoutX="326.0" layoutY="161.0" text="LastName" textFill="#eaf6ff" />
+            <Label id="l4" layoutX="326.0" layoutY="241.0" text="Email" textFill="#eaf6ff" />
+            <Label id="l6" layoutX="331.0" layoutY="322.0" text="Confirm Password" textFill="#eaf6ff" />
+            <Button id="next" layoutX="374.0" layoutY="474.0" mnemonicParsing="false" onAction="#nextForm" prefHeight="26.0" prefWidth="150.0" text="Next" textFill="#eaf6ff">
+               <padding>
+                  <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+               </padding></Button>
+            <PasswordField id="t6" layoutX="326.0" layoutY="347.0" prefHeight="30.0" prefWidth="199.0" />
+            <Text fill="WHITE" layoutX="87.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To be a Member Create an Account" wrappingWidth="293.0">
+               <font>
+                  <Font size="16.0" />
+               </font></Text>
          </children>
       </AnchorPane>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />

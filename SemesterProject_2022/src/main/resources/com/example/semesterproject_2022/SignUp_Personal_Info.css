@@ -2,18 +2,14 @@
 
 #Main{
     -fx-background-color: linear-gradient(to left, #232f42,#354055);
-    }
+}
 #button1,#button2,#button3{
     -fx-background-color: transparent;
     -fx-text-fill: #EAF6FF;
     -fx-font-family: 'Poppins';
     -fx-font-weight: bold;
 }
-#button1{
-    -fx-border: 0 0 1px 0;
-    -fx-border-color: 1px solid #EAF6FF;
-}
-#t1,#t2,#t3,#t4,#t5,#t6{
+#t1,#t2,#t3,#t4{
     -fx-background-radius: 15px;
 }
 #hbox{
@@ -21,6 +17,6 @@
 }
 #next{
     -fx-background-radius:15px;
-    -fx-background-color:#ffffff;
+    -fx-background-color:#EAF6FF;
     -fx-text-fill: #000000;
 }
