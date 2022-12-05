@@ -1,15 +1,17 @@
 package model_class;
 
+import all_enums.Gender;
+
 public abstract class Person {
     private String firstName;
     private String lastName;
     private String email;
-    private String gender;
+    private Gender gender;
     private String phoneNumber;
     private String userName;
     private String password;
 
-    public Person(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password) {
+    public Person(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -44,10 +46,10 @@ public abstract class Person {
     }
 
     public String getGender() {
-        return gender;
+        return gender.toString();
     }
 
-    public void setGender(String gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 

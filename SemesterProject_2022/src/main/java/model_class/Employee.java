@@ -1,14 +1,48 @@
 package model_class;
 
-public class Employee extends Person{
+import all_enums.AccessLevel;
+import all_enums.EmployeeDesignation;
+import all_enums.Gender;
 
+import java.util.Date;
+
+public abstract class Employee extends Person{
+
+    private EmployeeDesignation designation;
+    private Date joiningDate;
+    private AccessLevel accessLevel;
     private double salary;
-    private String designation;
 
-    public Employee(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, double salary, String designation) {
+    public Employee(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password, EmployeeDesignation designation, Date joiningDate, AccessLevel accessLevel, double salary) {
         super(firstName, lastName, email, gender, phoneNumber, userName, password);
-        this.salary = salary;
         this.designation = designation;
+        this.joiningDate = joiningDate;
+        this.accessLevel = accessLevel;
+        this.salary = salary;
+    }
+
+    public EmployeeDesignation getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(EmployeeDesignation designation) {
+        this.designation = designation;
+    }
+
+    public Date getJoiningDate() {
+        return joiningDate;
+    }
+
+    public void setJoiningDate(Date joiningDate) {
+        this.joiningDate = joiningDate;
+    }
+
+    public AccessLevel getAccessLevel() {
+        return accessLevel;
+    }
+
+    public void setAccessLevel(AccessLevel accessLevel) {
+        this.accessLevel = accessLevel;
     }
 
     public double getSalary() {
@@ -17,13 +51,5 @@ public class Employee extends Person{
 
     public void setSalary(double salary) {
         this.salary = salary;
-    }
-
-    public String getDesignation() {
-        return designation;
-    }
-
-    public void setDesignation(String designation) {
-        this.designation = designation;
     }
 }
