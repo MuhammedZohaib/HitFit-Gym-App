@@ -1,4 +1,10 @@
-#AnchorPane{
+#AnchorPane {
 
     -fx-background-color: #2D384C;
+
+}
+
+#borderPane
+{
+    -fx-background-color: #4F5E78;
 }
