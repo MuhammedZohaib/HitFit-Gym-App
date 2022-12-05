@@ -12,14 +12,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="AnchorPane" prefHeight="388.0" prefWidth="666.0" stylesheets="@SignUp_Personal.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
+<AnchorPane fx:id="AnchorPane" prefHeight="237.0" prefWidth="604.0" stylesheets="@SignUp_Personal.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
    <children>
       <ImageView fitHeight="458.0" fitWidth="354.0" layoutX="311.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Group%2036.png" />
          </image>
       </ImageView>
-      <Rectangle id="Rectangles" fx:id="Rectangle" arcHeight="5.0" arcWidth="5.0" height="403.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="666.0">
+      <Rectangle id="Rectangles" fx:id="Rectangle" arcHeight="5.0" arcWidth="5.0" height="420.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0" width="668.0">
          <fill>
             <LinearGradient endX="0.6088328557059592" endY="1.0" startX="0.19242902208201887">
                <stops>
@@ -86,6 +86,36 @@
          </font>
       </Text>
       <Button layoutX="47.0" layoutY="306.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Next" />
-      <AnchorPane fx:id="borderPane" layoutY="363.0" prefHeight="52.0" prefWidth="666.0" />
+      <AnchorPane fx:id="borderPane" layoutY="371.0" prefHeight="41.0" prefWidth="668.0">
+         <children>
+            <AnchorPane fx:id="bluebar11" layoutX="45.0" layoutY="56.0" prefHeight="5.0" prefWidth="75.0" />
+            <Text fx:id="AccountInfo" layoutX="52.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Info">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Text>
+            <AnchorPane fx:id="bluebar111" layoutX="150.0" layoutY="57.0" prefHeight="3.0" prefWidth="75.0" />
+            <Text fx:id="PersonalInfo" layoutX="157.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Info">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Text>
+            <AnchorPane fx:id="bluebar112" layoutX="263.0" layoutY="58.0" prefHeight="3.0" prefWidth="75.0">
+               <children>
+                  <AnchorPane fx:id="bluebar1111" layoutX="-19.0" prefHeight="3.0" prefWidth="75.0" />
+               </children>
+            </AnchorPane>
+            <Text fx:id="AdditionalInfo" layoutX="265.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Additional Info">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Text>
+         </children></AnchorPane>
+      <ImageView fitHeight="445.0" fitWidth="332.0" layoutX="390.0" layoutY="-8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#152e45a1" height="434.0" layoutX="391.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="297.0" />
    </children>
 </AnchorPane>
