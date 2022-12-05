@@ -5,9 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -17,11 +15,6 @@ import java.util.ResourceBundle;
 
 public class LoadingScreen_Controller implements Initializable {
 
-
-    @FXML
-    private ImageView LogoImage;
-    @FXML
-    private Text LoadingText ;
 
     @FXML
     private AnchorPane loadingStage;
