@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Main" prefHeight="600.0" prefWidth="1024.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
+<AnchorPane fx:id="Main" onMouseDragged="#dragwindow" onMousePressed="#pressedwindow" prefHeight="600.0" prefWidth="1024.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
    <children>
       <HBox id="hbox" fx:id="hbox" layoutX="403.0" layoutY="568.0" prefHeight="37.0" prefWidth="620.0">
          <children>

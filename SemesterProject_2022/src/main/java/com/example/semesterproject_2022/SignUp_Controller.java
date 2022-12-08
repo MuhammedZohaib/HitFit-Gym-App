@@ -21,7 +21,14 @@ import java.io.IOException;
 
 public class SignUp_Controller {
 
+    // local variables
 
+        /*X and Y coordinates for dragging window*/
+        private double x = 0;
+        private double y = 0;
+        /*--------------------------------------- */
+
+    // ------------------
 
     @FXML
     private AnchorPane Main;
@@ -163,5 +170,20 @@ public class SignUp_Controller {
     public void close(ActionEvent e){
         Stage stage = (Stage) exit.getScene().getWindow();
         stage.close();
+    }
+    @FXML
+    public void dragwindow(MouseEvent e)
+    {
+        obj.stage = (Stage) Main.getScene().getWindow();
+        obj.stage.setX(e.getScreenX()-x);
+        obj.stage.setY(e.getScreenY()-y);
+
+    }
+
+    @FXML
+    public void pressedwindow(MouseEvent e)
+    {
+        x = e.getSceneX();
+        y= e.getSceneY();
     }
 }
