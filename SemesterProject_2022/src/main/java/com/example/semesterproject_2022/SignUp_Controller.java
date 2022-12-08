@@ -75,8 +75,8 @@ public class SignUp_Controller {
     private Label userNameValidation;
     @FXML
     private Label emailValidation;
-    String errorStyle = "-fx-border-color: #F56457; -fx-border-width: 2px; -fx-border-radius:15px";
-    String resetStyle = "-fx-border-color: #ffffff; -fx-border-width: 2px; -fx-border-radius:15px";
+    String errorStyle = "-fx-border-color: #F56457; -fx-border-width: 2px; -fx-border-radius:12px";
+    String resetStyle = "-fx-border-color: #ffffff; -fx-border-width: 2px; -fx-border-radius:12px";
 
 
     private static String firstName, lastName, emailField, userName, userPassword, confirmPassword;
