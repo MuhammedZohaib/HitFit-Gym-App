@@ -14,6 +14,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoadingScreen_Controller implements Initializable {
+    Stage stage = new Stage();
+    Scene scene;
+
 
 
     @FXML
@@ -42,8 +45,7 @@ public class LoadingScreen_Controller implements Initializable {
 
                         try {
                             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginSignUp.fxml"));
-                            Scene scene = new Scene(fxmlLoader.load());
-                            Stage stage = new Stage();
+                            scene = new Scene(fxmlLoader.load());
                             stage.setScene(scene);
                             stage.initStyle(StageStyle.UNDECORATED);
                             stage.show();

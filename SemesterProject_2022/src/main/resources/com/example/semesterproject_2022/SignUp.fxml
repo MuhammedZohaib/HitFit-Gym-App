@@ -27,7 +27,7 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </Button>
-            <Button fx:id="button3" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Additional Info">
+            <Button fx:id="button3" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Payment Info">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -48,11 +48,12 @@
                   <Font size="36.0" />
                </font>
             </Text>
-            <TextField id="t2" fx:id="lName" layoutX="322.0" layoutY="184.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
             <TextField id="t1" fx:id="fName" layoutX="79.0" layoutY="184.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
+            <TextField id="t2" fx:id="lName" layoutX="322.0" layoutY="184.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
             <TextField id="t3" fx:id="uName" layoutX="79.0" layoutY="264.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
-            <TextField id="t5" fx:id="password" layoutX="79.0" layoutY="344.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
             <TextField id="t4" fx:id="email" layoutX="322.0" layoutY="264.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
+            <TextField id="t5" fx:id="password" layoutX="79.0" layoutY="344.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
+            <PasswordField id="t6" fx:id="cPassword" layoutX="326.0" layoutY="347.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
             <Label id="l1" layoutX="91.0" layoutY="161.0" text="FirstName" textFill="#eaf6ff" />
             <Label layoutX="91.0" layoutY="241.0" text="Username" textFill="#eaf6ff" />
             <Label id="l5" layoutX="87.0" layoutY="322.0" text="Password" textFill="#eaf6ff" />
@@ -63,7 +64,6 @@
                <padding>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                </padding></Button>
-            <PasswordField id="t6" fx:id="cPassword" layoutX="326.0" layoutY="347.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
             <Text fill="WHITE" layoutX="87.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To be a Member Create an Account" wrappingWidth="293.0">
                <font>
                   <Font size="16.0" />
@@ -93,6 +93,20 @@
                   <Font name="System Italic" size="11.0" />
                </font>
             </Label>
+            <ImageView fx:id="loading" fitHeight="42.0" fitWidth="28.0" layoutX="544.0" layoutY="480.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@giphy.gif" />
+               </image>
+            </ImageView>
+            <Button fx:id="exit" layoutX="576.0" layoutY="14.0" minWidth="28.0" mnemonicParsing="false" onAction="#close" prefHeight="49.0" prefWidth="28.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons8-close-window-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
    </children>
