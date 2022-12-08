@@ -9,60 +9,67 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="pane" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="500.0" prefWidth="350.0" stylesheets="@LoginSignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.LoginSignUp_Controller">
+<AnchorPane fx:id="pane" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="525.0" prefWidth="354.0" stylesheets="@LoginSignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.LoginSignUp_Controller">
    <children>
-      <Text fx:id="h1" fill="#ffffff" layoutX="77.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME" textAlignment="CENTER" wrappingWidth="186.35888671875">
+      <Text fx:id="h1" fill="#ffffff" layoutX="80.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME" textAlignment="CENTER" wrappingWidth="186.35888671875">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Text fx:id="text1" fill="WHITE" layoutX="26.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To Keep connected with us, Please Login with Your Personal Information" textAlignment="CENTER" wrappingWidth="300.5390625">
+      <Text fx:id="text1" fill="WHITE" layoutX="52.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To Keep connected with us, Please Login with Your Personal Information" textAlignment="CENTER" wrappingWidth="243.33333333333337">
+         <font>
+            <Font size="10.0" />
+         </font>
+      </Text>
+      <Button fx:id="button1" layoutX="53.0" layoutY="122.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="243.0" text="Login As Admin">
+         <padding>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+         </padding>
+      </Button>
+      <Button fx:id="button2" layoutX="53.0" layoutY="204.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="243.0" text="Login As Member" textFill="WHITE">
+         <padding>
+            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+         </padding>
+      </Button>
+      <Text fx:id="text2" fill="WHITE" layoutX="166.0" layoutY="184.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" />
+      <Line endX="137.0" layoutX="182.0" layoutY="270.0" startX="-147.0" stroke="WHITE" />
+      <Text fx:id="text3" fill="WHITE" layoutX="129.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not A Member Yet?">
          <font>
             <Font size="11.0" />
          </font>
       </Text>
-      <Button fx:id="button1" layoutX="53.0" layoutY="115.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="243.0" text="Login As Admin">
-         <padding>
-            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-         </padding></Button>
-      <Button fx:id="button2" layoutX="53.0" layoutY="199.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="243.0" text="Login As Member" textFill="WHITE">
-         <padding>
-            <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-         </padding></Button>
-      <Text fx:id="text2" fill="WHITE" layoutX="167.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" />
-      <Line endX="137.0" layoutX="182.0" layoutY="266.0" startX="-147.0" stroke="WHITE" />
-      <Text fx:id="text3" fill="WHITE" layoutX="122.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not A Member Yet?">
-         <font>
-            <Font size="11.0" />
-         </font>
-      </Text>
-      <Text fx:id="h2" fill="WHITE" layoutX="83.0" layoutY="323.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create An Account" textAlignment="CENTER" wrappingWidth="201.35888671875">
+      <Text fx:id="h2" fill="WHITE" layoutX="82.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create An Account" textAlignment="CENTER" wrappingWidth="201.35888671875">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Text>
-      <Button fx:id="button3" layoutX="53.0" layoutY="352.0" mnemonicParsing="false" onAction="#switchToSignUp" prefHeight="26.0" prefWidth="243.0" text="Sign Up">
+      <Button fx:id="button3" layoutX="53.0" layoutY="356.0" mnemonicParsing="false" onAction="#switchToSignUp" prefHeight="26.0" prefWidth="243.0" text="Sign Up">
          <padding>
             <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-         </padding></Button>
-      <Button fx:id="button4" layoutX="55.0" layoutY="425.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="243.0" text="Explore" textFill="WHITE">
+         </padding>
+      </Button>
+      <Button fx:id="button4" layoutX="55.0" layoutY="435.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="243.0" text="Explore" textFill="WHITE">
          <padding>
             <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-         </padding></Button>
-      <Text fx:id="text4" fill="WHITE" layoutX="166.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" />
-      <Text fx:id="text5" fill="WHITE" layoutX="129.0" layoutY="489.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HitFit App @Copyrights" textAlignment="CENTER">
+         </padding>
+      </Button>
+      <Text fx:id="text4" fill="WHITE" layoutX="166.0" layoutY="420.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" />
+      <Text fx:id="text5" fill="WHITE" layoutX="129.0" layoutY="497.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HitFit App @Copyrights" textAlignment="CENTER">
          <font>
             <Font size="8.0" />
          </font>
       </Text>
-      <Button fx:id="exit" layoutX="298.0" minWidth="28.0" mnemonicParsing="false" onAction="#close" prefHeight="49.0" prefWidth="28.0" style="-fx-background-color: transparent;">
+      <Button fx:id="exit" layoutX="315.0" layoutY="5.0" minWidth="28.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="28.0" style="-fx-background-color: transparent;">
          <graphic>
-            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="24.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icons8-close-window-96.png" />
+                  <Image url="@CloseIcon.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
    </children>
+   <padding>
+      <Insets bottom="10.0" top="25.0" />
+   </padding>
 </AnchorPane>
