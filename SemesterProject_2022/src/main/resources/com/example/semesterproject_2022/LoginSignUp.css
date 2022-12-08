@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,700;2400&display=swap');
 
 
-#Stage{
+#pane{
     -fx-background-color: linear-gradient(to left, #1b2e44,#354055);
     -fx-font-family: 'Poppins';
 }
@@ -35,6 +35,7 @@
     -fx-border-radius: 15;
 }
 #button2:hover{
+    -fx-cursor: hand;
     -fx-background-color: #009FFD;
     -fx-border-color: #009FFD;
     -fx-font-weight: 400;
@@ -47,8 +48,8 @@
     -fx-background-color: #EAF6FF;
 }
 #button3:hover{
-    -fx-background-color:  linear-gradient(to left, #1b2e44,#354055);
-    -fx-border-color:#EAF6FF;
+    -fx-cursor: hand;
+    -fx-background-color:  #FFA400;
     -fx-border-radius: 15;
     -fx-text-fill: #EAF6FF;
 }
@@ -56,6 +57,11 @@
     -fx-background-color:#009FFD;
 }
 #button4:hover{
+    -fx-cursor: hand;
     -fx-background-color:#FFA400;
     -fx-text-fill: linear-gradient(to left, #1b2e44,#354055);
+}
+#exit:hover
+{
+    -fx-cursor: hand;
 }

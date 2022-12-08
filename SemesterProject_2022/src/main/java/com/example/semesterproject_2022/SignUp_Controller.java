@@ -21,7 +21,7 @@ import java.io.IOException;
 
 public class SignUp_Controller {
 
-    // local variables
+    // local variables not from FXML (**declare non-fxml fields here**)
 
         /*X and Y coordinates for dragging window*/
         private double x = 0;
@@ -166,11 +166,16 @@ public class SignUp_Controller {
         userNameValidation.setText("");
         passwordValidation.setText("");
     }
+
+    /*CLOSE BUTTON LOGIC STARTS HERE ----*/
     @FXML
     public void close(ActionEvent e){
         Stage stage = (Stage) exit.getScene().getWindow();
         stage.close();
     }
+    /*CLOSE BUTTON LOGIC ENDS HERE ----*/
+
+    /*DRAGGING WINDOW LOGIC STARTS HERE -----*/
     @FXML
     public void dragwindow(MouseEvent e)
     {
@@ -186,4 +191,6 @@ public class SignUp_Controller {
         x = e.getSceneX();
         y= e.getSceneY();
     }
+
+    /* DRAGGING WINDOW LOGIC ENDS HERE ----- */
 }

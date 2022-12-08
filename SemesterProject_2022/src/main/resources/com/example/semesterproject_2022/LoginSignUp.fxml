@@ -9,14 +9,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Stage" prefHeight="500.0" prefWidth="350.0" stylesheets="@LoginSignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.LoginSignUp_Controller">
+<AnchorPane fx:id="pane" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="500.0" prefWidth="350.0" stylesheets="@LoginSignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.LoginSignUp_Controller">
    <children>
-      <Text fx:id="h1" fill="#ffffff" layoutX="89.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME" textAlignment="CENTER" wrappingWidth="186.35888671875">
+      <Text fx:id="h1" fill="#ffffff" layoutX="77.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME" textAlignment="CENTER" wrappingWidth="186.35888671875">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Text>
-      <Text fx:id="text1" fill="WHITE" layoutX="32.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To Keep connected with us, Please Login with Your Personal Information" textAlignment="CENTER" wrappingWidth="300.5390625">
+      <Text fx:id="text1" fill="WHITE" layoutX="26.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To Keep connected with us, Please Login with Your Personal Information" textAlignment="CENTER" wrappingWidth="300.5390625">
          <font>
             <Font size="11.0" />
          </font>
