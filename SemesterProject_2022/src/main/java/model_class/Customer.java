@@ -3,6 +3,7 @@ package model_class;
 import all_enums.Gender;
 import all_enums.MembershipPlans;
 import all_enums.TimingSlot;
+import all_enums.WeightGainLoose;
 
 import java.util.Date;
 
@@ -13,14 +14,16 @@ public class Customer extends Person{
     private double weight;
     private TimingSlot slot;
     private MembershipPlans membershipType;
+    private WeightGainLoose weightGainLoose;
 
-    public Customer(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password, String address, Date dob, double weight, TimingSlot slot, MembershipPlans membershipType) {
+    public Customer(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password, String address, Date dob, double weight, TimingSlot slot, MembershipPlans membershipType, WeightGainLoose weightGainLoose) {
         super(firstName, lastName, email, gender, phoneNumber, userName, password);
         this.address = address;
         this.dob = dob;
         this.weight = weight;
         this.slot = slot;
         this.membershipType = membershipType;
+        this.weightGainLoose = weightGainLoose;
     }
 
     public String getAddress() {
@@ -61,5 +64,13 @@ public class Customer extends Person{
 
     public void setMembershipType(MembershipPlans membershipType) {
         this.membershipType = membershipType;
+    }
+
+    public WeightGainLoose getWeightGainLoose() {
+        return weightGainLoose;
+    }
+
+    public void setWeightGainLoose(WeightGainLoose weightGainLoose) {
+        this.weightGainLoose = weightGainLoose;
     }
 }
