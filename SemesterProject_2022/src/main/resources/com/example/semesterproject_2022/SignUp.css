@@ -30,3 +30,7 @@
     -fx-background-radius:15px;
     -fx-border-radius:15px;
 }
+#exit:hover{
+    -fx-cursor: hand;
+    -fx-background-color: #da6c06;
+}
