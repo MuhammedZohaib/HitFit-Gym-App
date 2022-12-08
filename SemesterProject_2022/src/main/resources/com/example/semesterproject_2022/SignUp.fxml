@@ -9,15 +9,19 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Main" onMouseDragged="#dragwindow" onMousePressed="#pressedwindow" prefHeight="615.0" prefWidth="965.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
+<AnchorPane fx:id="Main" onMouseDragged="#dragwindow" onMousePressed="#pressedwindow" prefHeight="617.0" prefWidth="1000.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
    <children>
-      <HBox id="hbox" fx:id="hbox" layoutX="403.0" layoutY="568.0" prefHeight="37.0" prefWidth="597.0">
+      <HBox id="hbox" fx:id="hbox" layoutX="427.0" layoutY="586.0" prefHeight="37.0" prefWidth="576.0">
          <children>
-            <Button fx:id="button1" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Account Info">
+            <Button fx:id="button1" mnemonicParsing="false" prefHeight="37.0" prefWidth="171.0" text="Account Info">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
@@ -33,7 +37,30 @@
                </font>
             </Button>
          </children></HBox>
-      <ImageView fitHeight="630.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="635.0" layoutX="-32.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="448.0">
+         <fill>
+            <LinearGradient endX="0.798107303655486" endY="0.37223962654450715" startX="0.04731861499581791" startY="0.2996845425867506">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9955257270693513">
+                     <color>
+                        <Color red="0.1589999943971634" green="0.2248000055551529" blue="0.30000001192092896" opacity="0.6395938992500305" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.16120000183582306" green="0.23311999440193176" blue="0.3100000023841858" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="664.0" fitWidth="424.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />
          </image>
@@ -41,7 +68,7 @@
             <Rectangle2D />
          </viewport>
       </ImageView>
-      <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="580.0">
+      <AnchorPane id="l3" fx:id="child" layoutX="407.0" prefHeight="569.0" prefWidth="576.0">
          <children>
             <Label fx:id="emailValidation" layoutX="272.0" layoutY="513.0" textFill="#eaf6ff">
                <font>
