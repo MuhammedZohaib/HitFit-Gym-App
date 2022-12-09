@@ -15,7 +15,6 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import model_class.Customer;
 
 import java.io.IOException;
 
@@ -177,7 +176,7 @@ public class SignUp_Controller {
 
     /*DRAGGING WINDOW LOGIC STARTS HERE -----*/
     @FXML
-    public void dragwindow(MouseEvent e)
+    public void dragWindow(MouseEvent e)
     {
         obj.stage = (Stage) Main.getScene().getWindow();
         obj.stage.setX(e.getScreenX()-x);
@@ -186,7 +185,7 @@ public class SignUp_Controller {
     }
 
     @FXML
-    public void pressedwindow(MouseEvent e)
+    public void pressedWindow(MouseEvent e)
     {
         x = e.getSceneX();
         y= e.getSceneY();

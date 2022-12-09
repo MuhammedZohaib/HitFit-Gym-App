@@ -61,9 +61,9 @@
       </Text>
       <Button fx:id="exit" layoutX="315.0" layoutY="5.0" minWidth="28.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="28.0" style="-fx-background-color: transparent;">
          <graphic>
-            <ImageView fitHeight="24.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@CloseIcon.png" />
+                  <Image url="@icons8-close-window-96.png" />
                </image>
             </ImageView>
          </graphic>

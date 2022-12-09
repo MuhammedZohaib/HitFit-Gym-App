@@ -13,7 +13,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Main" prefHeight="600.0" prefWidth="1024.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
+<AnchorPane fx:id="Main" onMouseDragged="#dragWindow" onMousePressed="#pressedWindow" prefHeight="600.0" prefWidth="1024.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
     <children>
         <HBox id="hbox" fx:id="hbox" layoutX="403.0" layoutY="568.0" prefHeight="37.0" prefWidth="620.0">
             <children>
@@ -33,31 +33,49 @@
                     </font>
                 </Button>
             </children></HBox>
-        <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" stylesheets="@SignUp_Personal_Info.css">
+        <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" stylesheets="@SignUp.css">
             <children>
-                <Text fill="WHITE" layoutX="91.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGNUP" wrappingWidth="159.0">
+                <Text fill="WHITE" layoutX="79.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" wrappingWidth="171.0">
                     <font>
-                        <Font size="36.0" />
+                        <Font name="System Bold" size="36.0" />
                     </font>
                 </Text>
-                <Label id="l1" layoutX="91.0" layoutY="161.0" text="Phone Number" textFill="#eaf6ff" />
+                <Label id="l1" layoutX="89.0" layoutY="161.0" text="Phone Number" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
                 <TextField id="t1" fx:id="phoneNumber" layoutX="79.0" layoutY="184.0" prefHeight="30.0" prefWidth="199.0" />
-                <Label id="l2" layoutX="326.0" layoutY="161.0" text="NIC Number" textFill="#eaf6ff" />
+                <Label id="l2" layoutX="326.0" layoutY="161.0" text="NIC Number" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
                 <TextField id="t2" fx:id="cnic" layoutX="322.0" layoutY="184.0" prefHeight="30.0" prefWidth="199.0" />
-                <Label layoutX="91.0" layoutY="241.0" text="Address (Optional)" textFill="#eaf6ff" />
+                <Label layoutX="89.0" layoutY="241.0" text="Address (Optional)" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
                 <TextField id="t3" fx:id="Address" layoutX="79.0" layoutY="264.0" prefHeight="30.0" prefWidth="439.0" />
-                <Label id="l5" layoutX="87.0" layoutY="322.0" text="Date Of Birth" textFill="#eaf6ff" />
+                <Label id="l5" layoutX="89.0" layoutY="322.0" text="Date Of Birth" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
                 <TextField id="t4" fx:id="dob" layoutX="79.0" layoutY="344.0" prefHeight="30.0" prefWidth="199.0" />
-            <Label layoutX="326.0" layoutY="322.0" text="Gender" textFill="#eaf6ff" />
-            <Label layoutX="87.0" layoutY="402.0" text="Weight lb/kg" textFill="#eaf6ff" />
+            <Label layoutX="326.0" layoutY="322.0" text="Gender" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
+            <Label layoutX="89.0" layoutY="402.0" text="Weight lb/kg" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
             <TextField id="t6" fx:id="weight" layoutX="79.0" layoutY="424.0" prefHeight="30.0" prefWidth="250.0" />
                 <Button id="next" layoutX="374.0" layoutY="474.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Next" textFill="#eaf6ff">
                     <padding>
                         <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                     </padding></Button>
-                <Text fill="WHITE" layoutX="87.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To be a Member Create an Account" wrappingWidth="293.0">
+                <Text fill="WHITE" layoutX="79.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To be a Member of Hit Fit. Create an Account Right Now" wrappingWidth="293.0">
                     <font>
-                        <Font size="16.0" />
+                        <Font size="14.0" />
                     </font></Text>
             <ToggleButtonGroup layoutX="322.0" layoutY="344.0" selectionType="SINGLE">
                <toggles>
@@ -69,9 +87,9 @@
                   <RadioButton fx:id="female" mnemonicParsing="false" text="Female" textFill="#eaf6ff" />
                </toggles>
             </ToggleButtonGroup>
-            <Button layoutX="561.0" layoutY="14.0" minWidth="43.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="43.0" style="-fx-background-color: transparent;">
+            <Button fx:id="exit" layoutX="561.0" layoutY="14.0" minWidth="43.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: transparent;">
                <graphic>
-                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@icons8-close-window-96.png" />
                      </image>
