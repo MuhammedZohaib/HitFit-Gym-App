@@ -46,6 +46,8 @@ public class DatabaseFunctions {
         } catch (SQLException e){
             System.out.println("Error! Could not run query: " + e);
         }
+
+        return true;
     }
 
 }
