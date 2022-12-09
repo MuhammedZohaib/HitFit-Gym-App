@@ -12,6 +12,7 @@ target/
 *.iml
 *.ipr
 *.xml
+*.idea
 
 ### Eclipse ###
 .apt_generated
