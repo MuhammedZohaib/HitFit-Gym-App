@@ -70,7 +70,7 @@
       </ImageView>
       <AnchorPane id="l3" fx:id="child" layoutX="407.0" prefHeight="569.0" prefWidth="627.0">
          <children>
-            <Label fx:id="emailValidation" layoutX="272.0" layoutY="513.0" textFill="#eaf6ff">
+            <Label fx:id="emailValidation" layoutX="315.0" layoutY="513.0" textFill="#eaf6ff">
                <font>
                   <Font name="System Italic" size="11.0" />
                </font>
@@ -114,22 +114,22 @@
                <font>
                   <Font size="14.0" />
                </font></Text>
-            <Label fx:id="fNameValidation" layoutX="272.0" layoutY="418.0" textFill="#eaf6ff">
+            <Label fx:id="fNameValidation" layoutX="315.0" layoutY="418.0" textFill="#eaf6ff">
                <font>
                   <Font name="System Italic" size="11.0" />
                </font>
             </Label>
-            <Label fx:id="lNameValidation" layoutX="272.0" layoutY="448.0" textFill="#eaf6ff">
+            <Label fx:id="lNameValidation" layoutX="315.0" layoutY="448.0" textFill="#eaf6ff">
                <font>
                   <Font name="System Italic" size="11.0" />
                </font>
             </Label>
-            <Label fx:id="userNameValidation" layoutX="272.0" layoutY="479.0" textFill="#eaf6ff">
+            <Label fx:id="userNameValidation" layoutX="315.0" layoutY="479.0" textFill="#eaf6ff">
                <font>
                   <Font name="System Italic" size="11.0" />
                </font>
             </Label>
-            <Label fx:id="passwordValidation" layoutX="272.0" layoutY="539.0" textFill="#eaf6ff">
+            <Label fx:id="passwordValidation" layoutX="315.0" layoutY="539.0" textFill="#eaf6ff">
                <font>
                   <Font name="System Italic" size="11.0" />
                </font>

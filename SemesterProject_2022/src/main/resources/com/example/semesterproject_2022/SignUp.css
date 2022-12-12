@@ -11,8 +11,13 @@
 }
 
 #t1,#t2,#t3,#t4,#t5,#t6{
-    -fx-background-radius: 12px;
+    -fx-background-radius: 15px;
+    -fx-border-color: none;
 }
+#t1:pressed{
+    -fx-border-color: none;
+}
+
 #hbox{
     -fx-background-color: transparent;
 }
