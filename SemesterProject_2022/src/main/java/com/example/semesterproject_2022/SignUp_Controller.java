@@ -151,6 +151,14 @@ public class SignUp_Controller {
         obj.stage.centerOnScreen();
         obj.stage.show();
     }
+    public void paymentForm(ActionEvent e) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Payment_Info.fxml"));
+        obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        obj.scene = new Scene(fxmlLoader.load());
+        obj.stage.setScene(obj.scene);
+        obj.stage.centerOnScreen();
+        obj.stage.show();
+    }
     public void clear(MouseEvent e){
         fName.setStyle(resetStyle);
         cPassword.setStyle(resetStyle);

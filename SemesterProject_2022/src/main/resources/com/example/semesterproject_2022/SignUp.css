@@ -30,5 +30,17 @@
 }
 #exit:hover{
     -fx-cursor: hand;
-    -fx-background-color: #da6c06;
 }
+#done{
+    -fx-cursor: hand;
+    -fx-background-color: #FFA400;
+    -fx-text-fill: #EAF6FF;
+    -fx-background-radius:12px;
+    -fx-border-radius:12px;
+}
+#done:hover{
+    -fx-background-color: #009FFD;
+    -fx-background-radius:12px;
+    -fx-text-fill: #ffffff;
+}
+

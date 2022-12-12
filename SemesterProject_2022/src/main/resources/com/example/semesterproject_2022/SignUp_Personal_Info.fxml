@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.ToggleButtonGroup?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,7 +34,7 @@
                     </font>
                 </Button>
             </children></HBox>
-        <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" stylesheets="@SignUp.css">
+        <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" style="-fx-background-color: transparent;" stylesheets="@SignUp.css">
             <children>
                 <Text fill="WHITE" layoutX="79.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" wrappingWidth="171.0">
                     <font>
@@ -59,7 +60,6 @@
                <font>
                   <Font name="System Italic" size="10.0" />
                </font></Label>
-                <TextField id="t4" fx:id="dob" layoutX="79.0" layoutY="344.0" prefHeight="30.0" prefWidth="199.0" />
             <Label layoutX="326.0" layoutY="322.0" text="Gender" textFill="#eaf6ff">
                <font>
                   <Font name="System Italic" size="10.0" />
@@ -68,8 +68,8 @@
                <font>
                   <Font name="System Italic" size="10.0" />
                </font></Label>
-            <TextField id="t6" fx:id="weight" layoutX="79.0" layoutY="424.0" prefHeight="30.0" prefWidth="250.0" />
-                <Button id="next" layoutX="374.0" layoutY="474.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="150.0" text="Next" textFill="#eaf6ff">
+            <TextField id="t6" fx:id="weight" layoutX="79.0" layoutY="424.0" prefHeight="30.0" prefWidth="199.0" />
+                <Button id="next" layoutX="79.0" layoutY="482.0" mnemonicParsing="false" onAction="#paymentForm" prefHeight="26.0" prefWidth="150.0" text="Next" textFill="#eaf6ff">
                     <padding>
                         <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                     </padding></Button>
@@ -77,16 +77,15 @@
                     <font>
                         <Font size="14.0" />
                     </font></Text>
-            <ToggleButtonGroup layoutX="322.0" layoutY="344.0" selectionType="SINGLE">
-               <toggles>
-                  <RadioButton fx:id="male" mnemonicParsing="false" text="Male" textFill="#eaf6ff">
-                     <padding>
-                        <Insets right="20.0" />
-                     </padding>
-                  </RadioButton>
-                  <RadioButton fx:id="female" mnemonicParsing="false" text="Female" textFill="#eaf6ff" />
-               </toggles>
-            </ToggleButtonGroup>
+            <RadioButton fx:id="male" layoutX="322.0" layoutY="344.0" mnemonicParsing="false" text="Male" textFill="#eaf6ff">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+               <toggleGroup>
+                  <ToggleGroup fx:id="Group1" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="female" layoutX="422.0" layoutY="344.0" mnemonicParsing="false" text="Female" textFill="#eaf6ff" toggleGroup="$Group1" />
             <Button fx:id="exit" layoutX="561.0" layoutY="14.0" minWidth="43.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: transparent;">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -96,6 +95,7 @@
                   </ImageView>
                </graphic>
             </Button>
+            <DatePicker layoutX="79.0" layoutY="344.0" prefHeight="30.0" prefWidth="199.0" promptText="Date of Birth" style="-fx-background-color: transparent;" />
             </children>
         </AnchorPane>
         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
