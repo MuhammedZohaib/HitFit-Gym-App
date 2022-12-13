@@ -28,8 +28,8 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("insert into customers (first_name, last_name, email, phone_number, password, username, gender, weight, dob,\n" +
-                    "                       weight_gain_loose, time_slot, membership_package, nic)\n" +
-                    "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);");
+                    "                       monthly_plan, nic, is_active)\n" +
+                    "values (?,?,?,?,?,?,?,?,?,?,?,?);");
 
             queryStatement.setString(1, customer.getFirstName());
             queryStatement.setString(2, customer.getLastName());
@@ -38,12 +38,11 @@ public class DatabaseFunctions {
             queryStatement.setString(5, customer.getPassword());
             queryStatement.setString(6, customer.getUserName());
             queryStatement.setString(7, customer.getGender());
-            queryStatement.setDouble(8, customer.getWeight());
+            queryStatement.setString(8, customer.getWeight());
             queryStatement.setString(9, customer.getDob());
-            queryStatement.setString(10, customer.getWeightGainLoose());
-            queryStatement.setString(11, customer.getSlot());
-            queryStatement.setString(12, customer.getMembershipType());
-            queryStatement.setString(13, customer.getNicNumber());
+            queryStatement.setInt(10, customer.getMonthlyPlan());
+            queryStatement.setString(11, customer.getNicNumber());
+            queryStatement.setBoolean(12, false);
 
         } catch (SQLException e){
             System.out.println("Error! Could not run query: " + e);
