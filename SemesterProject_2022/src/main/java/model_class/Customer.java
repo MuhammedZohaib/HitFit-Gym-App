@@ -13,16 +13,16 @@ public class Customer extends Person{
     private Date dob;
     private double weight;
     private TimingSlot slot;
-    private MembershipPlans membershipType;
+    private int monthlyPlan;
     private WeightGainLoose weightGainLoose;
 
-    public Customer(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password, String address, Date dob, double weight, TimingSlot slot, MembershipPlans membershipType, WeightGainLoose weightGainLoose, String nic) {
+    public Customer(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password, String address, Date dob, double weight, TimingSlot slot, int monthlyPlan, WeightGainLoose weightGainLoose, String nic) {
         super(firstName, lastName, email, gender, phoneNumber, userName, password, nic);
         this.address = address;
         this.dob = dob;
         this.weight = weight;
         this.slot = slot;
-        this.membershipType = membershipType;
+        this.monthlyPlan = monthlyPlan;
         this.weightGainLoose = weightGainLoose;
     }
 
@@ -58,19 +58,19 @@ public class Customer extends Person{
         this.slot = slot;
     }
 
-    public String getMembershipType() {
-        return membershipType.toString();
-    }
-
-    public void setMembershipType(MembershipPlans membershipType) {
-        this.membershipType = membershipType;
-    }
-
     public String getWeightGainLoose() {
         return weightGainLoose.toString();
     }
 
     public void setWeightGainLoose(WeightGainLoose weightGainLoose) {
         this.weightGainLoose = weightGainLoose;
+    }
+
+    public int getMonthlyPlan() {
+        return monthlyPlan;
+    }
+
+    public void setMonthlyPlan(int monthlyPlan) {
+        this.monthlyPlan = monthlyPlan;
     }
 }
