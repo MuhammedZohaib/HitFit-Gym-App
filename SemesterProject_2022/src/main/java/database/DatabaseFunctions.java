@@ -44,6 +44,7 @@ public class DatabaseFunctions {
             queryStatement.setString(11, customer.getNicNumber());
             queryStatement.setBoolean(12, false);
 
+            queryStatement.executeUpdate();
         } catch (SQLException e){
             System.out.println("Error! Could not run query: " + e);
         }
