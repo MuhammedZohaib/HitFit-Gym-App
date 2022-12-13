@@ -1,6 +1,5 @@
 package model_class;
 
-import all_enums.Gender;
 import all_enums.TimingSlot;
 
 import java.time.LocalDate;
@@ -8,12 +7,12 @@ import java.time.LocalDate;
 public class Customer extends Person{
 
     private String address;
-    private LocalDate dob;
+    private String dob;
     private String weight;
     private TimingSlot slot;
     private int monthlyPlan;
 
-    public Customer(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String address, LocalDate dob, String weight, int monthlyPlan, String nic) {
+    public Customer(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String address, String dob, String weight, int monthlyPlan, String nic) {
         super(firstName, lastName, email, gender, phoneNumber, userName, password, nic);
         this.address = address;
         this.dob = dob;
@@ -34,7 +33,7 @@ public class Customer extends Person{
         return dob.toString();
     }
 
-    public void setDob(LocalDate dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
