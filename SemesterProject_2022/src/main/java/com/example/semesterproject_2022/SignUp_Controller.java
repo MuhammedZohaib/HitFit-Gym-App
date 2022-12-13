@@ -9,17 +9,34 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.time.LocalDate;
 
 public class SignUp_Controller {
+    private String firstName;
+    private String lastName;
+    private String userName;
+    private String emailField;
+    private String userPassword;
+    private String phoneNumber;
+    private String nic;
+    private String userAddress;
+    private String gender;
+    private String userWeight;
+    private  LocalDate dob;
+    private  int monthlyPlan;
+    private String nameOfBank;
+    private String userBankAccountName;
+    private String tilID;
 
-    String errorStyle = "-fx-border-color: #ff0000; -fx-border-width: 3px; -fx-border-radius:12px";
-    String resetStyle = "-fx-border-color: transparent; -fx-border-width: 3px; -fx-border-radius:12px";
+
 
     private double x = 0;
     private double y = 0;
+
+    LoadingScreen_Controller obj = new LoadingScreen_Controller();
+    String errorStyle = "-fx-border-color: #ff0000; -fx-border-width: 3px; -fx-border-radius:12px";
+    String resetStyle = "-fx-border-color: transparent; -fx-border-width: 3px; -fx-border-radius:12px";
 
     @FXML
     private AnchorPane Main;
@@ -50,6 +67,16 @@ public class SignUp_Controller {
     @FXML
     private DatePicker date;
     @FXML
+    private TextField transactionID;
+    @FXML
+    private TextField accountName;
+    @FXML
+    private TextField bankName;
+
+
+    @FXML
+    private MenuButton package_select;
+    @FXML
     private Button exit;
     @FXML
     private Label fNameValidation;
@@ -69,29 +96,80 @@ public class SignUp_Controller {
     private Label phoneNoValidation;
     @FXML
     private Label weightValidation;
-    private static String firstName;
-    private static String lastName;
-    private static String userName;
-    private static String emailField;
-    private static String userPassword;
-    private static String phoneNumber;
-    private static String nic;
-    private static String userAddress;
-    private static String gender;
-    private static String userWeight;
-    private static LocalDate dob;
+    @FXML
+    private Label bankNameValidation;
+
+    @FXML
+    private Label accountNameValidation;
+
+    @FXML
+    private Label tilIDValidation;
+
+    @FXML
+    private Label packageValidation;
+    public PasswordField getcPassword() {
+        return cPassword;
+    }
+
+    public TextField getEmail() {
+        return email;
+    }
+
+    public TextField getfName() {
+        return fName;
+    }
+
+    public TextField getlName() {
+        return lName;
+    }
+
+    public TextField getPassword() {
+        return password;
+    }
+
+    public TextField getuName() {
+        return uName;
+    }
+
+    public TextField getpNumber() {
+        return pNumber;
+    }
+
+    public TextField getWeight() {
+        return weight;
+    }
+
+    public TextField getCnic() {
+        return cnic;
+    }
+
+    public TextField getAddress() {
+        return address;
+    }
+
+    public DatePicker getDate() {
+        return date;
+    }
+    public TextField getTransactionID() {
+        return transactionID;
+    }
+
+    public TextField getAccountName() {
+        return accountName;
+    }
+
+    public TextField getBankName() {
+        return bankName;
+    }
 
 
-
-
-    LoadingScreen_Controller obj = new LoadingScreen_Controller();
     public void nextForm(ActionEvent e) throws IOException{
-        firstName = fName.getText();
-        lastName = lName.getText();
-        emailField = email.getText();
-        userName = uName.getText();
-        userPassword = password.getText();
-        String confirmPassword = cPassword.getText();
+        firstName = getfName().getText();
+        lastName = getlName().getText();
+        emailField = getEmail().getText();
+        userName = getuName().getText();
+        userPassword = getPassword().getText();
+        String confirmPassword = getcPassword().getText();
 
         if(firstName.isBlank()){
             fNameValidation.setText("! FirstName Cannot Be Empty");
@@ -100,27 +178,22 @@ public class SignUp_Controller {
         else if(firstName.length() < 3){
             fNameValidation.setText("! FirstName Should Contain At-least Three Characters");
             fName.setStyle(errorStyle);
-
         }
         if(lastName.isBlank()){
             lNameValidation.setText("! LastName Cannot Be Empty");
             lName.setStyle(errorStyle);
-
         }
         else if(lastName.length() < 3){
             lNameValidation.setText("! LastName Should Contain At-least Three Characters");
             lName.setStyle(errorStyle);
-
         }
         if(userName.isBlank()){
             userNameValidation.setText("! UserName Cannot Be Empty");
             uName.setStyle(errorStyle);
-
         }
         if(emailField.isBlank()){
             emailValidation.setText("! Email Cannot Be Empty");
             email.setStyle(errorStyle);
-
         }
         if(confirmPassword.isBlank()){
             cPassword.setStyle(errorStyle);
@@ -129,16 +202,12 @@ public class SignUp_Controller {
             passwordValidation.setText("! Password Doesn't Match");
             password.setStyle(errorStyle);
             cPassword.setStyle(errorStyle);
-
-
         }
         else if(userPassword.length() < 8){
             passwordValidation.setText("! Password Should Contain 8 Characters");
             password.setStyle(errorStyle);
             cPassword.setStyle(errorStyle);
-
         }
-
         else if (fNameValidation.getText().isBlank() && lNameValidation.getText().equals("") && userNameValidation.getText().equals("") && emailValidation.getText().equals("") && passwordValidation.getText().equals("")){
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Personal_Info.fxml"));
             obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -148,24 +217,23 @@ public class SignUp_Controller {
             obj.stage.show();
         }
     }
-    public void paymentForm(ActionEvent e) throws IOException {
-        phoneNumber = pNumber.getText();
-        nic = cnic.getText();
-        userAddress = address.getText();
-        dob = date.getValue();
-        userWeight = weight.getText();
 
-        if(male.isPressed()){
+    public void paymentForm(ActionEvent e) throws IOException {
+        phoneNumber = getpNumber().getText();
+        nic = getCnic().getText();
+        userAddress = getAddress().getText();
+        dob = getDate().getValue();
+        userWeight = getWeight().getText();
+
+        if(male.isSelected()){
             gender = "male";
         }
-        if(female.isPressed()){
+        if(female.isSelected()){
             gender =  "female";
         }
-
         if(userAddress.isEmpty()){
             userAddress = "-";
         }
-
         if(phoneNumber.isBlank()){
             phoneNoValidation.setText("! PhoneNumber cannot be empty");
             pNumber.setStyle(errorStyle);
@@ -210,16 +278,50 @@ public class SignUp_Controller {
             obj.stage.setScene(obj.scene);
             obj.stage.centerOnScreen();
             obj.stage.show();
-
-            System.out.printf(phoneNumber);
-            System.out.println(nic);
-            System.out.println(userAddress);
-            System.out.println(dob);
-            System.out.println(gender);
-            System.out.println(userWeight);
         }
     }
-    public void previousForm(ActionEvent e) throws IOException {
+    public void starter(ActionEvent e){
+        monthlyPlan = 2000;
+        package_select.setText("Starter - Rs.2000");
+    }
+    public void beginner(ActionEvent e){
+        monthlyPlan = 3000;
+        package_select.setText("Beginner - Rs.3000");
+    }
+    public void pro(ActionEvent e){
+        monthlyPlan = 4500;
+        package_select.setText("Pro - Rs.4500");
+    }
+    public void doneSignUp(ActionEvent e) throws IOException {
+        nameOfBank = getBankName().getText();
+        tilID = getTransactionID().getText();
+        userBankAccountName = getAccountName().getText();
+
+        if(nameOfBank.isBlank() || nameOfBank.isEmpty()){
+            bankNameValidation.setText("! Bank Name cannot be empty");
+            getBankName().setStyle(errorStyle);
+        }
+        if(userBankAccountName.isBlank() || userBankAccountName.isEmpty()){
+            accountNameValidation.setText("! Account Holder's Name cannot be empty");
+            getAccountName().setStyle(errorStyle);
+        }
+        if(tilID.isBlank() || tilID.isEmpty()){
+            tilIDValidation.setText("! Bank Name cannot be empty");
+            getTransactionID().setStyle(errorStyle);
+        }
+        if(monthlyPlan == 0){
+            packageValidation.setText("! Please Select a Package");
+        }
+        if(bankNameValidation.getText().equals("") && packageValidation.getText().equals("") && tilIDValidation.getText().equals("") && accountNameValidation.getText().equals("")){
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Prompt.fxml"));
+            obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+            obj.scene = new Scene(fxmlLoader.load());
+            obj.stage.setScene(obj.scene);
+            obj.stage.centerOnScreen();
+            obj.stage.show();
+        }
+    }
+    public void backToLoginSignUp(ActionEvent e) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp.fxml"));
         obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         obj.scene = new Scene(fxmlLoader.load());
@@ -253,6 +355,17 @@ public class SignUp_Controller {
         dateValidation.setText("");
         weightValidation.setText("");
     }
+    public void clearTab3(MouseEvent e){
+        bankName.setStyle(resetStyle);
+        accountName.setStyle(resetStyle);
+        transactionID.setStyle(resetStyle);
+
+        bankNameValidation.setText("");
+        accountNameValidation.setText("");
+        tilIDValidation.setText("");
+        packageValidation.setText("");
+    }
+
     @FXML
     public void close(ActionEvent e){
         Stage stage = (Stage) exit.getScene().getWindow();

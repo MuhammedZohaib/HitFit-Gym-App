@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="Main" onMouseDragged="#dragWindow" onMousePressed="#pressedWindow" prefHeight="600.0" prefWidth="1024.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
+    <children>
+        <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="608.0" prefWidth="627.0" style="-fx-background-color: transparent;" stylesheets="@SignUp.css">
+            <children>
+                <Label fx:id="phoneNoValidation" layoutX="300.0" layoutY="400.0" textFill="#eaf6ff">
+                    <font>
+                        <Font name="System Italic" size="13.0" />
+                    </font>
+                </Label>
+                <Label fx:id="nicValidation" layoutX="300.0" layoutY="425.0" textFill="#eaf6ff">
+                    <font>
+                        <Font name="System Italic" size="13.0" />
+                    </font>
+                </Label>
+                <Label fx:id="dateValidation" layoutX="300.0" layoutY="450.0" textFill="#eaf6ff">
+                    <font>
+                        <Font name="System Italic" size="13.0" />
+                    </font>
+                </Label>
+                <Label fx:id="weightValidation" layoutX="300.0" layoutY="475.0" textFill="#eaf6ff">
+                    <font>
+                        <Font name="System Italic" size="13.0" />
+                    </font>
+                </Label>
+                <Button id="next" layoutX="168.0" layoutY="454.0" mnemonicParsing="false" onAction="#paymentForm" prefHeight="36.0" prefWidth="279.0" text="Back To Login" textFill="#eaf6ff">
+                    <padding>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                    </padding></Button>
+                <Button fx:id="exit" layoutX="561.0" layoutY="14.0" minWidth="43.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: transparent;">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@icons8-close-window-96.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </AnchorPane>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+        <ImageView fitHeight="630.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>
