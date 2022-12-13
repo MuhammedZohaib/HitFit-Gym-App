@@ -316,9 +316,9 @@ public class SignUp_Controller {
             packageValidation.setText("! Please Select a Package");
         }
         if(bankNameValidation.getText().equals("") && packageValidation.getText().equals("") && tilIDValidation.getText().equals("") && accountNameValidation.getText().equals("")){
-            Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName,userPassword,userAddress,"12/12/1911",userWeight,monthlyPlan,nic);
-            DatabaseFunctions.saveToDb(customer);
-            System.out.println(dob);
+//            Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName,userPassword,userAddress,"12/12/1911",userWeight,monthlyPlan,nic);
+//            DatabaseFunctions.saveToDb(customer);
+//            System.out.println(dob);
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Prompt.fxml"));
             obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             obj.scene = new Scene(fxmlLoader.load());
@@ -371,6 +371,14 @@ public class SignUp_Controller {
         tilIDValidation.setText("");
         packageValidation.setText("");
     }
+    @FXML
+    void GoBackLogIn(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginSignUp.fxml"));
+        obj.stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        obj.scene = new Scene(fxmlLoader.load());
+        obj.stage.setScene(obj.scene);
+        obj.stage.centerOnScreen();
+        obj.stage.show();    }
 
     @FXML
     public void close(ActionEvent e){
