@@ -11,7 +11,9 @@ public abstract class Person {
     private String userName;
     private String password;
 
-    public Person(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password) {
+    private String nicNumber;
+
+    public Person(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password, String nicNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -19,6 +21,7 @@ public abstract class Person {
         this.phoneNumber = phoneNumber;
         this.userName = userName;
         this.password = password;
+        this.nicNumber = nicNumber;
     }
 
     public String getFirstName() {
@@ -75,5 +78,13 @@ public abstract class Person {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getNicNumber() {
+        return nicNumber;
+    }
+
+    public void setNicNumber(String nicNumber) {
+        this.nicNumber = nicNumber;
     }
 }
