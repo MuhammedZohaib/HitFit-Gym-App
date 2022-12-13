@@ -13,7 +13,7 @@ public abstract class Employee extends Person{
     private AccessLevel accessLevel;
     private double salary;
 
-    public Employee(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password, EmployeeDesignation designation, Date joiningDate, AccessLevel accessLevel, double salary, String nicNumber) {
+    public Employee(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, EmployeeDesignation designation, Date joiningDate, AccessLevel accessLevel, double salary, String nicNumber) {
         super(firstName, lastName, email, gender, phoneNumber, userName, password, nicNumber);
         this.designation = designation;
         this.joiningDate = joiningDate;

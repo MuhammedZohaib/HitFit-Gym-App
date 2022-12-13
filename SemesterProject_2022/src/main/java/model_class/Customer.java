@@ -13,7 +13,7 @@ public class Customer extends Person{
     private TimingSlot slot;
     private int monthlyPlan;
 
-    public Customer(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password, String address, LocalDate dob, String weight, int monthlyPlan, String nic) {
+    public Customer(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String address, LocalDate dob, String weight, int monthlyPlan, String nic) {
         super(firstName, lastName, email, gender, phoneNumber, userName, password, nic);
         this.address = address;
         this.dob = dob;

@@ -6,14 +6,14 @@ public abstract class Person {
     private String firstName;
     private String lastName;
     private String email;
-    private Gender gender;
+    private String gender;
     private String phoneNumber;
     private String userName;
     private String password;
 
     private String nicNumber;
 
-    public Person(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password, String nicNumber) {
+    public Person(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String nicNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -49,10 +49,10 @@ public abstract class Person {
     }
 
     public String getGender() {
-        return gender.toString();
+        return gender;
     }
 
-    public void setGender(Gender gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 
