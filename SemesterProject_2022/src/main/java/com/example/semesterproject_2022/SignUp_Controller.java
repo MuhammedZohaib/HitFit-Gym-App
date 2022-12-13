@@ -1,7 +1,7 @@
 package com.example.semesterproject_2022;
 
 import all_enums.Gender;
-import all_enums.TimingSlot;
+import database.DatabaseFunctions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -317,6 +317,7 @@ public class SignUp_Controller {
         }
         if(bankNameValidation.getText().equals("") && packageValidation.getText().equals("") && tilIDValidation.getText().equals("") && accountNameValidation.getText().equals("")){
             Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName,userPassword,userAddress,dob,userWeight,monthlyPlan,nic);
+            DatabaseFunctions.saveToDb(customer);
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Prompt.fxml"));
             obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             obj.scene = new Scene(fxmlLoader.load());
