@@ -35,6 +35,26 @@
             </children></HBox>
         <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" stylesheets="@SignUp.css">
             <children>
+            <Label fx:id="PackageValidation" layoutX="322.0" layoutY="414.0" prefHeight="19.0" prefWidth="303.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="BankNameValidation" layoutX="322.0" layoutY="439.0" prefHeight="19.0" prefWidth="293.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="TransactionValidation" layoutX="322.0" layoutY="465.0" prefHeight="19.0" prefWidth="293.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="AccountHNameValidation" layoutX="322.0" layoutY="491.0" prefHeight="19.0" prefWidth="293.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
                 <Text fill="WHITE" layoutX="79.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" wrappingWidth="171.0">
                     <font>
                         <Font name="System Bold" size="36.0" />
@@ -48,6 +68,7 @@
                     <font>
                         <Font name="System Italic" size="10.0" />
                     </font></Label>
+<<<<<<< Updated upstream
                 <TextField id="t2" fx:id="bankName" layoutX="322.0" layoutY="184.0" onMouseClicked="#clearTab3" prefHeight="30.0" prefWidth="199.0" />
                 <Label layoutX="79.0" layoutY="241.0" text="Transaction Id" textFill="#eaf6ff">
                     <font>
@@ -60,6 +81,35 @@
                     </font></Label>
                 <TextField id="t4" fx:id="accountName" layoutX="79.0" layoutY="344.0" onMouseClicked="#clearTab3" prefHeight="30.0" prefWidth="199.0" />
                 <Button id="done" layoutX="82.0" layoutY="409.0" mnemonicParsing="false" onAction="#doneSignUp" prefHeight="30.0" prefWidth="150.0" text="Done" textFill="#eaf6ff">
+=======
+<<<<<<< HEAD
+                <TextField id="t2" fx:id="bankName" layoutX="322.0" layoutY="184.0" onMouseClicked="#bankField" prefHeight="30.0" prefWidth="199.0" />
+                <Label layoutX="89.0" layoutY="241.0" text="Transaction Id (No dashes)" textFill="#eaf6ff">
+                    <font>
+                        <Font name="System Italic" size="10.0" />
+                    </font></Label>
+                <TextField id="t3" fx:id="TransactionId" layoutX="79.0" layoutY="264.0" onMouseClicked="#TransacId" prefHeight="30.0" prefWidth="439.0" />
+                <Label id="l5" layoutX="89.0" layoutY="322.0" text="Account Holder's Name" textFill="#eaf6ff">
+                    <font>
+                        <Font name="System Italic" size="10.0" />
+                    </font></Label>
+                <TextField id="t4" fx:id="accountHname" layoutX="79.0" layoutY="344.0" onMouseClicked="#AccountHNameM" prefHeight="30.0" prefWidth="439.0" />
+                <Button id="done" fx:id="done" layoutX="82.0" layoutY="409.0" mnemonicParsing="false" onAction="#done_button" prefHeight="30.0" prefWidth="150.0" text="Done" textFill="#eaf6ff">
+=======
+                <TextField id="t2" fx:id="bankName" layoutX="322.0" layoutY="184.0" onMouseClicked="#clearTab3" prefHeight="30.0" prefWidth="199.0" />
+                <Label layoutX="79.0" layoutY="241.0" text="Transaction Id" textFill="#eaf6ff">
+                    <font>
+                        <Font name="System Italic" size="10.0" />
+                    </font></Label>
+                <TextField id="t3" fx:id="transactionID" layoutX="79.0" layoutY="264.0" onMouseClicked="#clearTab3" prefHeight="30.0" prefWidth="439.0" />
+                <Label id="l5" layoutX="79.0" layoutY="322.0" text="Account Holder's Name" textFill="#eaf6ff">
+                    <font>
+                        <Font name="System Italic" size="10.0" />
+                    </font></Label>
+                <TextField id="t4" fx:id="accountName" layoutX="79.0" layoutY="344.0" onMouseClicked="#clearTab3" prefHeight="30.0" prefWidth="199.0" />
+                <Button id="done" layoutX="82.0" layoutY="409.0" mnemonicParsing="false" onAction="#doneSignUp" prefHeight="30.0" prefWidth="150.0" text="Done" textFill="#eaf6ff">
+>>>>>>> 94aca1477ef3dabfeece14aab1d8b0a18c704b5a
+>>>>>>> Stashed changes
                     <padding>
                         <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                     </padding></Button>
@@ -76,11 +126,25 @@
                         </ImageView>
                     </graphic>
                 </Button>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+            <MenuButton fx:id="package_select" layoutX="79.0" layoutY="184.0" mnemonicParsing="false" onAction="#package_button" prefHeight="27.0" prefWidth="199.0" style="-fx-background-color: #eaf6ff;" text="Select a Package" textFill="#00000096">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#option1" text="Starter - Rs.2000" />
+                <MenuItem mnemonicParsing="false" onAction="#option2" text="Beginner - Rs.3000" />
+                  <MenuItem mnemonicParsing="false" onAction="#option3" text="Pro - Rs.4500" />
+=======
+>>>>>>> Stashed changes
             <MenuButton fx:id="package_select" layoutX="79.0" layoutY="184.0" mnemonicParsing="false" onMouseClicked="#clearTab3" prefHeight="30.0" prefWidth="199.0" style="-fx-background-color: #ffffff;" text="Select a Package" textFill="#00000096">
               <items>
                 <MenuItem fx:id="starter" mnemonicParsing="false" onAction="#starter" text="Starter - Rs.2000" />
                 <MenuItem fx:id="beginner" mnemonicParsing="false" onAction="#beginner" text="Beginner - Rs.3000" />
                   <MenuItem fx:id="pro" mnemonicParsing="false" onAction="#pro" text="Pro - Rs.4500" />
+<<<<<<< Updated upstream
+=======
+>>>>>>> 94aca1477ef3dabfeece14aab1d8b0a18c704b5a
+>>>>>>> Stashed changes
               </items>
             </MenuButton>
             <Label fx:id="bankNameValidation" layoutX="330.0" layoutY="350.0" textFill="#eaf6ff">

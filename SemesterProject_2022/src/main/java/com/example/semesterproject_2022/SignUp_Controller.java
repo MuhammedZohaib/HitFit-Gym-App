@@ -82,6 +82,10 @@ public class SignUp_Controller {
     private MenuButton package_select;
     @FXML
     private Button exit;
+
+    /*---Validations Fields-------*/
+    @FXML
+    private Label TransactionValidation,PackageValidation,BankNameValidation,AccountHNameValidation; // for Payment Tab
     @FXML
     private Label fNameValidation;
     @FXML
@@ -101,6 +105,29 @@ public class SignUp_Controller {
     @FXML
     private Label weightValidation;
     @FXML
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    private MenuButton package_select;
+    @FXML
+    private TextField bankName,TransactionId,accountHname;
+
+    /*----------Non FXML fields-----------*/
+    private static String firstName;
+    private static String lastName;
+    private static String userName;
+    private static String emailField;
+    private static String userPassword;
+    private static String phoneNumber;
+    private static String nic;
+    private static String userAddress;
+    private static String gender;
+    private static String userWeight;
+    private static String packageSelectPrompt;
+    @FXML
+    private static LocalDate dob;
+=======
+>>>>>>> Stashed changes
     private Label bankNameValidation;
 
     @FXML
@@ -165,6 +192,10 @@ public class SignUp_Controller {
     public TextField getBankName() {
         return bankName;
     }
+<<<<<<< Updated upstream
+=======
+>>>>>>> 94aca1477ef3dabfeece14aab1d8b0a18c704b5a
+>>>>>>> Stashed changes
 
 
     public void nextForm(ActionEvent e) throws IOException{
@@ -371,6 +402,138 @@ public class SignUp_Controller {
         packageValidation.setText("");
     }
 
+<<<<<<< Updated upstream
+=======
+    @FXML
+    public void package_button(ActionEvent event)
+    {
+        
+    }
+    @FXML
+    void option1(ActionEvent event) {
+        TransactionId.setStyle(resetStyle);
+        bankName.setStyle(resetStyle);
+        accountHname.setStyle(resetStyle);
+        package_select.setStyle(resetStyle);
+
+        package_select.setText("Starter - Rs.2000");
+
+        PackageValidation.setText("");
+        BankNameValidation.setText("");
+        TransactionValidation.setText("");
+        AccountHNameValidation.setText("");
+        
+    }
+
+    @FXML
+    void option2(ActionEvent event) {
+        TransactionId.setStyle(resetStyle);
+        bankName.setStyle(resetStyle);
+        accountHname.setStyle(resetStyle);
+        package_select.setStyle(resetStyle);
+
+        package_select.setText("Beginner - Rs.3000");
+
+        PackageValidation.setText("");
+        BankNameValidation.setText("");
+        TransactionValidation.setText("");
+        AccountHNameValidation.setText("");
+    }
+
+    @FXML
+    void option3(ActionEvent event) {
+        TransactionId.setStyle(resetStyle);
+        bankName.setStyle(resetStyle);
+        accountHname.setStyle(resetStyle);
+        package_select.setStyle(resetStyle);
+
+
+        package_select.setText("Pro - Rs.4500");
+
+        PackageValidation.setText("");
+        BankNameValidation.setText("");
+        TransactionValidation.setText("");
+        AccountHNameValidation.setText("");
+    }
+    @FXML
+    void bankField(MouseEvent event)
+    {
+        TransactionId.setStyle(resetStyle);
+        bankName.setStyle(resetStyle);
+        accountHname.setStyle(resetStyle);
+        package_select.setStyle(resetStyle);
+
+        PackageValidation.setText("");
+        BankNameValidation.setText("");
+        TransactionValidation.setText("");
+        AccountHNameValidation.setText("");
+
+    }
+    @FXML
+    public void TransacId(MouseEvent event) {
+        TransactionId.setStyle(resetStyle);
+        bankName.setStyle(resetStyle);
+        accountHname.setStyle(resetStyle);
+        package_select.setStyle(resetStyle);
+
+        PackageValidation.setText("");
+        BankNameValidation.setText("");
+        TransactionValidation.setText("");
+        AccountHNameValidation.setText("");
+    }
+    @FXML
+    public void AccountHNameM(MouseEvent event) {
+        accountHname.setStyle(resetStyle);
+
+        PackageValidation.setText("");
+        BankNameValidation.setText("");
+        TransactionValidation.setText("");
+        AccountHNameValidation.setText("");
+    }
+
+    @FXML
+    public void done_button(ActionEvent event) throws IOException // payment tab done button method
+    {
+        packageSelectPrompt=package_select.getText(); // storing the string in a string variable to access '.equals'
+       if(packageSelectPrompt.equals("Select a Package"))
+       {
+           package_select.setStyle(errorStyle);
+           PackageValidation.setText("At least one package needs to be selected");
+       } // else statement TBA
+       if(bankName.getText().isEmpty() || bankName.getText().isBlank())
+       {
+           bankName.setStyle(errorStyle);
+           BankNameValidation.setText("Bank Name Field cannot be empty");
+       } // else statement TBA
+       if(TransactionId.getText().isEmpty() || TransactionId.getText().isBlank())
+       {
+           TransactionId.setStyle(errorStyle);
+           TransactionValidation.setText("Transaction Id Field cannot be empty");
+       } // else state TBA
+        if(TransactionId.getText().length()<14 || TransactionId.getText().length()>14)
+        {
+            TransactionId.setStyle(errorStyle);
+            TransactionValidation.setText("Transaction Id must be 14 characters long");
+        }
+        if(accountHname.getText().isEmpty() || accountHname.getText().isBlank())
+        {
+            accountHname.setStyle(errorStyle);
+            AccountHNameValidation.setText("Account Name Field cannot be empty");
+        }
+
+        if(TransactionId.getText().isEmpty() == false && accountHname.getText().isEmpty() == false && bankName.getText().isEmpty() == false &&  packageSelectPrompt.equals("Select a Package") == false)
+        {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Done_Info.fxml"));
+            obj.stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            obj.scene = new Scene(fxmlLoader.load());
+            obj.stage.setScene(obj.scene);
+            obj.stage.centerOnScreen();
+            obj.stage.show();
+        }
+
+
+    }
+>>>>>>> Stashed changes
     @FXML
     public void close(ActionEvent e){
         Stage stage = (Stage) exit.getScene().getWindow();
@@ -384,9 +547,21 @@ public class SignUp_Controller {
         obj.stage.setY(e.getScreenY()-y);
     }
     @FXML
+    void LoginForm(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("loginSignUp.fxml"));
+        obj.stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        obj.scene = new Scene(fxmlLoader.load());
+        obj.stage.setScene(obj.scene);
+        obj.stage.centerOnScreen();
+        obj.stage.show();
+    }
+    @FXML
     public void pressedWindow(MouseEvent e)
     {
         x = e.getSceneX();
         y= e.getSceneY();
     }
+
+
+
 }

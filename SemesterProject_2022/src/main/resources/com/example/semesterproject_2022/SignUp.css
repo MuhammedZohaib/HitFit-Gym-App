@@ -48,4 +48,35 @@
     -fx-background-radius:12px;
     -fx-text-fill: #ffffff;
 }
+#package_select
+{
+    -fx-background-radius: 14px;
+}
+#option1
+{
+    -fx-background-radius: 14px;
+    -fx-background-color: #ffffff;
+}
+#option2
+{
+    -fx-background-radius: 14px;
+    -fx-background-color: #ffffff;
+    }
+#option3
+{
+    -fx-background-radius: 14px;
+    -fx-background-color: #ffffff;
+}
+#Login
+{
+    -fx-background-color: #009FFD;
+    -fx-text-fill: #EAF6FF;
+    -fx-background-radius:12px;
+    -fx-border-radius:12px;
+}
 
+#Login:hover
+{
+    -fx-cursor: hand;
+    -fx-background-color: #FFA400;
+}
