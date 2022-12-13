@@ -1,7 +1,6 @@
 package model_class;
 
 import all_enums.Gender;
-import all_enums.MembershipPlans;
 import all_enums.TimingSlot;
 import all_enums.WeightGainLoose;
 
@@ -11,12 +10,12 @@ public class Customer extends Person{
 
     private String address;
     private Date dob;
-    private double weight;
+    private String weight;
     private TimingSlot slot;
     private int monthlyPlan;
     private WeightGainLoose weightGainLoose;
 
-    public Customer(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password, String address, Date dob, double weight, TimingSlot slot, int monthlyPlan, WeightGainLoose weightGainLoose, String nic) {
+    public Customer(String firstName, String lastName, String email, Gender gender, String phoneNumber, String userName, String password, String address, Date dob, String weight, TimingSlot slot, int monthlyPlan, WeightGainLoose weightGainLoose, String nic) {
         super(firstName, lastName, email, gender, phoneNumber, userName, password, nic);
         this.address = address;
         this.dob = dob;
@@ -42,11 +41,11 @@ public class Customer extends Person{
         this.dob = dob;
     }
 
-    public double getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 
