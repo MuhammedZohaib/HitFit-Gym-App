@@ -7,9 +7,9 @@ import java.sql.*;
 
 public class DatabaseFunctions {
 
-    private static final String dbUrl = "";
-    private static final String dbUsername = "";
-    private static final String dbPassword = "";
+    private static final String dbUrl = "mysql://doadmin:AVNS_BEoqT0_xVRrXV9Y5PS8@db-mysql-nyc1-56612-do-user-13046066-0.b.db.ondigitalocean.com:25060/defaultdb?ssl-mode=REQUIRED";
+    private static final String dbUsername = "doadmin";
+    private static final String dbPassword = "AVNS_BEoqT0_xVRrXV9Y5PS8";
 
     private static Connection dbConnection = null;
 

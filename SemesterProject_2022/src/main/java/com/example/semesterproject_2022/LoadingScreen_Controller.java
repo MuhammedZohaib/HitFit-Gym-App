@@ -1,5 +1,6 @@
 package com.example.semesterproject_2022;
 
+import database.DatabaseFunctions;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -37,6 +38,7 @@ public class LoadingScreen_Controller implements Initializable {
         public void run()
         {
             try {
+                DatabaseFunctions.makeConnection();
                 Thread.sleep(10000);
 
                 Platform.runLater(new Runnable() {

@@ -1,5 +1,7 @@
 package com.example.semesterproject_2022;
 
+import all_enums.Gender;
+import all_enums.TimingSlot;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +11,8 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import model_class.Customer;
+
 import java.io.IOException;
 import java.time.LocalDate;
 
@@ -21,7 +25,7 @@ public class SignUp_Controller {
     private String phoneNumber;
     private String nic;
     private String userAddress;
-    private String gender;
+    private Gender gender;
     private String userWeight;
     private  LocalDate dob;
     private  int monthlyPlan;
@@ -226,10 +230,10 @@ public class SignUp_Controller {
         userWeight = getWeight().getText();
 
         if(male.isSelected()){
-            gender = "male";
+            gender = Gender.MALE;
         }
         if(female.isSelected()){
-            gender =  "female";
+            gender = Gender.FEMALE;
         }
         if(userAddress.isEmpty()){
             userAddress = "-";
@@ -312,6 +316,7 @@ public class SignUp_Controller {
             packageValidation.setText("! Please Select a Package");
         }
         if(bankNameValidation.getText().equals("") && packageValidation.getText().equals("") && tilIDValidation.getText().equals("") && accountNameValidation.getText().equals("")){
+            Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName,userPassword,userAddress,dob,userWeight,monthlyPlan,nic);
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Prompt.fxml"));
             obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             obj.scene = new Scene(fxmlLoader.load());
