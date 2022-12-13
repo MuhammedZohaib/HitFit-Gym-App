@@ -25,7 +25,7 @@ public class SignUp_Controller {
     private String phoneNumber;
     private String nic;
     private String userAddress;
-    private Gender gender;
+    private String gender;
     private String userWeight;
     private  LocalDate dob;
     private  int monthlyPlan;
@@ -230,10 +230,10 @@ public class SignUp_Controller {
         userWeight = getWeight().getText();
 
         if(male.isSelected()){
-            gender = Gender.MALE;
+            gender = "male";
         }
         if(female.isSelected()){
-            gender = Gender.FEMALE;
+            gender = "female";
         }
         if(userAddress.isEmpty()){
             userAddress = "-";
