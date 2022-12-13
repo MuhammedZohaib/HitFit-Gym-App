@@ -265,7 +265,6 @@ public class SignUp_Controller {
             }
             else if(dob.getYear() == 2022){
                 dateValidation.setText("! Invalid Date of Birth");
-                date.setStyle(errorStyle);
             }
         }
         catch (NullPointerException event){
