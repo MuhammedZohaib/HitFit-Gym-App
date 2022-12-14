@@ -60,4 +60,15 @@ public class Customer extends Person{
     public void setMonthlyPlan(int monthlyPlan) {
         this.monthlyPlan = monthlyPlan;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +"Customer{" +
+                "address='" + address + '\'' +
+                ", dob='" + dob + '\'' +
+                ", weight='" + weight + '\'' +
+                ", slot=" + slot +
+                ", monthlyPlan=" + monthlyPlan +
+                '}';
+    }
 }

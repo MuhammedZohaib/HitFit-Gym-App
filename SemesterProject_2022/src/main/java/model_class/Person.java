@@ -1,11 +1,25 @@
 package model_class;
 
-import all_enums.Gender;
 
-public abstract class Person {
+public class Person {
     private String firstName;
     private String lastName;
     private String email;
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", gender='" + gender + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", nicNumber='" + nicNumber + '\'' +
+                '}';
+    }
+
     private String gender;
     private String phoneNumber;
     private String userName;

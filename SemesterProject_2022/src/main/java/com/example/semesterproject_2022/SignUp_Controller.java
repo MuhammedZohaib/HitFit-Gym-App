@@ -17,21 +17,21 @@ import java.io.IOException;
 import java.time.LocalDate;
 
 public class SignUp_Controller {
-    private String firstName;
-    private String lastName;
-    private String userName;
-    private String emailField;
-    private String userPassword;
-    private String phoneNumber;
-    private String nic;
-    private String userAddress;
-    private String gender;
-    private String userWeight;
-    private  LocalDate dob;
-    private  int monthlyPlan;
-    private String nameOfBank;
-    private String userBankAccountName;
-    private String tilID;
+    private static String firstName;
+    private static String lastName;
+    private static String userName;
+    private static String emailField;
+    private static String userPassword;
+    private static String phoneNumber;
+    private static String nic;
+    private static String userAddress;
+    private static String gender;
+    private static String userWeight;
+    private static LocalDate dob;
+    private static  int monthlyPlan;
+    private static String nameOfBank;
+    private static String userBankAccountName;
+    private static String tilID;
 
 
 
@@ -111,69 +111,14 @@ public class SignUp_Controller {
 
     @FXML
     private Label packageValidation;
-    public PasswordField getcPassword() {
-        return cPassword;
-    }
-
-    public TextField getEmail() {
-        return email;
-    }
-
-    public TextField getfName() {
-        return fName;
-    }
-
-    public TextField getlName() {
-        return lName;
-    }
-
-    public TextField getPassword() {
-        return password;
-    }
-
-    public TextField getuName() {
-        return uName;
-    }
-
-    public TextField getpNumber() {
-        return pNumber;
-    }
-
-    public TextField getWeight() {
-        return weight;
-    }
-
-    public TextField getCnic() {
-        return cnic;
-    }
-
-    public TextField getAddress() {
-        return address;
-    }
-
-    public DatePicker getDate() {
-        return date;
-    }
-    public TextField getTransactionID() {
-        return transactionID;
-    }
-
-    public TextField getAccountName() {
-        return accountName;
-    }
-
-    public TextField getBankName() {
-        return bankName;
-    }
-
 
     public void nextForm(ActionEvent e) throws IOException{
-        firstName = getfName().getText();
-        lastName = getlName().getText();
-        emailField = getEmail().getText();
-        userName = getuName().getText();
-        userPassword = getPassword().getText();
-        String confirmPassword = getcPassword().getText();
+        firstName = fName.getText();
+        lastName = lName.getText();
+        emailField = email.getText();
+        userName = uName.getText();
+        userPassword = password.getText();
+        String confirmPassword = cPassword.getText();
 
         if(firstName.isBlank()){
             fNameValidation.setText("! FirstName Cannot Be Empty");
@@ -223,11 +168,11 @@ public class SignUp_Controller {
     }
 
     public void paymentForm(ActionEvent e) throws IOException {
-        phoneNumber = getpNumber().getText();
-        nic = getCnic().getText();
-        userAddress = getAddress().getText();
-        dob = getDate().getValue();
-        userWeight = getWeight().getText();
+        phoneNumber = pNumber.getText();
+        nic = cnic.getText();
+        userAddress = address.getText();
+        dob = date.getValue();
+        userWeight = weight.getText();
 
         if(male.isSelected()){
             gender = "male";
@@ -296,29 +241,30 @@ public class SignUp_Controller {
         package_select.setText("Pro - Rs.4500");
     }
     public void doneSignUp(ActionEvent e) throws IOException {
-        nameOfBank = getBankName().getText();
-        tilID = getTransactionID().getText();
-        userBankAccountName = getAccountName().getText();
+        nameOfBank = bankName.getText();
+        tilID = transactionID.getText();
+        userBankAccountName = accountName.getText();
 
         if(nameOfBank.isBlank() || nameOfBank.isEmpty()){
             bankNameValidation.setText("! Bank Name cannot be empty");
-            getBankName().setStyle(errorStyle);
+            bankName.setStyle(errorStyle);
         }
         if(userBankAccountName.isBlank() || userBankAccountName.isEmpty()){
             accountNameValidation.setText("! Account Holder's Name cannot be empty");
-            getAccountName().setStyle(errorStyle);
+            bankName.setStyle(errorStyle);
         }
         if(tilID.isBlank() || tilID.isEmpty()){
             tilIDValidation.setText("! Bank Name cannot be empty");
-            getTransactionID().setStyle(errorStyle);
+            transactionID.setStyle(errorStyle);
         }
         if(monthlyPlan == 0){
             packageValidation.setText("! Please Select a Package");
         }
         if(bankNameValidation.getText().equals("") && packageValidation.getText().equals("") && tilIDValidation.getText().equals("") && accountNameValidation.getText().equals("")){
-//            Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName,userPassword,userAddress,"12/12/1911",userWeight,monthlyPlan,nic);
-//            DatabaseFunctions.saveToDb(customer);
-//            System.out.println(dob);
+            Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName,userPassword,userAddress,dob.toString(),userWeight,monthlyPlan,nic);
+            System.out.println(customer);
+            DatabaseFunctions.saveToDb(customer);
+
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Prompt.fxml"));
             obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             obj.scene = new Scene(fxmlLoader.load());
