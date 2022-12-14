@@ -28,7 +28,7 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("insert into customers (first_name, last_name, email, phone_number, password, username, gender, weight, dob,\n" +
-                    "                       monthly_plan, nic, is_active)\n" +
+                    "monthly_plan, nic, is_active)\n" +
                     "values (?,?,?,?,?,?,?,?,?,?,?,?);");
 
             queryStatement.setString(1, customer.getFirstName());
@@ -43,8 +43,8 @@ public class DatabaseFunctions {
             queryStatement.setInt(10, customer.getMonthlyPlan());
             queryStatement.setString(11, customer.getNicNumber());
             queryStatement.setBoolean(12, false);
-
             queryStatement.executeUpdate();
+
         } catch (SQLException e){
             System.out.println("Error! Could not run query: " + e);
         }
