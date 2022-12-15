@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,400&display=swap');
+
+.text
+{
+    -fx-font-family: 'Poppins';
+}
+#anchorpane_login
+{
+    -fx-background-color: linear-gradient(to left, #1b2e44,#354055);
+}
+
+#EmailField
+{
+    -fx-background-radius: 15px;
+    -fx-border-color: none;
+}
+
+#PassField
+{
+    -fx-background-radius: 15px;
+    -fx-border-color: none;
+}
+
+#LogInbtn
+{
+    -fx-background-color: #009FFD;
+    -fx-background-radius: 10px;
+    -fx-text-fill: #EAF6FF;
+    -fx-font-family: 'Poppins';
+    -fx-font-weight: bold;
+}
