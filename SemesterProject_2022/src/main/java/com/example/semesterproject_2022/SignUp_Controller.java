@@ -258,8 +258,8 @@ public class SignUp_Controller {
             packageValidation.setText("! Please Select a Package");
         }
         if(bankNameValidation.getText().equals("") && packageValidation.getText().equals("") && tilIDValidation.getText().equals("") && accountNameValidation.getText().equals("")){
-            Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName,userPassword,userAddress,dob.toString(),userWeight,monthlyPlan,nic);
-            System.out.println(customer);
+
+            Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName,userPassword,nic,userAddress,dob.toString(),userWeight,monthlyPlan,DatabaseFunctions.generateId());
             DatabaseFunctions.saveToDb(customer);
 
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Prompt.fxml"));

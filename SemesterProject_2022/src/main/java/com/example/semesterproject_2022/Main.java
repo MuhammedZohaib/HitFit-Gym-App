@@ -1,5 +1,6 @@
 package com.example.semesterproject_2022;
 
+import database.DatabaseFunctions;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -26,6 +27,7 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
+        DatabaseFunctions.makeConnection();
         launch();
     }
 }
