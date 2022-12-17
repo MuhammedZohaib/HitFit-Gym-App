@@ -38,6 +38,10 @@ public class Person {
         this.nicNumber = nicNumber;
     }
 
+    public Person(){
+
+    }
+
     public String getFirstName() {
         return firstName;
     }

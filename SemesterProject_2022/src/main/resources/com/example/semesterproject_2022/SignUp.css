@@ -59,6 +59,8 @@
 #BackToLogin:hover
 {
     -fx-cursor: hand;
-    -fx-background-color: #ffa400;
+}
+#back:hover{
+    -fx-cursor: hand;
 }
 

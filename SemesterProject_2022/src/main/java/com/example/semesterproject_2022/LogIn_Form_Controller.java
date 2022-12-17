@@ -16,14 +16,15 @@ public class LogIn_Form_Controller {
     private TextField EmailField;
 
     @FXML
-    private Button LogInbtn,exit;
+    private Button LogInButton;
 
     @FXML
-    private PasswordField PassField;
+    private PasswordField cPassField;
 
     @FXML
     private AnchorPane anchorpane_login;
-
+    @FXML
+    private Button exit;
     @FXML
     private Text epValidation;
 
@@ -46,11 +47,10 @@ public class LogIn_Form_Controller {
         x=event.getSceneX();
         y=event.getSceneY();
     }
-
     @FXML
     public void close(ActionEvent e){
-        Stage stage = (Stage) exit.getScene().getWindow();
-        stage.close();
+        obj.stage = (Stage) exit.getScene().getWindow();
+        obj.stage.close();
     }
 
 }

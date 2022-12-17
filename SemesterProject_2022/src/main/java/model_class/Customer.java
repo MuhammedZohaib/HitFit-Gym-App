@@ -9,16 +9,21 @@ public class Customer extends Person{
     private String address;
     private String dob;
     private String weight;
-    private TimingSlot slot;
     private int monthlyPlan;
+    private int customerId;
+    private boolean isActive;
 
-    public Customer(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String address, String dob, String weight, int monthlyPlan, String nic) {
-        super(firstName, lastName, email, gender, phoneNumber, userName, password, nic);
+    public Customer(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String nicNumber, String address, String dob, String weight, int monthlyPlan, int customerId) {
+        super(firstName, lastName, email, gender, phoneNumber, userName, password, nicNumber);
         this.address = address;
         this.dob = dob;
         this.weight = weight;
-        this.slot = slot;
         this.monthlyPlan = monthlyPlan;
+        this.customerId = customerId;
+    }
+
+    public Customer(){
+        super();
     }
 
     public String getAddress() {
@@ -30,7 +35,7 @@ public class Customer extends Person{
     }
 
     public String getDob() {
-        return dob.toString();
+        return dob;
     }
 
     public void setDob(String dob) {
@@ -45,14 +50,6 @@ public class Customer extends Person{
         this.weight = weight;
     }
 
-    public String getSlot() {
-        return slot.toString();
-    }
-
-    public void setSlot(TimingSlot slot) {
-        this.slot = slot;
-    }
-
     public int getMonthlyPlan() {
         return monthlyPlan;
     }
@@ -61,13 +58,28 @@ public class Customer extends Person{
         this.monthlyPlan = monthlyPlan;
     }
 
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
+    }
+
+    public boolean isActive() {
+        return isActive;
+    }
+
+    public void setActive(boolean active) {
+        isActive = active;
+    }
+
     @Override
     public String toString() {
         return super.toString() +"Customer{" +
                 "address='" + address + '\'' +
                 ", dob='" + dob + '\'' +
                 ", weight='" + weight + '\'' +
-                ", slot=" + slot +
                 ", monthlyPlan=" + monthlyPlan +
                 '}';
     }

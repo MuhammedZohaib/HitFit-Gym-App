@@ -83,24 +83,24 @@
          </font>
       </Text>
       <Rectangle arcHeight="2.0" arcWidth="5.0" fill="#009ffd" height="4.0" layoutX="45.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="212.0" />
-      <TextField fx:id="EmailField" layoutX="45.0" layoutY="154.0" prefHeight="25.0" prefWidth="251.0" />
       <Text fill="#b5b5b5" layoutX="53.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email or Username" wrappingWidth="103.07769775390625">
          <font>
             <Font name="Arial" size="10.0" />
          </font>
       </Text>
+      <TextField fx:id="EmailField" layoutX="45.0" layoutY="154.0" prefHeight="25.0" prefWidth="251.0" />
       <Text fill="#b5b5b5" layoutX="53.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="52.91015625000006">
          <font>
             <Font name="Arial" size="10.0" />
          </font>
       </Text>
       <PasswordField fx:id="PassField" layoutX="45.0" layoutY="214.0" prefHeight="25.0" prefWidth="251.0" />
-      <Button fx:id="LogInbtn" layoutX="44.0" layoutY="282.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="251.0" text="Log In" />
       <CheckBox layoutX="51.0" layoutY="247.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="167.0" text="Keep Me Logged In" textFill="#c3c3c3">
          <font>
             <Font size="10.0" />
          </font>
       </CheckBox>
+      <Button fx:id="LogInButton" layoutX="44.0" layoutY="282.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="251.0" text="Log In" />
       <Text fill="#b5b5b5" layoutX="53.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Can't Sign In? Forgot Password ?" wrappingWidth="155.07769775390625">
          <font>
             <Font name="Arial" size="8.0" />
@@ -111,14 +111,13 @@
             <Font name="Arial" size="10.0" />
          </font>
       </Text>
-      <Button fx:id="exit" layoutX="559.0" layoutY="14.0" minWidth="28.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: transparent;">
+      <Button fx:id="exit" layoutX="591.0" layoutY="19.0" minWidth="28.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="28.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@icons8-close-window-96.png" />
                </image>
             </ImageView>
-         </graphic>
-      </Button>
+         </graphic></Button>
    </children>
 </AnchorPane>

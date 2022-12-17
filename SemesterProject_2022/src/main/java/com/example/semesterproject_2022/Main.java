@@ -1,5 +1,6 @@
 package com.example.semesterproject_2022;
 
+import database.DatabaseFunctions;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,17 +15,19 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
 
 
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LogIn_Form.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoadingScreen.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
+        stage.centerOnScreen();
 
     }
 
 
     public static void main(String[] args) {
+        DatabaseFunctions.makeConnection();
         launch();
     }
 }

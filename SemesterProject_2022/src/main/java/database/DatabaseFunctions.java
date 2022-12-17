@@ -4,6 +4,7 @@ import all_enums.CustomerOrEmployee;
 import model_class.Customer;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DatabaseFunctions {
 
@@ -27,36 +28,67 @@ public class DatabaseFunctions {
         PreparedStatement queryStatement = null;
 
         try {
-            queryStatement = dbConnection.prepareStatement("insert into customers (first_name, last_name, email, phone_number, password, username, gender, weight, dob,\n" +
+            queryStatement = dbConnection.prepareStatement("insert into customers (customer_id, first_name, last_name, email, phone_number, password, username, gender, weight, dob,\n" +
                     "monthly_plan, nic, is_active)\n" +
-                    "values (?,?,?,?,?,?,?,?,?,?,?,?);");
+                    "values (?,?,?,?,?,?,?,?,?,?,?,?,?);");
 
-            queryStatement.setString(1, customer.getFirstName());
-            queryStatement.setString(2, customer.getLastName());
-            queryStatement.setString(3, customer.getEmail());
-            queryStatement.setString(4, customer.getPhoneNumber());
-            queryStatement.setString(5, customer.getPassword());
-            queryStatement.setString(6, customer.getUserName());
-            queryStatement.setString(7, customer.getGender());
-            queryStatement.setString(8, customer.getWeight());
-            queryStatement.setString(9, customer.getDob());
-            queryStatement.setInt(10, customer.getMonthlyPlan());
-            queryStatement.setString(11, customer.getNicNumber());
-            queryStatement.setBoolean(12, false);
+            queryStatement.setInt(1, customer.getCustomerId());
+            queryStatement.setString(2, customer.getFirstName());
+            queryStatement.setString(3, customer.getLastName());
+            queryStatement.setString(4, customer.getEmail());
+            queryStatement.setString(5, customer.getPhoneNumber());
+            queryStatement.setString(6, customer.getPassword());
+            queryStatement.setString(7, customer.getUserName());
+            queryStatement.setString(8, customer.getGender());
+            queryStatement.setString(9, customer.getWeight());
+            queryStatement.setString(10, customer.getDob());
+            queryStatement.setInt(11, customer.getMonthlyPlan());
+            queryStatement.setString(12, customer.getNicNumber());
+            queryStatement.setBoolean(13, false);
             queryStatement.executeUpdate();
 
-        } catch (SQLException e){
+        } catch (SQLException e) {
             System.out.println("Error! Could not run query: " + e);
         }
 
         return true;
     }
 
-    public static boolean getAllFromDb(CustomerOrEmployee choice){
+    public static boolean getAllFromDb(CustomerOrEmployee choice) {
 
-        switch (choice){
+        ResultSet allDataRs = null;
+
+        ArrayList<Integer> customerIds = new ArrayList<>();
+        ArrayList<String> firstNames = new ArrayList<>();
+        ArrayList<String> lastNames = new ArrayList<>();
+        ArrayList<String> emails = new ArrayList<>();
+        ArrayList<String> phoneNumbers = new ArrayList<>();
+        ArrayList<String> passwords = new ArrayList<>();
+        ArrayList<String> usernames = new ArrayList<>();
+        ArrayList<String> genders = new ArrayList<>();
+        ArrayList<String> weights = new ArrayList<>();
+        ArrayList<String> dobs = new ArrayList<>();
+        ArrayList<Integer> monthlyPlans = new ArrayList<>();
+        ArrayList<String> nics = new ArrayList<>();
+        ArrayList<String> isActives = new ArrayList<>();
+
+
+        switch (choice) {
             case CUSTOMER:
-                
+
+                PreparedStatement queryStatement = null;
+                Customer savedCustomer = new Customer();
+                try {
+                    queryStatement = dbConnection.prepareStatement("SELECT * FROM customers;");
+                    allDataRs = queryStatement.executeQuery();
+
+                    while (allDataRs.next()) {
+                       customerIds.add(allDataRs.getInt(0));
+                    }
+
+                } catch (SQLException e) {
+                    System.out.println("Error in getting ids: " + e);
+                }
                 break;
 
             case EMPLOYEE:
@@ -65,4 +97,23 @@ public class DatabaseFunctions {
 
         return true;
     }
+
+    public static int generateId() {
+
+        ResultSet allIds = null;
+        int lastId = 0;
+        PreparedStatement queryStatement = null;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("SELECT * FROM customers ORDER BY customer_id DESC LIMIT 1;");
+            allIds = queryStatement.executeQuery();
+            while (allIds.next()) {
+                lastId = allIds.getInt(1);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error in getting ids: " + e);
+        }
+        return lastId + 1;
+    }
+
 }
