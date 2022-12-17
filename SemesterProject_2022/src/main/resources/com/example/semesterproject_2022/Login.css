@@ -21,11 +21,20 @@
     -fx-border-color: none;
 }
 
-#LogInbtn
+#LogInButton
 {
     -fx-background-color: #009FFD;
     -fx-background-radius: 10px;
     -fx-text-fill: #EAF6FF;
     -fx-font-family: 'Poppins';
     -fx-font-weight: bold;
+}
+#LogInButton:hover{
+    -fx-cursor: hand;
+    -fx-background-color:#FFA400;
+    -fx-text-fill: linear-gradient(to left, #1b2e44,#354055);
+}
+#exit:hover
+{
+    -fx-cursor: hand;
 }

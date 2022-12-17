@@ -1,6 +1,5 @@
 package com.example.semesterproject_2022;
 
-import all_enums.Gender;
 import database.DatabaseFunctions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -76,8 +75,6 @@ public class SignUp_Controller {
     private TextField accountName;
     @FXML
     private TextField bankName;
-
-
     @FXML
     private MenuButton package_select;
     @FXML
@@ -273,14 +270,6 @@ public class SignUp_Controller {
             obj.stage.show();
         }
     }
-    public void backToLoginSignUp(ActionEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp.fxml"));
-        obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        obj.scene = new Scene(fxmlLoader.load());
-        obj.stage.setScene(obj.scene);
-        obj.stage.centerOnScreen();
-        obj.stage.show();
-    }
     public void clear(MouseEvent e){
         fName.setStyle(resetStyle);
         cPassword.setStyle(resetStyle);
@@ -328,8 +317,8 @@ public class SignUp_Controller {
 
     @FXML
     public void close(ActionEvent e){
-        Stage stage = (Stage) exit.getScene().getWindow();
-        stage.close();
+        obj.stage = (Stage) exit.getScene().getWindow();
+        obj.stage.close();
     }
     @FXML
     public void dragWindow(MouseEvent e)

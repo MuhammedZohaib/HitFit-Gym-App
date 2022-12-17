@@ -41,12 +41,20 @@ public class LoginSignUp_Controller {
         obj.stage.centerOnScreen();
         obj.stage.show();
     }
+    public void switchToLogin(ActionEvent e) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LogIn_Form.fxml"));
+        obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        obj.scene = new Scene(fxmlLoader.load());
+        obj.stage.setScene(obj.scene);
+        obj.stage.centerOnScreen();
+        obj.stage.show();
+    }
 
     /*CLOSE BUTTON LOGIC STARTS HERE ----*/
     @FXML
     public void close(ActionEvent e){
-        Stage stage = (Stage) exit.getScene().getWindow();
-        stage.close();
+        obj.stage = (Stage) exit.getScene().getWindow();
+        obj.stage.close();
     }
     /*CLOSE BUTTON LOGIC ENDS HERE ----*/
 

@@ -154,6 +154,15 @@
                </font>
             </Label>
             <Line endX="336.0" layoutX="179.0" layoutY="173.0" startX="-100.0" stroke="WHITE" />
+            <Button fx:id="back" layoutX="29.0" layoutY="14.0" minWidth="28.0" mnemonicParsing="false" onAction="#GoBackLogIn" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@go-back-30.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
    </children>

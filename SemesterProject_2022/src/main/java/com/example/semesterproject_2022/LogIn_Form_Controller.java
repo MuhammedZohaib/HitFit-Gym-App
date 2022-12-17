@@ -1,5 +1,6 @@
 package com.example.semesterproject_2022;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -15,14 +16,15 @@ public class LogIn_Form_Controller {
     private TextField EmailField;
 
     @FXML
-    private Button LogInbtn;
+    private Button LogInButton;
 
     @FXML
-    private PasswordField PassField;
+    private PasswordField cPassField;
 
     @FXML
     private AnchorPane anchorpane_login;
-
+    @FXML
+    private Button exit;
     @FXML
     private Text epValidation;
 
@@ -44,6 +46,11 @@ public class LogIn_Form_Controller {
     void pressed(MouseEvent event) {
         x=event.getSceneX();
         y=event.getSceneY();
+    }
+    @FXML
+    public void close(ActionEvent e){
+        obj.stage = (Stage) exit.getScene().getWindow();
+        obj.stage.close();
     }
 
 }
