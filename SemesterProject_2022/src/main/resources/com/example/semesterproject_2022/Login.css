@@ -29,3 +29,14 @@
     -fx-font-family: 'Poppins';
     -fx-font-weight: bold;
 }
+
+#exit:hover
+{
+    -fx-cursor: hand;
+}
+
+#LogInbtn:hover
+{
+    -fx-background-color: #FFA400;
+ -fx-cursor: hand;
+}
