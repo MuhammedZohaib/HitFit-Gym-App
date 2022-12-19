@@ -52,6 +52,7 @@ public class LogIn_Form_Controller {
         obj.scene = new Scene(fxmlLoader.load(),screenbounds.getWidth(),screenbounds.getHeight());
         obj.stage.setScene(obj.scene);
         obj.stage.centerOnScreen();
+        /*---------Using the Undecorated Stage we can't resize with through native functionalities so here is the function to resize and drag the undecorated stage----------------*/
         ResizeHelper.addResizeListener(obj.stage);
         obj.stage.show();
     }
