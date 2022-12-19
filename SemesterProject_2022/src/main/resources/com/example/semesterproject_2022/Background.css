@@ -1,0 +1,6 @@
+#anchorpane_login{
+    -fx-background-image: url("bg.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
