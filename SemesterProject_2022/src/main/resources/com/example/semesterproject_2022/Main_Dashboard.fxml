@@ -2,13 +2,13 @@
 
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-
+<?import javafx.scene.layout.HBox?>
 
 <AnchorPane fx:id="anchorpane_login" prefHeight="1080.0" prefWidth="1920.0" stylesheets="@Background.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.Main_Interface">
    <children>
       <BorderPane layoutX="-8.0" prefHeight="1082.0" prefWidth="1928.0">
          <top>
-            <BorderPane prefHeight="38.0" prefWidth="1928.0" style="-fx-background-color: #1b2e44;" BorderPane.alignment="CENTER" />
+            <HBox prefHeight="38.0" prefWidth="1928.0" style="-fx-background-color: #1b2e44;" BorderPane.alignment="CENTER" />
          </top>
       </BorderPane>
    </children>
