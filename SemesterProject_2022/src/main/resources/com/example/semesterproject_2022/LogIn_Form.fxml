@@ -100,7 +100,7 @@
             <Font size="10.0" />
          </font>
       </CheckBox>
-      <Button fx:id="LogInButton" layoutX="44.0" layoutY="282.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="251.0" text="Log In" />
+      <Button fx:id="LogInButton" layoutX="44.0" layoutY="282.0" mnemonicParsing="false" onMouseClicked="#loginbtn" prefHeight="25.0" prefWidth="251.0" text="Log In" />
       <Text fill="#b5b5b5" layoutX="53.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Can't Sign In? Forgot Password ?" wrappingWidth="155.07769775390625">
          <font>
             <Font name="Arial" size="8.0" />

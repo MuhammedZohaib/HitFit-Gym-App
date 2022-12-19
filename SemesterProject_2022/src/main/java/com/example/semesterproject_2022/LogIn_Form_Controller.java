@@ -1,8 +1,10 @@
 package com.example.semesterproject_2022;
 
+import com.ResizeHelper.ResizeHelper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,7 +13,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -39,7 +43,18 @@ public class LogIn_Form_Controller {
     /*------*/
     /*---------Loading Screen object----------*/
     LoadingScreen_Controller obj = new LoadingScreen_Controller();
-
+    /*For Resolution relative to every screen we will get the dimensions of the screen*/
+    Rectangle2D screenbounds = Screen.getPrimary().getVisualBounds();
+    @FXML
+    void loginbtn(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Main_Dashboard.fxml"));
+        obj.stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        obj.scene = new Scene(fxmlLoader.load(),screenbounds.getWidth(),screenbounds.getHeight());
+        obj.stage.setScene(obj.scene);
+        obj.stage.centerOnScreen();
+        ResizeHelper.addResizeListener(obj.stage);
+        obj.stage.show();
+    }
     @FXML
     void dragged(MouseEvent event) {
         obj.stage = (Stage) anchorpane_login.getScene().getWindow();
