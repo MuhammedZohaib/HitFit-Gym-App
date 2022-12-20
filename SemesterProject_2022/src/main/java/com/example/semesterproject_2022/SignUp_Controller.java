@@ -16,6 +16,8 @@ import model_class.Customer;
 import java.io.IOException;
 import java.time.LocalDate;
 
+import static email_validation.EmailValidation.validateEmail;
+
 public class SignUp_Controller {
     private static String firstName;
     private static String lastName;
@@ -118,6 +120,8 @@ public class SignUp_Controller {
         userPassword = password.getText();
         String confirmPassword = cPassword.getText();
 
+        Boolean apiResponse = validateEmail(emailField);
+
         if(firstName.isBlank()){
             fNameValidation.setText("! FirstName Cannot Be Empty");
             fName.setStyle(errorStyle);
@@ -142,6 +146,10 @@ public class SignUp_Controller {
             emailValidation.setText("! Email Cannot Be Empty");
             email.setStyle(errorStyle);
         }
+        else if(apiResponse.equals(false)){
+            emailValidation.setText("! Invalid Email");
+            email.setStyle(errorStyle);
+        }
         if(confirmPassword.isBlank()){
             cPassword.setStyle(errorStyle);
         }
@@ -150,12 +158,13 @@ public class SignUp_Controller {
             password.setStyle(errorStyle);
             cPassword.setStyle(errorStyle);
         }
+
         else if(userPassword.length() < 8){
             passwordValidation.setText("! Password Should Contain 8 Characters");
             password.setStyle(errorStyle);
             cPassword.setStyle(errorStyle);
         }
-        else if (fNameValidation.getText().isBlank() && lNameValidation.getText().equals("") && userNameValidation.getText().equals("") && emailValidation.getText().equals("") && passwordValidation.getText().equals("")){
+        else if (fNameValidation.getText().isBlank() && lNameValidation.getText().equals("") && userNameValidation.getText().equals("") && emailValidation.getText().equals("") && passwordValidation.getText().equals("") && apiResponse.equals(true)){
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Personal_Info.fxml"));
             obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             obj.scene = new Scene(fxmlLoader.load());
