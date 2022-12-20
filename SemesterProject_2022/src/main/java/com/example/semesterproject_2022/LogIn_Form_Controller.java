@@ -49,11 +49,11 @@ public class LogIn_Form_Controller {
     void loginbtn(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Main_Dashboard.fxml"));
         obj.stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        obj.scene = new Scene(fxmlLoader.load(),screenbounds.getWidth(),screenbounds.getHeight());
+        obj.scene = new Scene(fxmlLoader.load());
         obj.stage.setScene(obj.scene);
         obj.stage.centerOnScreen();
         /*---------Using the Undecorated Stage we can't resize with through native functionalities so here is the function to resize and drag the undecorated stage----------------*/
-        ResizeHelper.addResizeListener(obj.stage,420,420,screenbounds.getWidth(),screenbounds.getHeight());
+        ResizeHelper.addResizeListener(obj.stage,1280,800,screenbounds.getWidth(),screenbounds.getHeight());
         obj.stage.show();
     }
     @FXML

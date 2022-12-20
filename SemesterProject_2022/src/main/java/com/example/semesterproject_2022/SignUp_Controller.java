@@ -1,5 +1,6 @@
 package com.example.semesterproject_2022;
 
+import com.ResizeHelper.ResizeHelper;
 import database.DatabaseFunctions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
