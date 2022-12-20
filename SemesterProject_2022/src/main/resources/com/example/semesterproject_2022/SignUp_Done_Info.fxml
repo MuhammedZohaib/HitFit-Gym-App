@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Main" onMouseDragged="#dragWindow" onMousePressed="#pressedWindow" prefHeight="600.0" prefWidth="1024.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
+<AnchorPane fx:id="Main" onMouseDragged="#dragWindow" onMousePressed="#pressedWindow" prefHeight="600.0" prefWidth="1024.0" stylesheets="@CSS/SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
     <children>
         <HBox id="hbox" fx:id="hbox" layoutX="403.0" layoutY="568.0" prefHeight="37.0" prefWidth="620.0">
             <children>
@@ -30,7 +30,7 @@
                     </font>
                 </Button>
             </children></HBox>
-        <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" style="-fx-background-color: transparent;" stylesheets="@SignUp.css">
+        <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" style="-fx-background-color: transparent;" stylesheets="@CSS/SignUp.css">
             <children>
                 <Text fill="WHITE" layoutX="79.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" wrappingWidth="171.0">
                     <font>
@@ -65,7 +65,7 @@
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@icons8-close-window-96.png" />
+                                <Image url="@Images/icons8-close-window-96.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -73,7 +73,7 @@
             <Line endX="125.3333740234375" layoutX="237.0" layoutY="157.0" startX="-157.33334350585938" stroke="#009ffd" strokeWidth="3.0" />
             <ImageView fitHeight="81.0" fitWidth="82.0" layoutX="78.0" layoutY="180.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@WAIT.png" />
+                  <Image url="@Images/WAIT.png" />
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="79.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thank you for signing up and filling in all the details." wrappingWidth="359.6666259765625">
@@ -91,13 +91,13 @@
                   <Font size="14.0" />
                </font>
             </Text>
-            <Button id="Login" layoutX="79.0" layoutY="432.0" mnemonicParsing="false" onAction="#LoginForm" prefHeight="30.0" prefWidth="150.0" stylesheets="@SignUp.css" text="Go to Log In" />
+            <Button id="Login" layoutX="79.0" layoutY="432.0" mnemonicParsing="false" onAction="#LoginForm" prefHeight="30.0" prefWidth="150.0" stylesheets="@CSS/SignUp.css" text="Go to Log In" />
             </children>
         </AnchorPane>
         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
         <ImageView fitHeight="630.0" fitWidth="402.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />
+            <Image url="@Images/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />
          </image>
         </ImageView>
     </children>

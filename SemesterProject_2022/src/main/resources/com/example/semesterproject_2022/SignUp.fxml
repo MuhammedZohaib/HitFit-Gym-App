@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Main" onMouseDragged="#dragWindow" onMousePressed="#pressedWindow" prefHeight="617.0" prefWidth="1000.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
+<AnchorPane fx:id="Main" onMouseDragged="#dragWindow" onMousePressed="#pressedWindow" prefHeight="617.0" prefWidth="1000.0" stylesheets="@CSS/SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
    <children>
       <HBox id="hbox" fx:id="hbox" layoutX="427.0" layoutY="586.0" prefHeight="37.0" prefWidth="576.0">
          <children>
@@ -62,7 +62,7 @@
       </Rectangle>
       <ImageView fitHeight="664.0" fitWidth="424.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />
+            <Image url="@Images/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />
          </image>
          <viewport>
             <Rectangle2D />
@@ -136,14 +136,14 @@
             </Label>
             <ImageView fx:id="loading" fitHeight="42.0" fitWidth="28.0" layoutX="544.0" layoutY="480.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@giphy.gif" />
+                  <Image url="@Images/giphy.gif" />
                </image>
             </ImageView>
             <Button fx:id="exit" layoutX="561.0" layoutY="14.0" minWidth="28.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: transparent;">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@icons8-close-window-96.png" />
+                        <Image url="@Images/icons8-close-window-96.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -158,7 +158,7 @@
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@go-back-30.png" />
+                        <Image url="@Images/go-back-30.png" />
                      </image>
                   </ImageView>
                </graphic>

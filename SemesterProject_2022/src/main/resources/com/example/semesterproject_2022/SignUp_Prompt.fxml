@@ -10,9 +10,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="Main" onMouseDragged="#dragWindow" onMousePressed="#pressedWindow" prefHeight="600.0" prefWidth="1024.0" stylesheets="@SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
+<AnchorPane fx:id="Main" onMouseDragged="#dragWindow" onMousePressed="#pressedWindow" prefHeight="600.0" prefWidth="1024.0" stylesheets="@CSS/SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.SignUp_Controller">
     <children>
-        <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" stylesheets="@SignUp.css">
+        <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" stylesheets="@CSS/SignUp.css">
             <children>
                 <Text fill="WHITE" layoutX="79.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" wrappingWidth="171.0">
                     <font>
@@ -31,7 +31,7 @@
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@icons8-close-window-96.png" />
+                                <Image url="@Images/icons8-close-window-96.png" />
                             </image>
                         </ImageView>
                     </graphic>
@@ -69,7 +69,7 @@
             </Text>
             <ImageView fitHeight="127.0" fitWidth="119.0" layoutX="79.0" layoutY="166.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@WAIT.png" />
+                  <Image url="@Images/WAIT.png" />
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="79.0" layoutY="415.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You may leave this window now." wrappingWidth="378.3333740234375">
@@ -82,7 +82,7 @@
         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
         <ImageView fitHeight="630.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@spencer-davis-0ShTs8iPY28-unsplash%201.png" />
+                <Image url="@Images/spencer-davis-0ShTs8iPY28-unsplash%201.png" />
             </image>
         </ImageView>
     </children>

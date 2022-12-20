@@ -14,11 +14,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorpane_login" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="417.0" prefWidth="658.0" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.LogIn_Form_Controller">
+<AnchorPane fx:id="anchorpane_login" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="417.0" prefWidth="658.0" stylesheets="@CSS/Login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.LogIn_Form_Controller">
    <children>
       <ImageView fitHeight="445.0" fitWidth="313.0" layoutX="355.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@bodybuilder-training-arm-with-resistance-band%201.png" />
+            <Image url="@Images/bodybuilder-training-arm-with-resistance-band%201.png" />
          </image>
       </ImageView>
       <Rectangle arcWidth="5.0" height="436.0" layoutX="-2.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="391.0">
@@ -69,7 +69,7 @@
       </Rectangle>
       <ImageView fitHeight="67.0" fitWidth="77.0" layoutX="31.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Mask%20group.png" />
+            <Image url="@Images/Mask%20group.png" />
          </image>
       </ImageView>
       <Text fill="WHITE" layoutX="116.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOG IN">
@@ -115,7 +115,7 @@
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@icons8-close-window-96.png" />
+                  <Image url="@Images/icons8-close-window-96.png" />
                </image>
             </ImageView>
          </graphic></Button>
