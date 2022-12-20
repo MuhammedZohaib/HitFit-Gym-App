@@ -1,6 +1,5 @@
 package database;
 
-import all_enums.CustomerOrEmployee;
 import model_class.Customer;
 
 import java.sql.*;
@@ -54,48 +53,54 @@ public class DatabaseFunctions {
         return true;
     }
 
-    public static boolean getAllFromDb(CustomerOrEmployee choice) {
+    public static ArrayList<Customer> getAllCustomers() {
 
         ResultSet allDataRs = null;
+        PreparedStatement queryStatement = null;
+        Customer savedCustomer = new Customer();
+        ArrayList<Customer> allCustomers = new ArrayList<>();
 
-        ArrayList<Integer> customerIds = new ArrayList<>();
-        ArrayList<String> firstNames = new ArrayList<>();
-        ArrayList<String> lastNames = new ArrayList<>();
-        ArrayList<String> emails = new ArrayList<>();
-        ArrayList<String> phoneNumbers = new ArrayList<>();
-        ArrayList<String> passwords = new ArrayList<>();
-        ArrayList<String> usernames = new ArrayList<>();
-        ArrayList<String> genders = new ArrayList<>();
-        ArrayList<String> weights = new ArrayList<>();
-        ArrayList<String> dobs = new ArrayList<>();
-        ArrayList<Integer> monthlyPlans = new ArrayList<>();
-        ArrayList<String> nics = new ArrayList<>();
-        ArrayList<String> isActives = new ArrayList<>();
+        try {
+            queryStatement = dbConnection.prepareStatement("SELECT * FROM customers;");
+            allDataRs = queryStatement.executeQuery();
 
+            while (allDataRs.next()) {
+                savedCustomer.setCustomerId(allDataRs.getInt(1));
+                savedCustomer.setFirstName(allDataRs.getString(2));
+                savedCustomer.setLastName(allDataRs.getString(3));
+                savedCustomer.setEmail(allDataRs.getString(4));
+                savedCustomer.setPhoneNumber(allDataRs.getString(5));
+                savedCustomer.setPassword(" ");
+                savedCustomer.setUserName(allDataRs.getString(7));
+                savedCustomer.setGender(allDataRs.getString(8));
+                savedCustomer.setWeight(allDataRs.getString(9));
+                savedCustomer.setDob(allDataRs.getString(10));
+                savedCustomer.setMonthlyPlan(allDataRs.getInt(11));
+                savedCustomer.setNicNumber(allDataRs.getString(12));
+                savedCustomer.setActive(allDataRs.getBoolean(13));
 
-        switch (choice) {
-            case CUSTOMER:
+                allCustomers.add(savedCustomer);
+            }
 
-                PreparedStatement queryStatement = null;
-                Customer savedCustomer = new Customer();
-                try {
-                    queryStatement = dbConnection.prepareStatement("SELECT * FROM customers;");
-                    allDataRs = queryStatement.executeQuery();
-
-                    while (allDataRs.next()) {
-                       customerIds.add(allDataRs.getInt(0));
-                    }
-
-                } catch (SQLException e) {
-                    System.out.println("Error in getting ids: " + e);
-                }
-                break;
-
-            case EMPLOYEE:
-                break;
+        } catch (SQLException e) {
+            System.out.println("Error in getting ids: " + e);
         }
 
-        return true;
+//        for (Customer e: allCustomers) {
+//            System.out.println(e.getCustomerId());
+//            System.out.println(e.getFirstName());
+//            System.out.println(e.getLastName());
+//            System.out.println(e.getEmail());
+//            System.out.println(e.getPassword());
+//            System.out.println(e.getUserName());
+//            System.out.println(e.getPhoneNumber());
+//            System.out.println(e.getGender());
+//            System.out.println(e.getWeight());
+//            System.out.println(e.getDob());
+//            System.out.println(e.getMonthlyPlan());
+//            System.out.println(e.getNicNumber());
+//        }
+        return allCustomers;
     }
 
     public static int generateId() {
