@@ -14,14 +14,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="anchorpane_login" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="381.0" prefWidth="621.0" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.LogIn_Form_Controller">
+<AnchorPane fx:id="anchorpane_login" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="417.0" prefWidth="658.0" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.LogIn_Form_Controller">
    <children>
-      <ImageView fitHeight="498.0" fitWidth="279.0" layoutX="355.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="445.0" fitWidth="313.0" layoutX="355.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@bodybuilder-training-arm-with-resistance-band%201.png" />
          </image>
       </ImageView>
-      <Rectangle arcWidth="5.0" height="387.0" layoutX="-2.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="433.0">
+      <Rectangle arcWidth="5.0" height="436.0" layoutX="-2.0" layoutY="-6.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="391.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="0.5709779059473272" startY="0.9905363009179051">
                <stops>
@@ -44,7 +44,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Rectangle arcWidth="5.0" height="387.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="440.0">
+      <Rectangle arcWidth="5.0" height="434.0" layoutX="-2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="391.0">
          <fill>
             <LinearGradient endX="1.0" endY="1.0" startX="0.3943217785952595" startY="0.9905363009179051">
                <stops>
@@ -67,51 +67,51 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <ImageView fitHeight="67.0" fitWidth="77.0" layoutX="34.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="67.0" fitWidth="77.0" layoutX="31.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Mask%20group.png" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="118.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Log In">
+      <Text fill="WHITE" layoutX="116.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOG IN">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="System Bold" size="22.0" />
          </font>
       </Text>
-      <Text fill="#b5b5b5" layoutX="45.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign In with your Email / Username and Password" wrappingWidth="279.4110107421875">
+      <Text fill="#b5b5b5" layoutX="46.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign In with your Email / Username and Password" wrappingWidth="279.4110107421875">
          <font>
             <Font name="Arial" size="12.0" />
          </font>
       </Text>
-      <Rectangle arcHeight="2.0" arcWidth="5.0" fill="#009ffd" height="4.0" layoutX="45.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="212.0" />
-      <Text fill="#b5b5b5" layoutX="53.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email or Username" wrappingWidth="103.07769775390625">
+      <Rectangle arcHeight="2.0" arcWidth="5.0" fill="#009ffd" height="2.0" layoutX="45.0" layoutY="126.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="267.0" />
+      <Text fill="#b5b5b5" layoutX="54.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email or Username" wrappingWidth="103.07769775390625">
          <font>
             <Font name="Arial" size="10.0" />
          </font>
       </Text>
-      <TextField fx:id="EmailField" layoutX="45.0" layoutY="154.0" prefHeight="25.0" prefWidth="251.0" />
-      <Text fill="#b5b5b5" layoutX="53.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="52.91015625000006">
+      <TextField fx:id="EmailField" layoutX="46.0" layoutY="161.0" prefHeight="25.0" prefWidth="251.0" />
+      <Text fill="#b5b5b5" layoutX="54.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="52.91015625000006">
          <font>
             <Font name="Arial" size="10.0" />
          </font>
       </Text>
-      <PasswordField fx:id="PassField" layoutX="45.0" layoutY="214.0" prefHeight="25.0" prefWidth="251.0" />
-      <CheckBox layoutX="51.0" layoutY="247.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="167.0" text="Keep Me Logged In" textFill="#c3c3c3">
+      <PasswordField fx:id="PassField" layoutX="46.0" layoutY="224.0" prefHeight="25.0" prefWidth="251.0" />
+      <CheckBox layoutX="54.0" layoutY="322.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="167.0" text="Keep Me Logged In" textFill="#c3c3c3">
          <font>
             <Font size="10.0" />
          </font>
       </CheckBox>
-      <Button fx:id="LogInButton" layoutX="44.0" layoutY="282.0" mnemonicParsing="false" onMouseClicked="#loginbtn" prefHeight="25.0" prefWidth="251.0" text="Log In" />
-      <Text fill="#b5b5b5" layoutX="53.0" layoutY="367.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Can't Sign In? Forgot Password ?" wrappingWidth="155.07769775390625">
+      <Button fx:id="LogInButton" layoutX="46.0" layoutY="272.0" mnemonicParsing="false" onMouseClicked="#loginbtn" prefHeight="25.0" prefWidth="251.0" text="Log In" />
+      <Text fill="#b5b5b5" layoutX="54.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Can't Sign In? Forgot Password ?" wrappingWidth="155.07769775390625">
          <font>
             <Font name="Arial" size="8.0" />
          </font>
       </Text>
-      <Text fx:id="epValidation" fill="#b5b5b5" layoutX="57.0" layoutY="340.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="103.07769775390625">
+      <Text fx:id="epValidation" fill="#b5b5b5" layoutX="57.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="103.07769775390625">
          <font>
             <Font name="Arial" size="10.0" />
          </font>
       </Text>
-      <Button fx:id="exit" layoutX="591.0" layoutY="19.0" minWidth="28.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="28.0" style="-fx-background-color: transparent;">
+      <Button fx:id="exit" layoutX="619.0" layoutY="14.0" minWidth="28.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="28.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
