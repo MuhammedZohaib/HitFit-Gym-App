@@ -12,14 +12,16 @@ public class Customer extends Person{
     private int monthlyPlan;
     private int customerId;
     private boolean isActive;
+    private String passwordSalt;
 
-    public Customer(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String nicNumber, String address, String dob, String weight, int monthlyPlan, int customerId) {
+    public Customer(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String nicNumber, String address, String dob, String weight, int monthlyPlan, int customerId, String passwordSalt) {
         super(firstName, lastName, email, gender, phoneNumber, userName, password, nicNumber);
         this.address = address;
         this.dob = dob;
         this.weight = weight;
         this.monthlyPlan = monthlyPlan;
         this.customerId = customerId;
+        this.passwordSalt = passwordSalt;
     }
 
     public Customer(){
@@ -72,6 +74,14 @@ public class Customer extends Person{
 
     public void setActive(boolean active) {
         isActive = active;
+    }
+
+    public String getPasswordSalt() {
+        return passwordSalt;
+    }
+
+    public void setPasswordSalt(String passwordSalt) {
+        this.passwordSalt = passwordSalt;
     }
 
     @Override

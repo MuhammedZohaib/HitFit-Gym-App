@@ -28,8 +28,8 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("insert into customers (customer_id, first_name, last_name, email, phone_number, password, username, gender, weight, dob,\n" +
-                    "monthly_plan, nic, is_active)\n" +
-                    "values (?,?,?,?,?,?,?,?,?,?,?,?,?);");
+                    "monthly_plan, nic, is_active, salt)\n" +
+                    "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
 
             queryStatement.setInt(1, customer.getCustomerId());
             queryStatement.setString(2, customer.getFirstName());
@@ -44,6 +44,7 @@ public class DatabaseFunctions {
             queryStatement.setInt(11, customer.getMonthlyPlan());
             queryStatement.setString(12, customer.getNicNumber());
             queryStatement.setBoolean(13, false);
+            queryStatement.setString(14, customer.getPasswordSalt());
             queryStatement.executeUpdate();
 
         } catch (SQLException e) {
@@ -101,6 +102,28 @@ public class DatabaseFunctions {
 //            System.out.println(e.getNicNumber());
 //        }
         return allCustomers;
+    }
+
+    public static ArrayList<String> getUserPassword(int customerId){
+
+        ArrayList<String> saltPassArray = new ArrayList<>();
+
+        try {
+            PreparedStatement queryStatement = dbConnection.prepareStatement("SELECT * FROM customers WHERE customer_id = ?");
+            queryStatement.setInt(1, customerId);
+            ResultSet resultSet = queryStatement.executeQuery();
+
+            while (resultSet.next()){
+                saltPassArray.add(resultSet.getString("salt"));
+                saltPassArray.add(resultSet.getString("password"));
+            }
+
+        } catch (SQLException e){
+            System.out.println("Error in retrieving customer: " + e);
+        }
+
+        return saltPassArray;
+
     }
 
     public static int generateId() {
