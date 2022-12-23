@@ -13,8 +13,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model_class.Customer;
+import model_class.Transaction;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.time.LocalDate;
 
 import static email_validation.EmailValidation.validateEmail;
@@ -273,8 +275,16 @@ public class SignUp_Controller {
             String[] tempArr;
             tempArr = PasswordSaving.makeFinalPassword(userPassword);
 
-            Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName, tempArr[1], nic,userAddress,dob.toString(),userWeight,monthlyPlan,DatabaseFunctions.generateId(), tempArr[0]);
+            // for id generation, use "customer" for getting customer id
+            // for id generation, use "transaction" for getting transaction id
+
+            long systemCurrentTime = System.currentTimeMillis();
+            java.sql.Date date = new java.sql.Date(systemCurrentTime);
+
+            Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName, tempArr[1], nic,userAddress,dob.toString(),userWeight,monthlyPlan,DatabaseFunctions.generateId("customer"), tempArr[0]);
             DatabaseFunctions.saveToDb(customer);
+            Transaction transaction = new Transaction(DatabaseFunctions.generateId("transaction"), date , 4500, "test", "test", "abc", customer.getCustomerId());
+            DatabaseFunctions.saveToDb(transaction);
 
             tempArr[0] = " ";
             tempArr[1] = " ";

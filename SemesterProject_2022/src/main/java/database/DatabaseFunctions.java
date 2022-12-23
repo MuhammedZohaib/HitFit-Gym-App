@@ -1,6 +1,7 @@
 package database;
 
 import model_class.Customer;
+import model_class.Transaction;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -46,12 +47,38 @@ public class DatabaseFunctions {
             queryStatement.setBoolean(13, false);
             queryStatement.setString(14, customer.getPasswordSalt());
             queryStatement.executeUpdate();
+            return true;
 
         } catch (SQLException e) {
             System.out.println("Error! Could not run query: " + e);
+            return false;
         }
 
-        return true;
+    }
+
+    public static boolean saveToDb(Transaction transaction) {
+        PreparedStatement queryStatement = null;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("insert into transactions (transaction_id, created_date, amount, transaction_number, bank_name, account_owner_name, fk_customer_id)\n" +
+                    "values (?,?,?,?,?,?,?);");
+
+            queryStatement.setInt(1, transaction.getTransactionId());
+            queryStatement.setDate(2, transaction.getCreatedDate());
+            queryStatement.setInt(3, transaction.getAmount());
+            queryStatement.setString(4, transaction.getTransactionNumber());
+            queryStatement.setString(5, transaction.getBankName());
+            queryStatement.setString(6, transaction.getAccountOwnerName());
+            queryStatement.setInt(7, transaction.getFkCustomerId());
+
+
+            queryStatement.executeUpdate();
+            return true;
+
+        } catch (SQLException e) {
+            System.out.println("Error! Could not run query: " + e);
+            return false;
+        }
     }
 
     public static ArrayList<Customer> getAllCustomers() {
@@ -104,21 +131,21 @@ public class DatabaseFunctions {
         return allCustomers;
     }
 
-    public static ArrayList<String> getUserPassword(int customerId){
+    public static ArrayList<String> getUserPassword(String customerUsername) {
 
         ArrayList<String> saltPassArray = new ArrayList<>();
 
         try {
-            PreparedStatement queryStatement = dbConnection.prepareStatement("SELECT * FROM customers WHERE customer_id = ?");
-            queryStatement.setInt(1, customerId);
+            PreparedStatement queryStatement = dbConnection.prepareStatement("SELECT * FROM customers WHERE username = ?");
+            queryStatement.setString(1, customerUsername);
             ResultSet resultSet = queryStatement.executeQuery();
 
-            while (resultSet.next()){
+            while (resultSet.next()) {
                 saltPassArray.add(resultSet.getString("salt"));
                 saltPassArray.add(resultSet.getString("password"));
             }
 
-        } catch (SQLException e){
+        } catch (SQLException e) {
             System.out.println("Error in retrieving customer: " + e);
         }
 
@@ -126,22 +153,40 @@ public class DatabaseFunctions {
 
     }
 
-    public static int generateId() {
+    public static int generateId(String choice) {
 
         ResultSet allIds = null;
         int lastId = 0;
         PreparedStatement queryStatement = null;
 
-        try {
-            queryStatement = dbConnection.prepareStatement("SELECT * FROM customers ORDER BY customer_id DESC LIMIT 1;");
-            allIds = queryStatement.executeQuery();
-            while (allIds.next()) {
-                lastId = allIds.getInt(1);
-            }
-        } catch (SQLException e) {
-            System.out.println("Error in getting ids: " + e);
-        }
-        return lastId + 1;
-    }
+        switch (choice) {
 
+            case "customer":
+                try {
+                    queryStatement = dbConnection.prepareStatement("SELECT * FROM customers ORDER BY customer_id DESC LIMIT 1;");
+                    allIds = queryStatement.executeQuery();
+                    while (allIds.next()) {
+                        lastId = allIds.getInt(1);
+                    }
+                } catch (SQLException e) {
+                    System.out.println("Error in getting ids: " + e);
+                }
+                return lastId + 1;
+
+            case "transaction":
+                try {
+                    queryStatement = dbConnection.prepareStatement("SELECT * FROM transactions ORDER BY transaction_id DESC LIMIT 1;");
+                    allIds = queryStatement.executeQuery();
+                    while (allIds.next()) {
+                        lastId = allIds.getInt(1);
+                    }
+                } catch (SQLException e) {
+                    System.out.println("Error in getting ids: " + e);
+                }
+                return lastId + 1;
+
+            default:
+                return 0;
+        }
+    }
 }

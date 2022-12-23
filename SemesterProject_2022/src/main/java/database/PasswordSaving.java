@@ -30,19 +30,21 @@ public class PasswordSaving {
         return passSalt;
     }
 
-    public static boolean verifyPassword(int customerId, String enteredPassword) {
+    public static boolean verifyPassword(String customerUsername, String enteredPassword) {
 
         String[] userSaltPassword = new String[2];
         int i = 0;
 
-        for (String s : DatabaseFunctions.getUserPassword(customerId)) {
+        for (String s : DatabaseFunctions.getUserPassword(customerUsername)) {
             userSaltPassword[i] = s;
             i++;
         }
 
-        enteredPassword = enteredPassword + userSaltPassword[0];
+        String changedPassword = DigestUtils.sha3_256Hex(enteredPassword);
 
-        if (enteredPassword.equals(userSaltPassword[1])){
+        changedPassword = changedPassword + userSaltPassword[0];
+
+        if (changedPassword.equals(userSaltPassword[1])){
             System.out.println("Access granted.");
             return true;
         } else {
