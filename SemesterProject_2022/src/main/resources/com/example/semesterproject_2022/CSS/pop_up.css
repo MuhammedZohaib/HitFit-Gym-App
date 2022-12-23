@@ -1,0 +1,13 @@
+#topBar
+{
+    -fx-background-color:linear-gradient(to left, #1b2e44,#354055);
+}
+#CodeField
+{
+  -fx-background-radius: 8px;
+}
+#verifyBtn
+{
+    -fx-background-color: #009FFD;
+    -fx-background-radius: 8px;
+}

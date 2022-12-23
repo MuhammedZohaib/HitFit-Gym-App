@@ -1,9 +1,9 @@
 #WindowBorder
 {
-    -fx-background-color: #1b2e44;
+    -fx-background-color: #d1d1f3;
 }
 #sideBar
 {
     -fx-background-color: linear-gradient(to left, #1b2e44,#354055);
-    -fx-background-radius: 0 15 0 0;
+    -fx-background-radius: 0 25 0 0;
 }
