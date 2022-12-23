@@ -61,7 +61,7 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("insert into transactions (transaction_id, created_date, amount, transaction_number, bank_name, account_owner_name, fk_customer_id)\n" +
-                    "values (?,?,?,?,?,?,?);");
+                    "values (?,?,?,?,?,?,?,?);");
 
             queryStatement.setInt(1, transaction.getTransactionId());
             queryStatement.setDate(2, transaction.getCreatedDate());
@@ -70,7 +70,25 @@ public class DatabaseFunctions {
             queryStatement.setString(5, transaction.getBankName());
             queryStatement.setString(6, transaction.getAccountOwnerName());
             queryStatement.setInt(7, transaction.getFkCustomerId());
+            queryStatement.setBoolean(8, transaction.isStatus());
 
+            queryStatement.executeUpdate();
+            return true;
+
+        } catch (SQLException e) {
+            System.out.println("Error! Could not run query: " + e);
+            return false;
+        }
+    }
+
+    public static boolean updateTransactionStatus(int transactionId) {
+
+        PreparedStatement queryStatement = null;
+        try {
+            queryStatement = dbConnection.prepareStatement("UPDATE transactions\n" +
+                    "SET status = true\n" +
+                    "WHERE transaction_id = ?;");
+            queryStatement.setInt(1, transactionId);
 
             queryStatement.executeUpdate();
             return true;

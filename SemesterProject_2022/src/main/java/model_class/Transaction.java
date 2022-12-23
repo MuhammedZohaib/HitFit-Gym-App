@@ -11,6 +11,7 @@ public class Transaction {
     private String bankName;
     private String accountOwnerName;
     private int fkCustomerId;
+    private boolean status;
 
     public Transaction(int transactionId, Date createdDate, int amount, String transactionNumber, String bankName, String accountOwnerName) {
         this.transactionId = transactionId;
@@ -24,7 +25,7 @@ public class Transaction {
     public Transaction() {
     }
 
-    public Transaction(int transactionId, Date createdDate, int amount, String transactionNumber, String bankName, String accountOwnerName, int fkCustomerId) {
+    public Transaction(int transactionId, Date createdDate, int amount, String transactionNumber, String bankName, String accountOwnerName, int fkCustomerId, boolean status) {
         this.transactionId = transactionId;
         this.createdDate = createdDate;
         this.amount = amount;
@@ -32,6 +33,7 @@ public class Transaction {
         this.bankName = bankName;
         this.accountOwnerName = accountOwnerName;
         this.fkCustomerId = fkCustomerId;
+        this.status = status;
     }
 
     public int getFkCustomerId() {
@@ -88,5 +90,13 @@ public class Transaction {
 
     public void setAccountOwnerName(String accountOwnerName) {
         this.accountOwnerName = accountOwnerName;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }
