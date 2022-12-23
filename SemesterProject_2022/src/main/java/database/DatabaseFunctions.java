@@ -84,6 +84,9 @@ public class DatabaseFunctions {
     public static boolean updateTransactionStatus(int transactionId) {
 
         PreparedStatement queryStatement = null;
+        PreparedStatement queryStatement2 = null;
+        int fkCustomerId = 0;
+
         try {
             queryStatement = dbConnection.prepareStatement("UPDATE transactions\n" +
                     "SET status = true\n" +
@@ -91,6 +94,26 @@ public class DatabaseFunctions {
             queryStatement.setInt(1, transactionId);
 
             queryStatement.executeUpdate();
+
+            try {
+                PreparedStatement queryStatement3 = dbConnection.prepareStatement("SELECT fk_customer_id FROM transactions WHERE transaction_id = ?");
+                queryStatement3.setInt(1, transactionId);
+                ResultSet resultSet = queryStatement3.executeQuery();
+
+                while (resultSet.next()) {
+                    fkCustomerId = resultSet.getInt("fk_customer_id");
+                }
+
+            } catch (SQLException e) {
+                System.out.println("Error: " + e);
+            }
+
+            queryStatement2 = dbConnection.prepareStatement("UPDATE customers\n" +
+                    "SET is_active = true\n" +
+                    "WHERE customer_id = ?;");
+
+            queryStatement2.setInt(1, fkCustomerId);
+            queryStatement2.executeUpdate();
             return true;
 
         } catch (SQLException e) {
