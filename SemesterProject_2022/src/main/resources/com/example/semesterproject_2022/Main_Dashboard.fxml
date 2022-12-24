@@ -16,7 +16,7 @@
          <top>
             <HBox alignment="TOP_RIGHT" prefHeight="29.0" prefWidth="1217.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="minimize" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#minimzebtn" prefHeight="29.0" prefWidth="46.0" style="-fx-background-color: tra nsparent;" text="Button">
+                  <Button fx:id="minimize" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#minimizeBtn" prefHeight="29.0" prefWidth="46.0" style="-fx-background-color: tra nsparent;" text="Button">
                      <graphic>
                         <ImageView fitHeight="22.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -25,7 +25,7 @@
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#maximizebtn" prefHeight="29.0" prefWidth="46.0" style="-fx-background-color: transparent;" text="Button">
+                  <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#maximizeBtn" prefHeight="29.0" prefWidth="46.0" style="-fx-background-color: transparent;" text="Button">
                      <graphic>
                         <ImageView fitHeight="22.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                            <image>

@@ -34,7 +34,7 @@
                     </font>
                 </Button>
             </children></HBox>
-        <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" style="-fx-background-color: transparent;" stylesheets="@CSS/SignUp.css">
+        <AnchorPane id="l3" fx:id="personalInfoPane" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" style="-fx-background-color: transparent;" stylesheets="@CSS/SignUp.css">
             <children>
                 <Text fill="WHITE" layoutX="79.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" wrappingWidth="171.0">
                     <font>

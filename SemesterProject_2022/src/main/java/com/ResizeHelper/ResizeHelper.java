@@ -53,8 +53,7 @@ public class ResizeHelper {
         node.addEventHandler(MouseEvent.MOUSE_DRAGGED, listener);
         node.addEventHandler(MouseEvent.MOUSE_EXITED, listener);
         node.addEventHandler(MouseEvent.MOUSE_EXITED_TARGET, listener);
-        if (node instanceof Parent) {
-            Parent parent = (Parent) node;
+        if (node instanceof Parent parent) {
             ObservableList<Node> children = parent.getChildrenUnmodifiable();
             for (Node child : children) {
                 addListenerDeeply(child, listener);
@@ -63,10 +62,10 @@ public class ResizeHelper {
     }
 
     static class ResizeListener implements EventHandler<MouseEvent> {
-        private Stage stage;
+        private final Stage stage;
         private Cursor cursorEvent = Cursor.DEFAULT;
         private boolean resizing = true;
-        private int border = 4;
+        private final int border = 4;
         private double startX = 0;
         private double startY = 0;
         private double screenOffsetX = 0;
@@ -176,7 +175,7 @@ public class ResizeHelper {
                 screenOffsetY = stage.getY() - mouseEvent.getScreenY();
             }
 
-            if (MouseEvent.MOUSE_DRAGGED.equals(mouseEventType) && Cursor.DEFAULT.equals(cursorEvent) && resizing == false) {
+            if (MouseEvent.MOUSE_DRAGGED.equals(mouseEventType) && Cursor.DEFAULT.equals(cursorEvent) && !resizing) {
                 stage.setX(mouseEvent.getScreenX() + screenOffsetX);
                 stage.setY(mouseEvent.getScreenY() + screenOffsetY);
             }

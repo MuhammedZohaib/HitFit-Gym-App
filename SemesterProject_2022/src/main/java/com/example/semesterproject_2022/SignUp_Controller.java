@@ -5,9 +5,6 @@ import database.PasswordSaving;
 import email.SendEmail;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -36,12 +33,8 @@ public class SignUp_Controller {
     private static String nameOfBank;
     private static String userBankAccountName;
     private static String tilID;
-
-
-
     private double x = 0;
     private double y = 0;
-
     LoadingScreen_Controller obj = new LoadingScreen_Controller();
     String errorStyle = "-fx-border-color: #ff0000; -fx-border-width: 3px; -fx-border-radius:12px";
     String resetStyle = "-fx-border-color: transparent; -fx-border-width: 3px; -fx-border-radius:12px";
@@ -114,14 +107,13 @@ public class SignUp_Controller {
     @FXML
     private Label packageValidation;
 
-    public void nextForm(ActionEvent e) throws IOException{
+    public void nextForm(ActionEvent e) throws IOException {
         firstName = fName.getText();
         lastName = lName.getText();
         emailField = email.getText();
         userName = uName.getText();
         userPassword = password.getText();
         String confirmPassword = cPassword.getText();
-
         Boolean apiResponse = validateEmail(emailField);
 
         if(firstName.isBlank()){
@@ -167,12 +159,7 @@ public class SignUp_Controller {
             cPassword.setStyle(errorStyle);
         }
         else if (fNameValidation.getText().isBlank() && lNameValidation.getText().equals("") && userNameValidation.getText().equals("") && emailValidation.getText().equals("") && passwordValidation.getText().equals("") && apiResponse.equals(true)){
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Personal_Info.fxml"));
-            obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            obj.scene = new Scene(fxmlLoader.load());
-            obj.stage.setScene(obj.scene);
-            obj.stage.centerOnScreen();
-            obj.stage.show();
+            new GeneralFunctions().switchScene(e,"SignUp_Personal_Info.fxml");
         }
     }
 
@@ -196,16 +183,16 @@ public class SignUp_Controller {
             phoneNoValidation.setText("! PhoneNumber cannot be empty");
             pNumber.setStyle(errorStyle);
         }
-        else if(phoneNumber.length() < 11){
-            phoneNoValidation.setText("! PhoneNumber must contain at-least 11 digits");
+        else if(phoneNumber.length() < 11 || phoneNumber.length() > 11){
+            phoneNoValidation.setText("! PhoneNumber must contain exactly 11 digits (without countryCode)");
             pNumber.setStyle(errorStyle);
         }
         if(nic.isBlank()){
             nicValidation.setText("! NIC cannot be cannot be empty");
             cnic.setStyle(errorStyle);
         }
-        else if(nic.length() < 13 ){
-            nicValidation.setText("! NIC must contain at-least 13 digits");
+        else if(nic.length() < 13 || nic.length() > 13){
+            nicValidation.setText("! NIC must contain exactly 13 digits (without dashes)");
             cnic.setStyle(errorStyle);
         }
         if(userWeight.equals("0")){
@@ -229,26 +216,10 @@ public class SignUp_Controller {
             dateValidation.setText("! Date of Birth cannot be empty");
         }
         if (phoneNoValidation.getText().isBlank() && nicValidation.getText().isBlank() && dateValidation.getText().isBlank() && weightValidation.getText().isBlank()){
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Payment_Info.fxml"));
-            obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            obj.scene = new Scene(fxmlLoader.load());
-            obj.stage.setScene(obj.scene);
-            obj.stage.centerOnScreen();
-            obj.stage.show();
+            new GeneralFunctions().switchScene(e,"SignUp_Payment_Info.fxml");
         }
     }
-    public void starter(ActionEvent e){
-        monthlyPlan = 2000;
-        package_select.setText("Starter - Rs.2000");
-    }
-    public void beginner(ActionEvent e){
-        monthlyPlan = 3000;
-        package_select.setText("Beginner - Rs.3000");
-    }
-    public void pro(ActionEvent e){
-        monthlyPlan = 4500;
-        package_select.setText("Pro - Rs.4500");
-    }
+
     public void doneSignUp(ActionEvent e) throws IOException {
         nameOfBank = bankName.getText();
         tilID = transactionID.getText();
@@ -260,10 +231,10 @@ public class SignUp_Controller {
         }
         if(userBankAccountName.isBlank() || userBankAccountName.isEmpty()){
             accountNameValidation.setText("! Account Holder's Name cannot be empty");
-            bankName.setStyle(errorStyle);
+            accountName.setStyle(errorStyle);
         }
         if(tilID.isBlank() || tilID.isEmpty()){
-            tilIDValidation.setText("! Bank Name cannot be empty");
+            tilIDValidation.setText("! Transaction ID cannot be empty");
             transactionID.setStyle(errorStyle);
         }
         if(monthlyPlan == 0){
@@ -290,15 +261,22 @@ public class SignUp_Controller {
             tempArr[0] = " ";
             tempArr[1] = " ";
 
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp_Prompt.fxml"));
-            obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-            obj.scene = new Scene(fxmlLoader.load());
-            obj.stage.setScene(obj.scene);
-            obj.stage.centerOnScreen();
-            obj.stage.show();
+            new GeneralFunctions().switchScene(e,"SignUp_Prompt.fxml");
         }
     }
-    public void clear(MouseEvent e){
+    public void starter(){
+        monthlyPlan = 2000;
+        package_select.setText("Starter - Rs.2000");
+    }
+    public void beginner(){
+        monthlyPlan = 3000;
+        package_select.setText("Beginner - Rs.3000");
+    }
+    public void pro(){
+        monthlyPlan = 4500;
+        package_select.setText("Pro - Rs.4500");
+    }
+    public void clear(){
         fName.setStyle(resetStyle);
         cPassword.setStyle(resetStyle);
         password.setStyle(resetStyle);
@@ -314,7 +292,7 @@ public class SignUp_Controller {
         passwordValidation.setText("");
 
     }
-    public void clearTab2(MouseEvent e){
+    public void clearTab2(){
         pNumber.setStyle(resetStyle);
         cnic.setStyle(resetStyle);
         weight.setStyle(resetStyle);
@@ -324,7 +302,8 @@ public class SignUp_Controller {
         dateValidation.setText("");
         weightValidation.setText("");
     }
-    public void clearTab3(MouseEvent e){
+
+    public void clearTab3(){
         bankName.setStyle(resetStyle);
         accountName.setStyle(resetStyle);
         transactionID.setStyle(resetStyle);
@@ -335,18 +314,12 @@ public class SignUp_Controller {
         packageValidation.setText("");
     }
     @FXML
-    void GoBackLogIn(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginSignUp.fxml"));
-        obj.stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        obj.scene = new Scene(fxmlLoader.load());
-        obj.stage.setScene(obj.scene);
-        obj.stage.centerOnScreen();
-        obj.stage.show();    }
-
+    void GoBackLogIn(ActionEvent e) throws IOException {
+        new GeneralFunctions().switchScene(e, "LoginSignUp.fxml");
+    }
     @FXML
-    public void close(ActionEvent e){
-        obj.stage = (Stage) exit.getScene().getWindow();
-        obj.stage.close();
+    public void close(){
+        new GeneralFunctions().close(exit);
     }
     @FXML
     public void dragWindow(MouseEvent e)
@@ -361,4 +334,5 @@ public class SignUp_Controller {
         x = e.getSceneX();
         y= e.getSceneY();
     }
+
 }

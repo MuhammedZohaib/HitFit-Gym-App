@@ -2,9 +2,6 @@ package com.example.semesterproject_2022;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -34,27 +31,16 @@ public class LoginSignUp_Controller {
     LoadingScreen_Controller obj = new LoadingScreen_Controller();
 
     public void switchToSignUp(ActionEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("SignUp.fxml"));
-        obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        obj.scene = new Scene(fxmlLoader.load());
-        obj.stage.setScene(obj.scene);
-        obj.stage.centerOnScreen();
-        obj.stage.show();
+        new GeneralFunctions().switchScene(e,"SignUp.fxml");
     }
     public void switchToLogin(ActionEvent e) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LogIn_Form.fxml"));
-        obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        obj.scene = new Scene(fxmlLoader.load());
-        obj.stage.setScene(obj.scene);
-        obj.stage.centerOnScreen();
-        obj.stage.show();
+        new  GeneralFunctions().switchScene(e,"LogIn_Form.fxml");
     }
 
     /*CLOSE BUTTON LOGIC STARTS HERE ----*/
     @FXML
-    public void close(ActionEvent e){
-        obj.stage = (Stage) exit.getScene().getWindow();
-        obj.stage.close();
+    public void close(){
+        new GeneralFunctions().close(exit);
     }
     /*CLOSE BUTTON LOGIC ENDS HERE ----*/
 

@@ -15,19 +15,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoadingScreen_Controller implements Initializable {
-    Stage stage = new Stage();
-    Scene scene;
-
-
-
+    public Stage stage = new Stage();
+    public Scene scene;
     @FXML
     private AnchorPane loadingStage;
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
         // anonymous object
         new LoadingScreen().start();
     }
