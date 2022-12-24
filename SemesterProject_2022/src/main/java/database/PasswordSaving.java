@@ -9,7 +9,7 @@ public class PasswordSaving {
 
     public static String[] makeFinalPassword(String password) {
 
-        String changedPassword = DigestUtils.sha3_256Hex(password);
+        String changedPassword = DigestUtils.sha256Hex(password);
         SecureRandom secureRandom = null;
         String[] passSalt = new String[2];
 
@@ -40,7 +40,7 @@ public class PasswordSaving {
             i++;
         }
 
-        String changedPassword = DigestUtils.sha3_256Hex(enteredPassword);
+        String changedPassword = DigestUtils.sha256Hex(enteredPassword);
 
         changedPassword = changedPassword + userSaltPassword[0];
 
