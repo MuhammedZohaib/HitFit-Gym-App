@@ -4,9 +4,11 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -60,9 +62,9 @@
             </ImageView>
          </left>
          <center>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Hit Fit" textAlignment="CENTER" BorderPane.alignment="CENTER">
+            <Text fill="#eef6ff" strokeType="OUTSIDE" strokeWidth="0.0" text="Hit Fit" textAlignment="CENTER" BorderPane.alignment="CENTER">
                <BorderPane.margin>
-                  <Insets right="100.0" top="-30.0" />
+                  <Insets right="50.0" top="-30.0" />
                </BorderPane.margin>
                <font>
                   <Font name="System Bold" size="15.0" />
@@ -72,6 +74,170 @@
       </BorderPane>
    </top>
    <left>
-      <VBox fx:id="sideBar" prefHeight="793.0" prefWidth="256.0" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER" />
+      <AnchorPane fx:id="sideBar" prefHeight="770.0" prefWidth="262.0" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#eef6ff" layoutX="30.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HITFIT GYM" AnchorPane.leftAnchor="30.0">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+            <Button fx:id="navbar" layoutX="181.0" layoutY="25.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="40.0">
+               <graphic>
+                  <ImageView fx:id="navbar" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/navbar.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Text fill="#eef6ff" layoutX="108.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Admin">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text fill="#eef6ff" layoutX="108.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ayaan Ali">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="accountSetting" layoutX="38.0" layoutY="165.0" mnemonicParsing="false" styleClass="navButtons" text="Account Setting">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-25.0">
+                     <image>
+                        <Image url="@Images/account_Setting.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="logOut" layoutX="38.0" layoutY="220.0" mnemonicParsing="false" styleClass="navButtons" text="LogOut">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-25.0">
+                     <image>
+                        <Image url="@Images/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="dashBoard" layoutX="38.0" layoutY="300.0" mnemonicParsing="false" styleClass="navButtons" text="Dashboard">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-25.0">
+                     <image>
+                        <Image url="@Images/dashboard.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="members" layoutX="38.0" layoutY="350.0" mnemonicParsing="false" styleClass="navButtons" text="Members">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-25.0">
+                     <image>
+                        <Image url="@Images/members.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="memberships" layoutX="38.0" layoutY="400.0" mnemonicParsing="false" styleClass="navButtons" text="Memberships">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-25.0">
+                     <image>
+                        <Image url="@Images/memberships.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="employees" layoutX="38.0" layoutY="460.0" mnemonicParsing="false" styleClass="navButtons" text="Employees">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-25.0">
+                     <image>
+                        <Image url="@Images/employees.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="enquiries" layoutX="38.0" layoutY="510.0" mnemonicParsing="false" styleClass="navButtons" text="Enquiries">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-25.0">
+                     <image>
+                        <Image url="@Images/queries.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="equipments" layoutX="38.0" layoutY="570.0" mnemonicParsing="false" styleClass="navButtons" text="Equipments">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-25.0">
+                     <image>
+                        <Image url="@Images/equipments.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="revenue" layoutX="38.0" layoutY="620.0" mnemonicParsing="false" styleClass="navButtons" text="Revenue">
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-25.0">
+                     <image>
+                        <Image url="@Images/revenue.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eef6ff" height="3.0" layoutX="27.0" layoutY="272.0" stroke="BLACK" strokeType="INSIDE" width="220.0" />
+            <Circle fill="#eef6ff" layoutX="67.0" layoutY="108.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+         </children>
+      </AnchorPane>
    </left>
 </BorderPane>

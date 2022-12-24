@@ -7,3 +7,18 @@
     -fx-background-color: linear-gradient(to left, #1b2e44,#354055);
     -fx-background-radius: 0 25 0 0;
 }
+#navbar{
+    -fx-border:none;
+    -fx-background-color: transparent;
+}
+#profile{
+    -fx-background-image: url("Main_Images/bg.png");
+    -fx-background-radius: 360deg;
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+.navButtons{
+    -fx-background-color: transparent;
+    -fx-text-fill: #eef6ff;
+}
