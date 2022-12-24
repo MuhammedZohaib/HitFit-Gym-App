@@ -3,6 +3,7 @@ module com.example.semesterproject_2022 {
     requires javafx.fxml;
     requires java.sql;
     requires org.apache.commons.codec;
+    requires com.mailjet.api;
 
 
     opens com.example.semesterproject_2022 to javafx.fxml;

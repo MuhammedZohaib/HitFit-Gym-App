@@ -28,9 +28,10 @@ public class DatabaseFunctions {
         PreparedStatement queryStatement = null;
 
         try {
-            queryStatement = dbConnection.prepareStatement("insert into customers (customer_id, first_name, last_name, email, phone_number, password, username, gender, weight, dob,\n" +
-                    "monthly_plan, nic, is_active, salt)\n" +
-                    "values (?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+            queryStatement = dbConnection.prepareStatement("""
+                    insert into customers (customer_id, first_name, last_name, email, phone_number, password, username, gender, weight, dob,
+                    monthly_plan, nic, is_active, salt)
+                    values (?,?,?,?,?,?,?,?,?,?,?,?,?,?);""");
 
             queryStatement.setInt(1, customer.getCustomerId());
             queryStatement.setString(2, customer.getFirstName());
@@ -60,8 +61,9 @@ public class DatabaseFunctions {
         PreparedStatement queryStatement = null;
 
         try {
-            queryStatement = dbConnection.prepareStatement("insert into transactions (transaction_id, created_date, amount, transaction_number, bank_name, account_owner_name, fk_customer_id)\n" +
-                    "values (?,?,?,?,?,?,?,?);");
+            queryStatement = dbConnection.prepareStatement("""
+                    INSERT INTO transactions (transaction_id, created_date, amount, transaction_number, bank_name, account_owner_name, fk_customer_id, status)
+                    VALUE (?,?,?,?,?,?,?,?);""");
 
             queryStatement.setInt(1, transaction.getTransactionId());
             queryStatement.setDate(2, transaction.getCreatedDate());
@@ -88,9 +90,10 @@ public class DatabaseFunctions {
         int fkCustomerId = 0;
 
         try {
-            queryStatement = dbConnection.prepareStatement("UPDATE transactions\n" +
-                    "SET status = true\n" +
-                    "WHERE transaction_id = ?;");
+            queryStatement = dbConnection.prepareStatement("""
+                    UPDATE transactions
+                    SET status = true
+                    WHERE transaction_id = ?;""");
             queryStatement.setInt(1, transactionId);
 
             queryStatement.executeUpdate();
@@ -108,9 +111,10 @@ public class DatabaseFunctions {
                 System.out.println("Error: " + e);
             }
 
-            queryStatement2 = dbConnection.prepareStatement("UPDATE customers\n" +
-                    "SET is_active = true\n" +
-                    "WHERE customer_id = ?;");
+            queryStatement2 = dbConnection.prepareStatement("""
+                    UPDATE customers
+                    SET is_active = true
+                    WHERE customer_id = ?;""");
 
             queryStatement2.setInt(1, fkCustomerId);
             queryStatement2.executeUpdate();
@@ -201,8 +205,7 @@ public class DatabaseFunctions {
         PreparedStatement queryStatement = null;
 
         switch (choice) {
-
-            case "customer":
+            case "customer" -> {
                 try {
                     queryStatement = dbConnection.prepareStatement("SELECT * FROM customers ORDER BY customer_id DESC LIMIT 1;");
                     allIds = queryStatement.executeQuery();
@@ -213,8 +216,8 @@ public class DatabaseFunctions {
                     System.out.println("Error in getting ids: " + e);
                 }
                 return lastId + 1;
-
-            case "transaction":
+            }
+            case "transaction" -> {
                 try {
                     queryStatement = dbConnection.prepareStatement("SELECT * FROM transactions ORDER BY transaction_id DESC LIMIT 1;");
                     allIds = queryStatement.executeQuery();
@@ -225,9 +228,10 @@ public class DatabaseFunctions {
                     System.out.println("Error in getting ids: " + e);
                 }
                 return lastId + 1;
-
-            default:
+            }
+            default -> {
                 return 0;
+            }
         }
     }
 }

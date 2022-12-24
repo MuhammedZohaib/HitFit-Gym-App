@@ -1,8 +1,8 @@
 package com.example.semesterproject_2022;
 
-import com.ResizeHelper.ResizeHelper;
 import database.DatabaseFunctions;
 import database.PasswordSaving;
+import email.SendEmail;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,10 +16,9 @@ import model_class.Customer;
 import model_class.Transaction;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.time.LocalDate;
 
-import static email_validation.EmailValidation.validateEmail;
+import static email.EmailValidation.validateEmail;
 
 public class SignUp_Controller {
     private static String firstName;
@@ -274,17 +273,19 @@ public class SignUp_Controller {
 
             String[] tempArr;
             tempArr = PasswordSaving.makeFinalPassword(userPassword);
-
             // for id generation, use "customer" for getting customer id
             // for id generation, use "transaction" for getting transaction id
-
             long systemCurrentTime = System.currentTimeMillis();
             java.sql.Date date = new java.sql.Date(systemCurrentTime);
 
             Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName, tempArr[1], nic,userAddress,dob.toString(),userWeight,monthlyPlan,DatabaseFunctions.generateId("customer"), tempArr[0]);
             DatabaseFunctions.saveToDb(customer);
+
             Transaction transaction = new Transaction(DatabaseFunctions.generateId("transaction"), date , 4500, "test", "test", "abc", customer.getCustomerId(), false);
             DatabaseFunctions.saveToDb(transaction);
+
+            SendEmail newEmail = new SendEmail();
+            newEmail.sendWelcomeEmail(customer.getEmail(), customer.getFirstName() + " " + customer.getLastName());
 
             tempArr[0] = " ";
             tempArr[1] = " ";

@@ -1,4 +1,4 @@
-package email_validation;
+package email;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
