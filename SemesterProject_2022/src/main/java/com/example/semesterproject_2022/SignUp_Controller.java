@@ -114,7 +114,10 @@ public class SignUp_Controller {
         userName = uName.getText();
         userPassword = password.getText();
         String confirmPassword = cPassword.getText();
-        Boolean apiResponse = validateEmail(emailField);
+        Boolean apiResponse = null;
+        if(!emailField.isBlank() && !emailField.isEmpty()){
+            apiResponse = validateEmail(emailField);
+        }
 
         if(firstName.isBlank()){
             fNameValidation.setText("! FirstName Cannot Be Empty");
