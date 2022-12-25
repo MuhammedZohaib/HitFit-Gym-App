@@ -165,7 +165,6 @@ public class SignUp_Controller {
         }
         else if (fNameValidation.getText().isBlank() && lNameValidation.getText().equals("") && userNameValidation.getText().equals("") && emailValidation.getText().equals("") && passwordValidation.getText().equals("") && apiResponse.equals(true)){
             new GeneralFunctions().switchScene(e,"SignUp_Personal_Info.fxml");
-            new Animations().fade(personalInfoPane);
         }
     }
 

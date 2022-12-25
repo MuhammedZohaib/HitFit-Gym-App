@@ -47,11 +47,7 @@ public class LogIn_Form_Controller {
     Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
     @FXML
     void loginBtn(MouseEvent e) throws IOException {
-        new GeneralFunctions().switchScene(e,"Main_Dashboard.fxml");
-        obj.stage.setScene(obj.scene);
-        /*---------Using the Undecorated Stage we can't resize with through native functionalities so here is the function to resize and drag the undecorated stage----------------*/
-        ResizeHelper.addResizeListener(obj.stage,1280,800,screenBounds.getWidth(),screenBounds.getHeight());
-        obj.stage.show();
+        new GeneralFunctions().switchScene(e,"Main_Dashboard.fxml",screenBounds.getWidth(),screenBounds.getHeight());
     }
     @FXML
     void dragged(MouseEvent event) {
