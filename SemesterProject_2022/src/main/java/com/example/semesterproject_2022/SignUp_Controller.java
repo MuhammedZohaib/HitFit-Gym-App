@@ -1,7 +1,7 @@
 package com.example.semesterproject_2022;
 
 import database.DatabaseFunctions;
-import database.PasswordSaving;
+import all_important_backend_functions.Password;
 import email.SendEmail;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -248,7 +248,7 @@ public class SignUp_Controller {
         if(bankNameValidation.getText().equals("") && packageValidation.getText().equals("") && tilIDValidation.getText().equals("") && accountNameValidation.getText().equals("")){
 
             String[] tempArr;
-            tempArr = PasswordSaving.makeFinalPassword(userPassword);
+            tempArr = Password.makeFinalPassword(userPassword);
             // for id generation, use "customer" for getting customer id
             // for id generation, use "transaction" for getting transaction id
             long systemCurrentTime = System.currentTimeMillis();

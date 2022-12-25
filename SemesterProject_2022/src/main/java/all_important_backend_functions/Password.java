@@ -1,11 +1,12 @@
-package database;
+package all_important_backend_functions;
 
+import database.DatabaseFunctions;
 import org.apache.commons.codec.digest.DigestUtils;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
-public class PasswordSaving {
+public class Password {
 
     public static String[] makeFinalPassword(String password) {
 

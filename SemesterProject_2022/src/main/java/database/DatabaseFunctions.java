@@ -13,6 +13,7 @@ public class DatabaseFunctions {
     private static final String dbPassword = "AVNS_BEoqT0_xVRrXV9Y5PS8";
 
     private static Connection dbConnection = null;
+    private static ArrayList<String> allUsernames = new ArrayList<>();
 
     public static boolean makeConnection() {
         try {
@@ -196,6 +197,34 @@ public class DatabaseFunctions {
 
         return saltPassArray;
 
+    }
+
+    public static void setAllUsernames() {
+
+        ResultSet allUsernamesRs = null;
+
+        try {
+            PreparedStatement queryStatement = dbConnection.prepareStatement("""
+                    SELECT username FROM customers;
+                    """);
+
+            allUsernamesRs = queryStatement.executeQuery();
+
+            try {
+                while (allUsernamesRs.next()) {
+                    allUsernames.add(allUsernamesRs.getString("username"));
+                }
+            } catch (Exception e) {
+                System.out.println("No such column found! in get all usernames: " + e);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error in retrieving usernames: " + e);
+        }
+    }
+
+    public static void removeAllUsernamesFromMem() {
+        allUsernames.clear();
     }
 
     public static int generateId(String choice) {
