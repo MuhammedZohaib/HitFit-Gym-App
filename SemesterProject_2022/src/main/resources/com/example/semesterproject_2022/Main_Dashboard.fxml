@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane id="anchorpane_login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" stylesheets="@CSS/Background.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.Main_Interface">
+<BorderPane id="anchorpane_login" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" stylesheets="@CSS/Background.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.Main_Interface">
    <top>
       <BorderPane prefHeight="30.0" prefWidth="1280.0" style="-fx-background-color: #1b2e44;" BorderPane.alignment="CENTER">
          <top>
@@ -74,33 +74,33 @@
       </BorderPane>
    </top>
    <left>
-      <AnchorPane fx:id="sideBar" prefHeight="770.0" prefWidth="262.0" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="sideBar" prefHeight="770.0" prefWidth="220.0" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER">
          <children>
-            <Text fill="#eef6ff" layoutX="30.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HITFIT GYM" AnchorPane.leftAnchor="30.0">
+            <Text fill="#eef6ff" layoutX="15.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HITFIT GYM" AnchorPane.leftAnchor="19.0">
                <font>
                   <Font name="System Bold" size="22.0" />
                </font>
             </Text>
-            <Button fx:id="navbar" layoutX="181.0" layoutY="25.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="40.0">
+            <Button fx:id="navbar" layoutX="170.0" layoutY="30.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="30.0">
                <graphic>
-                  <ImageView fx:id="navbar" fitHeight="30.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="20.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@Images/navbar.png" />
                      </image>
                   </ImageView>
                </graphic>
             </Button>
-            <Text fill="#eef6ff" layoutX="108.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Admin">
+            <Text fill="#eef6ff" layoutX="91.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Admin">
                <font>
-                  <Font size="14.0" />
+                  <Font size="12.0" />
                </font>
             </Text>
-            <Text fill="#eef6ff" layoutX="108.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ayaan Ali">
+            <Text fill="#eef6ff" layoutX="91.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ayaan Ali">
                <font>
-                  <Font name="System Bold" size="18.0" />
+                  <Font name="System Bold" size="16.0" />
                </font>
             </Text>
-            <Button fx:id="accountSetting" layoutX="38.0" layoutY="165.0" mnemonicParsing="false" styleClass="navButtons" text="Account Setting">
+            <Button fx:id="accountSetting" layoutX="38.0" layoutY="170.0" mnemonicParsing="false" styleClass="navButtons" text="Account Setting">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" translateX="-25.0">
                      <image>
@@ -112,10 +112,10 @@
                   <Insets left="30.0" />
                </padding>
                <font>
-                  <Font size="14.0" />
+                  <Font size="12.0" />
                </font>
             </Button>
-            <Button fx:id="logOut" layoutX="38.0" layoutY="220.0" mnemonicParsing="false" styleClass="navButtons" text="LogOut">
+            <Button fx:id="logOut" layoutX="38.0" layoutY="210.0" mnemonicParsing="false" styleClass="navButtons" text="LogOut">
                <padding>
                   <Insets left="30.0" />
                </padding>
@@ -127,10 +127,10 @@
                   </ImageView>
                </graphic>
                <font>
-                  <Font size="14.0" />
+                  <Font size="12.0" />
                </font>
             </Button>
-            <Button fx:id="dashBoard" layoutX="38.0" layoutY="300.0" mnemonicParsing="false" styleClass="navButtons" text="Dashboard">
+            <Button fx:id="dashBoard" layoutX="38.0" layoutY="278.0" mnemonicParsing="false" styleClass="navButtons" text="Dashboard">
                <padding>
                   <Insets left="30.0" />
                </padding>
@@ -142,10 +142,10 @@
                   </ImageView>
                </graphic>
                <font>
-                  <Font size="14.0" />
+                  <Font size="12.0" />
                </font>
             </Button>
-            <Button fx:id="members" layoutX="38.0" layoutY="350.0" mnemonicParsing="false" styleClass="navButtons" text="Members">
+            <Button fx:id="members" layoutX="38.0" layoutY="318.0" mnemonicParsing="false" styleClass="navButtons" text="Members">
                <padding>
                   <Insets left="30.0" />
                </padding>
@@ -157,10 +157,10 @@
                   </ImageView>
                </graphic>
                <font>
-                  <Font size="14.0" />
+                  <Font size="12.0" />
                </font>
             </Button>
-            <Button fx:id="memberships" layoutX="38.0" layoutY="400.0" mnemonicParsing="false" styleClass="navButtons" text="Memberships">
+            <Button fx:id="memberships" layoutX="38.0" layoutY="358.0" mnemonicParsing="false" styleClass="navButtons" text="Memberships">
                <padding>
                   <Insets left="30.0" />
                </padding>
@@ -172,10 +172,10 @@
                   </ImageView>
                </graphic>
                <font>
-                  <Font size="14.0" />
+                  <Font size="12.0" />
                </font>
             </Button>
-            <Button fx:id="employees" layoutX="38.0" layoutY="460.0" mnemonicParsing="false" styleClass="navButtons" text="Employees">
+            <Button fx:id="employees" layoutX="38.0" layoutY="398.0" mnemonicParsing="false" styleClass="navButtons" text="Employees">
                <padding>
                   <Insets left="30.0" />
                </padding>
@@ -187,10 +187,10 @@
                   </ImageView>
                </graphic>
                <font>
-                  <Font size="14.0" />
+                  <Font size="12.0" />
                </font>
             </Button>
-            <Button fx:id="enquiries" layoutX="38.0" layoutY="510.0" mnemonicParsing="false" styleClass="navButtons" text="Enquiries">
+            <Button fx:id="enquiries" layoutX="38.0" layoutY="438.0" mnemonicParsing="false" styleClass="navButtons" text="Enquiries">
                <padding>
                   <Insets left="30.0" />
                </padding>
@@ -202,10 +202,10 @@
                   </ImageView>
                </graphic>
                <font>
-                  <Font size="14.0" />
+                  <Font size="12.0" />
                </font>
             </Button>
-            <Button fx:id="equipments" layoutX="38.0" layoutY="570.0" mnemonicParsing="false" styleClass="navButtons" text="Equipments">
+            <Button fx:id="equipments" layoutX="38.0" layoutY="478.0" mnemonicParsing="false" styleClass="navButtons" text="Equipments">
                <padding>
                   <Insets left="30.0" />
                </padding>
@@ -217,10 +217,10 @@
                   </ImageView>
                </graphic>
                <font>
-                  <Font size="14.0" />
+                  <Font size="12.0" />
                </font>
             </Button>
-            <Button fx:id="revenue" layoutX="38.0" layoutY="620.0" mnemonicParsing="false" styleClass="navButtons" text="Revenue">
+            <Button fx:id="revenue" layoutX="38.0" layoutY="518.0" mnemonicParsing="false" styleClass="navButtons" text="Revenue">
                <padding>
                   <Insets left="30.0" />
                </padding>
@@ -232,11 +232,11 @@
                   </ImageView>
                </graphic>
                <font>
-                  <Font size="14.0" />
+                  <Font size="12.0" />
                </font>
             </Button>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eef6ff" height="3.0" layoutX="27.0" layoutY="272.0" stroke="BLACK" strokeType="INSIDE" width="220.0" />
-            <Circle fill="#eef6ff" layoutX="67.0" layoutY="108.0" radius="28.0" stroke="BLACK" strokeType="INSIDE" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#eef6ff" height="1.0" layoutX="37.0" layoutY="254.0" stroke="#eef6ff" strokeType="INSIDE" width="160.0" />
+            <Circle fill="#eef6ff" layoutX="52.0" layoutY="108.0" radius="25.0" stroke="#eef6ff" strokeType="INSIDE" />
          </children>
       </AnchorPane>
    </left>
