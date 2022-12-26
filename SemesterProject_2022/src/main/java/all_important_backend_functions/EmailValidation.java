@@ -1,4 +1,4 @@
-package email;
+package all_important_backend_functions;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

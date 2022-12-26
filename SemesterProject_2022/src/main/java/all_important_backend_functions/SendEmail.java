@@ -1,4 +1,4 @@
-package email;
+package all_important_backend_functions;
 
 import com.mailjet.client.ClientOptions;
 import com.mailjet.client.MailjetClient;

@@ -201,26 +201,25 @@ public class DatabaseFunctions {
 
     public static void setAllUsernames() {
 
-        ResultSet allUsernamesRs = null;
+        ResultSet allUsernamesRs;
 
         try {
             PreparedStatement queryStatement = dbConnection.prepareStatement("""
-                    SELECT username FROM customers;
-                    """);
+                    SELECT username FROM customers;""");
 
             allUsernamesRs = queryStatement.executeQuery();
 
-            try {
-                while (allUsernamesRs.next()) {
-                    allUsernames.add(allUsernamesRs.getString("username"));
-                }
-            } catch (Exception e) {
-                System.out.println("No such column found! in get all usernames: " + e);
+            while (allUsernamesRs.next()) {
+                allUsernames.add(allUsernamesRs.getString(1));
             }
+
+            allUsernamesRs.close();
+            allUsernamesRs.close();
 
         } catch (SQLException e) {
             System.out.println("Error in retrieving usernames: " + e);
         }
+
     }
 
     public static void removeAllUsernamesFromMem() {
@@ -263,4 +262,9 @@ public class DatabaseFunctions {
             }
         }
     }
+
+    public static ArrayList<String> getAllUsernames() {
+        return allUsernames;
+    }
+
 }

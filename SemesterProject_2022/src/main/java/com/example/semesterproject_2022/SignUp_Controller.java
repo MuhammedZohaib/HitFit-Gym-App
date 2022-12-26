@@ -2,7 +2,7 @@ package com.example.semesterproject_2022;
 
 import database.DatabaseFunctions;
 import all_important_backend_functions.Password;
-import email.SendEmail;
+import all_important_backend_functions.SendEmail;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -15,7 +15,7 @@ import model_class.Transaction;
 import java.io.IOException;
 import java.time.LocalDate;
 
-import static email.EmailValidation.validateEmail;
+import static all_important_backend_functions.EmailValidation.validateEmail;
 
 public class SignUp_Controller {
     private static String firstName;
