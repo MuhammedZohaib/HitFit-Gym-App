@@ -108,6 +108,7 @@ public class SignUp_Controller {
 
     @FXML
     private Label packageValidation;
+    private Boolean apiResponse = null;
 
     public void nextForm(ActionEvent e) throws IOException {
         firstName = fName.getText();
@@ -116,7 +117,6 @@ public class SignUp_Controller {
         userName = uName.getText();
         userPassword = password.getText();
         String confirmPassword = cPassword.getText();
-        Boolean apiResponse = null;
         if(!emailField.isBlank() && !emailField.isEmpty()){
             apiResponse = validateEmail(emailField);
         }
