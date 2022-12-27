@@ -114,25 +114,17 @@ public class Email {
 
     public static boolean checkEmail(String email) {
 
-        ResultSet allEmailsRs = DatabaseFunctions.setAllEmails();
-        ArrayList<String> allEmails = new ArrayList<>();
+        ArrayList<String> allEmails = DatabaseFunctions.getAllEmails();
 
-        try {
-            while (allEmailsRs.next()) {
-                allEmails.add(allEmailsRs.getString(1));
-            }
-        } catch (SQLException e) {
-            System.out.println("Error in saving emails: " + e);
-        }
-
+        assert allEmails != null;
         for (String e : allEmails) {
 
             if (e.equals(email)) {
-                System.out.println("Email found");
                 return true;
             }
 
         }
+        System.out.println("Not found");
         return false;
     }
 }

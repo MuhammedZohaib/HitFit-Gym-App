@@ -10,18 +10,9 @@ public class Username {
 
     public static boolean checkUsername(String username) {
 
-        ResultSet allUsernamesRs = DatabaseFunctions.getAllUsernames();
-        ArrayList<String> allUsernames = new ArrayList<>();
+        ArrayList<String> allUsernames = DatabaseFunctions.getAllUsernames();
 
-
-        try {
-            while (allUsernamesRs.next()) {
-                allUsernames.add(allUsernamesRs.getString(1));
-            }
-        } catch (SQLException e){
-            System.out.println("Error: " + e);
-        }
-
+        assert allUsernames != null;
         for (String s : allUsernames) {
 
             if (s.equals(username)) {

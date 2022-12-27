@@ -257,7 +257,7 @@ public class SignUp_Controller {
             Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName, tempArr[1], nic,userAddress,dob.toString(),userWeight,monthlyPlan,DatabaseFunctions.generateId("customer"), tempArr[0]);
             DatabaseFunctions.saveToDb(customer);
 
-            Transaction transaction = new Transaction(DatabaseFunctions.generateId("transaction"), date , 4500, "test", "test", "abc", customer.getCustomerId(), false);
+            Transaction transaction = new Transaction(DatabaseFunctions.generateId("transaction"), date , monthlyPlan, tilID, nameOfBank, userBankAccountName, customer.getCustomerId(), false);
             DatabaseFunctions.saveToDb(transaction);
 
             Email newEmail = new Email();
