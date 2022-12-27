@@ -8,7 +8,7 @@ public class Login {
     private String username;
     private String email;
     private String password;
-    private String queryOption;
+    public static String queryOption;
 
     public boolean checkUsernameEmail(String usrInp) {
 
@@ -34,11 +34,21 @@ public class Login {
                     System.out.println("Username already exists");
                     return false;
                 } else {
-                    email = usrInp;
+                    username = usrInp;
                 }
             }
         }
         return false;
+    }
+
+    public void checkPassword(){
+
+        checkUsernameEmail("megatron.0000888@gmail.com");
+
+        if(Password.verifyPassword("megatron.0000888@gmail.com", "11111111")){
+            System.out.println("worked");
+        }
+
     }
 
 }

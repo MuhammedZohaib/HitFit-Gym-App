@@ -31,12 +31,12 @@ public class Password {
         return passSalt;
     }
 
-    public static boolean verifyPassword(String customerUsername, String enteredPassword) {
+    public static boolean verifyPassword(String customerUsernameEmail, String enteredPassword) {
 
         String[] userSaltPassword = new String[2];
         int i = 0;
 
-        for (String s : DatabaseFunctions.getUserPassword(customerUsername)) {
+        for (String s : DatabaseFunctions.getUserPassword(customerUsernameEmail)) {
             userSaltPassword[i] = s;
             i++;
         }

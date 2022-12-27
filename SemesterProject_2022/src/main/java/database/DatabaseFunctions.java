@@ -1,5 +1,6 @@
 package database;
 
+import backend_functions.Login;
 import model_class.Customer;
 import model_class.Transaction;
 
@@ -176,22 +177,43 @@ public class DatabaseFunctions {
         return allCustomers;
     }
 
-    public static ArrayList<String> getUserPassword(String customerUsername) {
+    public static ArrayList<String> getUserPassword(String customerUsernameEmail) {
 
         ArrayList<String> saltPassArray = new ArrayList<>();
 
-        try {
-            PreparedStatement queryStatement = dbConnection.prepareStatement("SELECT * FROM customers WHERE username = ?");
-            queryStatement.setString(1, customerUsername);
-            ResultSet resultSet = queryStatement.executeQuery();
+        switch (Login.queryOption) {
+            case "username" -> {
+                try {
+                    PreparedStatement queryStatement = dbConnection.prepareStatement("SELECT * FROM customers WHERE username = ?");
+                    queryStatement.setString(1, customerUsernameEmail);
+                    ResultSet resultSet = queryStatement.executeQuery();
 
-            while (resultSet.next()) {
-                saltPassArray.add(resultSet.getString("salt"));
-                saltPassArray.add(resultSet.getString("password"));
+                    while (resultSet.next()) {
+                        saltPassArray.add(resultSet.getString("salt"));
+                        saltPassArray.add(resultSet.getString("password"));
+                    }
+
+                } catch (SQLException e) {
+                    System.out.println("Error in retrieving customer: " + e);
+                }
             }
 
-        } catch (SQLException e) {
-            System.out.println("Error in retrieving customer: " + e);
+            case "email" -> {
+                try {
+                    PreparedStatement queryStatement = dbConnection.prepareStatement("SELECT * FROM customers WHERE email = ?");
+                    queryStatement.setString(1, customerUsernameEmail);
+                    ResultSet resultSet = queryStatement.executeQuery();
+
+                    while (resultSet.next()) {
+                        saltPassArray.add(resultSet.getString("salt"));
+                        saltPassArray.add(resultSet.getString("password"));
+                    }
+
+
+                } catch (SQLException e) {
+                    System.out.println("Error in retrieving customer: " + e);
+                }
+            }
         }
 
         return saltPassArray;
@@ -210,7 +232,7 @@ public class DatabaseFunctions {
 
             allUsernamesRs = queryStatement.executeQuery();
 
-            while (allUsernamesRs.next()){
+            while (allUsernamesRs.next()) {
                 allUsernames.add(allUsernamesRs.getString(1));
             }
 
@@ -235,7 +257,7 @@ public class DatabaseFunctions {
 
             allEmailsRs = queryStatement.executeQuery();
 
-            while (allEmailsRs.next()){
+            while (allEmailsRs.next()) {
                 allEmails.add(allEmailsRs.getString(1));
             }
 
