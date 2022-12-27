@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,400&display=swap');
 #WindowBorder
 {
     -fx-background-color: #d1d1f3;
@@ -21,4 +22,66 @@
 .navButtons{
     -fx-background-color: transparent;
     -fx-text-fill: #eef6ff;
+}
+/*For new Dashboard*/
+
+#closeBtn,#maxBtn,#restoreBtn,#menuBarBtn
+{
+    -fx-background-color: transparent;
+}
+#navPanel
+{
+    -fx-background-color:  #1b2e44;
+}
+.text
+{
+    -fx-font-family: Poppins , SansSerif ;
+}
+#stageBorderPane
+{
+    -fx-background-color:  #1b2e44;
+}
+/*---- for hovering -----*/
+#closeBtn:hover
+{
+    -fx-background-radius: 0px;
+    -fx-background-color: #FF0606;
+}
+#maxBtn:hover
+{
+    -fx-cursor: hand;
+    -fx-background-radius: 0px;
+    -fx-background-color: rgba(187, 184, 184, 0.35);
+}
+#restoreBtn:hover
+{
+    -fx-background-radius: 0px;
+    -fx-background-color: rgba(187, 184, 184, 0.35);
+}
+#menuBarBtn:hover
+{
+    -fx-background-radius: 0px ;
+    -fx-cursor: hand;
+    -fx-background-color: rgba(187, 184, 184, 0.10);
+}
+#accountSettings:hover
+{
+    -fx-background-color: rgba(187, 184, 184, 0.10);
+}
+#logOut:hover
+{
+    -fx-background-color: rgba(187, 184, 184, 0.10);
+}
+
+#accountSettings,#logOut
+{
+    -fx-background-color: transparent;
+    -fx-font-size: 10px;
+}
+
+/*--- end of hovering block ---*/
+
+#logOut
+{
+
 }
