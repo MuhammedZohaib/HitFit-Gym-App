@@ -8,11 +8,15 @@ import com.mailjet.client.transactional.SendEmailsRequest;
 import com.mailjet.client.transactional.TrackOpens;
 import com.mailjet.client.transactional.TransactionalEmail;
 import com.mailjet.client.transactional.response.SendEmailsResponse;
+import database.DatabaseFunctions;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class Email {
 
@@ -20,6 +24,8 @@ public class Email {
     protected final String keyPrivate = "eba382894a93bb2779ce07b3cd390445";
     protected final String sendFromEmail = "hitfitgymapp@gmail.com";
     protected final String sendFromName = "Hit Fit Gym";
+
+    private ArrayList<String> allEmails = new ArrayList<>();
 
     private final ClientOptions options = ClientOptions.builder()
             .apiKey(keyPublic)
@@ -104,5 +110,29 @@ public class Email {
             System.out.println("Error in sending email: " + e);
         }
 
+    }
+
+    public static boolean checkEmail(String email) {
+
+        ResultSet allEmailsRs = DatabaseFunctions.setAllEmails();
+        ArrayList<String> allEmails = new ArrayList<>();
+
+        try {
+            while (allEmailsRs.next()) {
+                allEmails.add(allEmailsRs.getString(1));
+            }
+        } catch (SQLException e) {
+            System.out.println("Error in saving emails: " + e);
+        }
+
+        for (String e : allEmails) {
+
+            if (e.equals(email)) {
+                System.out.println("Email found");
+                return true;
+            }
+
+        }
+        return false;
     }
 }

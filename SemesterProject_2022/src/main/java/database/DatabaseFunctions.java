@@ -13,7 +13,6 @@ public class DatabaseFunctions {
     private static final String dbPassword = "AVNS_BEoqT0_xVRrXV9Y5PS8";
 
     private static Connection dbConnection = null;
-    private static ArrayList<String> allUsernames = new ArrayList<>();
 
     public static boolean makeConnection() {
         try {
@@ -199,31 +198,44 @@ public class DatabaseFunctions {
 
     }
 
-    public static void setAllUsernames() {
+    public static ResultSet getAllUsernames() {
 
-        ResultSet allUsernamesRs;
+        ResultSet allUsernamesRs = null;
+        PreparedStatement queryStatement = null;
 
         try {
-            PreparedStatement queryStatement = dbConnection.prepareStatement("""
+            queryStatement = dbConnection.prepareStatement("""
                     SELECT username FROM customers;""");
 
             allUsernamesRs = queryStatement.executeQuery();
 
-            while (allUsernamesRs.next()) {
-                allUsernames.add(allUsernamesRs.getString(1));
-            }
+            return allUsernamesRs;
 
-            allUsernamesRs.close();
-            allUsernamesRs.close();
 
         } catch (SQLException e) {
             System.out.println("Error in retrieving usernames: " + e);
         }
 
+        return null;
     }
 
-    public static void removeAllUsernamesFromMem() {
-        allUsernames.clear();
+    public static ResultSet setAllEmails() {
+
+        ResultSet allEmailsRs;
+
+        try {
+            PreparedStatement queryStatement = dbConnection.prepareStatement("""
+                    SELECT email FROM customers;""");
+
+            allEmailsRs = queryStatement.executeQuery();
+
+            return allEmailsRs;
+
+        } catch (SQLException e) {
+            System.out.println("Error in retrieving emails: " + e);
+        }
+
+        return null;
     }
 
     public static int generateId(String choice) {
@@ -261,10 +273,6 @@ public class DatabaseFunctions {
                 return 0;
             }
         }
-    }
-
-    public static ArrayList<String> getAllUsernames() {
-        return allUsernames;
     }
 
 }
