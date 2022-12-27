@@ -1,4 +1,4 @@
-package all_important_backend_functions;
+package backend_functions;
 
 import database.DatabaseFunctions;
 

@@ -1,4 +1,4 @@
-package all_important_backend_functions;
+package backend_functions;
 
 import com.mailjet.client.ClientOptions;
 import com.mailjet.client.MailjetClient;
@@ -9,7 +9,12 @@ import com.mailjet.client.transactional.TrackOpens;
 import com.mailjet.client.transactional.TransactionalEmail;
 import com.mailjet.client.transactional.response.SendEmailsResponse;
 
-public class SendEmail {
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class Email {
 
     protected final String keyPublic = "007a3211a19074225dabac679933c055";
     protected final String keyPrivate = "eba382894a93bb2779ce07b3cd390445";
@@ -20,6 +25,51 @@ public class SendEmail {
             .apiKey(keyPublic)
             .apiSecretKey(keyPrivate)
             .build();
+
+    public static boolean validateEmail(String email) {
+
+        String key = "e32208c4e0f145c3bea410b96929c34b";
+        String ip = " "; //ip address can be blank
+        String targetURL = "https://api.zerobounce.net/v2/validate?api_key=" + key + "&email=" + email + "&ip_address=" + ip;
+        HttpURLConnection connection = null;
+
+        try {
+            URL url = new URL(targetURL);
+            connection = (HttpURLConnection) url.openConnection();
+            connection.setRequestMethod("GET");
+            connection.setUseCaches(false);
+            connection.setDoOutput(true);
+
+            BufferedReader in = new BufferedReader(
+                    new InputStreamReader(connection.getInputStream()));
+            String inputLine;
+            StringBuilder response = new StringBuilder();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            in.close();
+
+            System.out.println(response.toString());
+
+            String[] resultString = response.toString().split(",");
+            if (resultString[1].contains("\"valid\"")) {
+                System.out.println("email is valid");
+                return true;
+            } else {
+                System.out.println("email is invalid");
+                return false;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (connection != null) {
+                connection.disconnect();
+            }
+        }
+        return true;
+    }
 
     public void sendWelcomeEmail(String sendToEmail, String sendToName) {
 

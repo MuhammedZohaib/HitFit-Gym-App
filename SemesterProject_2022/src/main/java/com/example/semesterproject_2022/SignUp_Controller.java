@@ -1,8 +1,8 @@
 package com.example.semesterproject_2022;
 
+import backend_functions.Email;
 import database.DatabaseFunctions;
-import all_important_backend_functions.Password;
-import all_important_backend_functions.SendEmail;
+import backend_functions.Password;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -15,7 +15,7 @@ import model_class.Transaction;
 import java.io.IOException;
 import java.time.LocalDate;
 
-import static all_important_backend_functions.EmailValidation.validateEmail;
+import static backend_functions.Email.validateEmail;
 
 public class SignUp_Controller {
     private static String firstName;
@@ -260,7 +260,7 @@ public class SignUp_Controller {
             Transaction transaction = new Transaction(DatabaseFunctions.generateId("transaction"), date , 4500, "test", "test", "abc", customer.getCustomerId(), false);
             DatabaseFunctions.saveToDb(transaction);
 
-            SendEmail newEmail = new SendEmail();
+            Email newEmail = new Email();
             newEmail.sendWelcomeEmail(customer.getEmail(), customer.getFirstName() + " " + customer.getLastName());
 
             tempArr[0] = " ";
