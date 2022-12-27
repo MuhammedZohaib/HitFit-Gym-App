@@ -1,6 +1,8 @@
 package com.example.semesterproject_2022;
 
 import backend_functions.Email;
+import backend_functions.Login;
+import backend_functions.Username;
 import database.DatabaseFunctions;
 import backend_functions.Password;
 import javafx.event.ActionEvent;
@@ -109,6 +111,7 @@ public class SignUp_Controller {
     @FXML
     private Label packageValidation;
     private Boolean apiResponse = null;
+    private Login login;
 
     public void nextForm(ActionEvent e) throws IOException {
         firstName = fName.getText();
@@ -117,6 +120,7 @@ public class SignUp_Controller {
         userName = uName.getText();
         userPassword = password.getText();
         String confirmPassword = cPassword.getText();
+
         if(!emailField.isBlank() && !emailField.isEmpty()){
             apiResponse = validateEmail(emailField);
         }
@@ -141,14 +145,25 @@ public class SignUp_Controller {
             userNameValidation.setText("! UserName Cannot Be Empty");
             uName.setStyle(errorStyle);
         }
+        else if (Username.checkUsername(userName)){
+            System.out.println("Duplicate username");
+            userNameValidation.setText("! UserName Already Exists");
+            uName.setStyle(errorStyle);
+        }
         if(emailField.isBlank()){
             emailValidation.setText("! Email Cannot Be Empty");
+            email.setStyle(errorStyle);
+        }
+        else if (Email.checkEmail(emailField)){
+            System.out.println("Duplicate email");
+            emailValidation.setText("! Email Already Exists");
             email.setStyle(errorStyle);
         }
         else if(apiResponse.equals(false)){
             emailValidation.setText("! Invalid Email");
             email.setStyle(errorStyle);
         }
+
         if(confirmPassword.isBlank()){
             cPassword.setStyle(errorStyle);
         }
