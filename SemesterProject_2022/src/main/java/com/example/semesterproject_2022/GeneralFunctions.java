@@ -66,8 +66,8 @@ public class GeneralFunctions {
         else if(true)
         {
             obj.stage = (Stage) b.getScene().getWindow();
-            obj.stage.setHeight(501);
-            obj.stage.setWidth(801);
+            obj.stage.setHeight(600);
+            obj.stage.setWidth(1024);
             obj.stage.centerOnScreen();
             Nan_counter=0;
         }
