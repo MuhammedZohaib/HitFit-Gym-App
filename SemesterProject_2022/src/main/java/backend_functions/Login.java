@@ -5,14 +5,14 @@ import java.util.ArrayList;
 public class Login {
 
     private ArrayList<String>[] allUsernamesEmails;
-    private String username;
-    private String email;
     private String password;
+    private String emailUsername;
+    private boolean logInSuccessful;
     public static String queryOption;
 
-    public boolean checkUsernameEmail(String usrInp) {
+    public boolean checkUsernameEmail() {
 
-        if (usrInp.contains("@")) {
+        if (emailUsername.contains("@")) {
             queryOption = "email";
         } else {
             queryOption = "username";
@@ -20,35 +20,64 @@ public class Login {
 
         switch (queryOption) {
             case "email" -> {
-                boolean tmp = Email.checkEmail(usrInp);
+                boolean tmp = Email.checkEmail(emailUsername);
                 if (tmp) {
                     System.out.println("Email already exists");
                     return false;
                 } else {
-                    email = usrInp;
+                    return true;
                 }
             }
             case "username" -> {
-                boolean tmp1 = Username.checkUsername(usrInp);
+                boolean tmp1 = Username.checkUsername(emailUsername);
                 if (tmp1) {
                     System.out.println("Username already exists");
                     return false;
                 } else {
-                    username = usrInp;
+                    return true;
                 }
             }
         }
-        return false;
+
+        return true;
     }
 
-    public void checkPassword(){
+    public void checkPassword() {
 
-        checkUsernameEmail("megatron.0000888@gmail.com");
-
-        if(Password.verifyPassword("megatron.0000888@gmail.com", "11111111")){
-            System.out.println("worked");
+        if (Password.verifyPassword(emailUsername, password)) {
+            System.out.println("Password matched");
+            logInSuccessful = true;
         }
 
     }
 
+    public boolean userLoggedInStatus() {
+
+        checkPassword();
+
+        if (logInSuccessful) {
+            System.out.println("User logged in successfully");
+            return true;
+        } else {
+            System.out.println("Wrong password");
+            return false;
+        }
+
+    }
+
+    public void setEmailUsername(String emailUsername) {
+        this.emailUsername = emailUsername;
+    }
+
+    public String getEmailUsername() {
+        return emailUsername;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
