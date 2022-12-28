@@ -47,6 +47,7 @@ public class LogIn_Form_Controller {
     Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
     @FXML
     void loginBtn(MouseEvent e) throws IOException {
+
         new GeneralFunctions().switchScene(e,"Main_Dashboard.fxml",screenBounds.getWidth(),screenBounds.getHeight());
     }
     @FXML
