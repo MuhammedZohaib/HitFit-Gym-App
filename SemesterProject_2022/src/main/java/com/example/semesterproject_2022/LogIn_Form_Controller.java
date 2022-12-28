@@ -53,9 +53,8 @@ public class LogIn_Form_Controller {
     @FXML
     void loginBtn(MouseEvent e) throws IOException {
 
-<<<<<<< Updated upstream
-        new GeneralFunctions().switchScene(e,"Main_Dashboard.fxml",screenBounds.getWidth(),screenBounds.getHeight());
-=======
+        new GeneralFunctions().switchScene(e, "Main_Dashboard.fxml", screenBounds.getWidth(), screenBounds.getHeight());
+
         Login newLogin = new Login();
 
         email = EmailField.getText();
@@ -85,10 +84,10 @@ public class LogIn_Form_Controller {
 
             System.out.println("User logged in successfully");
 
-            new GeneralFunctions().switchScene(e, "Main_Dashboard.fxml", screenBounds.getWidth(), screenBounds.getHeight());
+            new GeneralFunctions().switchScene(e, "Dashboard.fxml", screenBounds.getWidth(), screenBounds.getHeight());
         }
 
->>>>>>> Stashed changes
+
     }
 
     @FXML
