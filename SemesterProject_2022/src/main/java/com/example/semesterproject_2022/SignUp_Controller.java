@@ -41,6 +41,9 @@ public class SignUp_Controller {
     String errorStyle = "-fx-border-color: #ff0000; -fx-border-width: 3px; -fx-border-radius:12px";
     String resetStyle = "-fx-border-color: transparent; -fx-border-width: 3px; -fx-border-radius:12px";
 
+    String alphabetRegex = "^[a-zA-Z]*$";
+    String numericRegex = "^[0-9]*$";
+
     @FXML
     private AnchorPane Main;
     @FXML
@@ -121,6 +124,8 @@ public class SignUp_Controller {
         userPassword = password.getText();
         String confirmPassword = cPassword.getText();
 
+
+
         if(!emailField.isBlank() && !emailField.isEmpty()){
             apiResponse = validateEmail(emailField);
         }
@@ -133,12 +138,20 @@ public class SignUp_Controller {
             fNameValidation.setText("! FirstName Should Contain At-least Three Characters");
             fName.setStyle(errorStyle);
         }
+        else if (!firstName.matches(alphabetRegex)) {
+            fNameValidation.setText("! FirstName cannot contain letters");
+            fName.setStyle(errorStyle);
+        }
         if(lastName.isBlank()){
             lNameValidation.setText("! LastName Cannot Be Empty");
             lName.setStyle(errorStyle);
         }
         else if(lastName.length() < 3){
             lNameValidation.setText("! LastName Should Contain At-least Three Characters");
+            lName.setStyle(errorStyle);
+        }
+        else if (!lastName.matches(alphabetRegex)) {
+            lNameValidation.setText("! lastName cannot contain letters");
             lName.setStyle(errorStyle);
         }
         if(userName.isBlank()){
@@ -203,16 +216,29 @@ public class SignUp_Controller {
             phoneNoValidation.setText("! PhoneNumber cannot be empty");
             pNumber.setStyle(errorStyle);
         }
-        else if(phoneNumber.length() < 11 || phoneNumber.length() > 11){
-            phoneNoValidation.setText("! PhoneNumber must contain exactly 11 digits (without countryCode)");
+        else if (!phoneNumber.matches(numericRegex)) {
+            phoneNoValidation.setText("! PhoneNumber cannot contain letters");
             pNumber.setStyle(errorStyle);
         }
+        else if(phoneNumber.length() < 11 || phoneNumber.length() > 11){
+            phoneNoValidation.setText("! PhoneNumber must contain exactly 11 digits");
+            pNumber.setStyle(errorStyle);
+        }
+
         if(nic.isBlank()){
             nicValidation.setText("! NIC cannot be cannot be empty");
             cnic.setStyle(errorStyle);
         }
+        else if (!nic.matches(numericRegex)) {
+            nicValidation.setText("! PhoneNumber cannot contain letters");
+            cnic.setStyle(errorStyle);
+        }
         else if(nic.length() < 13 || nic.length() > 13){
-            nicValidation.setText("! NIC must contain exactly 13 digits (without dashes)");
+            nicValidation.setText("! NIC must contain exactly 13 digits");
+            cnic.setStyle(errorStyle);
+        }
+        else if (!nic.matches(numericRegex)) {
+            nicValidation.setText("! NIC cannot contain letters");
             cnic.setStyle(errorStyle);
         }
         if(userWeight.equals("0")){
@@ -221,6 +247,10 @@ public class SignUp_Controller {
         }
         else if (userWeight.isBlank()) {
             weightValidation.setText("! Weight Cannot Be empty");
+            weight.setStyle(errorStyle);
+        }
+        else if (!userWeight.matches(numericRegex)) {
+            weightValidation.setText("! Weight cannot be in letters");
             weight.setStyle(errorStyle);
         }
         try{
@@ -249,14 +279,27 @@ public class SignUp_Controller {
             bankNameValidation.setText("! Bank Name cannot be empty");
             bankName.setStyle(errorStyle);
         }
+        else if (!nameOfBank.matches(alphabetRegex)) {
+            bankNameValidation.setText("! Bank Name cannot contain Numbers");
+            bankName.setStyle(errorStyle);
+        }
         if(userBankAccountName.isBlank() || userBankAccountName.isEmpty()){
             accountNameValidation.setText("! Account Holder's Name cannot be empty");
+            accountName.setStyle(errorStyle);
+        }
+        else if (userBankAccountName.matches(numericRegex)) {
+            accountNameValidation.setText("! Account Holder's cannot contain Numbers");
             accountName.setStyle(errorStyle);
         }
         if(tilID.isBlank() || tilID.isEmpty()){
             tilIDValidation.setText("! Transaction ID cannot be empty");
             transactionID.setStyle(errorStyle);
         }
+        else if (!tilID.matches(numericRegex)) {
+            tilIDValidation.setText("! Transaction ID cannot contain Letters");
+            transactionID.setStyle(errorStyle);
+        }
+
         if(monthlyPlan == 0){
             packageValidation.setText("! Please Select a Package");
         }

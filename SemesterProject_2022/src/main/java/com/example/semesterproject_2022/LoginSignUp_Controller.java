@@ -37,12 +37,10 @@ public class LoginSignUp_Controller {
         new  GeneralFunctions().switchScene(e,"LogIn_Form.fxml");
     }
 
-    /*CLOSE BUTTON LOGIC STARTS HERE ----*/
     @FXML
     public void close(){
         new GeneralFunctions().close(exit);
     }
-    /*CLOSE BUTTON LOGIC ENDS HERE ----*/
 
 
     /*DRAGGING WINDOW LOGIC STARTS HERE -----------*/

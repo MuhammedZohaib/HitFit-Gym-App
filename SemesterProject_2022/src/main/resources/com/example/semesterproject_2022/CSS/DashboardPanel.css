@@ -1,0 +1,12 @@
+.color{
+    -fx-background-color: #eef6ff;
+    -fx-background-radius: 15px;
+    -fx-font-family: Poppins , SansSerif ;
+
+}
+.head{
+    -fx-background-color: linear-gradient(to left, #1b2e44,#354055);
+    -fx-background-radius: 15 15 0 0;
+    -fx-font-family: Poppins , SansSerif ;
+
+}
