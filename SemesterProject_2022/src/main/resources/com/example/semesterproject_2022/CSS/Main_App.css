@@ -140,3 +140,22 @@
     -fx-background-color: #232F42;
     -fx-background-radius: 12 12 0 0;
 }
+
+.patches_top_button
+{
+    -fx-background-color: #8E9DB5;
+    -fx-background-radius: 12 12 0 0;
+    -fx-border-width: 0 1 0 0;
+    -fx-border-radius: 0 0 1 0;
+    -fx-border-color: #03032c;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 18px;
+}
+.patches_top_button:hover
+{
+    -fx-background-color: #232F42;
+}
+#Recentbtn:pressed
+{
+    -fx-background-color: black;
+}
