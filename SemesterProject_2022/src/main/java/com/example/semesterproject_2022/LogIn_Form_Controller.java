@@ -9,6 +9,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -37,7 +38,9 @@ public class LogIn_Form_Controller {
     @FXML
     private Button exit;
     @FXML
-    private Text epValidation;
+    private Label epValidation;
+    @FXML
+    private Label passwordValidation;
 
     /*---------Local Variable------------*/
     private String email;
@@ -49,45 +52,58 @@ public class LogIn_Form_Controller {
     LoadingScreen_Controller obj = new LoadingScreen_Controller();
     /*For Resolution relative to every screen we will get the dimensions of the screen*/
     Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
+    String errorStyle = "-fx-border-color: #ff0000; -fx-border-width: 3px; -fx-border-radius:12px";
+    String resetStyle = "-fx-border-color: transparent; -fx-border-width: 3px; -fx-border-radius:12px";
 
     @FXML
     void loginBtn(MouseEvent e) throws IOException {
 
-        new GeneralFunctions().switchScene(e, "DashBoard.fxml", screenBounds.getWidth(), screenBounds.getHeight());
 
         Login newLogin = new Login();
 
         email = EmailField.getText();
         password = PassField.getText();
-
-        if (email.equals(" ")) {
-            System.out.println("email cannot be empty");
-        }
-
-        if (password.equals(" ")) {
-            System.out.println("password cannot be empty");
-        }
-
         newLogin.setEmailUsername(email);
-
-        if (newLogin.checkUsernameEmail()) {
-            System.out.println("An account does not exist with the entered email or username");
-        }
-
         newLogin.setPassword(password);
 
-        if (!newLogin.userLoggedInStatus()) {
-            System.out.println("Wrong Password!");
+
+
+        if (email.isEmpty() || email.isBlank()) {
+            epValidation.setText("! Email cannot be empty");
+            EmailField.setStyle(errorStyle);
+            EmailField.setText("");
         }
 
-        if (!email.equals(" ") && !password.equals(" ") && !newLogin.checkUsernameEmail() && newLogin.userLoggedInStatus()) {
+        else if (newLogin.checkUsernameEmail()) {
+            epValidation.setText("! Invalid email or username");
+            EmailField.setStyle(errorStyle);
+            EmailField.setText("");
+        }
 
-            System.out.println("User logged in successfully");
+        if (password.isEmpty() || password.isBlank()) {
+            passwordValidation.setText("! Password cannot be empty");
+            PassField.setStyle(errorStyle);
+            PassField.setText("");
+        }
 
-            new GeneralFunctions().switchScene(e, "Dashboard.fxml");
+        else if (!newLogin.userLoggedInStatus()) {
+            passwordValidation.setText("! Password Incorrect");
+            PassField.setStyle(errorStyle);
+            PassField.setText("");
+        }
+
+        else if (!newLogin.checkUsernameEmail() && newLogin.userLoggedInStatus() && epValidation.getText().equals("") && passwordValidation.getText().equals("")) {
+            new GeneralFunctions().switchScene(e, "Customer_Dashboard.fxml", screenBounds.getWidth(), screenBounds.getHeight());
+
         }
 
 
+    }
+    public void clear(){
+        epValidation.setText("");
+        EmailField.setStyle(resetStyle);
+        passwordValidation.setText("");
+        PassField.setStyle(resetStyle);
     }
 
     @FXML
@@ -106,5 +122,8 @@ public class LogIn_Form_Controller {
     public void close() {
         new GeneralFunctions().close(exit);
     }
-
+    @FXML
+    void GoBackLogIn(ActionEvent e) throws IOException {
+        new GeneralFunctions().switchScene(e, "LoginSignUp.fxml");
+    }
 }

@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -88,13 +89,13 @@
             <Font name="Arial" size="10.0" />
          </font>
       </Text>
-      <TextField fx:id="EmailField" layoutX="46.0" layoutY="161.0" prefHeight="25.0" prefWidth="251.0" />
+      <TextField fx:id="EmailField" layoutX="46.0" layoutY="161.0" onMouseClicked="#clear" prefHeight="25.0" prefWidth="251.0" />
       <Text fill="#b5b5b5" layoutX="54.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="52.91015625000006">
          <font>
             <Font name="Arial" size="10.0" />
          </font>
       </Text>
-      <PasswordField fx:id="PassField" layoutX="46.0" layoutY="224.0" prefHeight="25.0" prefWidth="251.0" />
+      <PasswordField fx:id="PassField" layoutX="46.0" layoutY="224.0" onMouseClicked="#clear" prefHeight="25.0" prefWidth="251.0" />
       <CheckBox layoutX="54.0" layoutY="322.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="167.0" text="Keep Me Logged In" textFill="#c3c3c3">
          <font>
             <Font size="10.0" />
@@ -106,11 +107,6 @@
             <Font name="Arial" size="8.0" />
          </font>
       </Text>
-      <Text fx:id="epValidation" fill="#b5b5b5" layoutX="57.0" layoutY="273.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="103.07769775390625">
-         <font>
-            <Font name="Arial" size="10.0" />
-         </font>
-      </Text>
       <Button fx:id="exit" layoutX="619.0" layoutY="14.0" minWidth="28.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="28.0" style="-fx-background-color: transparent;">
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
@@ -119,5 +115,24 @@
                </image>
             </ImageView>
          </graphic></Button>
+      <Label fx:id="epValidation" layoutX="63.0" layoutY="166.0" onMouseClicked="#clear">
+         <font>
+            <Font name="System Italic" size="8.0" />
+         </font>
+      </Label>
+      <Label fx:id="passwordValidation" layoutX="63.0" layoutY="229.0" onMouseClicked="#clear">
+         <font>
+            <Font name="System Italic" size="6.0" />
+         </font>
+      </Label>
+      <Button fx:id="back" layoutX="14.0" layoutY="14.0" minWidth="28.0" mnemonicParsing="false" onAction="#GoBackLogIn" prefHeight="16.0" prefWidth="28.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/go-back-30.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
