@@ -159,3 +159,14 @@
 {
     -fx-background-color: black;
 }
+
+.myownbuttons
+{
+    -fx-background-color: #232f42;
+    -fx-background-radius: 12px ;
+    -fx-text-fill: white;
+}
+.myownHBOX:hover
+{
+    -fx-background-color: rgba(115, 115, 115, 0.10);
+}
