@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="583.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.DashboardPanel_Controller">
+<AnchorPane prefHeight="583.0" prefWidth="1052.0" style="-fx-background-color: F2F2F2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterproject_2022.DashboardPanel_Controller">
    <children>
-      <BorderPane layoutX="85.0" layoutY="-28.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane layoutX="85.0" layoutY="-28.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: F2F2F2;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
             <BorderPane prefHeight="52.0" prefWidth="600.0" styleClass="borderName" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER">
                <center>
@@ -25,99 +26,220 @@
             </BorderPane>
          </top>
          <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: ffffff;" stylesheets="@CSS/DashboardPanel.css" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="531.0" prefWidth="1017.0" style="-fx-background-color: F2F2F2;" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane layoutX="70.0" layoutY="70.0" prefHeight="180.0" prefWidth="260.0" styleClass="color" stylesheets="@CSS/DashboardPanel.css">
-                     <children>
-                        <AnchorPane prefHeight="29.0" prefWidth="260.0" styleClass="head" />
-                        <Text layoutX="71.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Members">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Text>
-                        <Label fx:id="totalMembers" layoutX="128.0" layoutY="92.0" text="24" AnchorPane.leftAnchor="125.0">
-                           <font>
-                              <Font name="System Bold Italic" size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="610.0" layoutY="70.0" prefHeight="180.0" prefWidth="260.0" styleClass="color" stylesheets="@CSS/DashboardPanel.css">
-                     <children>
-                        <AnchorPane prefHeight="29.0" prefWidth="260.0" styleClass="head" />
-                        <Text layoutX="53.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Payments">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Text>
-                        <Label fx:id="pendingPayments" layoutX="117.0" layoutY="92.0" text="22" AnchorPane.leftAnchor="125.0">
-                           <font>
-                              <Font name="System Bold Italic" size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="340.0" layoutY="70.0" prefHeight="180.0" prefWidth="260.0" styleClass="color" stylesheets="@CSS/DashboardPanel.css">
-                     <children>
-                        <AnchorPane prefHeight="29.0" prefWidth="260.0" styleClass="head" />
-                        <Text layoutX="53.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Memberships Due">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Text>
-                        <Label fx:id="membershipDue" layoutX="117.0" layoutY="94.0" text="10" AnchorPane.leftAnchor="125.0">
-                           <font>
-                              <Font name="System Bold Italic" size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="70.0" layoutY="300.0" prefHeight="180.0" prefWidth="260.0" styleClass="color" stylesheets="@CSS/DashboardPanel.css">
-                     <children>
-                        <AnchorPane prefHeight="29.0" prefWidth="260.0" styleClass="head" />
-                        <Text layoutX="69.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Revenue">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Text>
-                        <Label fx:id="totalRevenue" layoutX="113.0" layoutY="92.0" text="10000" AnchorPane.leftAnchor="120.0">
-                           <font>
-                              <Font name="System Bold Italic" size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="610.0" layoutY="300.0" prefHeight="180.0" prefWidth="260.0" styleClass="color" stylesheets="@CSS/DashboardPanel.css">
-                     <children>
-                        <AnchorPane prefHeight="29.0" prefWidth="260.0" styleClass="head" />
-                        <Text layoutX="69.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Profit">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Text>
-                        <Label fx:id="monthlyProfit" layoutX="111.0" layoutY="90.0" text="20000" AnchorPane.leftAnchor="120.0">
-                           <font>
-                              <Font name="System Bold Italic" size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="340.0" layoutY="300.0" prefHeight="180.0" prefWidth="260.0" styleClass="color" stylesheets="@CSS/DashboardPanel.css">
-                     <children>
-                        <AnchorPane prefHeight="29.0" prefWidth="260.0" styleClass="head" />
-                        <Text layoutX="69.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Expense">
-                           <font>
-                              <Font name="System Bold" size="16.0" />
-                           </font>
-                        </Text>
-                        <Label fx:id="totalExpense" layoutX="113.0" layoutY="92.0" text="100000" AnchorPane.leftAnchor="120.0">
-                           <font>
-                              <Font name="System Bold Italic" size="18.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </AnchorPane>
+                  <ScrollPane prefHeight="505.0" prefWidth="1164.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <content>
+                        <FlowPane prefHeight="466.0" prefWidth="1201.0">
+                           <children>
+                              <AnchorPane prefHeight="150.0" prefWidth="240.0" style="-fx-background-color: FFFFFF;" styleClass="patches" stylesheets="@CSS/Main_App.css">
+                                 <children>
+                                    <BorderPane layoutX="23.0" layoutY="-21.0" prefHeight="187.0" prefWidth="261.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <top>
+                                          <AnchorPane prefHeight="23.0" prefWidth="270.0" styleClass="patches_top" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER" />
+                                       </top>
+                                       <center>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <center>
+                                                <Text fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                   </font>
+                                                   <BorderPane.margin>
+                                                      <Insets top="30.0" />
+                                                   </BorderPane.margin>
+                                                </Text>
+                                             </center>
+                                             <bottom>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Members" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font name="System Italic" size="18.0" />
+                                                   </font>
+                                                   <BorderPane.margin>
+                                                      <Insets bottom="30.0" />
+                                                   </BorderPane.margin>
+                                                </Text>
+                                             </bottom>
+                                          </BorderPane>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                                 <FlowPane.margin>
+                                    <Insets bottom="20.0" left="140.0" top="30.0" />
+                                 </FlowPane.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="150.0" prefWidth="240.0" style="-fx-background-color: FFFFFF;" styleClass="patches" stylesheets="@CSS/Main_App.css">
+                                 <children>
+                                    <BorderPane layoutX="23.0" layoutY="-21.0" prefHeight="157.33333333333334" prefWidth="270.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <top>
+                                          <AnchorPane prefHeight="23.0" prefWidth="270.0" styleClass="patches_top" BorderPane.alignment="CENTER" />
+                                       </top>
+                                       <center>
+                                          <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                             <center>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
+                                                   <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                   </font>
+                                                   <BorderPane.margin>
+                                                      <Insets top="30.0" />
+                                                   </BorderPane.margin>
+                                                </Text>
+                                             </center>
+                                             <bottom>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Memberships Due" BorderPane.alignment="CENTER">
+                                                   <BorderPane.margin>
+                                                      <Insets bottom="32.0" />
+                                                   </BorderPane.margin>
+                                                   <font>
+                                                      <Font name="System Italic" size="18.0" />
+                                                   </font>
+                                                </Text>
+                                             </bottom>
+                                          </BorderPane>
+                                       </center>
+                                    </BorderPane>
+                                 </children>
+                                 <FlowPane.margin>
+                                    <Insets bottom="20.0" left="120.0" top="30.0" />
+                                 </FlowPane.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="150.0" prefWidth="240.0" style="-fx-background-color: FFFFFF;" styleClass="patches" stylesheets="@CSS/Main_App.css">
+                                 <children>
+                                    <BorderPane layoutY="-1.0" prefHeight="202.0" prefWidth="270.0" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                                       <top>
+                                          <AnchorPane prefHeight="23.0" prefWidth="270.0" styleClass="patches_top" BorderPane.alignment="CENTER" />
+                                       </top>
+                                       <center>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
+                                             <BorderPane.margin>
+                                                <Insets top="22.0" />
+                                             </BorderPane.margin>
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </center>
+                                       <bottom>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Payments" BorderPane.alignment="CENTER">
+                                             <BorderPane.margin>
+                                                <Insets bottom="50.0" />
+                                             </BorderPane.margin>
+                                             <font>
+                                                <Font name="System Italic" size="18.0" />
+                                             </font>
+                                          </Text>
+                                       </bottom>
+                                    </BorderPane>
+                                 </children>
+                                 <FlowPane.margin>
+                                    <Insets bottom="20.0" left="120.0" top="30.0" />
+                                 </FlowPane.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="150.0" prefWidth="240.0" style="-fx-background-color: FFFFFF;" styleClass="patches" stylesheets="@CSS/Main_App.css">
+                                 <children>
+                                    <BorderPane layoutY="-1.0" prefHeight="202.0" prefWidth="270.0" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                                       <top>
+                                          <AnchorPane prefHeight="23.0" prefWidth="240.0" styleClass="patches_top" BorderPane.alignment="CENTER" />
+                                       </top>
+                                       <center>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                             <BorderPane.margin>
+                                                <Insets top="24.0" />
+                                             </BorderPane.margin>
+                                          </Text>
+                                       </center>
+                                       <bottom>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Members" BorderPane.alignment="CENTER">
+                                             <BorderPane.margin>
+                                                <Insets bottom="50.0" />
+                                             </BorderPane.margin>
+                                             <font>
+                                                <Font name="System Italic" size="18.0" />
+                                             </font>
+                                          </Text>
+                                       </bottom>
+                                    </BorderPane>
+                                 </children>
+                                 <FlowPane.margin>
+                                    <Insets bottom="20.0" left="140.0" top="50.0" />
+                                 </FlowPane.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="150.0" prefWidth="240.0" style="-fx-background-color: FFFFFF;" styleClass="patches" stylesheets="@CSS/Main_App.css">
+                                 <children>
+                                    <BorderPane layoutY="-1.0" prefHeight="202.0" prefWidth="270.0" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                                       <top>
+                                          <AnchorPane prefHeight="23.0" prefWidth="270.0" styleClass="patches_top" BorderPane.alignment="CENTER" />
+                                       </top>
+                                       <center>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4" BorderPane.alignment="CENTER">
+                                             <BorderPane.margin>
+                                                <Insets top="20.0" />
+                                             </BorderPane.margin>
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </center>
+                                       <bottom>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Queries" BorderPane.alignment="CENTER">
+                                             <BorderPane.margin>
+                                                <Insets bottom="50.0" />
+                                             </BorderPane.margin>
+                                             <font>
+                                                <Font name="System Italic" size="18.0" />
+                                             </font>
+                                          </Text>
+                                       </bottom>
+                                    </BorderPane>
+                                 </children>
+                                 <FlowPane.margin>
+                                    <Insets bottom="20.0" left="120.0" top="50.0" />
+                                 </FlowPane.margin>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="150.0" prefWidth="240.0" style="-fx-background-color: FFFFFF;" styleClass="patches" stylesheets="@CSS/Main_App.css">
+                                 <children>
+                                    <BorderPane layoutY="-1.0" prefHeight="202.0" prefWidth="270.0" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                                       <top>
+                                          <AnchorPane prefHeight="23.0" prefWidth="270.0" styleClass="patches_top" BorderPane.alignment="CENTER" />
+                                       </top>
+                                       <center>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="20 $" BorderPane.alignment="CENTER">
+                                             <BorderPane.margin>
+                                                <Insets top="20.0" />
+                                             </BorderPane.margin>
+                                             <font>
+                                                <Font name="System Bold" size="24.0" />
+                                             </font>
+                                          </Text>
+                                       </center>
+                                       <bottom>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Revenue" BorderPane.alignment="CENTER">
+                                             <font>
+                                                <Font name="System Italic" size="18.0" />
+                                             </font>
+                                             <BorderPane.margin>
+                                                <Insets bottom="50.0" />
+                                             </BorderPane.margin>
+                                          </Text>
+                                       </bottom>
+                                    </BorderPane>
+                                 </children>
+                                 <FlowPane.margin>
+                                    <Insets bottom="20.0" left="120.0" top="50.0" />
+                                 </FlowPane.margin>
+                              </AnchorPane>
+                           </children>
+                        </FlowPane>
+                     </content>
+                  </ScrollPane>
                </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
             </AnchorPane>
          </center>
       </BorderPane>

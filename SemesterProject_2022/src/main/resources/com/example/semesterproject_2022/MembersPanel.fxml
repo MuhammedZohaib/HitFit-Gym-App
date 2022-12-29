@@ -25,22 +25,32 @@
                     </center>
                 </BorderPane>
             </top>
-            <center>
-                <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-               <children>
-                  <TableView fx:id="membersView" fixedCellSize="0.0" layoutX="50.0" prefHeight="498.0" prefWidth="984.0">
-                    <columns>
-                      <TableColumn fx:id="name" prefWidth="141.0" text="Name" />
-                      <TableColumn fx:id="phone" prefWidth="138.0" text="Phone Number" />
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <TableView fx:id="membersView" fixedCellSize="0.0" prefHeight="474.0" prefWidth="1044.0" BorderPane.alignment="CENTER">
+                     <columns>
+                        <TableColumn fx:id="name" prefWidth="141.0" text="Name" />
+                        <TableColumn fx:id="phone" prefWidth="138.0" text="Phone Number" />
                         <TableColumn fx:id="nic" prefWidth="75.0" text="NIC" />
                         <TableColumn fx:id="email" prefWidth="124.0" text="Email" />
                         <TableColumn fx:id="gender" minWidth="0.0" prefWidth="123.0" text="Gender" />
                         <TableColumn fx:id="plan" minWidth="0.0" prefWidth="132.0" text="Monthly Plan" />
-                    </columns>
+                     </columns>
                   </TableView>
-               </children>
-                </AnchorPane>
-            </center>
+               </center>
+               <top>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="All the members of the gym are shown here. You can add, view and delete members here." BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="30.0" top="30.0" />
+                     </BorderPane.margin>
+                     <font>
+                        <Font name="System Italic" size="16.0" />
+                     </font>
+                  </Text>
+               </top>
+            </BorderPane>
+         </center>
         </BorderPane>
     </children>
 </AnchorPane>

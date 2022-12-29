@@ -89,3 +89,54 @@
 {
     -fx-background-color: rgba(35, 47, 66, 0.54);
 }
+.scroll-pane
+{
+    -fx-background-color:  F2F2F2;
+}
+.scroll-pane .scroll-bar:horizontal
+{
+    -fx-background-color: transparent;
+
+}
+.scroll-pane .scroll-bar:horizontal .track
+{
+    -fx-background-color: rgba(0, 0, 0, 0.1);
+    -fx-background-radius: 20px ;
+}
+.scroll-pane .scroll-bar:horizontal .thumb
+{
+    -fx-background-color: #232F42;
+    -fx-background-radius: 20px ;
+}
+
+.scroll-pane .scroll-bar:vertical
+{
+    -fx-background-color: transparent;
+
+}
+.scroll-pane .scroll-bar:vertical .track
+{
+    -fx-background-color: rgba(0, 0, 0, 0.1);
+    -fx-background-radius: 20px ;
+}
+.scroll-pane .scroll-bar:vertical .thumb
+{
+    -fx-background-color: #232F42;
+    -fx-background-radius: 20px ;
+}
+.scroll-pane.scroll-bar.increment-arrow,
+.scroll-pane.scroll-bar.decrement-arrow
+{
+    -fx-padding: -10px;
+}
+
+.patches
+{
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(Gaussian, rgba(0, 0, 0, 0.15), 30, 0.1, 2, 3);
+}
+.patches_top
+{
+    -fx-background-color: #232F42;
+    -fx-background-radius: 12 12 0 0;
+}
