@@ -84,7 +84,7 @@ public class LogIn_Form_Controller {
 
             System.out.println("User logged in successfully");
 
-            new GeneralFunctions().switchScene(e, "DashBoard.fxml");
+            new GeneralFunctions().switchScene(e, "Dashboard.fxml");
         }
 
 

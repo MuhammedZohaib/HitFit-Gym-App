@@ -33,7 +33,7 @@
          <center>
             <AnchorPane prefHeight="531.0" prefWidth="1017.0" style="-fx-background-color: F2F2F2;" BorderPane.alignment="CENTER">
                <children>
-                  <ScrollPane prefHeight="518.0" prefWidth="996.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="0.0">
+                  <ScrollPane prefHeight="535.0" prefWidth="955.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="69.0" AnchorPane.topAnchor="0.0">
                      <content>
                         <FlowPane prefHeight="1005.0" prefWidth="1201.0">
                            <children>
@@ -46,7 +46,7 @@
                                        <center>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                                              <center>
-                                                <Text fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
+                                                <Text fx:id="totalMembers" fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font>
@@ -82,7 +82,7 @@
                                        <center>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                                              <center>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
+                                                <Text fx:id="membershipsDue" strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font>
@@ -126,7 +126,7 @@
                                           </Text>
                                        </center>
                                        <bottom>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Payments" BorderPane.alignment="CENTER">
+                                          <Text fx:id="pendingPayments" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Payments" BorderPane.alignment="CENTER">
                                              <BorderPane.margin>
                                                 <Insets bottom="50.0" />
                                              </BorderPane.margin>
@@ -148,7 +148,7 @@
                                           <AnchorPane prefHeight="23.0" prefWidth="240.0" styleClass="patches_top" BorderPane.alignment="CENTER" />
                                        </top>
                                        <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
+                                          <Text fx:id="monthlyRevenue" strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
                                              <font>
                                                 <Font name="System Bold" size="24.0" />
                                              </font>
@@ -158,7 +158,7 @@
                                           </Text>
                                        </center>
                                        <bottom>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Members" BorderPane.alignment="CENTER">
+                                          <Text fx:id="monthlyMembers" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Revenue" BorderPane.alignment="CENTER">
                                              <BorderPane.margin>
                                                 <Insets bottom="50.0" />
                                              </BorderPane.margin>
@@ -180,7 +180,7 @@
                                           <AnchorPane prefHeight="23.0" prefWidth="270.0" styleClass="patches_top" BorderPane.alignment="CENTER" />
                                        </top>
                                        <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="4" BorderPane.alignment="CENTER">
+                                          <Text fx:id="monthlyExpense" strokeType="OUTSIDE" strokeWidth="0.0" text="4" BorderPane.alignment="CENTER">
                                              <BorderPane.margin>
                                                 <Insets top="20.0" />
                                              </BorderPane.margin>
@@ -207,28 +207,37 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="150.0" prefWidth="240.0" style="-fx-background-color: FFFFFF;" styleClass="patches" stylesheets="@CSS/Main_App.css">
                                  <children>
-                                    <BorderPane layoutY="-1.0" prefHeight="202.0" prefWidth="270.0" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
+                                    <BorderPane layoutY="-1.0" prefHeight="202.0" prefWidth="240.0" AnchorPane.bottomAnchor="-14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-1.0">
                                        <top>
                                           <AnchorPane prefHeight="23.0" prefWidth="270.0" styleClass="patches_top" BorderPane.alignment="CENTER" />
                                        </top>
                                        <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="20 $" BorderPane.alignment="CENTER">
+                                          <AnchorPane prefHeight="46.0" prefWidth="240.0" BorderPane.alignment="CENTER">
+                                             <children>
+                                                <Text layoutX="40.0" layoutY="48.8984375" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs." AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="23.0">
+                                                   <font>
+                                                      <Font name="System Bold" size="24.0" />
+                                                   </font>
+                                                </Text>
+                                                <Text fx:id="monthlyprofit" layoutX="78.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1000000" wrappingWidth="112.78466796875" AnchorPane.leftAnchor="77.45133463541667" AnchorPane.rightAnchor="49.21533203125">
+                                                   <font>
+                                                      <Font size="24.0" />
+                                                   </font>
+                                                </Text>
+                                             </children>
                                              <BorderPane.margin>
-                                                <Insets top="20.0" />
+                                                <Insets bottom="30.0" />
                                              </BorderPane.margin>
-                                             <font>
-                                                <Font name="System Bold" size="24.0" />
-                                             </font>
-                                          </Text>
+                                          </AnchorPane>
                                        </center>
                                        <bottom>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Revenue" BorderPane.alignment="CENTER">
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Profit" BorderPane.alignment="CENTER">
+                                             <BorderPane.margin>
+                                                <Insets bottom="50.0" top="-20.0" />
+                                             </BorderPane.margin>
                                              <font>
                                                 <Font name="System Italic" size="18.0" />
                                              </font>
-                                             <BorderPane.margin>
-                                                <Insets bottom="50.0" />
-                                             </BorderPane.margin>
                                           </Text>
                                        </bottom>
                                     </BorderPane>
@@ -278,16 +287,15 @@
                                        <top>
                                           <HBox prefHeight="51.0" prefWidth="489.0" style="-fx-background-color: #8E9DB5;" styleClass="patches_top" BorderPane.alignment="CENTER">
                                              <children>
-                                                <Button id="Recentbtn" mnemonicParsing="false" prefHeight="50.0" prefWidth="143.0" style="-fx-background-radius: 12 0 0 0;" styleClass="patches_top_button" text="Recent" />
-                                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="143.0" style="-fx-background-radius: 0 0 0 0;" styleClass="patches_top_button" text="Due" />
-                                                <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="143.0" style="-fx-background-radius: 0 0 0 0;" styleClass="patches_top_button" text="Expired" />
+                                                <Button id="Recentbtn" fx:id="recentButton" mnemonicParsing="false" onAction="#recentBtn" prefHeight="50.0" prefWidth="143.0" style="-fx-background-radius: 12 0 0 0;" styleClass="patches_top_button" text="Recent" />
+                                                <Button fx:id="dueButton" mnemonicParsing="false" onAction="#duebtn" prefHeight="50.0" prefWidth="143.0" style="-fx-background-radius: 0 0 0 0;" styleClass="patches_top_button" text="Due" />
+                                                <Button fx:id="expiredButton" mnemonicParsing="false" onAction="#expiredbtn" prefHeight="50.0" prefWidth="143.0" style="-fx-background-radius: 0 0 0 0;" styleClass="patches_top_button" text="Expired" />
                                              </children>
                                           </HBox>
                                        </top>
                                        <center>
-                                          <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                          <StackPane fx:id="memberstckpane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                                              <children>
-                                                <AnchorPane fx:id="duePane" prefHeight="200.0" prefWidth="200.0" />
                                                 <AnchorPane fx:id="recentPane" prefHeight="200.0" prefWidth="200.0">
                                                    <children>
                                                       <ScrollPane>
@@ -422,6 +430,334 @@
                                                                         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
                                                                            <HBox.margin>
                                                                               <Insets left="220.0" right="20.0" top="35.0" />
+                                                                           </HBox.margin>
+                                                                        </Button>
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </FlowPane>
+                                                         </content>
+                                                      </ScrollPane>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane fx:id="duePane" prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <ScrollPane>
+                                                         <content>
+                                                            <FlowPane prefHeight="373.0" prefWidth="492.0">
+                                                               <children>
+                                                                  <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
+                                                                     <children>
+                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@BorderIcons/CircularImage.png" />
+                                                                           </image>
+                                                                           <HBox.margin>
+                                                                              <Insets left="20.0" top="15.0" />
+                                                                           </HBox.margin>
+                                                                        </ImageView>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
+                                                                           <HBox.margin>
+                                                                              <Insets left="15.0" top="25.0" />
+                                                                           </HBox.margin>
+                                                                           <font>
+                                                                              <Font name="System Bold" size="18.0" />
+                                                                           </font>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Due:">
+                                                                           <font>
+                                                                              <Font name="System Italic" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="-80.0" top="50.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="28-12-2022">
+                                                                           <HBox.margin>
+                                                                              <Insets left="12.0" top="52.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
+                                                                           <HBox.margin>
+                                                                              <Insets left="200.0" right="20.0" top="35.0" />
+                                                                           </HBox.margin>
+                                                                        </Button>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
+                                                                     <children>
+                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@BorderIcons/CircularImage.png" />
+                                                                           </image>
+                                                                           <HBox.margin>
+                                                                              <Insets left="20.0" top="15.0" />
+                                                                           </HBox.margin>
+                                                                        </ImageView>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
+                                                                           <HBox.margin>
+                                                                              <Insets left="15.0" top="25.0" />
+                                                                           </HBox.margin>
+                                                                           <font>
+                                                                              <Font name="System Bold" size="18.0" />
+                                                                           </font>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Due:">
+                                                                           <font>
+                                                                              <Font name="System Italic" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="-80.0" top="50.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="28-12-2022">
+                                                                           <HBox.margin>
+                                                                              <Insets left="12.0" top="52.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
+                                                                           <HBox.margin>
+                                                                              <Insets left="200.0" right="20.0" top="35.0" />
+                                                                           </HBox.margin>
+                                                                        </Button>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
+                                                                     <children>
+                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@BorderIcons/CircularImage.png" />
+                                                                           </image>
+                                                                           <HBox.margin>
+                                                                              <Insets left="20.0" top="15.0" />
+                                                                           </HBox.margin>
+                                                                        </ImageView>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
+                                                                           <HBox.margin>
+                                                                              <Insets left="15.0" top="25.0" />
+                                                                           </HBox.margin>
+                                                                           <font>
+                                                                              <Font name="System Bold" size="18.0" />
+                                                                           </font>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Due:">
+                                                                           <font>
+                                                                              <Font name="System Italic" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="-80.0" top="50.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="28-12-2022">
+                                                                           <HBox.margin>
+                                                                              <Insets left="12.0" top="52.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
+                                                                           <HBox.margin>
+                                                                              <Insets left="200.0" right="20.0" top="35.0" />
+                                                                           </HBox.margin>
+                                                                        </Button>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
+                                                                     <children>
+                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@BorderIcons/CircularImage.png" />
+                                                                           </image>
+                                                                           <HBox.margin>
+                                                                              <Insets left="20.0" top="15.0" />
+                                                                           </HBox.margin>
+                                                                        </ImageView>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
+                                                                           <HBox.margin>
+                                                                              <Insets left="15.0" top="25.0" />
+                                                                           </HBox.margin>
+                                                                           <font>
+                                                                              <Font name="System Bold" size="18.0" />
+                                                                           </font>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Due:">
+                                                                           <font>
+                                                                              <Font name="System Italic" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="-80.0" top="50.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="28-12-2022">
+                                                                           <HBox.margin>
+                                                                              <Insets left="12.0" top="52.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
+                                                                           <HBox.margin>
+                                                                              <Insets left="200.0" right="20.0" top="35.0" />
+                                                                           </HBox.margin>
+                                                                        </Button>
+                                                                     </children>
+                                                                  </HBox>
+                                                               </children>
+                                                            </FlowPane>
+                                                         </content>
+                                                      </ScrollPane>
+                                                   </children>
+                                                </AnchorPane>
+                                                <AnchorPane fx:id="expiredPane" prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <ScrollPane>
+                                                         <content>
+                                                            <FlowPane prefHeight="373.0" prefWidth="492.0">
+                                                               <children>
+                                                                  <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
+                                                                     <children>
+                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@BorderIcons/CircularImage.png" />
+                                                                           </image>
+                                                                           <HBox.margin>
+                                                                              <Insets left="20.0" top="15.0" />
+                                                                           </HBox.margin>
+                                                                        </ImageView>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
+                                                                           <HBox.margin>
+                                                                              <Insets left="15.0" top="25.0" />
+                                                                           </HBox.margin>
+                                                                           <font>
+                                                                              <Font name="System Bold" size="18.0" />
+                                                                           </font>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Expired:">
+                                                                           <font>
+                                                                              <Font name="System Italic" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="-80.0" top="50.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="28-12-2022">
+                                                                           <HBox.margin>
+                                                                              <Insets left="6.0" top="52.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
+                                                                           <HBox.margin>
+                                                                              <Insets left="190.0" right="20.0" top="35.0" />
+                                                                           </HBox.margin>
+                                                                        </Button>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
+                                                                     <children>
+                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@BorderIcons/CircularImage.png" />
+                                                                           </image>
+                                                                           <HBox.margin>
+                                                                              <Insets left="20.0" top="15.0" />
+                                                                           </HBox.margin>
+                                                                        </ImageView>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
+                                                                           <HBox.margin>
+                                                                              <Insets left="15.0" top="25.0" />
+                                                                           </HBox.margin>
+                                                                           <font>
+                                                                              <Font name="System Bold" size="18.0" />
+                                                                           </font>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Expired:">
+                                                                           <font>
+                                                                              <Font name="System Italic" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="-80.0" top="50.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="28-12-2022">
+                                                                           <HBox.margin>
+                                                                              <Insets left="6.0" top="52.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
+                                                                           <HBox.margin>
+                                                                              <Insets left="190.0" right="20.0" top="35.0" />
+                                                                           </HBox.margin>
+                                                                        </Button>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
+                                                                     <children>
+                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@BorderIcons/CircularImage.png" />
+                                                                           </image>
+                                                                           <HBox.margin>
+                                                                              <Insets left="20.0" top="15.0" />
+                                                                           </HBox.margin>
+                                                                        </ImageView>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
+                                                                           <HBox.margin>
+                                                                              <Insets left="15.0" top="25.0" />
+                                                                           </HBox.margin>
+                                                                           <font>
+                                                                              <Font name="System Bold" size="18.0" />
+                                                                           </font>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Expired:">
+                                                                           <font>
+                                                                              <Font name="System Italic" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="-80.0" top="50.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="28-12-2022">
+                                                                           <HBox.margin>
+                                                                              <Insets left="6.0" top="52.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
+                                                                           <HBox.margin>
+                                                                              <Insets left="190.0" right="20.0" top="35.0" />
+                                                                           </HBox.margin>
+                                                                        </Button>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
+                                                                     <children>
+                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                                                                           <image>
+                                                                              <Image url="@BorderIcons/CircularImage.png" />
+                                                                           </image>
+                                                                           <HBox.margin>
+                                                                              <Insets left="20.0" top="15.0" />
+                                                                           </HBox.margin>
+                                                                        </ImageView>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
+                                                                           <HBox.margin>
+                                                                              <Insets left="15.0" top="25.0" />
+                                                                           </HBox.margin>
+                                                                           <font>
+                                                                              <Font name="System Bold" size="18.0" />
+                                                                           </font>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Expired:">
+                                                                           <font>
+                                                                              <Font name="System Italic" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="-80.0" top="50.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="28-12-2022">
+                                                                           <HBox.margin>
+                                                                              <Insets left="6.0" top="52.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
+                                                                           <HBox.margin>
+                                                                              <Insets left="190.0" right="20.0" top="35.0" />
                                                                            </HBox.margin>
                                                                         </Button>
                                                                      </children>

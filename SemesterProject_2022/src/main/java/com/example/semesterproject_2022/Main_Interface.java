@@ -94,7 +94,7 @@ public class Main_Interface implements Initializable {
             TranslateTransition translateTransition1 = new TranslateTransition();
             translateTransition1.setDuration(Duration.millis(400));
             translateTransition1.setNode(stckPane);
-            translateTransition1.setToX(-100);
+            translateTransition1.setToX(-135);
             translateTransition1.play();
 
             stckPane.setTranslateX(-200);
