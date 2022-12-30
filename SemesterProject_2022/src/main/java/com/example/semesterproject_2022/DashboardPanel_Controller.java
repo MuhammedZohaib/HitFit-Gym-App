@@ -13,14 +13,25 @@ import java.util.ResourceBundle;
 
 public class DashboardPanel_Controller implements Initializable {
 
+/*-Buttons-*/
+    @FXML
+    private Button PendingButton;
+    @FXML
+    private Button CompletedButton;
     @FXML
     private Button dueButton;
+    @FXML
+    private Button expiredButton;
+    @FXML
+    private Button recentButton;
+    @FXML
+    private Button HistoryButton;
+    @FXML
+    private Button RecentButtonExpenses;
+/*--------*/
 
     @FXML
     private AnchorPane duePane;
-
-    @FXML
-    private Button expiredButton;
 
     @FXML
     private AnchorPane expiredPane;
@@ -47,14 +58,33 @@ public class DashboardPanel_Controller implements Initializable {
     private Text pendingPayments;
 
     @FXML
-    private Button recentButton;
+    private StackPane ExpensestckPane;
+
 
     @FXML
     private AnchorPane recentPane;
 
     @FXML
     private Text totalMembers;
+    @FXML
+    private StackPane querystckpane;
 
+    @FXML
+    void CompeleteBtn(ActionEvent event) {
+        System.out.println(querystckpane.getChildren());
+        CompletedButton.setStyle("-fx-background-color: #03032c; -fx-background-radius: 12 0 0 0;");
+        querystckpane.getChildren().get(1).setVisible(true);
+        querystckpane.getChildren().get(0).setVisible(false);
+        PendingButton.setStyle("-fx-background-color: #8E9DB5; -fx-background-radius: 0 0 0 0;");
+    }
+
+    @FXML
+    void Pendingbtn(ActionEvent event) {
+        PendingButton.setStyle("-fx-background-color: #03032c; -fx-background-radius: 0 0 0 0;");
+        querystckpane.getChildren().get(0).setVisible(true);
+        querystckpane.getChildren().get(1).setVisible(false);
+        CompletedButton.setStyle("-fx-background-color: #8E9DB5; -fx-background-radius: 12 0 0 0;");
+    }
     @FXML
     void duebtn(ActionEvent event) {
         dueButton.setStyle("-fx-background-color: #03032c; -fx-background-radius: 0 0 0 0;");
@@ -99,6 +129,19 @@ public class DashboardPanel_Controller implements Initializable {
         dueButton.setStyle("-fx-background-color: #8E9DB5; -fx-background-radius: 0 0 0 0;");
         expiredButton.setStyle("-fx-background-color: #8E9DB5; -fx-background-radius: 0 0 0 0;");
     }
+
+
+    @FXML
+    void RecentExpBtn(ActionEvent event) {
+
+
+    }
+    @FXML
+    void HistoryBtn(ActionEvent event) {
+
+    }
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
