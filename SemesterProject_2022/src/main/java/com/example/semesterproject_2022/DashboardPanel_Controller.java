@@ -3,6 +3,10 @@ package com.example.semesterproject_2022;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
@@ -68,6 +72,12 @@ public class DashboardPanel_Controller implements Initializable {
     private Text totalMembers;
     @FXML
     private StackPane querystckpane;
+
+    @FXML
+    private LineChart<?,?> monthlyProfitChart;
+
+    @FXML
+    private BarChart<?,? > monthlyExpenseChart;
 
     @FXML
     void CompeleteBtn(ActionEvent event) {
@@ -143,6 +153,7 @@ public class DashboardPanel_Controller implements Initializable {
 
 
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -152,6 +163,41 @@ public class DashboardPanel_Controller implements Initializable {
             memberstckpane.getChildren().get(i).setVisible(false);
         }
         /*--End--*/
+
+
+        XYChart.Series series = new XYChart.Series<>();
+        series.setName("Monthly Profit in Rupees");
+        series.getData().add(new XYChart.Data<>("1", 2000));
+        series.getData().add(new XYChart.Data<>("2", 40000));
+        series.getData().add(new XYChart.Data<>("3", 60000));
+        series.getData().add(new XYChart.Data<>("4", 80000));
+        series.getData().add(new XYChart.Data<>("5", 100000));
+        series.getData().add(new XYChart.Data<>("6", 100000));
+        series.getData().add(new XYChart.Data<>("7", 100000));
+        series.getData().add(new XYChart.Data<>("8", 100000));
+        series.getData().add(new XYChart.Data<>("9", 100000));
+        series.getData().add(new XYChart.Data<>("10", 100000));
+        series.getData().add(new XYChart.Data<>("11", 100000));
+        series.getData().add(new XYChart.Data<>("12", 100000));
+
+        monthlyProfitChart.getData().add(series);
+
+        XYChart.Series series1 = new XYChart.Series<>();
+        series1.setName("Monthly Expense in Rupees");
+        series1.getData().add(new XYChart.Data<>("1", 2000));
+        series1.getData().add(new XYChart.Data<>("2", 40000));
+        series1.getData().add(new XYChart.Data<>("3", 60000));
+        series1.getData().add(new XYChart.Data<>("4", 80000));
+        series1.getData().add(new XYChart.Data<>("5", 100000));
+        series1.getData().add(new XYChart.Data<>("6", 100000));
+        series1.getData().add(new XYChart.Data<>("7", 100000));
+        series1.getData().add(new XYChart.Data<>("8", 100000));
+        series1.getData().add(new XYChart.Data<>("9", 100000));
+        series1.getData().add(new XYChart.Data<>("10", 100000));
+        series1.getData().add(new XYChart.Data<>("11", 100000));
+        series1.getData().add(new XYChart.Data<>("12", 100000));
+        monthlyExpenseChart.getData().add(series1);
+
 
     }
 }

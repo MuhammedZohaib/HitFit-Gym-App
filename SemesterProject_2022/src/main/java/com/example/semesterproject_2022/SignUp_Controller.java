@@ -1,10 +1,9 @@
 package com.example.semesterproject_2022;
 
 import backend_functions.Email;
-import backend_functions.Login;
+import backend_functions.Password;
 import backend_functions.Username;
 import database.DatabaseFunctions;
-import backend_functions.Password;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -46,8 +45,6 @@ public class SignUp_Controller {
 
     @FXML
     private AnchorPane Main;
-    @FXML
-    private AnchorPane personalInfoPane;
     @FXML
     private PasswordField cPassword;
     @FXML
@@ -114,7 +111,6 @@ public class SignUp_Controller {
     @FXML
     private Label packageValidation;
     private Boolean apiResponse = null;
-    private Login login;
 
     public void nextForm(ActionEvent e) throws IOException {
         firstName = fName.getText();
@@ -220,7 +216,7 @@ public class SignUp_Controller {
             phoneNoValidation.setText("! PhoneNumber cannot contain letters");
             pNumber.setStyle(errorStyle);
         }
-        else if(phoneNumber.length() < 11 || phoneNumber.length() > 11){
+        else if(phoneNumber.length() != 11){
             phoneNoValidation.setText("! PhoneNumber must contain exactly 11 digits");
             pNumber.setStyle(errorStyle);
         }
@@ -229,11 +225,7 @@ public class SignUp_Controller {
             nicValidation.setText("! NIC cannot be cannot be empty");
             cnic.setStyle(errorStyle);
         }
-        else if (!nic.matches(numericRegex)) {
-            nicValidation.setText("! PhoneNumber cannot contain letters");
-            cnic.setStyle(errorStyle);
-        }
-        else if(nic.length() < 13 || nic.length() > 13){
+        else if(nic.length() != 13){
             nicValidation.setText("! NIC must contain exactly 13 digits");
             cnic.setStyle(errorStyle);
         }
@@ -287,7 +279,7 @@ public class SignUp_Controller {
             accountNameValidation.setText("! Account Holder's Name cannot be empty");
             accountName.setStyle(errorStyle);
         }
-        else if (userBankAccountName.matches(numericRegex)) {
+        else if (!userBankAccountName.matches(alphabetRegex)) {
             accountNameValidation.setText("! Account Holder's cannot contain Numbers");
             accountName.setStyle(errorStyle);
         }
