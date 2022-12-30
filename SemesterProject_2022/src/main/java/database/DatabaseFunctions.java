@@ -1,8 +1,7 @@
 package database;
 
 import backend_functions.Login;
-import model_class.Customer;
-import model_class.Transaction;
+import model_class.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -82,6 +81,39 @@ public class DatabaseFunctions {
             System.out.println("Error! Could not run query: " + e);
             return false;
         }
+    }
+
+    public static boolean saveToDb(Employee employee) {
+
+        PreparedStatement queryStatement = null;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    INSERT INTO employees (id, first_name, last_name, designation, nic_number, salary, gender, phone_number, joining_date, username, password, salt, access)
+                    VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?);""");
+
+            queryStatement.setInt(1, employee.getId());
+            queryStatement.setString(2, employee.getFirstName());
+            queryStatement.setString(3, employee.getLastName());
+            queryStatement.setString(4, employee.getDesignation());
+            queryStatement.setString(5, employee.getNicNumber());
+            queryStatement.setInt(6, employee.getSalary());
+            queryStatement.setString(7, employee.getGender());
+            queryStatement.setString(8, employee.getPhoneNumber());
+            queryStatement.setDate(9, employee.getJoiningDate());
+            queryStatement.setString(10, employee.getUserName());
+            queryStatement.setString(11, employee.getPassword());
+            queryStatement.setString(12, employee.getSalt());
+            queryStatement.setInt(13, employee.getAccess());
+
+            queryStatement.executeUpdate();
+            return true;
+
+        } catch (SQLException e) {
+            System.out.println("Error! Could not run query: " + e);
+            return false;
+        }
+
     }
 
     public static boolean updateTransactionStatus(int transactionId) {
@@ -175,6 +207,55 @@ public class DatabaseFunctions {
 //            System.out.println(e.getNicNumber());
 //        }
         return allCustomers;
+    }
+
+    public static ArrayList<Employee> getAllEmployees() {
+        ResultSet allDataRs = null;
+        PreparedStatement queryStatement = null;
+        Employee savedEmployee = new Employee();
+        ArrayList<Employee> allEmployees = new ArrayList<>();
+
+        try {
+            queryStatement = dbConnection.prepareStatement("SELECT * FROM employees;");
+            allDataRs = queryStatement.executeQuery();
+
+            while (allDataRs.next()) {
+                savedEmployee.setId(allDataRs.getInt("id"));
+                savedEmployee.setFirstName(allDataRs.getString("first_name"));
+                savedEmployee.setLastName(allDataRs.getString("last_name"));
+                savedEmployee.setDesignation(allDataRs.getString("designation"));
+                savedEmployee.setNicNumber(allDataRs.getString("nic_number"));
+                savedEmployee.setSalary(allDataRs.getInt("salary"));
+                savedEmployee.setGender(allDataRs.getString("gender"));
+                savedEmployee.setPhoneNumber(allDataRs.getString("phone_number"));
+                savedEmployee.setJoiningDate(allDataRs.getDate("joining_date"));
+                savedEmployee.setUserName(allDataRs.getString("username"));
+                savedEmployee.setAccess(allDataRs.getInt("access"));
+                savedEmployee.setEmail("email");
+
+                allEmployees.add(savedEmployee);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error in getting ids: " + e);
+        }
+
+//        for (Employee e : allEmployees) {
+//            System.out.println(e.getId());
+//            System.out.println(e.getFirstName());
+//            System.out.println(e.getLastName());
+//            System.out.println(e.getEmail());
+//            System.out.println(e.getUserName());
+//            System.out.println(e.getPhoneNumber());
+//            System.out.println(e.getGender());
+//            System.out.println(e.getSalary());
+//            System.out.println(e.getNicNumber());
+//            System.out.println(e.getJoiningDate());
+//            System.out.println(e.getDesignation());
+//            System.out.println(e.getAccess());
+//        }
+
+        return allEmployees;
     }
 
     public static ArrayList<String> getUserPassword(String customerUsernameEmail) {
@@ -304,6 +385,18 @@ public class DatabaseFunctions {
             case "transaction" -> {
                 try {
                     queryStatement = dbConnection.prepareStatement("SELECT * FROM transactions ORDER BY transaction_id DESC LIMIT 1;");
+                    allIds = queryStatement.executeQuery();
+                    while (allIds.next()) {
+                        lastId = allIds.getInt(1);
+                    }
+                } catch (SQLException e) {
+                    System.out.println("Error in getting ids: " + e);
+                }
+                return lastId + 1;
+            }
+            case "employee" -> {
+                try {
+                    queryStatement = dbConnection.prepareStatement("SELECT * FROM employees ORDER BY id DESC LIMIT 1;");
                     allIds = queryStatement.executeQuery();
                     while (allIds.next()) {
                         lastId = allIds.getInt(1);
