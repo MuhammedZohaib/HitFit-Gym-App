@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="loadingStage" prefHeight="500.0" prefWidth="350.0" stylesheets="@CSS/LoadingScreen.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.LoadingScreen_Controller">
+    <children>
+        <Text fx:id="LoadingText" fill="WHITE" layoutX="114.0" layoutY="370.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starting" textAlignment="CENTER" wrappingWidth="122.296875">
+            <font>
+                <Font name="System Italic" size="16.0" />
+            </font>
+        </Text>
+        <ImageView fx:id="LogoImage" fitHeight="206.0" fitWidth="229.0" layoutX="61.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Images/Mask%20group.png" />
+            </image>
+        </ImageView>
+      <ImageView fitHeight="32.0" fitWidth="28.0" layoutX="162.0" layoutY="384.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/giphy.gif" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

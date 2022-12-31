@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="Main" onMouseDragged="#dragWindow" onMousePressed="#pressedWindow" prefHeight="600.0" prefWidth="1024.0" stylesheets="@CSS/SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.SignUp_Controller">
+    <children>
+        <HBox id="hbox" fx:id="hbox" layoutX="403.0" layoutY="568.0" prefHeight="37.0" prefWidth="620.0">
+            <children>
+                <Button fx:id="button1" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Account Info">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Button fx:id="button2" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Personal Info">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Button fx:id="button3" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Payment Info">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+            </children></HBox>
+        <AnchorPane id="l3" fx:id="child" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" stylesheets="@CSS/SignUp.css">
+            <children>
+                <Text fill="WHITE" layoutX="79.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" wrappingWidth="171.0">
+                    <font>
+                        <Font name="System Bold" size="36.0" />
+                    </font>
+                </Text>
+                <Label id="l1" layoutX="79.0" layoutY="161.0" text="Select Packages" textFill="#eaf6ff">
+                    <font>
+                        <Font name="System Italic" size="10.0" />
+                    </font></Label>
+                <Label id="l2" layoutX="326.0" layoutY="161.0" text="Bank Name" textFill="#eaf6ff">
+                    <font>
+                        <Font name="System Italic" size="10.0" />
+                    </font></Label>
+                <TextField id="t2" fx:id="bankName" layoutX="322.0" layoutY="184.0" onMouseClicked="#clearTab3" prefHeight="30.0" prefWidth="199.0" />
+                <Label layoutX="79.0" layoutY="241.0" text="Transaction Id" textFill="#eaf6ff">
+                    <font>
+                        <Font name="System Italic" size="10.0" />
+                    </font></Label>
+                <TextField id="t3" fx:id="transactionID" layoutX="79.0" layoutY="264.0" onMouseClicked="#clearTab3" prefHeight="30.0" prefWidth="439.0" />
+                <Label id="l5" layoutX="79.0" layoutY="322.0" text="Account Holder's Name" textFill="#eaf6ff">
+                    <font>
+                        <Font name="System Italic" size="10.0" />
+                    </font></Label>
+                <TextField id="t4" fx:id="accountName" layoutX="79.0" layoutY="344.0" onMouseClicked="#clearTab3" prefHeight="30.0" prefWidth="199.0" />
+                <Button id="done" layoutX="82.0" layoutY="409.0" mnemonicParsing="false" onAction="#doneSignUp" prefHeight="30.0" prefWidth="150.0" text="Done" textFill="#eaf6ff">
+                    <padding>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                    </padding></Button>
+                <Text fill="WHITE" layoutX="79.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To be a Member of Hit Fit. Create an Account Right Now" wrappingWidth="293.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font></Text>
+                <Button fx:id="exit" layoutX="561.0" layoutY="14.0" minWidth="43.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: transparent;">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@Images/icons8-close-window-96.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            <MenuButton fx:id="package_select" layoutX="79.0" layoutY="184.0" mnemonicParsing="false" onMouseClicked="#clearTab3" prefHeight="30.0" prefWidth="199.0" style="-fx-background-color: #ffffff;" text="Select a Package" textFill="#00000096">
+              <items>
+                <MenuItem fx:id="starter" mnemonicParsing="false" onAction="#starter" text="Starter - Rs.2000" />
+                <MenuItem fx:id="beginner" mnemonicParsing="false" onAction="#beginner" text="Beginner - Rs.3000" />
+                  <MenuItem fx:id="pro" mnemonicParsing="false" onAction="#pro" text="Pro - Rs.4500" />
+              </items>
+            </MenuButton>
+            <Label fx:id="bankNameValidation" layoutX="330.0" layoutY="350.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="tilIDValidation" layoutX="330.0" layoutY="390.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="accountNameValidation" layoutX="330.0" layoutY="430.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="packageValidation" layoutX="330.0" layoutY="470.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+        <ImageView fitHeight="630.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Images/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />
+            </image>
+        </ImageView>
+    </children>
+</AnchorPane>

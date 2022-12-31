@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="Main" onMouseDragged="#dragWindow" onMousePressed="#pressedWindow" prefHeight="617.0" prefWidth="1000.0" stylesheets="@CSS/SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.SignUp_Controller">
+   <children>
+      <HBox id="hbox" fx:id="hbox" layoutX="427.0" layoutY="586.0" prefHeight="37.0" prefWidth="576.0">
+         <children>
+            <Button fx:id="button1" mnemonicParsing="false" prefHeight="37.0" prefWidth="171.0" text="Account Info">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="button2" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Personal Info">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="button3" mnemonicParsing="false" prefHeight="37.0" prefWidth="159.0" text="Payment Info">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+         </children></HBox>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="635.0" layoutX="-32.0" layoutY="-3.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="448.0">
+         <fill>
+            <LinearGradient endX="0.798107303655486" endY="0.37223962654450715" startX="0.04731861499581791" startY="0.2996845425867506">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.9955257270693513">
+                     <color>
+                        <Color red="0.1589999943971634" green="0.2248000055551529" blue="0.30000001192092896" opacity="0.6395938992500305" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.16120000183582306" green="0.23311999440193176" blue="0.3100000023841858" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="664.0" fitWidth="424.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />
+         </image>
+         <viewport>
+            <Rectangle2D />
+         </viewport>
+      </ImageView>
+      <AnchorPane id="l3" fx:id="child" layoutX="407.0" prefHeight="569.0" prefWidth="627.0">
+         <children>
+            <Label fx:id="emailValidation" layoutX="315.0" layoutY="513.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+            </Label>
+            <Text fill="WHITE" layoutX="79.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" wrappingWidth="171.0">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Text>
+            <TextField id="t1" fx:id="fName" layoutX="79.0" layoutY="221.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
+            <TextField id="t2" fx:id="lName" layoutX="322.0" layoutY="221.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
+            <TextField id="t3" fx:id="uName" layoutX="79.0" layoutY="287.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
+            <TextField id="t4" fx:id="email" layoutX="322.0" layoutY="287.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
+            <TextField id="t5" fx:id="password" layoutX="79.0" layoutY="357.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
+            <PasswordField id="t6" fx:id="cPassword" layoutX="322.0" layoutY="357.0" onMouseClicked="#clear" prefHeight="30.0" prefWidth="199.0" />
+            <Label id="l1" layoutX="89.0" layoutY="203.0" text="FirstName" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
+            <Label layoutX="89.0" layoutY="266.0" text="Username" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
+            <Label id="l5" layoutX="87.0" layoutY="339.0" text="Password" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
+            <Label id="l4" layoutX="334.0" layoutY="266.0" text="Email" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
+            <Label id="l6" layoutX="334.0" layoutY="339.0" text="Confirm Password" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
+            <Button id="next" layoutX="79.0" layoutY="418.0" mnemonicParsing="false" onAction="#nextForm" prefHeight="30.0" prefWidth="140.0" text="Next" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Text fill="WHITE" layoutX="79.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To be a Member of Hit Fit. Create an Account Right Now" wrappingWidth="302.33331298828125">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <Label fx:id="fNameValidation" layoutX="315.0" layoutY="418.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="lNameValidation" layoutX="315.0" layoutY="448.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="userNameValidation" layoutX="315.0" layoutY="479.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+            </Label>
+            <Label fx:id="passwordValidation" layoutX="315.0" layoutY="539.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="11.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="loading" fitHeight="42.0" fitWidth="28.0" layoutX="544.0" layoutY="480.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/giphy.gif" />
+               </image>
+            </ImageView>
+            <Button fx:id="exit" layoutX="561.0" layoutY="14.0" minWidth="28.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/icons8-close-window-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Label id="l1" layoutX="334.0" layoutY="201.0" text="LastName" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font>
+            </Label>
+            <Line endX="336.0" layoutX="179.0" layoutY="173.0" startX="-100.0" stroke="WHITE" />
+            <Button fx:id="back" layoutX="29.0" layoutY="14.0" minWidth="28.0" mnemonicParsing="false" onAction="#GoBackLogIn" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/go-back-30.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

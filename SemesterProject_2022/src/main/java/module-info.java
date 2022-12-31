@@ -6,6 +6,6 @@ module com.example.semesterproject_2022 {
     requires com.mailjet.api;
     requires AnimateFX;
 
-    opens com.example.semesterproject_2022 to javafx.fxml;
-    exports com.example.semesterproject_2022;
+    opens com.example.semesterProject_2022 to javafx.fxml;
+    exports com.example.semesterProject_2022;
 }

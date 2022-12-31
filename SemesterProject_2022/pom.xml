@@ -72,7 +72,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                com.example.semesterproject_2022/com.example.semesterproject_2022.Main
+                                com.example.semesterproject_2022/com.example.semesterProject_2022.Main
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="Main" onMouseDragged="#dragWindow" onMousePressed="#pressedWindow" prefHeight="600.0" prefWidth="1024.0" stylesheets="@CSS/SignUp.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.SignUp_Controller">
+    <children>
+        <HBox id="hbox" fx:id="hbox" layoutX="403.0" layoutY="568.0" prefHeight="37.0" prefWidth="620.0">
+            <children>
+                <Button fx:id="button1" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Account Info">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Button fx:id="button2" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Personal Info">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+                <Button fx:id="button3" mnemonicParsing="false" prefHeight="37.0" prefWidth="209.0" text="Payment Info">
+                    <font>
+                        <Font name="System Bold" size="13.0" />
+                    </font>
+                </Button>
+            </children></HBox>
+        <AnchorPane id="l3" fx:id="personalInfoPane" layoutX="403.0" prefHeight="569.0" prefWidth="627.0" style="-fx-background-color: transparent;" stylesheets="@CSS/SignUp.css">
+            <children>
+                <Text fill="WHITE" layoutX="79.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN UP" wrappingWidth="171.0">
+                    <font>
+                        <Font name="System Bold" size="36.0" />
+                    </font>
+                </Text>
+                <Label id="l1" layoutX="79.0" layoutY="161.0" text="Phone Number" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
+                <TextField id="t1" fx:id="pNumber" layoutX="79.0" layoutY="184.0" onMouseClicked="#clearTab2" prefHeight="30.0" prefWidth="199.0" />
+                <Label id="l2" layoutX="326.0" layoutY="161.0" text="NIC Number" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
+                <TextField id="t2" fx:id="cnic" layoutX="322.0" layoutY="184.0" onMouseClicked="#clearTab2" prefHeight="30.0" prefWidth="199.0" />
+                <Label layoutX="79.0" layoutY="241.0" text="Address (Optional)" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
+                <TextField id="t3" fx:id="address" layoutX="79.0" layoutY="264.0" onMouseClicked="#clearTab2" prefHeight="30.0" prefWidth="439.0" />
+                <Label id="l5" layoutX="79.0" layoutY="322.0" text="Date Of Birth" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
+            <DatePicker fx:id="date" layoutX="79.0" layoutY="344.0" onMouseClicked="#clearTab2" prefHeight="30.0" prefWidth="199.0" promptText="Date of Birth" style="-fx-background-color: transparent;" />
+            <Label layoutX="326.0" layoutY="322.0" text="Gender" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
+            <RadioButton fx:id="male" layoutX="322.0" layoutY="344.0" mnemonicParsing="false" text="Male" textFill="#eaf6ff">
+               <padding>
+                  <Insets right="20.0" />
+               </padding>
+               <toggleGroup>
+                  <ToggleGroup fx:id="Group1" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="female" layoutX="422.0" layoutY="344.0" mnemonicParsing="false" text="Female" textFill="#eaf6ff" toggleGroup="$Group1" />
+            <Label layoutX="79.0" layoutY="402.0" text="Weight lb/kg" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="10.0" />
+               </font></Label>
+            <TextField id="t6" fx:id="weight" layoutX="79.0" layoutY="424.0" onMouseClicked="#clearTab2" prefHeight="30.0" prefWidth="199.0" />
+            <Label fx:id="phoneNoValidation" layoutX="300.0" layoutY="400.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="nicValidation" layoutX="300.0" layoutY="425.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateValidation" layoutX="300.0" layoutY="450.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+            <Label fx:id="weightValidation" layoutX="300.0" layoutY="475.0" textFill="#eaf6ff">
+               <font>
+                  <Font name="System Italic" size="13.0" />
+               </font>
+            </Label>
+                <Button id="next" layoutX="79.0" layoutY="482.0" mnemonicParsing="false" onAction="#paymentForm" prefHeight="26.0" prefWidth="150.0" text="Next" textFill="#eaf6ff">
+                    <padding>
+                        <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+                    </padding></Button>
+                <Text fill="WHITE" layoutX="79.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="To be a Member of Hit Fit. Create an Account Right Now" wrappingWidth="293.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font></Text>
+            <Button fx:id="exit" layoutX="561.0" layoutY="14.0" minWidth="43.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="50.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/icons8-close-window-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            </children>
+        </AnchorPane>
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <ImageView fitHeight="630.0" fitWidth="410.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/edgar-chaparro-sHfo3WOgGTU-unsplash.jpg" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>
