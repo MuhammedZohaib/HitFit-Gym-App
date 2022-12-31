@@ -1,0 +1,25 @@
+.text
+{
+    -fx-font-family: Poppins , SansSerif ;
+}
+#topborder{
+    -fx-background-color: #000000;
+    -fx-border:none;
+    -fx-background-radius: 25 25 0 0;
+}
+#main{
+    -fx-background-color: #000000;
+    -fx-border:none;
+    -fx-background-radius: 25;
+}
+
+#queries{
+    -fx-background-radius: 15;
+    -fx-background-color: #eef6ff;
+}
+.buttons
+{
+    -fx-background-color: #232f42;
+    -fx-background-radius: 12px ;
+    -fx-text-fill: white;
+}
