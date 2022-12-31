@@ -92,6 +92,38 @@ public class LogIn_Form_Controller {
 
 
     }
+    public void adminLogin(ActionEvent e) throws IOException {
+        email = EmailField.getText();
+        password = PassField.getText();
+
+        if (email.isEmpty() || email.isBlank()) {
+            epValidation.setText("! Email cannot be empty");
+            EmailField.setStyle(errorStyle);
+            EmailField.setText("");
+        }
+        else if (!email.equals("AyaanAli@9921")) {
+            epValidation.setText("! Invalid email or username");
+            EmailField.setStyle(errorStyle);
+            EmailField.setText("");
+        }
+
+        if (password.isEmpty() || password.isBlank()) {
+            passwordValidation.setText("! Password cannot be empty");
+            PassField.setStyle(errorStyle);
+            PassField.setText("");
+        }
+
+        else if (!password.equals("L3tM31n_121")) {
+            passwordValidation.setText("! Password Incorrect");
+            PassField.setStyle(errorStyle);
+            PassField.setText("");
+        }
+
+        else if (email.equals("AyaanAli@9921") && password.equals("L3tM31n_121") && epValidation.getText().equals("") && passwordValidation.getText().equals("")) {
+            new GeneralFunctions().switchScene(e, "DashBoard.fxml", screenBounds.getWidth(), screenBounds.getHeight());
+
+        }
+    }
     public void clear(){
         epValidation.setText("");
         EmailField.setStyle(resetStyle);
