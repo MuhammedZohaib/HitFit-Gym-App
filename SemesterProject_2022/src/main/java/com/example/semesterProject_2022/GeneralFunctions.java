@@ -1,5 +1,6 @@
 package com.example.semesterProject_2022;
 
+import com.ResizeHelper.ResizeHelper;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -37,10 +38,11 @@ public class GeneralFunctions {
         obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         obj.scene = new Scene(fxmlLoader.load());
         obj.stage.setScene(obj.scene);
-        obj.stage.centerOnScreen();
+
         /*---------Using the Undecorated Stage we can't resize through native functionalities so here is the function to resize and drag the undecorated stage----------------*/
-      //  ResizeHelper.addResizeListener(obj.stage,1280,800,maxWidth,maxHeight);
+        ResizeHelper.addResizeListener(obj.stage,1024,600,maxWidth,maxHeight);
         obj.stage.show();
+        obj.stage.centerOnScreen();
     }
     /*-----a function for restoring the window------- */
 

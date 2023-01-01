@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="2000.0" prefWidth="1500.0" style="-fx-background-color: F2F2F2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.DashboardPanel_Controller">
+<AnchorPane prefHeight="600.0" prefWidth="1024.0" style="-fx-background-color: F2F2F2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.DashboardPanel_Controller">
    <children>
       <BorderPane layoutX="85.0" layoutY="-28.0" prefHeight="1728.0" prefWidth="1500.0" style="-fx-background-color: F2F2F2;" AnchorPane.bottomAnchor="-28.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -37,9 +37,9 @@
          <center>
             <AnchorPane prefHeight="2000.0" prefWidth="1017.0" style="-fx-background-color: F2F2F2;" BorderPane.alignment="CENTER">
                <children>
-                  <ScrollPane prefHeight="1993.0" prefWidth="1497.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="-17.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="0.0">
+                  <ScrollPane fx:id="scrollpanedashboard" layoutX="27.0" prefHeight="544.0" prefWidth="922.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="27.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="0.0">
                      <content>
-                        <FlowPane prefHeight="2000.0" prefWidth="1475.0">
+                        <FlowPane prefHeight="2089.0" prefWidth="1427.0">
                            <children>
                               <AnchorPane prefHeight="150.0" prefWidth="240.0" style="-fx-background-color: FFFFFF;" styleClass="patches" stylesheets="@CSS/Main_App.css">
                                  <children>
@@ -1513,15 +1513,15 @@
                                        <top>
                                           <HBox prefHeight="51.0" prefWidth="489.0" style="-fx-background-color: #8E9DB5;" styleClass="patches_top" BorderPane.alignment="CENTER">
                                              <children>
-                                                <Button id="Recentbtn" fx:id="CompletedButton11" mnemonicParsing="false" onAction="#CompeleteBtn" prefHeight="50.0" prefWidth="143.0" style="-fx-background-radius: 12 0 0 0;" styleClass="patches_top_button" text="Completed" />
-                                                <Button fx:id="PendingButton11" mnemonicParsing="false" onAction="#Pendingbtn" prefHeight="50.0" prefWidth="143.0" style="-fx-background-radius: 0 0 0 0;" styleClass="patches_top_button" text="Pending" />
+                                                <Button id="Recentbtn" fx:id="InStockButton" mnemonicParsing="false" onAction="#InStockBtn" prefHeight="50.0" prefWidth="143.0" style="-fx-background-radius: 12 0 0 0;" styleClass="patches_top_button" text="In-Stock" />
+                                                <Button fx:id="OutofStockButton" mnemonicParsing="false" onAction="#OutofStockBtn" prefHeight="50.0" prefWidth="143.0" style="-fx-background-radius: 0 0 0 0;" styleClass="patches_top_button" text="Out of Stock" />
                                              </children>
                                           </HBox>
                                        </top>
                                        <center>
-                                          <StackPane fx:id="querystckpane11" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                          <StackPane fx:id="itemstckpane" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                                              <children>
-                                                <AnchorPane fx:id="pendingPane11" prefHeight="200.0" prefWidth="200.0">
+                                                <AnchorPane fx:id="InStockPane" prefHeight="200.0" prefWidth="200.0">
                                                    <children>
                                                       <ScrollPane>
                                                          <content>
@@ -1529,23 +1529,31 @@
                                                                <children>
                                                                   <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
                                                                      <children>
-                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
-                                                                           <image>
-                                                                              <Image url="@BorderIcons/CircularImage.png" />
-                                                                           </image>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item name">
                                                                            <HBox.margin>
-                                                                              <Insets left="20.0" top="15.0" />
-                                                                           </HBox.margin>
-                                                                        </ImageView>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
-                                                                           <HBox.margin>
-                                                                              <Insets left="15.0" top="25.0" />
+                                                                              <Insets left="30.0" top="25.0" />
                                                                            </HBox.margin>
                                                                            <font>
                                                                               <Font name="System Bold" size="18.0" />
                                                                            </font>
                                                                         </Text>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status: Pending">
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Unit: packet">
+                                                                           <font>
+                                                                              <Font name="System Italic" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="-90.0" top="50.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Remaining (Units)">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="250.0" top="30.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10">
                                                                            <font>
                                                                               <Font name="System Italic" size="14.0" />
                                                                            </font>
@@ -1553,32 +1561,35 @@
                                                                               <Insets left="-80.0" top="50.0" />
                                                                            </HBox.margin>
                                                                         </Text>
-                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
-                                                                           <HBox.margin>
-                                                                              <Insets left="220.0" right="20.0" top="35.0" />
-                                                                           </HBox.margin>
-                                                                        </Button>
                                                                      </children>
                                                                   </HBox>
                                                                   <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
                                                                      <children>
-                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
-                                                                           <image>
-                                                                              <Image url="@BorderIcons/CircularImage.png" />
-                                                                           </image>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item name">
                                                                            <HBox.margin>
-                                                                              <Insets left="20.0" top="15.0" />
-                                                                           </HBox.margin>
-                                                                        </ImageView>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
-                                                                           <HBox.margin>
-                                                                              <Insets left="15.0" top="25.0" />
+                                                                              <Insets left="30.0" top="25.0" />
                                                                            </HBox.margin>
                                                                            <font>
                                                                               <Font name="System Bold" size="18.0" />
                                                                            </font>
                                                                         </Text>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status: Pending">
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Unit: packet">
+                                                                           <font>
+                                                                              <Font name="System Italic" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="-90.0" top="50.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Remaining (Units)">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="250.0" top="30.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10">
                                                                            <font>
                                                                               <Font name="System Italic" size="14.0" />
                                                                            </font>
@@ -1586,32 +1597,35 @@
                                                                               <Insets left="-80.0" top="50.0" />
                                                                            </HBox.margin>
                                                                         </Text>
-                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
-                                                                           <HBox.margin>
-                                                                              <Insets left="220.0" right="20.0" top="35.0" />
-                                                                           </HBox.margin>
-                                                                        </Button>
                                                                      </children>
                                                                   </HBox>
                                                                   <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
                                                                      <children>
-                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
-                                                                           <image>
-                                                                              <Image url="@BorderIcons/CircularImage.png" />
-                                                                           </image>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item name">
                                                                            <HBox.margin>
-                                                                              <Insets left="20.0" top="15.0" />
-                                                                           </HBox.margin>
-                                                                        </ImageView>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
-                                                                           <HBox.margin>
-                                                                              <Insets left="15.0" top="25.0" />
+                                                                              <Insets left="30.0" top="25.0" />
                                                                            </HBox.margin>
                                                                            <font>
                                                                               <Font name="System Bold" size="18.0" />
                                                                            </font>
                                                                         </Text>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status: Pending">
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Unit: packet">
+                                                                           <font>
+                                                                              <Font name="System Italic" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="-90.0" top="50.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Remaining (Units)">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="250.0" top="30.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="10">
                                                                            <font>
                                                                               <Font name="System Italic" size="14.0" />
                                                                            </font>
@@ -1619,44 +1633,6 @@
                                                                               <Insets left="-80.0" top="50.0" />
                                                                            </HBox.margin>
                                                                         </Text>
-                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
-                                                                           <HBox.margin>
-                                                                              <Insets left="220.0" right="20.0" top="35.0" />
-                                                                           </HBox.margin>
-                                                                        </Button>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
-                                                                     <children>
-                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
-                                                                           <image>
-                                                                              <Image url="@BorderIcons/CircularImage.png" />
-                                                                           </image>
-                                                                           <HBox.margin>
-                                                                              <Insets left="20.0" top="15.0" />
-                                                                           </HBox.margin>
-                                                                        </ImageView>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
-                                                                           <HBox.margin>
-                                                                              <Insets left="15.0" top="25.0" />
-                                                                           </HBox.margin>
-                                                                           <font>
-                                                                              <Font name="System Bold" size="18.0" />
-                                                                           </font>
-                                                                        </Text>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status: Pending">
-                                                                           <font>
-                                                                              <Font name="System Italic" size="14.0" />
-                                                                           </font>
-                                                                           <HBox.margin>
-                                                                              <Insets left="-80.0" top="50.0" />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
-                                                                           <HBox.margin>
-                                                                              <Insets left="220.0" right="20.0" top="35.0" />
-                                                                           </HBox.margin>
-                                                                        </Button>
                                                                      </children>
                                                                   </HBox>
                                                                </children>
@@ -1665,7 +1641,7 @@
                                                       </ScrollPane>
                                                    </children>
                                                 </AnchorPane>
-                                                <AnchorPane fx:id="CompletedPane11" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                                <AnchorPane fx:id="OutofStockPane" prefHeight="200.0" prefWidth="200.0">
                                                    <children>
                                                       <ScrollPane>
                                                          <content>
@@ -1673,23 +1649,31 @@
                                                                <children>
                                                                   <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
                                                                      <children>
-                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
-                                                                           <image>
-                                                                              <Image url="@BorderIcons/CircularImage.png" />
-                                                                           </image>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Item name">
                                                                            <HBox.margin>
-                                                                              <Insets left="20.0" top="15.0" />
-                                                                           </HBox.margin>
-                                                                        </ImageView>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
-                                                                           <HBox.margin>
-                                                                              <Insets left="15.0" top="25.0" />
+                                                                              <Insets left="30.0" top="25.0" />
                                                                            </HBox.margin>
                                                                            <font>
                                                                               <Font name="System Bold" size="18.0" />
                                                                            </font>
                                                                         </Text>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status:">
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Unit: packet">
+                                                                           <font>
+                                                                              <Font name="System Italic" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="-90.0" top="50.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Remaining (Units)">
+                                                                           <font>
+                                                                              <Font name="System Bold" size="14.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="250.0" top="30.0" />
+                                                                           </HBox.margin>
+                                                                        </Text>
+                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="0">
                                                                            <font>
                                                                               <Font name="System Italic" size="14.0" />
                                                                            </font>
@@ -1697,130 +1681,6 @@
                                                                               <Insets left="-80.0" top="50.0" />
                                                                            </HBox.margin>
                                                                         </Text>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Completed">
-                                                                           <HBox.margin>
-                                                                              <Insets left="12.0" top="52.0" />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
-                                                                           <HBox.margin>
-                                                                              <Insets left="200.0" right="20.0" top="35.0" />
-                                                                           </HBox.margin>
-                                                                        </Button>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
-                                                                     <children>
-                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
-                                                                           <image>
-                                                                              <Image url="@BorderIcons/CircularImage.png" />
-                                                                           </image>
-                                                                           <HBox.margin>
-                                                                              <Insets left="20.0" top="15.0" />
-                                                                           </HBox.margin>
-                                                                        </ImageView>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
-                                                                           <HBox.margin>
-                                                                              <Insets left="15.0" top="25.0" />
-                                                                           </HBox.margin>
-                                                                           <font>
-                                                                              <Font name="System Bold" size="18.0" />
-                                                                           </font>
-                                                                        </Text>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status:">
-                                                                           <font>
-                                                                              <Font name="System Italic" size="14.0" />
-                                                                           </font>
-                                                                           <HBox.margin>
-                                                                              <Insets left="-80.0" top="50.0" />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Completed">
-                                                                           <HBox.margin>
-                                                                              <Insets left="12.0" top="52.0" />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
-                                                                           <HBox.margin>
-                                                                              <Insets left="200.0" right="20.0" top="35.0" />
-                                                                           </HBox.margin>
-                                                                        </Button>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
-                                                                     <children>
-                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
-                                                                           <image>
-                                                                              <Image url="@BorderIcons/CircularImage.png" />
-                                                                           </image>
-                                                                           <HBox.margin>
-                                                                              <Insets left="20.0" top="15.0" />
-                                                                           </HBox.margin>
-                                                                        </ImageView>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
-                                                                           <HBox.margin>
-                                                                              <Insets left="15.0" top="25.0" />
-                                                                           </HBox.margin>
-                                                                           <font>
-                                                                              <Font name="System Bold" size="18.0" />
-                                                                           </font>
-                                                                        </Text>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status:">
-                                                                           <font>
-                                                                              <Font name="System Italic" size="14.0" />
-                                                                           </font>
-                                                                           <HBox.margin>
-                                                                              <Insets left="-80.0" top="50.0" />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Completed">
-                                                                           <HBox.margin>
-                                                                              <Insets left="12.0" top="52.0" />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
-                                                                           <HBox.margin>
-                                                                              <Insets left="200.0" right="20.0" top="35.0" />
-                                                                           </HBox.margin>
-                                                                        </Button>
-                                                                     </children>
-                                                                  </HBox>
-                                                                  <HBox prefHeight="100.0" prefWidth="493.0" styleClass="myownHBOX" stylesheets="@CSS/Main_App.css">
-                                                                     <children>
-                                                                        <ImageView fitHeight="71.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
-                                                                           <image>
-                                                                              <Image url="@BorderIcons/CircularImage.png" />
-                                                                           </image>
-                                                                           <HBox.margin>
-                                                                              <Insets left="20.0" top="15.0" />
-                                                                           </HBox.margin>
-                                                                        </ImageView>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="John Doe">
-                                                                           <HBox.margin>
-                                                                              <Insets left="15.0" top="25.0" />
-                                                                           </HBox.margin>
-                                                                           <font>
-                                                                              <Font name="System Bold" size="18.0" />
-                                                                           </font>
-                                                                        </Text>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Status:">
-                                                                           <font>
-                                                                              <Font name="System Italic" size="14.0" />
-                                                                           </font>
-                                                                           <HBox.margin>
-                                                                              <Insets left="-80.0" top="50.0" />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Completed">
-                                                                           <HBox.margin>
-                                                                              <Insets left="12.0" top="52.0" />
-                                                                           </HBox.margin>
-                                                                        </Text>
-                                                                        <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="111.0" styleClass="myownbuttons" stylesheets="@CSS/Main_App.css" text="View">
-                                                                           <HBox.margin>
-                                                                              <Insets left="200.0" right="20.0" top="35.0" />
-                                                                           </HBox.margin>
-                                                                        </Button>
                                                                      </children>
                                                                   </HBox>
                                                                </children>

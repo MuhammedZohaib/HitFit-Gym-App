@@ -7,6 +7,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
@@ -31,6 +32,10 @@ public class DashboardPanel_Controller implements Initializable {
     private Button HistoryButton;
     @FXML
     private Button RecentButtonExpenses;
+    @FXML
+    private Button InStockButton;
+    @FXML
+    private Button OutofStockButton;
 /*--------*/
 
     @FXML
@@ -44,6 +49,9 @@ public class DashboardPanel_Controller implements Initializable {
 
     @FXML
     private StackPane memberstckpane;
+    @FXML
+    public ScrollPane scrollpanedashboard = new ScrollPane();
+
 
     @FXML
     private Text monthlyExpense;
@@ -66,6 +74,8 @@ public class DashboardPanel_Controller implements Initializable {
 
     @FXML
     private AnchorPane recentPane;
+    @FXML
+    private StackPane itemstckpane;
 
     @FXML
     private Text totalMembers;
@@ -83,6 +93,7 @@ public class DashboardPanel_Controller implements Initializable {
         System.out.println(querystckpane.getChildren());
         CompletedButton.setStyle("-fx-background-color: #03032c; -fx-background-radius: 12 0 0 0;");
         querystckpane.getChildren().get(1).setVisible(true);
+        new animatefx.animation.FadeIn(querystckpane).play();
         querystckpane.getChildren().get(0).setVisible(false);
         PendingButton.setStyle("-fx-background-color: #8E9DB5; -fx-background-radius: 0 0 0 0;");
     }
@@ -91,6 +102,7 @@ public class DashboardPanel_Controller implements Initializable {
     void Pendingbtn(ActionEvent event) {
         PendingButton.setStyle("-fx-background-color: #03032c; -fx-background-radius: 0 0 0 0;");
         querystckpane.getChildren().get(0).setVisible(true);
+        new animatefx.animation.FadeIn(querystckpane).play();
         querystckpane.getChildren().get(1).setVisible(false);
         CompletedButton.setStyle("-fx-background-color: #8E9DB5; -fx-background-radius: 12 0 0 0;");
     }
@@ -142,14 +154,40 @@ public class DashboardPanel_Controller implements Initializable {
 
     @FXML
     void RecentExpBtn(ActionEvent event) {
-
-
+        RecentButtonExpenses.setStyle("-fx-background-color: #03032c; -fx-background-radius: 12 0 0 0;");
+        ExpensestckPane.getChildren().get(0).setVisible(true);
+        new animatefx.animation.FadeIn(ExpensestckPane).play();
+        ExpensestckPane.getChildren().get(1).setVisible(false);
+        HistoryButton.setStyle("-fx-background-color: #8E9DB5; -fx-background-radius: 0 0 0 0;");
     }
     @FXML
     void HistoryBtn(ActionEvent event) {
+        HistoryButton.setStyle("-fx-background-color: #03032c; -fx-background-radius: 0 0 0 0;");
+        ExpensestckPane.getChildren().get(1).setVisible(true);
+        new animatefx.animation.FadeIn(ExpensestckPane).play();
+        ExpensestckPane.getChildren().get(0).setVisible(false);
+        RecentButtonExpenses.setStyle("-fx-background-color: #8E9DB5; -fx-background-radius: 12 0 0 0;");
 
     }
 
+    @FXML
+    void InStockBtn(ActionEvent event) {
+        InStockButton.setStyle("-fx-background-color: #03032c; -fx-background-radius: 12 0 0 0;");
+        itemstckpane.getChildren().get(0).setVisible(true);
+        new animatefx.animation.FadeIn(itemstckpane).play();
+        itemstckpane.getChildren().get(1).setVisible(false);
+        OutofStockButton.setStyle("-fx-background-color: #8e9db5; -fx-background-radius: 0 0 0 0;");
+    }
+
+    @FXML
+    void OutofStockBtn(ActionEvent event) {
+        InStockButton.setStyle("-fx-background-color: #839db5; -fx-background-radius: 12 0 0 0;");
+        itemstckpane.getChildren().get(0).setVisible(false);
+        new animatefx.animation.FadeIn(itemstckpane).play();
+        itemstckpane.getChildren().get(1).setVisible(true);
+        OutofStockButton.setStyle("-fx-background-color: #03032c; -fx-background-radius: 0 0 0 0;");
+
+    }
 
 
 

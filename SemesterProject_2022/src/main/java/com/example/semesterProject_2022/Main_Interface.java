@@ -28,7 +28,7 @@ public class Main_Interface implements Initializable {
 
     @FXML
     private Button restoreBtn;
-
+    DashboardPanel_Controller dashboardPanel_controller = new DashboardPanel_Controller();
 
     private static int Menu_Counter = 0;
     /*---ChangeFxml Class objects---*/
@@ -101,8 +101,15 @@ public class Main_Interface implements Initializable {
             translateTransition1.setToX(-186);
             translateTransition1.play();
 
+            TranslateTransition translateTransition2 = new TranslateTransition();
+            translateTransition2.setDuration(Duration.millis(400));
+            translateTransition2.setNode(dashboardPanel_controller.scrollpanedashboard);
+            translateTransition2.setToX(-100);
+
             stackPane.setTranslateX(0);
             navPanel.setTranslateX(0);
+            dashboardPanel_controller.scrollpanedashboard.setTranslateX(0);
+
             Menu_Counter=0;
         }
 
@@ -161,6 +168,7 @@ public class Main_Interface implements Initializable {
         }
         if(Menu_Counter==1)
         {
+            dashboardPanel_controller.scrollpanedashboard.setTranslateX(-100);
             navPanel.setTranslateX(0);
             stackPane.setTranslateX(0);
         }
