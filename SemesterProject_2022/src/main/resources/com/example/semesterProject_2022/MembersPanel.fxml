@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
@@ -19,35 +26,125 @@
                                 <Font name="System Bold" size="23.0" />
                             </font>
                             <BorderPane.margin>
-                                <Insets right="60.0" />
+                                <Insets left="40.0" right="60.0" />
                             </BorderPane.margin>
                         </Text>
                     </center>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
                 </BorderPane>
             </top>
          <center>
             <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <center>
-                  <TableView fx:id="membersView" fixedCellSize="0.0" prefHeight="474.0" prefWidth="1044.0" BorderPane.alignment="CENTER">
+                  <TableView fx:id="membersView" fixedCellSize="0.0" prefHeight="349.0" prefWidth="739.0" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER">
                      <columns>
-                        <TableColumn fx:id="name" prefWidth="141.0" text="Name" />
+                        <TableColumn id="firstcol" fx:id="name" prefWidth="141.0" text="Name" />
                         <TableColumn fx:id="phone" prefWidth="138.0" text="Phone Number" />
-                        <TableColumn fx:id="nic" prefWidth="75.0" text="NIC" />
+                        <TableColumn fx:id="nic" prefWidth="75.0" styleClass="transparent_col" text="NIC" />
                         <TableColumn fx:id="email" prefWidth="124.0" text="Email" />
-                        <TableColumn fx:id="gender" minWidth="0.0" prefWidth="123.0" text="Gender" />
                         <TableColumn fx:id="plan" minWidth="0.0" prefWidth="132.0" text="Monthly Plan" />
+                        <TableColumn fx:id="plan1" minWidth="0.0" prefWidth="132.0" text="Action" />
                      </columns>
+                     <BorderPane.margin>
+                        <Insets bottom="70.0" left="165.0" right="140.0" top="-50.0" />
+                     </BorderPane.margin>
                   </TableView>
                </center>
                <top>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="All the members of the gym are shown here. You can add, view and delete members here." BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="175.0" prefWidth="697.0" styleClass="searchpane" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
-                        <Insets bottom="30.0" top="30.0" />
+                        <Insets bottom="20.0" left="163.0" right="140.0" />
                      </BorderPane.margin>
-                     <font>
-                        <Font name="System Italic" size="16.0" />
-                     </font>
-                  </Text>
+                     <children>
+                        <BorderPane layoutX="270.0" layoutY="-12.0" prefHeight="188.0" prefWidth="740.6666666666666" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <top>
+                              <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <top>
+                                    <ImageView fitHeight="69.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                       <image>
+                                          <Image url="@BorderIcons/Members.png" />
+                                       </image>
+                                       <BorderPane.margin>
+                                          <Insets left="-700.0" top="25.0" />
+                                       </BorderPane.margin>
+                                    </ImageView>
+                                 </top>
+                                 <center>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="All the members of the gym. You can add, delete or view the information about the members" BorderPane.alignment="CENTER">
+                                       <font>
+                                          <Font name="System Italic" size="16.0" />
+                                       </font>
+                                       <BorderPane.margin>
+                                          <Insets bottom="150.0" left="30.0" top="-25.0" />
+                                       </BorderPane.margin>
+                                    </Text>
+                                 </center>
+                                 <bottom>
+                                    <FlowPane prefHeight="127.0" prefWidth="741.0" BorderPane.alignment="CENTER">
+                                       <BorderPane.margin>
+                                          <Insets top="-100.0" />
+                                       </BorderPane.margin>
+                                       <children>
+                                          <Button mnemonicParsing="false" prefHeight="17.0" prefWidth="88.0" stylesheets="@CSS/Main_App.css" text="(A-Z)" textFill="WHITE">
+                                             <FlowPane.margin>
+                                                <Insets left="30.0" top="30.0" />
+                                             </FlowPane.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="curve" />
+                                                <String fx:value="buttoncolor" />
+                                             </styleClass>
+                                          </Button>
+                                          <StackPane prefHeight="47.0" prefWidth="187.0" stylesheets="@CSS/Main_App.css">
+                                             <FlowPane.margin>
+                                                <Insets left="40.0" top="30.0" />
+                                             </FlowPane.margin>
+                                             <children>
+                                                <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="21.0" prefWidth="67.0" text="Button">
+                                                   <StackPane.margin>
+                                                      <Insets bottom="22.5" left="100.0" right="20.0" top="22.0" />
+                                                   </StackPane.margin>
+                                                   <styleClass>
+                                                      <String fx:value="curve" />
+                                                      <String fx:value="buttoncolor" />
+                                                   </styleClass>
+                                                   <graphic>
+                                                      <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="5.0" translateY="1.0">
+                                                         <image>
+                                                            <Image url="@BorderIcons/icons8-search-512.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                </Button>
+                                                <TextField prefHeight="25.0" prefWidth="157.0" styleClass="curve">
+                                                   <StackPane.margin>
+                                                      <Insets right="65.0" />
+                                                   </StackPane.margin>
+                                                </TextField>
+                                             </children>
+                                          </StackPane>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sort by Order">
+                                             <FlowPane.margin>
+                                                <Insets bottom="30.0" left="-310.0" />
+                                             </FlowPane.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Search By keyword">
+                                             <FlowPane.margin>
+                                                <Insets bottom="30.0" left="60.0" />
+                                             </FlowPane.margin>
+                                          </Text>
+                                       </children>
+                                    </FlowPane>
+                                 </bottom>
+                              </BorderPane>
+                           </top>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
                </top>
             </BorderPane>
          </center>
