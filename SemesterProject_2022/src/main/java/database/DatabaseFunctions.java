@@ -411,5 +411,9 @@ public class DatabaseFunctions {
             }
         }
     }
-
+        public Connection getDbConnection()
+        {
+            makeConnection();
+            return dbConnection;
+        }
 }

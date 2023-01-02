@@ -8,4 +8,6 @@ module com.example.semesterproject_2022 {
 
     opens com.example.semesterProject_2022 to javafx.fxml;
     exports com.example.semesterProject_2022;
+    opens model_class to javafx.fxml;
+    exports model_class;
 }

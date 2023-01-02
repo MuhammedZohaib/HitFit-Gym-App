@@ -10,11 +10,17 @@ public class Customer extends Person{
     private String dob;
     private String weight;
     private int monthlyPlan;
+    private Package monthlyPackage;
     private int customerId;
     private boolean isActive;
     private String passwordSalt;
 
-    public Customer(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String nicNumber, String address, String dob, String weight, int monthlyPlan, int customerId, String passwordSalt) {
+    public Customer(String firstName, String lastName, String email, String phoneNumber,String nicNumber, int monthlyPlan) {
+        super(firstName, lastName, email, "gender", phoneNumber, "userName", "password", nicNumber);
+        this.monthlyPlan = monthlyPlan;
+    }
+
+    public Customer( String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String nicNumber, String address, String dob, String weight, int monthlyPlan, int customerId, String passwordSalt) {
         super(firstName, lastName, email, gender, phoneNumber, userName, password, nicNumber);
         this.address = address;
         this.dob = dob;
@@ -22,6 +28,14 @@ public class Customer extends Person{
         this.monthlyPlan = monthlyPlan;
         this.customerId = customerId;
         this.passwordSalt = passwordSalt;
+    }
+
+    public Package getMonthlyPackage() {
+        return monthlyPackage;
+    }
+
+    public void setMonthlyPackage(Package monthlyPackage) {
+        this.monthlyPackage = monthlyPackage;
     }
 
     public Customer(){
@@ -93,4 +107,5 @@ public class Customer extends Person{
                 ", monthlyPlan=" + monthlyPlan +
                 '}';
     }
+
 }
