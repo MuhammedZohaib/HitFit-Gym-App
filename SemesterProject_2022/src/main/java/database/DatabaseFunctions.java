@@ -159,103 +159,34 @@ public class DatabaseFunctions {
         }
     }
 
-    public static ArrayList<Customer> getAllCustomers() {
+    public static ResultSet getAllCustomers() {
 
         ResultSet allDataRs = null;
         PreparedStatement queryStatement = null;
-        Customer savedCustomer = new Customer();
-        ArrayList<Customer> allCustomers = new ArrayList<>();
 
         try {
             queryStatement = dbConnection.prepareStatement("SELECT * FROM customers;");
             allDataRs = queryStatement.executeQuery();
 
-            while (allDataRs.next()) {
-                savedCustomer.setCustomerId(allDataRs.getInt(1));
-                savedCustomer.setFirstName(allDataRs.getString(2));
-                savedCustomer.setLastName(allDataRs.getString(3));
-                savedCustomer.setEmail(allDataRs.getString(4));
-                savedCustomer.setPhoneNumber(allDataRs.getString(5));
-                savedCustomer.setPassword(" ");
-                savedCustomer.setUserName(allDataRs.getString(7));
-                savedCustomer.setGender(allDataRs.getString(8));
-                savedCustomer.setWeight(allDataRs.getString(9));
-                savedCustomer.setDob(allDataRs.getString(10));
-                savedCustomer.setMonthlyPlan(allDataRs.getInt(11));
-                savedCustomer.setNicNumber(allDataRs.getString(12));
-                savedCustomer.setActive(allDataRs.getBoolean(13));
-
-                allCustomers.add(savedCustomer);
-            }
-
         } catch (SQLException e) {
             System.out.println("Error in getting ids: " + e);
         }
 
-//        for (Customer e: allCustomers) {
-//            System.out.println(e.getCustomerId());
-//            System.out.println(e.getFirstName());
-//            System.out.println(e.getLastName());
-//            System.out.println(e.getEmail());
-//            System.out.println(e.getPassword());
-//            System.out.println(e.getUserName());
-//            System.out.println(e.getPhoneNumber());
-//            System.out.println(e.getGender());
-//            System.out.println(e.getWeight());
-//            System.out.println(e.getDob());
-//            System.out.println(e.getMonthlyPlan());
-//            System.out.println(e.getNicNumber());
-//        }
-        return allCustomers;
+        return allDataRs;
     }
 
-    public static ArrayList<Employee> getAllEmployees() {
+    public static ResultSet getAllEmployees() {
         ResultSet allDataRs = null;
         PreparedStatement queryStatement = null;
-        Employee savedEmployee = new Employee();
-        ArrayList<Employee> allEmployees = new ArrayList<>();
 
         try {
             queryStatement = dbConnection.prepareStatement("SELECT * FROM employees;");
             allDataRs = queryStatement.executeQuery();
 
-            while (allDataRs.next()) {
-                savedEmployee.setId(allDataRs.getInt("id"));
-                savedEmployee.setFirstName(allDataRs.getString("first_name"));
-                savedEmployee.setLastName(allDataRs.getString("last_name"));
-                savedEmployee.setDesignation(allDataRs.getString("designation"));
-                savedEmployee.setNicNumber(allDataRs.getString("nic_number"));
-                savedEmployee.setSalary(allDataRs.getInt("salary"));
-                savedEmployee.setGender(allDataRs.getString("gender"));
-                savedEmployee.setPhoneNumber(allDataRs.getString("phone_number"));
-                savedEmployee.setJoiningDate(allDataRs.getDate("joining_date"));
-                savedEmployee.setUserName(allDataRs.getString("username"));
-                savedEmployee.setAccess(allDataRs.getInt("access"));
-                savedEmployee.setEmail("email");
-
-                allEmployees.add(savedEmployee);
-            }
-
         } catch (SQLException e) {
             System.out.println("Error in getting ids: " + e);
         }
-
-//        for (Employee e : allEmployees) {
-//            System.out.println(e.getId());
-//            System.out.println(e.getFirstName());
-//            System.out.println(e.getLastName());
-//            System.out.println(e.getEmail());
-//            System.out.println(e.getUserName());
-//            System.out.println(e.getPhoneNumber());
-//            System.out.println(e.getGender());
-//            System.out.println(e.getSalary());
-//            System.out.println(e.getNicNumber());
-//            System.out.println(e.getJoiningDate());
-//            System.out.println(e.getDesignation());
-//            System.out.println(e.getAccess());
-//        }
-
-        return allEmployees;
+        return allDataRs;
     }
 
     public static ArrayList<String> getUserPassword(String customerUsernameEmail) {
@@ -363,6 +294,30 @@ public class DatabaseFunctions {
         return allUsernamePasswords;
     }
 
+    public static int getNumberOfCustomers() {
+
+        PreparedStatement queryStatement = null;
+        int allCustomers = 0;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT COUNT(customer_id)
+                    FROM customers;
+                    """);
+
+            ResultSet customersRs = queryStatement.executeQuery();
+
+            while (customersRs.next()) {
+                allCustomers = customersRs.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error in getting number of customers: " + e);
+        }
+
+        return allCustomers;
+    }
+
     public static int generateId(String choice) {
 
         ResultSet allIds = null;
@@ -411,9 +366,9 @@ public class DatabaseFunctions {
             }
         }
     }
-        public Connection getDbConnection()
-        {
-            makeConnection();
-            return dbConnection;
-        }
+
+    public Connection getDbConnection() {
+        makeConnection();
+        return dbConnection;
+    }
 }

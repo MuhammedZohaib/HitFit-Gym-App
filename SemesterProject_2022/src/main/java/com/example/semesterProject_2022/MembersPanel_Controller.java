@@ -41,11 +41,7 @@ public class MembersPanel_Controller implements Initializable {
     @FXML
     private TableColumn<Customer, Integer> plan;
 
-    DatabaseFunctions databaseFunctions = new DatabaseFunctions();
     ObservableList<Customer> memberslist = FXCollections.observableArrayList();
-    String query = null;
-    Connection connection  = databaseFunctions.getDbConnection();
-    PreparedStatement preparedStatement = null;
     ResultSet resultSet = null;
 
     @Override
@@ -70,10 +66,7 @@ public class MembersPanel_Controller implements Initializable {
      void showrecords() throws SQLException {
         memberslist.clear();
 
-         query = "SELECT first_name, last_name, email, phone_number, nic, monthly_plan\n" +
-                 "FROM customers;";
-         preparedStatement = connection.prepareStatement(query);
-         resultSet = preparedStatement.executeQuery();
+         resultSet = DatabaseFunctions.getAllCustomers();
 
         while(resultSet.next())
         {
