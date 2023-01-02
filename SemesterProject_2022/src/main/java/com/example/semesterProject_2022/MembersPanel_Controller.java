@@ -65,14 +65,19 @@ public class MembersPanel_Controller implements Initializable {
 
      void showrecords() throws SQLException {
         memberslist.clear();
+         try {
+             resultSet = DatabaseFunctions.getAllCustomers();
 
-         resultSet = DatabaseFunctions.getAllCustomers();
 
-        while(resultSet.next())
-        {
-            memberslist.add(new Customer(resultSet.getString("first_name"),resultSet.getString("last_name") , resultSet.getString("email"), resultSet.getString("phone_number"), resultSet.getString("nic"), Integer.parseInt(resultSet.getString("monthly_plan"))));
-            membersView.setItems(memberslist);
-            System.out.println(memberslist.get(0));
-        }
+             while (resultSet.next()) {
+                 memberslist.add(new Customer(resultSet.getString("first_name"), resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("phone_number"), resultSet.getString("nic"), Integer.parseInt(resultSet.getString("monthly_plan"))));
+                 membersView.setItems(memberslist);
+                 System.out.println(memberslist.get(0));
+             }
+         }
+
+         catch (NullPointerException e){
+                 System.out.println("Connection to Database Cannot Be Established");
+             }
     }
 }

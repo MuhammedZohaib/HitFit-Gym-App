@@ -41,12 +41,12 @@
                <center>
                   <TableView fx:id="membersView" fixedCellSize="0.0" prefHeight="167.0" prefWidth="739.0" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER">
                      <columns>
-                        <TableColumn id="firstcol" fx:id="FirstName" prefWidth="141.0" text="First Name" />
-                        <TableColumn fx:id="LastName" prefWidth="138.0" text="Last Name" />
-                        <TableColumn fx:id="nic" prefWidth="75.0" styleClass="transparent_col" text="NIC" />
-                        <TableColumn fx:id="email" prefWidth="124.0" text="Email" />
-                        <TableColumn fx:id="plan" minWidth="0.0" prefWidth="132.0" text="Monthly Plan" />
-                        <TableColumn fx:id="phone" minWidth="0.0" prefWidth="132.0" text="Phone No" />
+                        <TableColumn id="firstcol" fx:id="FirstName" prefWidth="120.0" text="First Name" />
+                        <TableColumn fx:id="LastName" prefWidth="120.0" text="Last Name" />
+                        <TableColumn fx:id="nic" prefWidth="120.0" styleClass="transparent_col" text="NIC" />
+                        <TableColumn fx:id="email" prefWidth="250.0" text="Email" />
+                        <TableColumn fx:id="plan" minWidth="0.0" prefWidth="120.0" text="Monthly Plan" />
+                        <TableColumn fx:id="phone" minWidth="0.0" prefWidth="120.0" text="Phone No" />
                         <TableColumn id="firstcol" fx:id="action" prefWidth="141.0" text="Action" />
                      </columns>
                      <BorderPane.margin>
@@ -63,26 +63,6 @@
                         <BorderPane layoutX="270.0" layoutY="-12.0" prefHeight="188.0" prefWidth="740.6666666666666" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <top>
                               <BorderPane prefHeight="197.0" prefWidth="741.0" BorderPane.alignment="CENTER">
-                                 <top>
-                                    <ImageView fitHeight="69.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-                                       <image>
-                                          <Image url="@BorderIcons/Members.png" />
-                                       </image>
-                                       <BorderPane.margin>
-                                          <Insets left="-700.0" top="25.0" />
-                                       </BorderPane.margin>
-                                    </ImageView>
-                                 </top>
-                                 <center>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="All the members of the gym. You can add, delete or view the information about the members" BorderPane.alignment="CENTER">
-                                       <font>
-                                          <Font name="System Italic" size="16.0" />
-                                       </font>
-                                       <BorderPane.margin>
-                                          <Insets bottom="150.0" left="30.0" top="-25.0" />
-                                       </BorderPane.margin>
-                                    </Text>
-                                 </center>
                                  <bottom>
                                     <FlowPane prefHeight="126.0" prefWidth="741.0" BorderPane.alignment="CENTER">
                                        <BorderPane.margin>
@@ -145,6 +125,22 @@
                                  <BorderPane.margin>
                                     <Insets />
                                  </BorderPane.margin>
+                                 <center>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Text layoutX="74.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="All the members of the gym. You can add, delete or view the information about the members" wrappingWidth="643.2083282470703">
+                                             <font>
+                                                <Font name="System Italic" size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="69.0" fitWidth="32.0" layoutX="32.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@BorderIcons/Members.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
                               </BorderPane>
                            </top>
                         </BorderPane>

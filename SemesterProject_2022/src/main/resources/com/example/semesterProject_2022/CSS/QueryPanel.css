@@ -23,3 +23,26 @@
     -fx-background-radius: 12px ;
     -fx-text-fill: white;
 }
+.label {
+    -fx-font-size: 16px;
+}
+
+.text-field {
+    -fx-font-size: 14px;
+    -fx-pref-width: 300px;
+    -fx-padding: 10px;
+}
+
+.text-area {
+    -fx-font-size: 14px;
+    -fx-pref-width: 300px;
+    -fx-pref-height: 200px;
+    -fx-padding: 10px;
+}
+
+.button {
+    -fx-font-size: 14px;
+    -fx-pref-width: 80px;
+    -fx-padding: 10px;
+}
+
