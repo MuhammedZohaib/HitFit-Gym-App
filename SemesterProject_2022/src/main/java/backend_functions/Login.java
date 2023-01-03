@@ -20,7 +20,7 @@ public class Login {
 
         switch (queryOption) {
             case "email" -> {
-                boolean tmp = Email.checkEmail(emailUsername, choice);
+                boolean tmp = Email.checkEmail(emailUsername);
                 if (tmp) {
                     System.out.println("Email already exists");
                     return false;
@@ -29,7 +29,7 @@ public class Login {
                 }
             }
             case "username" -> {
-                boolean tmp1 = Username.checkUsername(emailUsername, choice);
+                boolean tmp1 = Username.checkUsername(emailUsername);
                 if (tmp1) {
                     System.out.println("Username already exists");
                     return false;
@@ -59,7 +59,6 @@ public class Login {
             System.out.println("User logged in successfully");
             return true;
         } else {
-            System.out.println("Wrong password");
             return false;
         }
 

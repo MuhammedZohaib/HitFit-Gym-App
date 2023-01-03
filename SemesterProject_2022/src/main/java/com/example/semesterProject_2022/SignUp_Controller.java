@@ -154,7 +154,7 @@ public class SignUp_Controller {
             userNameValidation.setText("! UserName Cannot Be Empty");
             uName.setStyle(errorStyle);
         }
-        else if (Username.checkUsername(userName, "customer")){
+        else if (Username.checkUsername(userName)){
             System.out.println("Duplicate username");
             userNameValidation.setText("! UserName Already Exists");
             uName.setStyle(errorStyle);
@@ -163,7 +163,7 @@ public class SignUp_Controller {
             emailValidation.setText("! Email Cannot Be Empty");
             email.setStyle(errorStyle);
         }
-        else if (Email.checkEmail(emailField, "customer")){
+        else if (Email.checkEmail(emailField)){
             System.out.println("Duplicate email");
             emailValidation.setText("! Email Already Exists");
             email.setStyle(errorStyle);

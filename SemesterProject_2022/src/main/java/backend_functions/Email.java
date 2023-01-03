@@ -14,8 +14,6 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class Email {
@@ -112,11 +110,10 @@ public class Email {
 
     }
 
-    public static boolean checkEmail(String email, String choice) {
+    public static boolean checkEmail(String email) {
 
-        ArrayList<String> allEmails = DatabaseFunctions.getAllEmails(choice);
+        ArrayList<String> allEmails = DatabaseFunctions.getAllEmails();
 
-        assert allEmails != null;
         for (String e : allEmails) {
 
             if (e.equals(email)) {
@@ -124,7 +121,7 @@ public class Email {
             }
 
         }
-        System.out.println("Not found");
+
         return false;
     }
 }
