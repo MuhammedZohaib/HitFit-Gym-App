@@ -3,12 +3,13 @@ package com.example.semesterProject_2022;
 import database.DatabaseFunctions;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model_class.Customer;
 
 import java.net.URL;
@@ -16,10 +17,12 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 public class MembersPanel_Controller implements Initializable {
+
+    Stage stage;
     Customer customer = null;
     private String FullName;
     @FXML
-    private TableColumn<Customer, Button> action;
+    private TableColumn<Customer, MenuButton> action;
 
     @FXML
     private TableColumn<Customer, String> email;
@@ -46,6 +49,7 @@ public class MembersPanel_Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         try {
             loadData();
         } catch (SQLException e) {
@@ -53,6 +57,10 @@ public class MembersPanel_Controller implements Initializable {
         }
     }
 
+    public void view()
+    {
+
+    }
     public void loadData() throws SQLException {
         showrecords();
         FirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
@@ -61,6 +69,7 @@ public class MembersPanel_Controller implements Initializable {
         phone.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         nic.setCellValueFactory(new PropertyValueFactory<>("nicNumber"));
         plan.setCellValueFactory(new PropertyValueFactory<>("monthlyPlan"));
+        action.setCellValueFactory(new PropertyValueFactory<>("action"));
     }
 
      void showrecords() throws SQLException {

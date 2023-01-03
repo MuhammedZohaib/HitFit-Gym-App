@@ -1,10 +1,17 @@
 package model_class;
 
 import all_enums.TimingSlot;
+import com.example.semesterProject_2022.MembersPanel_Controller;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 
 import java.time.LocalDate;
 
 public class Customer extends Person{
+
+    MembersPanel_Controller btn = new MembersPanel_Controller();
 
     private String address;
     private String dob;
@@ -14,10 +21,19 @@ public class Customer extends Person{
     private int customerId;
     private boolean isActive;
     private String passwordSalt;
+    private MenuButton action;
+    private MenuItem item1 = new MenuItem("View");
+    private MenuItem item2 = new MenuItem("Remove");
 
     public Customer(String firstName, String lastName, String email, String phoneNumber,String nicNumber, int monthlyPlan) {
         super(firstName, lastName, email, "gender", phoneNumber, "userName", "password", nicNumber);
         this.monthlyPlan = monthlyPlan;
+        this.action = new MenuButton("Action");
+        action.getItems().addAll(item1,item2);
+        item1.setOnAction(event ->
+        {
+
+        });
     }
 
     public Customer( String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String nicNumber, String address, String dob, String weight, int monthlyPlan, int customerId, String passwordSalt) {
@@ -28,6 +44,14 @@ public class Customer extends Person{
         this.monthlyPlan = monthlyPlan;
         this.customerId = customerId;
         this.passwordSalt = passwordSalt;
+    }
+
+    public MenuButton getAction() {
+        return action;
+    }
+
+    public void setAction(MenuButton action) {
+        this.action = action;
     }
 
     public Package getMonthlyPackage() {
