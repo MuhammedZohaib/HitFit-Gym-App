@@ -5,15 +5,16 @@ import java.util.Date;
 public class Expense {
 
     private String title;
-    private double amount;
-    private Date date;
-    private String specialNotes;
+    private int amount;
+    private Date selectedDate;
 
-    public Expense(String title, double amount, Date date, String specialNotes) {
+    long systemCurrentTime = System.currentTimeMillis();
+    private java.sql.Date createdDate;
+
+    public Expense(String title, int amount) {
         this.title = title;
         this.amount = amount;
-        this.date = date;
-        this.specialNotes = specialNotes;
+        this.createdDate = new java.sql.Date(systemCurrentTime);
     }
 
     public String getTitle() {
@@ -24,27 +25,12 @@ public class Expense {
         this.title = title;
     }
 
-    public double getAmount() {
+    public int getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public String getSpecialNotes() {
-        return specialNotes;
-    }
-
-    public void setSpecialNotes(String specialNotes) {
-        this.specialNotes = specialNotes;
-    }
 }

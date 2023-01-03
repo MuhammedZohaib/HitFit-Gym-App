@@ -112,9 +112,9 @@ public class Email {
 
     }
 
-    public static boolean checkEmail(String email) {
+    public static boolean checkEmail(String email, String choice) {
 
-        ArrayList<String> allEmails = DatabaseFunctions.getAllEmails();
+        ArrayList<String> allEmails = DatabaseFunctions.getAllEmails(choice);
 
         assert allEmails != null;
         for (String e : allEmails) {
