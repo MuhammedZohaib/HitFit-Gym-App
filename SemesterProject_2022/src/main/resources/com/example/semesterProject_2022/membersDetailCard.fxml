@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="Main" onMouseDragged="#dragWindow" onMousePressed="#pressedWindow" prefHeight="513.0" prefWidth="327.0" styleClass="background" stylesheets="@CSS/Main_App.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.MembersDetailCard_Controller">
+   <children>
+      <Text fill="WHITE" layoutX="80.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Members Detail Card" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fill="#0094eb" layoutX="21.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Personal Info">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2c5d600" height="104.0" layoutX="21.0" layoutY="74.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.5" width="286.0" />
+      <Text fill="WHITE" layoutX="31.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Full Name">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="31.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Weight">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="31.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Address">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#0094eb" layoutX="23.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Info">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2c5d600" height="77.0" layoutX="23.0" layoutY="219.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.5" width="286.0" />
+      <Text fill="WHITE" layoutX="33.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="33.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#0094eb" layoutX="24.0" layoutY="325.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Package Info">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b2c5d600" height="77.0" layoutX="24.0" layoutY="338.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="0.5" width="286.0" />
+      <Text fill="WHITE" layoutX="37.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Package ">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="37.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pricing">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Button fx:id="closeButton" layoutX="105.0" layoutY="446.0" mnemonicParsing="false" onAction="#closebtn" prefHeight="31.0" prefWidth="107.0" style="-fx-background-radius: 14; -fx-font-size: 14;" styleClass="buttoncolor" stylesheets="@CSS/Main_App.css" text="Close" textFill="WHITE" />
+      <Text fx:id="fullName" fill="WHITE" layoutX="97.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saad Suleman" />
+      <Text fx:id="weight" fill="WHITE" layoutX="97.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="80 kg" />
+      <Text fx:id="address" fill="WHITE" layoutX="98.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XYZ XYZ XYZ XYZ XYZ XYZ " />
+      <Text fx:id="email" fill="WHITE" layoutX="97.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saadfacebooks4567@gmail.com" />
+      <Text fx:id="username" fill="WHITE" layoutX="98.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ssulemans37" />
+      <Text fx:id="packagetype" fill="WHITE" layoutX="99.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starter" />
+      <Text fx:id="packageprice" fill="WHITE" layoutX="99.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs. 4500" />
+   </children>
+</AnchorPane>

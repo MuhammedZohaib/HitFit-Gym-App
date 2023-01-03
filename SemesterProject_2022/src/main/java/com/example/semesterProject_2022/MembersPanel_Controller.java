@@ -6,20 +6,36 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.effect.GaussianBlur;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import model_class.Customer;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
 public class MembersPanel_Controller implements Initializable {
 
-    Stage stage;
+    private final static int DataSize = 100;
+    private final static int rowsPerPage = 5;
+    @FXML
+    private Pagination pagination;
+
+    Stage membercardstage;
+
     Customer customer = null;
+
     private String FullName;
     @FXML
     private TableColumn<Customer, MenuButton> action;
@@ -49,6 +65,7 @@ public class MembersPanel_Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        pagination.setPageFactory(this::createPage);
 
         try {
             loadData();
@@ -57,9 +74,22 @@ public class MembersPanel_Controller implements Initializable {
         }
     }
 
-    public void view()
-    {
+    private Node createPage(int pageIndex) {
+        int fromIndex = pageIndex * rowsPerPage;
+        int toIndex = Math.min(fromIndex+rowsPerPage, memberslist.size());
+        membersView.setItems(FXCollections.observableList(memberslist.subList(fromIndex, toIndex)));
+        return membersView;
+    }
 
+    public void view() throws IOException {
+        membercardstage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("membersDetailCard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        membercardstage.setScene(scene);
+        membercardstage.initStyle(StageStyle.UNDECORATED);
+        membercardstage.initModality(Modality.APPLICATION_MODAL);
+        membercardstage.showAndWait();
+        membercardstage.centerOnScreen();
     }
     public void loadData() throws SQLException {
         showrecords();
@@ -80,8 +110,7 @@ public class MembersPanel_Controller implements Initializable {
 
              while (resultSet.next()) {
                  memberslist.add(new Customer(resultSet.getString("first_name"), resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("phone_number"), resultSet.getString("nic"), Integer.parseInt(resultSet.getString("monthly_plan"))));
-                 membersView.setItems(memberslist);
-                 System.out.println(memberslist.get(0));
+                // membersView.setItems(memberslist);
              }
          }
 
