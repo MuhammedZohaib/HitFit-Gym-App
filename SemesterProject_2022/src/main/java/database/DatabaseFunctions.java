@@ -14,6 +14,10 @@ public class DatabaseFunctions {
 
     private static Connection dbConnection = null;
 
+    public static int customersListCount;
+    public static int employeesListCount;
+    public static int totalList;
+
     public static boolean makeConnection() {
         try {
             dbConnection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
@@ -89,8 +93,8 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("""
-                    INSERT INTO employees (id, first_name, last_name, designation, nic_number, salary, gender, phone_number, joining_date, username, password, salt, access)
-                    VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?);""");
+                    INSERT INTO employees (id, first_name, last_name, designation, nic_number, salary, gender, phone_number, joining_date, username, password, salt, access,email)
+                    VALUE (?,?,?,?,?,?,?,?,?,?,?,?,?,?);""");
 
             queryStatement.setInt(1, employee.getId());
             queryStatement.setString(2, employee.getFirstName());
@@ -105,6 +109,7 @@ public class DatabaseFunctions {
             queryStatement.setString(11, employee.getPassword());
             queryStatement.setString(12, employee.getSalt());
             queryStatement.setInt(13, employee.getAccess());
+            queryStatement.setString(14, employee.getEmail());
 
             queryStatement.executeUpdate();
             return true;
@@ -232,96 +237,129 @@ public class DatabaseFunctions {
 
     }
 
-    public static ArrayList<String> getAllUsernames(String choice) {
+    public static ArrayList<String> getEmployeePassword(String employeeUsernameEmail) {
+
+        ArrayList<String> saltPassArray = new ArrayList<>();
+
+        switch (Login.queryOption) {
+            case "username" -> {
+                try {
+                    PreparedStatement queryStatement = dbConnection.prepareStatement("SELECT * FROM employees WHERE username = ?");
+                    queryStatement.setString(1, employeeUsernameEmail);
+                    ResultSet resultSet = queryStatement.executeQuery();
+
+                    while (resultSet.next()) {
+                        saltPassArray.add(resultSet.getString("salt"));
+                        saltPassArray.add(resultSet.getString("password"));
+                    }
+
+                } catch (SQLException e) {
+                    System.out.println("Error in retrieving customer: " + e);
+                }
+            }
+
+            case "email" -> {
+                try {
+                    PreparedStatement queryStatement = dbConnection.prepareStatement("SELECT * FROM employees WHERE email = ?");
+                    queryStatement.setString(1, employeeUsernameEmail);
+                    ResultSet resultSet = queryStatement.executeQuery();
+
+                    while (resultSet.next()) {
+                        saltPassArray.add(resultSet.getString("salt"));
+                        saltPassArray.add(resultSet.getString("password"));
+                    }
+
+
+                } catch (SQLException e) {
+                    System.out.println("Error in retrieving customer: " + e);
+                }
+            }
+        }
+
+        return saltPassArray;
+
+    }
+
+    public static ArrayList<String> getAllUsernames() {
 
         ResultSet allUsernamesRs = null;
         PreparedStatement queryStatement = null;
         ArrayList<String> allUsernames = new ArrayList<>();
 
-        switch (choice) {
-            case "customer" -> {
-                try {
-                    queryStatement = dbConnection.prepareStatement("""
-                            SELECT username FROM customers;""");
 
-                    allUsernamesRs = queryStatement.executeQuery();
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT username FROM customers;""");
 
-                    while (allUsernamesRs.next()) {
-                        allUsernames.add(allUsernamesRs.getString(1));
-                    }
+            allUsernamesRs = queryStatement.executeQuery();
 
-                    return allUsernames;
-
-                } catch (SQLException e) {
-                    System.out.println("Error in retrieving usernames: " + e);
-                }
+            while (allUsernamesRs.next()) {
+                allUsernames.add(allUsernamesRs.getString(1));
+                customersListCount++;
             }
-            case "employee" -> {
-                try {
-                    queryStatement = dbConnection.prepareStatement("""
-                            SELECT username FROM employees;""");
 
-                    allUsernamesRs = queryStatement.executeQuery();
-
-                    while (allUsernamesRs.next()) {
-                        allUsernames.add(allUsernamesRs.getString(1));
-                    }
-
-                    return allUsernames;
-
-                } catch (SQLException e) {
-                    System.out.println("Error in retrieving usernames: " + e);
-                }
-            }
+        } catch (SQLException e) {
+            System.out.println("Error in retrieving usernames: " + e);
         }
 
-        return null;
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT username FROM employees;""");
+
+            allUsernamesRs = queryStatement.executeQuery();
+
+            while (allUsernamesRs.next()) {
+                allUsernames.add(allUsernamesRs.getString(1));
+                employeesListCount++;
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error in retrieving usernames: " + e);
+        }
+
+        return allUsernames;
+
     }
 
-    public static ArrayList<String> getAllEmails(String choice) {
+    public static ArrayList<String> getAllEmails() {
 
         ResultSet allEmailsRs = null;
         PreparedStatement queryStatement = null;
         ArrayList<String> allEmails = new ArrayList<>();
 
-        switch (choice) {
-            case "customer" -> {
-                try {
-                    queryStatement = dbConnection.prepareStatement("""
-                            SELECT email FROM customers;""");
 
-                    allEmailsRs = queryStatement.executeQuery();
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT email FROM customers;""");
 
-                    while (allEmailsRs.next()) {
-                        allEmails.add(allEmailsRs.getString(1));
-                    }
+            allEmailsRs = queryStatement.executeQuery();
 
-                    return allEmails;
-
-                } catch (SQLException e) {
-                    System.out.println("Error in retrieving usernames: " + e);
-                }
+            while (allEmailsRs.next()) {
+                allEmails.add(allEmailsRs.getString(1));
             }
-            case "employee" -> {
-                try {
-                    queryStatement = dbConnection.prepareStatement("""
-                            SELECT email FROM employees;""");
 
-                    allEmailsRs = queryStatement.executeQuery();
 
-                    while (allEmailsRs.next()) {
-                        allEmails.add(allEmailsRs.getString(1));
-                    }
-
-                    return allEmails;
-
-                } catch (SQLException e) {
-                    System.out.println("Error in retrieving usernames: " + e);
-                }
-            }
+        } catch (SQLException e) {
+            System.out.println("Error in retrieving usernames: " + e);
         }
 
-        return null;
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT email FROM employees;""");
+
+            allEmailsRs = queryStatement.executeQuery();
+
+            while (allEmailsRs.next()) {
+                allEmails.add(allEmailsRs.getString(1));
+            }
+
+
+        } catch (SQLException e) {
+            System.out.println("Error in retrieving usernames: " + e);
+        }
+
+
+        return allEmails;
     }
 
     public static int getNumberOfCustomers() {
@@ -346,6 +384,13 @@ public class DatabaseFunctions {
         }
 
         return allCustomers;
+    }
+
+    public static int getTotalList() {
+
+        totalList = customersListCount + employeesListCount;
+        return totalList;
+
     }
 
     public static int generateId(String choice) {
