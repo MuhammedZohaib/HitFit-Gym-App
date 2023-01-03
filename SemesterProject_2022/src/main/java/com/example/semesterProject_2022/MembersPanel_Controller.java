@@ -28,7 +28,7 @@ import java.util.ResourceBundle;
 public class MembersPanel_Controller implements Initializable {
 
     private final static int DataSize = 100;
-    private final static int rowsPerPage = 5;
+    private final static int rowsPerPage = 10;
     @FXML
     private Pagination pagination;
 
@@ -75,6 +75,27 @@ public class MembersPanel_Controller implements Initializable {
     }
 
     private Node createPage(int pageIndex) {
+        if(memberslist.size()>0 && memberslist.size()<=10) {
+            pagination.setPageCount(1);
+        } else if(memberslist.size()>10 && memberslist.size()<=20)
+        {
+            pagination.setPageCount(2);
+        } else if(memberslist.size()>20 && memberslist.size()<=30)
+        {
+            pagination.setPageCount(3);
+        } else if(memberslist.size()>30 && memberslist.size()<=40)
+        {
+            pagination.setPageCount(4);
+        } else if(memberslist.size()>40 && memberslist.size()<=50)
+        {
+            pagination.setPageCount(5);
+        } else if(memberslist.size()>50 && memberslist.size()<=60)
+        {
+            pagination.setPageCount(6);
+        } else if(memberslist.size()>60 && memberslist.size()<=70)
+        {
+            pagination.setPageCount(7);
+        }
         int fromIndex = pageIndex * rowsPerPage;
         int toIndex = Math.min(fromIndex+rowsPerPage, memberslist.size());
         membersView.setItems(FXCollections.observableList(memberslist.subList(fromIndex, toIndex)));
