@@ -7,6 +7,7 @@ import javafx.event.EventHandler;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class Customer extends Person{
@@ -32,7 +33,11 @@ public class Customer extends Person{
         action.getItems().addAll(item1,item2);
         item1.setOnAction(event ->
         {
-
+            try {
+                new MembersPanel_Controller().view();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         });
     }
 

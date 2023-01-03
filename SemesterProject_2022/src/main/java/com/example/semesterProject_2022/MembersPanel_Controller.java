@@ -6,20 +6,36 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.effect.GaussianBlur;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import model_class.Customer;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
 
 public class MembersPanel_Controller implements Initializable {
 
-    Stage stage;
+    private final static int DataSize = 100;
+    private final static int rowsPerPage = 10;
+    @FXML
+    private Pagination pagination;
+
+    Stage membercardstage;
+
     Customer customer = null;
+
     private String FullName;
     @FXML
     private TableColumn<Customer, MenuButton> action;
@@ -49,6 +65,7 @@ public class MembersPanel_Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        pagination.setPageFactory(this::createPage);
 
         try {
             loadData();
@@ -57,9 +74,43 @@ public class MembersPanel_Controller implements Initializable {
         }
     }
 
-    public void view()
-    {
+    private Node createPage(int pageIndex) {
+        if(memberslist.size()>0 && memberslist.size()<=10) {
+            pagination.setPageCount(1);
+        } else if(memberslist.size()>10 && memberslist.size()<=20)
+        {
+            pagination.setPageCount(2);
+        } else if(memberslist.size()>20 && memberslist.size()<=30)
+        {
+            pagination.setPageCount(3);
+        } else if(memberslist.size()>30 && memberslist.size()<=40)
+        {
+            pagination.setPageCount(4);
+        } else if(memberslist.size()>40 && memberslist.size()<=50)
+        {
+            pagination.setPageCount(5);
+        } else if(memberslist.size()>50 && memberslist.size()<=60)
+        {
+            pagination.setPageCount(6);
+        } else if(memberslist.size()>60 && memberslist.size()<=70)
+        {
+            pagination.setPageCount(7);
+        }
+        int fromIndex = pageIndex * rowsPerPage;
+        int toIndex = Math.min(fromIndex+rowsPerPage, memberslist.size());
+        membersView.setItems(FXCollections.observableList(memberslist.subList(fromIndex, toIndex)));
+        return membersView;
+    }
 
+    public void view() throws IOException {
+        membercardstage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("membersDetailCard.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        membercardstage.setScene(scene);
+        membercardstage.initStyle(StageStyle.UNDECORATED);
+        membercardstage.initModality(Modality.APPLICATION_MODAL);
+        membercardstage.showAndWait();
+        membercardstage.centerOnScreen();
     }
     public void loadData() throws SQLException {
         showrecords();
@@ -80,8 +131,7 @@ public class MembersPanel_Controller implements Initializable {
 
              while (resultSet.next()) {
                  memberslist.add(new Customer(resultSet.getString("first_name"), resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("phone_number"), resultSet.getString("nic"), Integer.parseInt(resultSet.getString("monthly_plan"))));
-                 membersView.setItems(memberslist);
-                 System.out.println(memberslist.get(0));
+                // membersView.setItems(memberslist);
              }
          }
 

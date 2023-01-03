@@ -39,20 +39,25 @@
          <center>
             <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <center>
-                  <TableView fx:id="membersView" fixedCellSize="0.0" prefHeight="167.0" prefWidth="739.0" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER">
-                     <columns>
-                        <TableColumn id="firstcol" fx:id="FirstName" prefWidth="120.0" text="First Name" />
-                        <TableColumn fx:id="LastName" prefWidth="120.0" text="Last Name" />
-                        <TableColumn fx:id="nic" prefWidth="120.0" styleClass="transparent_col" text="NIC" />
-                        <TableColumn fx:id="email" prefWidth="250.0" text="Email" />
-                        <TableColumn fx:id="plan" minWidth="0.0" prefWidth="120.0" text="Monthly Plan" />
-                        <TableColumn fx:id="phone" minWidth="0.0" prefWidth="120.0" text="Phone No" />
-                        <TableColumn id="firstcol" fx:id="action" prefWidth="141.0" text="Action" />
-                     </columns>
+                  <AnchorPane prefHeight="320.0" prefWidth="745.0" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets bottom="20.0" left="165.0" right="140.0" top="-50.0" />
                      </BorderPane.margin>
-                  </TableView>
+                     <children>
+                        <TableView fx:id="membersView" fixedCellSize="0.0" prefHeight="232.0" prefWidth="739.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TableColumn id="firstcol" fx:id="FirstName" prefWidth="120.0" text="First Name" />
+                              <TableColumn fx:id="LastName" prefWidth="120.0" text="Last Name" />
+                              <TableColumn fx:id="nic" prefWidth="120.0" styleClass="transparent_col" text="NIC" />
+                              <TableColumn fx:id="email" prefWidth="250.0" text="Email" />
+                              <TableColumn fx:id="plan" minWidth="0.0" prefWidth="120.0" text="Monthly Plan" />
+                              <TableColumn fx:id="phone" minWidth="0.0" prefWidth="120.0" text="Phone No" />
+                              <TableColumn id="firstcol" fx:id="action" prefWidth="141.0" text="Action" />
+                           </columns>
+                        </TableView>
+                        <Pagination fx:id="pagination" pageCount="10" prefHeight="309.0" prefWidth="739.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
                </center>
                <top>
                   <AnchorPane prefHeight="175.0" prefWidth="697.0" styleClass="searchpane" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER">
@@ -147,9 +152,6 @@
                      </children>
                   </AnchorPane>
                </top>
-               <bottom>
-                  <Pagination pageCount="10" prefHeight="0.0" prefWidth="1044.0" BorderPane.alignment="CENTER" />
-               </bottom>
             </BorderPane>
          </center>
         </BorderPane>
