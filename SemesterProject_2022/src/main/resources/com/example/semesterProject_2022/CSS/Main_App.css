@@ -208,4 +208,10 @@
 .background{
     -fx-background-color: linear-gradient(to left, rgba(3, 3, 44, 0.8), rgba(48, 58, 75, 0.5));
 }
+#bg{
+    -fx-background-image: url("Main_Images/Explore.gif");
+    -fx-background-size: 100%;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
 
