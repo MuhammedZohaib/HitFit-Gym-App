@@ -232,66 +232,96 @@ public class DatabaseFunctions {
 
     }
 
-    public static ArrayList<String> getAllUsernames() {
+    public static ArrayList<String> getAllUsernames(String choice) {
 
         ResultSet allUsernamesRs = null;
         PreparedStatement queryStatement = null;
         ArrayList<String> allUsernames = new ArrayList<>();
 
-        try {
-            queryStatement = dbConnection.prepareStatement("""
-                    SELECT username FROM customers;""");
+        switch (choice) {
+            case "customer" -> {
+                try {
+                    queryStatement = dbConnection.prepareStatement("""
+                            SELECT username FROM customers;""");
 
-            allUsernamesRs = queryStatement.executeQuery();
+                    allUsernamesRs = queryStatement.executeQuery();
 
-            while (allUsernamesRs.next()) {
-                allUsernames.add(allUsernamesRs.getString(1));
+                    while (allUsernamesRs.next()) {
+                        allUsernames.add(allUsernamesRs.getString(1));
+                    }
+
+                    return allUsernames;
+
+                } catch (SQLException e) {
+                    System.out.println("Error in retrieving usernames: " + e);
+                }
             }
+            case "employee" -> {
+                try {
+                    queryStatement = dbConnection.prepareStatement("""
+                            SELECT username FROM employees;""");
 
-            return allUsernames;
+                    allUsernamesRs = queryStatement.executeQuery();
 
-        } catch (SQLException e) {
-            System.out.println("Error in retrieving usernames: " + e);
+                    while (allUsernamesRs.next()) {
+                        allUsernames.add(allUsernamesRs.getString(1));
+                    }
+
+                    return allUsernames;
+
+                } catch (SQLException e) {
+                    System.out.println("Error in retrieving usernames: " + e);
+                }
+            }
         }
 
         return null;
     }
 
-    public static ArrayList<String> getAllEmails() {
+    public static ArrayList<String> getAllEmails(String choice) {
 
         ResultSet allEmailsRs = null;
         PreparedStatement queryStatement = null;
         ArrayList<String> allEmails = new ArrayList<>();
 
-        try {
-            queryStatement = dbConnection.prepareStatement("""
-                    SELECT email FROM customers;""");
+        switch (choice) {
+            case "customer" -> {
+                try {
+                    queryStatement = dbConnection.prepareStatement("""
+                            SELECT email FROM customers;""");
 
-            allEmailsRs = queryStatement.executeQuery();
+                    allEmailsRs = queryStatement.executeQuery();
 
-            while (allEmailsRs.next()) {
-                allEmails.add(allEmailsRs.getString(1));
+                    while (allEmailsRs.next()) {
+                        allEmails.add(allEmailsRs.getString(1));
+                    }
+
+                    return allEmails;
+
+                } catch (SQLException e) {
+                    System.out.println("Error in retrieving usernames: " + e);
+                }
             }
+            case "employee" -> {
+                try {
+                    queryStatement = dbConnection.prepareStatement("""
+                            SELECT email FROM employees;""");
 
-            return allEmails;
+                    allEmailsRs = queryStatement.executeQuery();
 
-        } catch (SQLException e) {
-            System.out.println("Error in retrieving usernames: " + e);
+                    while (allEmailsRs.next()) {
+                        allEmails.add(allEmailsRs.getString(1));
+                    }
+
+                    return allEmails;
+
+                } catch (SQLException e) {
+                    System.out.println("Error in retrieving usernames: " + e);
+                }
+            }
         }
 
         return null;
-    }
-
-    public static ArrayList<String>[] getUsernamesEmails() {
-
-        ArrayList<String>[] allUsernamePasswords = new ArrayList[2];
-        ArrayList<String> allUsers = getAllUsernames();
-        ArrayList<String> allEmails = getAllEmails();
-
-        allUsernamePasswords[0] = allUsers;
-        allUsernamePasswords[1] = allEmails;
-
-        return allUsernamePasswords;
     }
 
     public static int getNumberOfCustomers() {
@@ -367,8 +397,4 @@ public class DatabaseFunctions {
         }
     }
 
-    public Connection getDbConnection() {
-        makeConnection();
-        return dbConnection;
-    }
 }

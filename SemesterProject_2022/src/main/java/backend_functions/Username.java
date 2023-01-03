@@ -8,9 +8,9 @@ import java.util.ArrayList;
 
 public class Username {
 
-    public static boolean checkUsername(String username) {
+    public static boolean checkUsername(String username, String choice) {
 
-        ArrayList<String> allUsernames = DatabaseFunctions.getAllUsernames();
+        ArrayList<String> allUsernames = DatabaseFunctions.getAllUsernames(choice);
 
         assert allUsernames != null;
         for (String s : allUsernames) {

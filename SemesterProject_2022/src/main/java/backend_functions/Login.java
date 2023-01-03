@@ -10,7 +10,7 @@ public class Login {
     private boolean logInSuccessful;
     public static String queryOption;
 
-    public boolean checkUsernameEmail() {
+    public boolean checkUsernameEmail(String choice) {
 
         if (emailUsername.contains("@")) {
             queryOption = "email";
@@ -20,7 +20,7 @@ public class Login {
 
         switch (queryOption) {
             case "email" -> {
-                boolean tmp = Email.checkEmail(emailUsername);
+                boolean tmp = Email.checkEmail(emailUsername, choice);
                 if (tmp) {
                     System.out.println("Email already exists");
                     return false;
@@ -29,7 +29,7 @@ public class Login {
                 }
             }
             case "username" -> {
-                boolean tmp1 = Username.checkUsername(emailUsername);
+                boolean tmp1 = Username.checkUsername(emailUsername, choice);
                 if (tmp1) {
                     System.out.println("Username already exists");
                     return false;
