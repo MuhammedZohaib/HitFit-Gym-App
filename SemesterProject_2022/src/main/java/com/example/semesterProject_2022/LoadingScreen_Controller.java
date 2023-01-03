@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -19,6 +20,9 @@ public class LoadingScreen_Controller implements Initializable {
     public Scene scene;
     @FXML
     private AnchorPane loadingStage;
+    @FXML
+    public Text LoadingText;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         // anonymous object
@@ -39,12 +43,12 @@ public class LoadingScreen_Controller implements Initializable {
                     public void run() {
 
                         try {
-                            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginSignUp.fxml"));
-                            scene = new Scene(fxmlLoader.load());
-                            stage.setScene(scene);
-                            stage.initStyle(StageStyle.UNDECORATED);
-                            stage.show();
-                            loadingStage.getScene().getWindow().hide();
+                                FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginSignUp.fxml"));
+                                scene = new Scene(fxmlLoader.load());
+                                stage.setScene(scene);
+                                stage.initStyle(StageStyle.UNDECORATED);
+                                stage.show();
+                                loadingStage.getScene().getWindow().hide();
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }

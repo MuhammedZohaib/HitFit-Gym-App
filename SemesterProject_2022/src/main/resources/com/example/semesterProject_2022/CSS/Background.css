@@ -1,6 +1,6 @@
 #anchorpane_login{
     -fx-background-image: url("Main_Images/bg.png");
-    -fx-background-size: cover;
+    -fx-background-size: 100%;
     -fx-background-position: center;
     -fx-background-repeat: no-repeat;
 }

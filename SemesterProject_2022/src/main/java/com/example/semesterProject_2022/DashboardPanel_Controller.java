@@ -1,5 +1,6 @@
 package com.example.semesterProject_2022;
 
+import database.DatabaseFunctions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -51,13 +52,15 @@ public class DashboardPanel_Controller implements Initializable {
     private StackPane memberstckpane;
     @FXML
     public ScrollPane scrollpanedashboard = new ScrollPane();
-
-
     @FXML
-    private Text monthlyExpense;
+    public static Text monthlyExpense;
 
     @FXML
     private Text monthlyMembers;
+
+    public static Text getMonthlyExpense() {
+        return monthlyExpense;
+    }
 
     @FXML
     private Text monthlyRevenue;
@@ -70,15 +73,10 @@ public class DashboardPanel_Controller implements Initializable {
 
     @FXML
     private StackPane ExpensestckPane;
-
-
     @FXML
     private AnchorPane recentPane;
     @FXML
     private StackPane itemstckpane;
-
-    @FXML
-    private Text totalMembers;
     @FXML
     private StackPane querystckpane;
 
@@ -87,6 +85,9 @@ public class DashboardPanel_Controller implements Initializable {
 
     @FXML
     private BarChart<?,? > monthlyExpenseChart;
+    @FXML
+    private Text totalMembers;
+    private int noOfCustomers;
 
     @FXML
     void CompeleteBtn(ActionEvent event) {
@@ -234,6 +235,13 @@ public class DashboardPanel_Controller implements Initializable {
         series1.getData().add(new XYChart.Data<>("11", 100000));
         series1.getData().add(new XYChart.Data<>("12", 100000));
         monthlyExpenseChart.getData().add(series1);
+        try{
+            noOfCustomers = DatabaseFunctions.getNumberOfCustomers();
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+        totalMembers.setText(String.valueOf(noOfCustomers));
 
 
     }

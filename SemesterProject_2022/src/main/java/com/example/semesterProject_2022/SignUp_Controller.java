@@ -40,7 +40,7 @@ public class SignUp_Controller {
     String errorStyle = "-fx-border-color: #ff0000; -fx-border-width: 3px; -fx-border-radius:12px";
     String resetStyle = "-fx-border-color: transparent; -fx-border-width: 3px; -fx-border-radius:12px";
 
-    String alphabetRegex = "^[a-zA-Z]*$";
+    String alphabetRegex = "^[a-zA-Z ]*$";
     String numericRegex = "^[0-9]*$";
 
     @FXML

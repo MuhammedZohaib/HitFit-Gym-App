@@ -39,6 +39,10 @@ public class LoginSignUp_Controller {
     public void switchToAdminLogin(ActionEvent e) throws IOException {
         new  GeneralFunctions().switchScene(e,"AdminLoginForm.fxml");
     }
+    public void switchToExplore(ActionEvent e) throws IOException {
+        new  GeneralFunctions().switchScene(e,"Explore.fxml");
+    }
+
 
     @FXML
     public void close(){

@@ -60,7 +60,7 @@
                                                 </Text>
                                              </center>
                                              <bottom>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Members" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                                                <Text fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Members" textAlignment="CENTER" BorderPane.alignment="CENTER">
                                                    <font>
                                                       <Font name="System Italic" size="18.0" />
                                                    </font>
@@ -86,7 +86,7 @@
                                        <center>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                                              <center>
-                                                <Text fx:id="membershipsDue" strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
+                                                <Text fx:id="membershipsDue" fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font>
@@ -96,7 +96,7 @@
                                                 </Text>
                                              </center>
                                              <bottom>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Memberships Due" BorderPane.alignment="CENTER">
+                                                <Text fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="Memberships Due" BorderPane.alignment="CENTER">
                                                    <BorderPane.margin>
                                                       <Insets bottom="32.0" />
                                                    </BorderPane.margin>
@@ -120,7 +120,7 @@
                                           <AnchorPane prefHeight="23.0" prefWidth="270.0" styleClass="patches_top" BorderPane.alignment="CENTER" />
                                        </top>
                                        <center>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
+                                          <Text fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="24" BorderPane.alignment="CENTER">
                                              <BorderPane.margin>
                                                 <Insets top="22.0" />
                                              </BorderPane.margin>
@@ -130,7 +130,7 @@
                                           </Text>
                                        </center>
                                        <bottom>
-                                          <Text fx:id="pendingPayments" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Payments" BorderPane.alignment="CENTER">
+                                          <Text fx:id="pendingPayments" fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="Pending Payments" BorderPane.alignment="CENTER">
                                              <BorderPane.margin>
                                                 <Insets bottom="50.0" />
                                              </BorderPane.margin>
@@ -152,7 +152,7 @@
                                           <AnchorPane prefHeight="23.0" prefWidth="240.0" styleClass="patches_top" BorderPane.alignment="CENTER" />
                                        </top>
                                        <bottom>
-                                          <Text fx:id="monthlyMembers" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Revenue" BorderPane.alignment="CENTER">
+                                          <Text fx:id="monthlyMembers" fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Revenue" BorderPane.alignment="CENTER">
                                              <BorderPane.margin>
                                                 <Insets bottom="50.0" />
                                              </BorderPane.margin>
@@ -164,12 +164,12 @@
                                        <center>
                                           <AnchorPane prefHeight="46.0" prefWidth="240.0" BorderPane.alignment="CENTER">
                                              <children>
-                                                <Text layoutX="35.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs." AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="26.72265625">
+                                                <Text fill="#232f42" layoutX="35.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs." AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="26.72265625">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="monthlyprofit1" layoutX="77.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100000" wrappingWidth="112.78466796875" AnchorPane.leftAnchor="77.45133463541667" AnchorPane.rightAnchor="49.21533203125">
+                                                <Text fx:id="monthlyprofit1" fill="#232f42" layoutX="77.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100000" wrappingWidth="112.78466796875" AnchorPane.leftAnchor="77.45133463541667" AnchorPane.rightAnchor="49.21533203125">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font>
@@ -193,7 +193,7 @@
                                           <AnchorPane prefHeight="23.0" prefWidth="270.0" styleClass="patches_top" BorderPane.alignment="CENTER" />
                                        </top>
                                        <center>
-                                          <Text fx:id="monthlyExpense" strokeType="OUTSIDE" strokeWidth="0.0" text="4" BorderPane.alignment="CENTER">
+                                          <Text fx:id="monthlyExpense" fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="4" BorderPane.alignment="CENTER">
                                              <BorderPane.margin>
                                                 <Insets />
                                              </BorderPane.margin>
@@ -203,7 +203,7 @@
                                           </Text>
                                        </center>
                                        <bottom>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Queries" BorderPane.alignment="CENTER">
+                                          <Text fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Expense" BorderPane.alignment="CENTER">
                                              <BorderPane.margin>
                                                 <Insets bottom="50.0" />
                                              </BorderPane.margin>
@@ -227,12 +227,12 @@
                                        <center>
                                           <AnchorPane prefHeight="46.0" prefWidth="240.0" BorderPane.alignment="CENTER">
                                              <children>
-                                                <Text layoutX="35.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs." AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="24.72265625">
+                                                <Text fill="#232f42" layoutX="35.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs." AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="24.72265625">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="monthlyprofit" layoutX="77.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100000" wrappingWidth="112.78466796875" AnchorPane.leftAnchor="77.45133463541667" AnchorPane.rightAnchor="49.21533203125">
+                                                <Text fx:id="monthlyprofit" fill="#232f42" layoutX="77.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100000" wrappingWidth="112.78466796875" AnchorPane.leftAnchor="77.45133463541667" AnchorPane.rightAnchor="49.21533203125">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font>
@@ -244,7 +244,7 @@
                                           </AnchorPane>
                                        </center>
                                        <bottom>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Profit" BorderPane.alignment="CENTER">
+                                          <Text fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly Profit" BorderPane.alignment="CENTER">
                                              <BorderPane.margin>
                                                 <Insets bottom="50.0" top="-20.0" />
                                              </BorderPane.margin>
