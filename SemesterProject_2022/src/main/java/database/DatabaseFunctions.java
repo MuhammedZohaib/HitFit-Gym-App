@@ -14,7 +14,9 @@ public class DatabaseFunctions {
 
     private static Connection dbConnection = null;
 
-    private String isEmployeeOrCustomer;
+    public static int customersListCount;
+    public static int employeesListCount;
+    public static int totalList;
 
     public static boolean makeConnection() {
         try {
@@ -293,6 +295,7 @@ public class DatabaseFunctions {
 
             while (allUsernamesRs.next()) {
                 allUsernames.add(allUsernamesRs.getString(1));
+                customersListCount++;
             }
 
         } catch (SQLException e) {
@@ -307,6 +310,7 @@ public class DatabaseFunctions {
 
             while (allUsernamesRs.next()) {
                 allUsernames.add(allUsernamesRs.getString(1));
+                employeesListCount++;
             }
 
         } catch (SQLException e) {
@@ -358,8 +362,6 @@ public class DatabaseFunctions {
         return allEmails;
     }
 
-
-
     public static int getNumberOfCustomers() {
 
         PreparedStatement queryStatement = null;
@@ -382,6 +384,13 @@ public class DatabaseFunctions {
         }
 
         return allCustomers;
+    }
+
+    public static int getTotalList() {
+
+        totalList = customersListCount + employeesListCount;
+        return totalList;
+
     }
 
     public static int generateId(String choice) {
@@ -431,12 +440,6 @@ public class DatabaseFunctions {
                 return 0;
             }
         }
-    }
-
-    public void setIsEmployeeOrCustomer(String choice){
-
-        this.isEmployeeOrCustomer = choice;
-
     }
 
 }

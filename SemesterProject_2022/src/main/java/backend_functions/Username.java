@@ -10,14 +10,23 @@ public class Username {
 
         ArrayList<String> allUsernames = DatabaseFunctions.getAllUsernames();
 
-        assert allUsernames != null;
+        int i = 0;
+
         for (String s : allUsernames) {
 
             if (s.equals(username)) {
                 System.out.println("Username found!");
-                return true;
-            }
+                
+                if (i <= DatabaseFunctions.customersListCount){
+                    Password.isCustomerOrEmployee = "customer";
+                    return true;
+                } else if (i > DatabaseFunctions.employeesListCount) {
+                    Password.isCustomerOrEmployee = "employee";
+                    System.out.println("Employee Logging in");
+                }
 
+            }
+            i++;
         }
         return false;
     }

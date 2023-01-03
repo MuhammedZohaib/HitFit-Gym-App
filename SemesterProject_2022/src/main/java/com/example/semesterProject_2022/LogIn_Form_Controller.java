@@ -67,7 +67,7 @@ public class LogIn_Form_Controller {
             EmailField.setText("");
         }
 
-        else if (newLogin.checkUsernameEmail("customer")) {
+        else if (newLogin.checkUsernameEmail()) {
             epValidation.setText("! Invalid email or username");
             EmailField.setStyle(errorStyle);
             EmailField.setText("");
@@ -85,7 +85,7 @@ public class LogIn_Form_Controller {
             PassField.setText("");
         }
 
-        else if (!newLogin.checkUsernameEmail("customer") && newLogin.userLoggedInStatus() && epValidation.getText().equals("") && passwordValidation.getText().equals("")) {
+        else if (!newLogin.checkUsernameEmail() && newLogin.userLoggedInStatus() && epValidation.getText().equals("") && passwordValidation.getText().equals("")) {
             new GeneralFunctions().switchScene(e, "Customer_Dashboard.fxml", screenBounds.getWidth(), screenBounds.getHeight());
 
         }

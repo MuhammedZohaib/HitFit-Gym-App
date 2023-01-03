@@ -10,7 +10,7 @@ public class Login {
     private boolean logInSuccessful;
     public static String queryOption;
 
-    public boolean checkUsernameEmail(String choice) {
+    public boolean checkUsernameEmail() {
 
         if (emailUsername.contains("@")) {
             queryOption = "email";

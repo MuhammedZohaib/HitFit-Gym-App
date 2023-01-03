@@ -114,12 +114,22 @@ public class Email {
 
         ArrayList<String> allEmails = DatabaseFunctions.getAllEmails();
 
+        int i = 0;
+
         for (String e : allEmails) {
 
             if (e.equals(email)) {
+                if (i <= DatabaseFunctions.customersListCount){
+                    Password.isCustomerOrEmployee = "customer";
+                    System.out.println("Customer logging in");
+                    return true;
+                } else if (i > DatabaseFunctions.employeesListCount) {
+                    Password.isCustomerOrEmployee = "employee";
+                    System.out.println("Employee Logging in");
+                }
                 return true;
             }
-
+            i++;
         }
 
         return false;
