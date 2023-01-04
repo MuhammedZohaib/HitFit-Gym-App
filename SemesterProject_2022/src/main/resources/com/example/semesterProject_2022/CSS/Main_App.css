@@ -206,7 +206,7 @@
     -fx-border-color: #00c2ff;
 }
 .background{
-    -fx-background-color: linear-gradient(to left, rgba(3, 3, 44, 0.8), rgba(48, 58, 75, 0.5));
+    -fx-background-color: linear-gradient(to right, #1b2e44,#354055);
 }
 #bg{
     -fx-background-image: url("Main_Images/Explore.gif");
@@ -215,3 +215,13 @@
     -fx-background-repeat: no-repeat;
 }
 
+#membersView .table-column
+{
+    -fx-alignment: Center;
+}
+
+#closeButton:hover
+{
+    -fx-cursor: hand;
+    -fx-background-color: #FFA400;
+}
