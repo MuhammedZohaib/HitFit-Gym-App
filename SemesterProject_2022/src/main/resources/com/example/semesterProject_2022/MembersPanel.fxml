@@ -39,23 +39,24 @@
          <center>
             <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <center>
-                  <AnchorPane prefHeight="320.0" prefWidth="745.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="344.0" prefWidth="805.0" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
-                        <Insets bottom="20.0" left="165.0" right="140.0" top="-50.0" />
+                        <Insets bottom="20.0" left="150.0" right="110.0" top="-50.0" />
                      </BorderPane.margin>
                      <children>
-                        <TableView fx:id="membersView" fixedCellSize="0.0" prefHeight="232.0" prefWidth="739.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="membersView" fixedCellSize="0.0" prefHeight="232.0" prefWidth="765.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="0.0">
                            <columns>
+                              <TableColumn id="firstcol" fx:id="Id" prefWidth="40.0" text="Id" />
                               <TableColumn id="firstcol" fx:id="FirstName" prefWidth="120.0" text="First Name" />
                               <TableColumn fx:id="LastName" prefWidth="120.0" text="Last Name" />
                               <TableColumn fx:id="nic" prefWidth="120.0" styleClass="transparent_col" text="NIC" />
                               <TableColumn fx:id="email" prefWidth="250.0" text="Email" />
                               <TableColumn fx:id="plan" minWidth="0.0" prefWidth="120.0" text="Monthly Plan" />
                               <TableColumn fx:id="phone" minWidth="0.0" prefWidth="120.0" text="Phone No" />
-                              <TableColumn id="firstcol" fx:id="action" prefWidth="141.0" text="Action" />
+                              <TableColumn fx:id="action" minWidth="0.0" prefWidth="120.0" text="Action" />
                            </columns>
                         </TableView>
-                        <Pagination fx:id="pagination" pageCount="10" prefHeight="309.0" prefWidth="739.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <Pagination fx:id="pagination" pageCount="10" prefHeight="309.0" prefWidth="750.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
                </center>
@@ -131,19 +132,22 @@
                                     <Insets />
                                  </BorderPane.margin>
                                  <center>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                    <AnchorPane prefHeight="141.0" prefWidth="741.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Text layoutX="74.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="All the members of the gym. You can add, delete or view the information about the members" wrappingWidth="643.2083282470703">
+                                          <Text layoutX="122.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="All the members of the gym. You can add, delete or view the information about the members" wrappingWidth="549.8750152587891" AnchorPane.bottomAnchor="29.33333333333333" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="43.0">
                                              <font>
                                                 <Font name="System Italic" size="13.0" />
                                              </font>
                                           </Text>
-                                          <ImageView fitHeight="69.0" fitWidth="32.0" layoutX="32.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
+                                          <ImageView fitHeight="69.0" fitWidth="32.0" layoutX="32.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="22.33333333333333" AnchorPane.leftAnchor="80.0" AnchorPane.rightAnchor="676.6666666666666" AnchorPane.topAnchor="37.0">
                                              <image>
                                                 <Image url="@BorderIcons/Members.png" />
                                              </image>
                                           </ImageView>
                                        </children>
+                                       <BorderPane.margin>
+                                          <Insets bottom="80.0" />
+                                       </BorderPane.margin>
                                     </AnchorPane>
                                  </center>
                               </BorderPane>

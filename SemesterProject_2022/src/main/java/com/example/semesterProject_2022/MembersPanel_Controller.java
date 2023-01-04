@@ -15,6 +15,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.effect.GaussianBlur;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Paint;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -27,6 +28,7 @@ import java.util.ResourceBundle;
 
 public class MembersPanel_Controller implements Initializable {
 
+
     private final static int DataSize = 100;
     private final static int rowsPerPage = 10;
     @FXML
@@ -38,13 +40,15 @@ public class MembersPanel_Controller implements Initializable {
 
     private String FullName;
     @FXML
+    private TableColumn<Customer, Integer> Id;
+    @FXML
     private TableColumn<Customer, MenuButton> action;
 
     @FXML
     private TableColumn<Customer, String> email;
 
     @FXML
-    private TableView<Customer> membersView;
+    public TableView<Customer> membersView;
 
     @FXML
     private TableColumn<Customer, String> FirstName;
@@ -60,11 +64,13 @@ public class MembersPanel_Controller implements Initializable {
     @FXML
     private TableColumn<Customer, Integer> plan;
 
-    ObservableList<Customer> memberslist = FXCollections.observableArrayList();
+    public static ObservableList<Customer> memberslist = FXCollections.observableArrayList();
     ResultSet resultSet = null;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        /*Button*/
+
         pagination.setPageFactory(this::createPage);
 
         try {
@@ -72,6 +78,7 @@ public class MembersPanel_Controller implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
     }
 
     private Node createPage(int pageIndex) {
@@ -114,13 +121,14 @@ public class MembersPanel_Controller implements Initializable {
     }
     public void loadData() throws SQLException {
         showrecords();
+        Id.setCellValueFactory(new PropertyValueFactory<>("Id"));
         FirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         LastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         email.setCellValueFactory(new PropertyValueFactory<>("email"));
         phone.setCellValueFactory(new PropertyValueFactory<>("phoneNumber"));
         nic.setCellValueFactory(new PropertyValueFactory<>("nicNumber"));
         plan.setCellValueFactory(new PropertyValueFactory<>("monthlyPlan"));
-        action.setCellValueFactory(new PropertyValueFactory<>("action"));
+        action.setCellValueFactory(new PropertyValueFactory<>("actionBtn"));
     }
 
      void showrecords() throws SQLException {
@@ -130,8 +138,9 @@ public class MembersPanel_Controller implements Initializable {
 
 
              while (resultSet.next()) {
-                 memberslist.add(new Customer(resultSet.getString("first_name"), resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("phone_number"), resultSet.getString("nic"), Integer.parseInt(resultSet.getString("monthly_plan"))));
-                // membersView.setItems(memberslist);
+                 memberslist.add(new Customer(resultSet.getInt("customer_id"),resultSet.getString("first_name"), resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("phone_number"), resultSet.getString("nic"), Integer.parseInt(resultSet.getString("monthly_plan")), new CustomMenuButton("Action", resultSet.getString("first_name")+" "+resultSet.getString("last_name"),resultSet.getString("weight"),"XYZ",resultSet.getString("email"),resultSet.getString("username"),resultSet.getString("monthly_plan"))));
+
+                 // membersView.setItems(memberslist);
              }
          }
 
@@ -139,4 +148,5 @@ public class MembersPanel_Controller implements Initializable {
                  System.out.println("Connection to Database Cannot Be Established");
              }
     }
+
 }
