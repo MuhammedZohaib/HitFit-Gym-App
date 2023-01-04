@@ -6,10 +6,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="600.0" prefWidth="1024.0" stylesheets="@CSS/Main_App.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.Explore_Controller">
+<AnchorPane prefHeight="583.0" prefWidth="1024.0" stylesheets="@CSS/Main_App.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.Explore_Controller">
    <children>
       <AnchorPane fx:id="stageBorderPane" prefHeight="35.0" prefWidth="1024.0" stylesheets="@CSS/Main_App.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
@@ -47,103 +49,138 @@
             </Text>
          </children>
       </AnchorPane>
-      <ScrollPane fitToWidth="true" layoutY="35.0" minHeight="564.0" minWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
+      <ScrollPane fitToWidth="true" layoutY="31.0" minHeight="553.0" minWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="33.0">
         <content>
-          <AnchorPane minHeight="2000.0" minWidth="1003.0" prefHeight="0.0" prefWidth="0.0">
+          <AnchorPane minHeight="1988.0" minWidth="1003.0" prefHeight="0.0" prefWidth="0.0">
                <children>
-                  <AnchorPane id="bg" layoutX="-2.0" layoutY="-500.0" minHeight="574.0" minWidth="1003.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                  <AnchorPane layoutY="565.0" prefHeight="225.0" prefWidth="1008.0" style="-fx-background-color: #eef6ff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <AnchorPane id="bg" layoutY="-10.0" minHeight="567.0" minWidth="1015.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <AnchorPane layoutY="568.0" prefHeight="233.0" prefWidth="1008.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="568.0">
                      <children>
-                        <AnchorPane layoutX="26.0" layoutY="32.0" prefHeight="140.0" prefWidth="649.0">
+                        <AnchorPane layoutX="25.0" layoutY="19.0" maxWidth="700.0" minWidth="649.0" prefHeight="168.0" styleClass="card" AnchorPane.leftAnchor="12.0">
                            <children>
-                              <Text fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="GYM FEE STRUCTURE">
+                              <Text fill="#232f42" layoutX="203.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GYM FEE STRUCTURE">
                                  <font>
                                     <Font name="System Bold" size="22.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40cc" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MONTHLY PLANS">
+                              <AnchorPane layoutY="46.0" prefHeight="30.0" prefWidth="649.0" style="-fx-background-color: #222e40;">
+                                 <children>
+                                    <Text fill="WHITE" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   MONTHLY PLANS               PRICING                REGISTERATION" wrappingWidth="646.3460369110107">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                              <Text fill="#222e40b2" layoutX="12.0" layoutY="99.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="1. BEGGINER PLAN">
                                  <font>
-                                    <Font name="System Bold" size="22.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutY="71.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="1. BEGGINER PLAN">
+                              <Text fill="#222e40b2" layoutX="12.0" layoutY="124.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="2. STARTER PLAN">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutY="96.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="2. STARTER PLAN">
+                              <Text fill="#222e40b2" layoutX="12.0" layoutY="152.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="3. PRO PLAN">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutY="121.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="3. PRO PLAN">
+                              <Text fill="#222e40b2" layoutX="246.0" layoutY="99.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="RS. 2000/=Incl. Tax">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40cc" layoutX="272.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRICING">
+                              <Text fill="#222e40b2" layoutX="246.0" layoutY="124.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="RS. 3000/=Incl. Tax">
                                  <font>
-                                    <Font name="System Bold" size="22.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="235.0" layoutY="71.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="RS. 2000/=Incl. Tax">
+                              <Text fill="#222e40b2" layoutX="246.0" layoutY="151.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="RS. 4500/=Incl. Tax">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="235.0" layoutY="96.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="RS. 3000/=Incl. Tax">
+                              <Text fill="#222e40b2" layoutX="528.0" layoutY="100.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="235.0" layoutY="121.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="RS. 4500/=Incl. Tax">
+                              <Text fill="#222e40b2" layoutX="528.0" layoutY="126.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
                                  <font>
-                                    <Font name="System Bold" size="16.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40cc" layoutX="450.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTERATION">
+                              <Text fill="#222e40b2" layoutX="528.0" layoutY="152.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
                                  <font>
-                                    <Font name="System Bold" size="22.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="520.0" layoutY="71.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Text>
-                              <Text fill="#222e40b2" layoutX="520.0" layoutY="96.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Text>
-                              <Text fill="#222e40b2" layoutX="520.0" layoutY="121.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                              </Text>
+                              <Region layoutY="134.0" prefHeight="1.0" prefWidth="649.0" style="-fx-background-color: #000000;" />
+                              <Region layoutY="107.0" prefHeight="1.0" prefWidth="649.0" style="-fx-background-color: #000000;" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="683.0" layoutY="-1.0" prefHeight="220.0" prefWidth="317.0">
+                        <AnchorPane layoutX="695.0" layoutY="19.0" maxWidth="401.0" minHeight="168.0" minWidth="301.0" styleClass="card" AnchorPane.leftAnchor="694.0" AnchorPane.rightAnchor="12.0">
                            <children>
-                              <Text fill="#232f42" layoutX="10.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OPENING HOURS">
+                              <StackPane layoutX="40.0" layoutY="12.5791015625" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <children>
+                                    <Text fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="OPENING HOURS" StackPane.alignment="CENTER">
+                                       <font>
+                                          <Font name="System Bold" size="22.0" />
+                                       </font>
+                                       <rotationAxis>
+                                          <Point3D />
+                                       </rotationAxis>
+                                    </Text>
+                                 </children>
+                              </StackPane>
+                              <AnchorPane layoutX="12.0" layoutY="46.2919921875" prefWidth="40.0" style="-fx-background-color: #222e40;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0">
+                                 <children>
+                                    <Text fill="WHITE" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="       DAY" wrappingWidth="158.20123291015625" AnchorPane.leftAnchor="0.0">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fill="WHITE" layoutX="169.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIMING" wrappingWidth="90.2012939453125" AnchorPane.rightAnchor="25.0">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                              <Text fill="#222e40b2" layoutX="31.0" layoutY="99.56" strokeType="OUTSIDE" strokeWidth="0.0" text="MORNING">
                                  <font>
-                                    <Font name="System Bold" size="22.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
-                                 <rotationAxis>
-                                    <Point3D />
-                                 </rotationAxis>
                               </Text>
-                              <Text fill="#222e40cc" layoutX="10.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="COMBINE">
+                              <Text fill="#222e40b2" layoutX="31.0" layoutY="124.5" strokeType="OUTSIDE" strokeWidth="0.0" text="EVENING">
                                  <font>
-                                    <Font name="System Bold" size="22.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40cc" layoutX="200.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LADIES">
+                              <Text fill="#222e40b2" layoutX="31.0" layoutY="152.56" strokeType="OUTSIDE" strokeWidth="0.0" text="SUNDAY">
                                  <font>
-                                    <Font name="System Bold" size="22.0" />
+                                    <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text layoutX="20.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MORNING" />
+                              <Text fill="#222e40b2" layoutX="154.9326171875" layoutY="99.56" strokeType="OUTSIDE" strokeWidth="0.0" text="7:00 AM TO 11:00 AM" AnchorPane.rightAnchor="12.0">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#222e40b2" layoutX="158.0" layoutY="124.56" strokeType="OUTSIDE" strokeWidth="0.0" text="2:45 PM TO 10:30 PM" AnchorPane.rightAnchor="12.0">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#222e40b2" layoutX="158.0" layoutY="152.56" strokeType="OUTSIDE" strokeWidth="0.0" text="1:00 PM TO 7:00 PM" AnchorPane.rightAnchor="15.0">
+                                 <font>
+                                    <Font name="System Bold" size="11.0" />
+                                 </font>
+                              </Text>
+                              <Region layoutY="107.0" minWidth="301.0" prefHeight="1.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                              <Region layoutY="134.0" minWidth="301.0" prefHeight="1.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                            </children>
                         </AnchorPane>
                      </children>
