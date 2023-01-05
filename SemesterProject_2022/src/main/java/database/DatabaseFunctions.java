@@ -34,8 +34,8 @@ public class DatabaseFunctions {
         try {
             queryStatement = dbConnection.prepareStatement("""
                     insert into customers (id, first_name, last_name, email, phone_number, password, username, gender, weight, dob,
-                    monthly_plan, nic, is_active, salt)
-                    values (?,?,?,?,?,?,?,?,?,?,?,?,?,?);""");
+                    monthly_plan, nic, is_active, salt, address)
+                    values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);""");
 
             queryStatement.setInt(1, customer.getCustomerId());
             queryStatement.setString(2, customer.getFirstName());
@@ -51,6 +51,7 @@ public class DatabaseFunctions {
             queryStatement.setString(12, customer.getNicNumber());
             queryStatement.setBoolean(13, false);
             queryStatement.setString(14, customer.getPasswordSalt());
+            queryStatement.setString(15, customer.getAddress());
             queryStatement.executeUpdate();
             return true;
 
@@ -133,9 +134,10 @@ public class DatabaseFunctions {
 
             queryStatement.setInt(1, expense.getId());
             queryStatement.setDate(2, expense.getCreatedDate());
-            queryStatement.setString(3, expense.getMonth());
-            queryStatement.setString(4, expense.getYear());
-            queryStatement.setDate(6, expense.getSelectedDate());
+            queryStatement.setInt(3, expense.getAmount());
+            queryStatement.setString(4, expense.getMonth());
+            queryStatement.setString(5, expense.getYear());
+            queryStatement.setDate(7, expense.getSelectedDate());
         } catch (SQLException e) {
             System.out.println("Error: " + e);
         }
