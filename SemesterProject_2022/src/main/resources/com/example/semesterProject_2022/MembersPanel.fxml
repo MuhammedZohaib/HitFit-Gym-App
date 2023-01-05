@@ -108,7 +108,7 @@
                                                       </ImageView>
                                                    </graphic>
                                                 </Button>
-                                                <TextField prefHeight="25.0" prefWidth="157.0" styleClass="curve">
+                                                <TextField fx:id="keyword" prefHeight="25.0" prefWidth="157.0" promptText="Keyword..." styleClass="curve">
                                                    <StackPane.margin>
                                                       <Insets right="65.0" />
                                                    </StackPane.margin>

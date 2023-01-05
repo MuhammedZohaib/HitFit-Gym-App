@@ -28,8 +28,17 @@
         private int customerId;
         private boolean isActive;
         private String passwordSalt;
+        private String Fullname;
 
         private int Id;
+
+        public String getFullname() {
+            return Fullname;
+        }
+
+        public void setFullname(String fullname) {
+            Fullname = fullname;
+        }
 
         /*--------*/
         private CustomMenuButton actionBtn;
@@ -50,7 +59,7 @@
             super(firstName, lastName, email, "gender", phoneNumber, "userName", "password", nicNumber);
             this.Id = Id;
             this.monthlyPlan = monthlyPlan;
-
+            Fullname=firstName+lastName;
             /*Action Button Stuff*/
             this.actionBtn = customMenuButton;
             this.actionBtn.setStyle("-fx-background-color: #00C2FF; -fx-background-radius: 12px;");

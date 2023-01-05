@@ -3,6 +3,8 @@ package com.example.semesterProject_2022;
 import database.DatabaseFunctions;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -64,6 +66,9 @@ public class MembersPanel_Controller implements Initializable {
     @FXML
     private TableColumn<Customer, Integer> plan;
 
+    @FXML
+    private TextField keyword;
+
     public static ObservableList<Customer> memberslist = FXCollections.observableArrayList();
     ResultSet resultSet = null;
 
@@ -78,7 +83,54 @@ public class MembersPanel_Controller implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        FilteredList<Customer> filteredList = new FilteredList<>(memberslist,b -> true);
 
+        keyword.textProperty().addListener((observable,oldvalue,newvalue) ->
+        {
+            filteredList.setPredicate(customer -> {
+                if(newvalue.isEmpty() || newvalue.isBlank() || newvalue==null)
+                {
+                    return true;
+                }
+                String searchkeyword = newvalue.toLowerCase();
+
+                if(customer.getFullname().toLowerCase().indexOf(searchkeyword) > -1)
+                {
+                    return true;
+                }
+                else if(customer.getFirstName().toLowerCase().indexOf(searchkeyword) > -1)
+                {
+                    return true;
+                } else if (customer.getLastName().toLowerCase().indexOf(searchkeyword) > -1)
+            {
+                    return true;
+            } else if(customer.getPhoneNumber().toLowerCase().indexOf(searchkeyword) > -1)
+            {
+                return true;
+            } else if(customer.getNicNumber().toLowerCase().indexOf(searchkeyword) > -1)
+            {
+                return true;
+            } else if(String.valueOf(customer.getId()).toLowerCase().indexOf(searchkeyword) > -1)
+            {
+                return true;
+            } else if((String.valueOf(customer.getMonthlyPlan()).toLowerCase().indexOf(searchkeyword) > -1))
+            {
+                return true;
+            }  else if (customer.getEmail().toLowerCase().indexOf(searchkeyword) > -1)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
+
+            });
+
+
+            SortedList<Customer> sortedList = new SortedList<>(filteredList);
+            sortedList.comparatorProperty().bind(membersView.comparatorProperty());
+            membersView.setItems(sortedList);
+        });
     }
 
     private Node createPage(int pageIndex) {
