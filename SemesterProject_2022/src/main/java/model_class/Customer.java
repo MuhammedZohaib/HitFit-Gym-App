@@ -11,13 +11,14 @@
     import javafx.scene.control.*;
     import javafx.scene.control.cell.PropertyValueFactory;
     import javafx.scene.paint.Paint;
+    import org.jetbrains.annotations.NotNull;
 
     import java.io.IOException;
     import java.net.URL;
     import java.time.LocalDate;
     import java.util.ResourceBundle;
 
-    public class Customer extends Person{
+    public class Customer extends Person implements Comparable{
 
 
         private String address;
@@ -172,7 +173,10 @@
         public void setPasswordSalt(String passwordSalt) {
             this.passwordSalt = passwordSalt;
         }
-
+        public String tolowerfirstname()
+        {
+            return getFirstName().toLowerCase();
+        }
         @Override
         public String toString() {
             return super.toString() +"Customer{" +
@@ -183,4 +187,8 @@
                     '}';
         }
 
+        @Override
+        public int compareTo(Object o) {
+            return 0;
+        }
     }

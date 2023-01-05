@@ -1,5 +1,6 @@
 package com.example.semesterProject_2022;
 
+import com.mailjet.client.resource.User;
 import database.DatabaseFunctions;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,7 +27,7 @@ import model_class.Customer;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class MembersPanel_Controller implements Initializable {
 
@@ -83,6 +84,7 @@ public class MembersPanel_Controller implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        /*------Searching With Keryword Logic----------*/
         FilteredList<Customer> filteredList = new FilteredList<>(memberslist,b -> true);
 
         keyword.textProperty().addListener((observable,oldvalue,newvalue) ->
@@ -131,8 +133,15 @@ public class MembersPanel_Controller implements Initializable {
             sortedList.comparatorProperty().bind(membersView.comparatorProperty());
             membersView.setItems(sortedList);
         });
-    }
+        /*----Search with Keyword Logic Ends HERE---------*/
 
+    }
+    @FXML
+    void sortbtn(ActionEvent event) {
+
+        memberslist.sort(Comparator.comparing(Customer::tolowerfirstname, Comparator.naturalOrder()));
+        membersView.setItems(memberslist);
+    }
     private Node createPage(int pageIndex) {
         if(memberslist.size()>0 && memberslist.size()<=10) {
             pagination.setPageCount(1);
@@ -190,7 +199,7 @@ public class MembersPanel_Controller implements Initializable {
 
 
              while (resultSet.next()) {
-                 memberslist.add(new Customer(resultSet.getInt("customer_id"),resultSet.getString("first_name"), resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("phone_number"), resultSet.getString("nic"), Integer.parseInt(resultSet.getString("monthly_plan")), new CustomMenuButton("Action", resultSet.getString("first_name")+" "+resultSet.getString("last_name"),resultSet.getString("weight"),"XYZ",resultSet.getString("email"),resultSet.getString("username"),resultSet.getString("monthly_plan"))));
+                 memberslist.add(new Customer(resultSet.getInt("id"),resultSet.getString("first_name"), resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("phone_number"), resultSet.getString("nic"), Integer.parseInt(resultSet.getString("monthly_plan")), new CustomMenuButton("Action", resultSet.getString("first_name")+" "+resultSet.getString("last_name"),resultSet.getString("weight"),"XYZ",resultSet.getString("email"),resultSet.getString("username"),resultSet.getString("monthly_plan"))));
 
                  // membersView.setItems(memberslist);
              }
@@ -199,6 +208,18 @@ public class MembersPanel_Controller implements Initializable {
          catch (NullPointerException e){
                  System.out.println("Connection to Database Cannot Be Established");
              }
+    }
+    @FXML
+    void sortbtn1(ActionEvent event) {
+        memberslist.sort(Comparator.comparing(Customer::getId, Comparator.naturalOrder()));
+        membersView.setItems(memberslist);
+    }
+
+    @FXML
+    void refreshbtn(ActionEvent event) throws SQLException {
+
+        loadData();
+
     }
 
 }
