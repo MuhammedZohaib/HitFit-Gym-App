@@ -82,6 +82,10 @@
                     throw new RuntimeException(e);
                 }
             });
+            item2.setOnAction(event ->
+            {
+              MembersPanel_Controller.deletingId=actionBtn.getButtonId();
+            }) ;
 
 
             /**/

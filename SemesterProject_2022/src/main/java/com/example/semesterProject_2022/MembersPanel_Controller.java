@@ -30,7 +30,8 @@ import java.sql.*;
 import java.util.*;
 
 public class MembersPanel_Controller implements Initializable {
-
+    // Making the field public so, it can be accessible without getter setters
+    public static int deletingId=-1;
 
     private final static int DataSize = 100;
     private final static int rowsPerPage = 10;
@@ -199,7 +200,7 @@ public class MembersPanel_Controller implements Initializable {
 
 
              while (resultSet.next()) {
-                 memberslist.add(new Customer(resultSet.getInt("id"),resultSet.getString("first_name"), resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("phone_number"), resultSet.getString("nic"), Integer.parseInt(resultSet.getString("monthly_plan")), new CustomMenuButton("Action", resultSet.getString("first_name")+" "+resultSet.getString("last_name"),resultSet.getString("weight"),"XYZ",resultSet.getString("email"),resultSet.getString("username"),resultSet.getString("monthly_plan"))));
+                 memberslist.add(new Customer(resultSet.getInt("id"),resultSet.getString("first_name"), resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("phone_number"), resultSet.getString("nic"), Integer.parseInt(resultSet.getString("monthly_plan")), new CustomMenuButton(resultSet.getInt("id"), "Action", resultSet.getString("first_name")+" "+resultSet.getString("last_name"),resultSet.getString("weight"),"XYZ",resultSet.getString("email"),resultSet.getString("username"),resultSet.getString("monthly_plan"))));
 
                  // membersView.setItems(memberslist);
              }
@@ -217,9 +218,10 @@ public class MembersPanel_Controller implements Initializable {
 
     @FXML
     void refreshbtn(ActionEvent event) throws SQLException {
-
         loadData();
-
     }
-
+    public void deleterow(ActionEvent event)
+    {
+        int selectedID = deletingId;
+    }
 }
