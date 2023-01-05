@@ -72,7 +72,7 @@
                                  <bottom>
                                     <FlowPane prefHeight="126.0" prefWidth="741.0" BorderPane.alignment="CENTER">
                                        <BorderPane.margin>
-                                          <Insets top="-100.0" />
+                                          <Insets bottom="-10.0" top="-100.0" />
                                        </BorderPane.margin>
                                        <children>
                                           <Button mnemonicParsing="false" prefHeight="17.0" prefWidth="88.0" stylesheets="@CSS/Main_App.css" text="(A-Z)" textFill="WHITE">
@@ -92,23 +92,7 @@
                                                 <Insets left="40.0" top="30.0" />
                                              </FlowPane.margin>
                                              <children>
-                                                <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="21.0" prefWidth="67.0" text="Button">
-                                                   <StackPane.margin>
-                                                      <Insets bottom="22.5" left="100.0" right="20.0" top="22.0" />
-                                                   </StackPane.margin>
-                                                   <styleClass>
-                                                      <String fx:value="curve" />
-                                                      <String fx:value="buttoncolor" />
-                                                   </styleClass>
-                                                   <graphic>
-                                                      <ImageView fitHeight="17.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" translateX="5.0" translateY="1.0">
-                                                         <image>
-                                                            <Image url="@BorderIcons/icons8-search-512.png" />
-                                                         </image>
-                                                      </ImageView>
-                                                   </graphic>
-                                                </Button>
-                                                <TextField fx:id="keyword" prefHeight="25.0" prefWidth="157.0" promptText="Keyword..." styleClass="curve">
+                                                <TextField fx:id="keyword" prefHeight="25.0" prefWidth="170.0" promptText="Keyword..." styleClass="curve">
                                                    <StackPane.margin>
                                                       <Insets right="65.0" />
                                                    </StackPane.margin>

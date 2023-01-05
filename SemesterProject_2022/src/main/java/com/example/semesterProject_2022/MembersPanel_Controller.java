@@ -110,7 +110,7 @@ public class MembersPanel_Controller implements Initializable {
             } else if(customer.getNicNumber().toLowerCase().indexOf(searchkeyword) > -1)
             {
                 return true;
-            } else if(String.valueOf(customer.getId()).toLowerCase().indexOf(searchkeyword) > -1)
+            } else if(String.valueOf(customer.getId()).indexOf(searchkeyword) > -1)
             {
                 return true;
             } else if((String.valueOf(customer.getMonthlyPlan()).toLowerCase().indexOf(searchkeyword) > -1))
