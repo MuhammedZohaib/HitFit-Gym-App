@@ -304,10 +304,10 @@ public class SignUp_Controller {
             long systemCurrentTime = System.currentTimeMillis();
             java.sql.Date date = new java.sql.Date(systemCurrentTime);
 
-            Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName, tempArr[1], nic,userAddress,dob.toString(),userWeight,monthlyPlan,DatabaseFunctions.generateId("customer"), tempArr[0]);
+            Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName, tempArr[1], nic,userAddress,dob.toString(),userWeight,monthlyPlan,DatabaseFunctions.generateId("customers"), tempArr[0]);
             DatabaseFunctions.saveToDb(customer);
 
-            Transaction transaction = new Transaction(DatabaseFunctions.generateId("transaction"), date , monthlyPlan, tilID, nameOfBank, userBankAccountName, customer.getCustomerId(), false);
+            Transaction transaction = new Transaction(DatabaseFunctions.generateId("transactions"), date , monthlyPlan, tilID, nameOfBank, userBankAccountName, customer.getCustomerId(), false);
             DatabaseFunctions.saveToDb(transaction);
 
             Email newEmail = new Email();

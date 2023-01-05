@@ -33,7 +33,7 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("""
-                    insert into customers (customer_id, first_name, last_name, email, phone_number, password, username, gender, weight, dob,
+                    insert into customers (id, first_name, last_name, email, phone_number, password, username, gender, weight, dob,
                     monthly_plan, nic, is_active, salt)
                     values (?,?,?,?,?,?,?,?,?,?,?,?,?,?);""");
 
@@ -66,7 +66,7 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("""
-                    INSERT INTO transactions (transaction_id, created_date, amount, transaction_number, bank_name, account_owner_name, fk_customer_id, status)
+                    INSERT INTO transactions (id, created_date, amount, transaction_number, bank_name, account_owner_name, fk_customer_id, status)
                     VALUE (?,?,?,?,?,?,?,?);""");
 
             queryStatement.setInt(1, transaction.getTransactionId());
@@ -121,6 +121,28 @@ public class DatabaseFunctions {
 
     }
 
+    public static boolean saveToDb(Expense expense) {
+
+        PreparedStatement queryStatement = null;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    INSERT INTO expenses (id, created_date, amount, month, year, fk_employee_id, selected_date)
+                    VALUE (?,?,?,?,?,?,?)
+                    """);
+
+            queryStatement.setInt(1, expense.getId());
+            queryStatement.setDate(2, expense.getCreatedDate());
+            queryStatement.setString(3, expense.getMonth());
+            queryStatement.setString(4, expense.getYear());
+            queryStatement.setDate(6, expense.getSelectedDate());
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+
+        return true;
+    }
+
     public static boolean updateTransactionStatus(int transactionId) {
 
         PreparedStatement queryStatement = null;
@@ -131,13 +153,13 @@ public class DatabaseFunctions {
             queryStatement = dbConnection.prepareStatement("""
                     UPDATE transactions
                     SET status = true
-                    WHERE transaction_id = ?;""");
+                    WHERE id = ?;""");
             queryStatement.setInt(1, transactionId);
 
             queryStatement.executeUpdate();
 
             try {
-                PreparedStatement queryStatement3 = dbConnection.prepareStatement("SELECT fk_customer_id FROM transactions WHERE transaction_id = ?");
+                PreparedStatement queryStatement3 = dbConnection.prepareStatement("SELECT fk_customer_id FROM transactions WHERE id = ?");
                 queryStatement3.setInt(1, transactionId);
                 ResultSet resultSet = queryStatement3.executeQuery();
 
@@ -152,7 +174,7 @@ public class DatabaseFunctions {
             queryStatement2 = dbConnection.prepareStatement("""
                     UPDATE customers
                     SET is_active = true
-                    WHERE customer_id = ?;""");
+                    WHERE id = ?;""");
 
             queryStatement2.setInt(1, fkCustomerId);
             queryStatement2.executeUpdate();
@@ -369,7 +391,7 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("""
-                    SELECT COUNT(customer_id)
+                    SELECT COUNT(id)
                     FROM customers;
                     """);
 
@@ -399,47 +421,20 @@ public class DatabaseFunctions {
         int lastId = 0;
         PreparedStatement queryStatement = null;
 
-        switch (choice) {
-            case "customer" -> {
-                try {
-                    queryStatement = dbConnection.prepareStatement("SELECT * FROM customers ORDER BY customer_id DESC LIMIT 1;");
-                    allIds = queryStatement.executeQuery();
-                    while (allIds.next()) {
-                        lastId = allIds.getInt(1);
-                    }
-                } catch (SQLException e) {
-                    System.out.println("Error in getting ids: " + e);
-                }
-                return lastId + 1;
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    CALL get_ids(?)
+                    """);
+            queryStatement.setString(1, choice);
+            allIds = queryStatement.executeQuery();
+            while (allIds.next()) {
+                lastId = allIds.getInt(1);
             }
-            case "transaction" -> {
-                try {
-                    queryStatement = dbConnection.prepareStatement("SELECT * FROM transactions ORDER BY transaction_id DESC LIMIT 1;");
-                    allIds = queryStatement.executeQuery();
-                    while (allIds.next()) {
-                        lastId = allIds.getInt(1);
-                    }
-                } catch (SQLException e) {
-                    System.out.println("Error in getting ids: " + e);
-                }
-                return lastId + 1;
-            }
-            case "employee" -> {
-                try {
-                    queryStatement = dbConnection.prepareStatement("SELECT * FROM employees ORDER BY id DESC LIMIT 1;");
-                    allIds = queryStatement.executeQuery();
-                    while (allIds.next()) {
-                        lastId = allIds.getInt(1);
-                    }
-                } catch (SQLException e) {
-                    System.out.println("Error in getting ids: " + e);
-                }
-                return lastId + 1;
-            }
-            default -> {
-                return 0;
-            }
+        } catch (SQLException e) {
+            System.out.println("Error in getting ids: " + e);
         }
+        return lastId + 1;
+
     }
 
 }
