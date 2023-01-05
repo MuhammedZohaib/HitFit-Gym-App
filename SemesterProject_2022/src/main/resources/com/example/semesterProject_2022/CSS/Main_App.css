@@ -206,7 +206,7 @@
     -fx-border-color: #00c2ff;
 }
 .background{
-    -fx-background-color: linear-gradient(to right, #1b2e44,#354055);
+    -fx-background-color: linear-gradient(to left, rgba(3, 3, 44, 0.8), rgba(48, 58, 75, 0.5));
 }
 #bg{
     -fx-background-image: url("Main_Images/Explore.gif");
@@ -215,25 +215,28 @@
     -fx-background-repeat: no-repeat;
 }
 .card {
-    -fx-background-color: white;
+    -fx-background-color: #232528;
     -fx-background-radius: 10;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.6), 10, 0, 0, 0);
 }
-.glassmorphic-anchor-pane {
-    -fx-background-color: rgba(255, 255, 255, 0.5);
-    -fx-background-radius: 10;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 10, 0, 0, 0);
+#exploreBg{
+    -fx-background-color: linear-gradient(to left, #031927, #0F1A20);
 }
-
-
-
-#membersView .table-column
-{
-    -fx-alignment: Center;
+#beginner{
+    -fx-background-image: url("Main_Images/Beginner.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
 }
-
-#closeButton:hover
-{
-    -fx-cursor: hand;
-    -fx-background-color: #FFA400;
+#pro{
+    -fx-background-image: url("Main_Images/Pro.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+}
+#starter{
+    -fx-background-image: url("Main_Images/Starter.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
 }

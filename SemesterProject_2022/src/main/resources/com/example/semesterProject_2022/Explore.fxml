@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
@@ -56,76 +57,76 @@
                   <AnchorPane id="bg" layoutY="-10.0" minHeight="567.0" minWidth="1015.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <AnchorPane layoutY="568.0" prefHeight="233.0" prefWidth="1008.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="568.0">
                      <children>
-                        <AnchorPane layoutX="25.0" layoutY="19.0" maxWidth="700.0" minWidth="649.0" prefHeight="168.0" styleClass="card" AnchorPane.leftAnchor="12.0">
+                        <AnchorPane id="exploreBg" layoutX="25.0" layoutY="19.0" maxWidth="700.0" minWidth="649.0" prefHeight="168.0" styleClass="card" AnchorPane.leftAnchor="12.0">
                            <children>
-                              <Text fill="#232f42" layoutX="203.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GYM FEE STRUCTURE">
+                              <Text fill="WHITE" layoutX="203.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GYM FEE STRUCTURE">
                                  <font>
                                     <Font name="System Bold" size="22.0" />
                                  </font>
                               </Text>
-                              <AnchorPane layoutY="46.0" prefHeight="30.0" prefWidth="649.0" style="-fx-background-color: #222e40;">
+                              <AnchorPane layoutY="46.0" prefHeight="30.0" prefWidth="649.0">
                                  <children>
-                                    <Text fill="WHITE" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   MONTHLY PLANS               PRICING                REGISTERATION" wrappingWidth="646.3460369110107">
+                                    <Text fill="WHITE" layoutY="22.0" strokeType="OUTSIDE" strokeWidth="0.0" text="   MONTHLY PLANS               PRICING                REGISTERATION" wrappingWidth="646.3460369110107">
                                        <font>
                                           <Font name="System Bold" size="18.0" />
                                        </font>
                                     </Text>
                                  </children>
                               </AnchorPane>
-                              <Text fill="#222e40b2" layoutX="12.0" layoutY="99.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="1. BEGGINER PLAN">
+                              <Text fill="#ffffffb2" layoutX="12.0" layoutY="99.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="1. BEGGINER PLAN">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="12.0" layoutY="124.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="2. STARTER PLAN">
+                              <Text fill="#ffffffb2" layoutX="12.0" layoutY="124.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="2. STARTER PLAN">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="12.0" layoutY="152.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="3. PRO PLAN">
+                              <Text fill="#ffffffb2" layoutX="12.0" layoutY="152.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="3. PRO PLAN">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="246.0" layoutY="99.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="RS. 2000/=Incl. Tax">
+                              <Text fill="#ffffffb2" layoutX="246.0" layoutY="99.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="RS. 2000/=Incl. Tax">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="246.0" layoutY="124.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="RS. 3000/=Incl. Tax">
+                              <Text fill="#ffffffb2" layoutX="246.0" layoutY="124.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="RS. 3000/=Incl. Tax">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="246.0" layoutY="151.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="RS. 4500/=Incl. Tax">
+                              <Text fill="#ffffffb2" layoutX="246.0" layoutY="151.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="RS. 4500/=Incl. Tax">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="528.0" layoutY="100.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
+                              <Text fill="#ffffffb2" layoutX="528.0" layoutY="100.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="528.0" layoutY="126.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
+                              <Text fill="#ffffffb2" layoutX="528.0" layoutY="126.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="528.0" layoutY="152.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
+                              <Text fill="#ffffffb2" layoutX="528.0" layoutY="152.5693359375" strokeType="OUTSIDE" strokeWidth="0.0" text="N/A">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Region layoutY="134.0" prefHeight="1.0" prefWidth="649.0" style="-fx-background-color: #000000;" />
-                              <Region layoutY="107.0" prefHeight="1.0" prefWidth="649.0" style="-fx-background-color: #000000;" />
+                              <Region layoutY="134.0" prefHeight="1.0" prefWidth="649.0" style="-fx-background-color: #ffffff;" />
+                              <Region layoutY="107.0" prefHeight="1.0" prefWidth="649.0" style="-fx-background-color: #ffffff;" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane layoutX="695.0" layoutY="19.0" maxWidth="401.0" minHeight="168.0" minWidth="301.0" styleClass="card" AnchorPane.leftAnchor="694.0" AnchorPane.rightAnchor="12.0">
+                        <AnchorPane id="exploreBg" layoutX="695.0" layoutY="19.0" maxWidth="401.0" minHeight="168.0" minWidth="301.0" styleClass="card" AnchorPane.leftAnchor="694.0" AnchorPane.rightAnchor="12.0">
                            <children>
                               <StackPane layoutX="40.0" layoutY="12.5791015625" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                                  <children>
-                                    <Text fill="#232f42" strokeType="OUTSIDE" strokeWidth="0.0" text="OPENING HOURS" StackPane.alignment="CENTER">
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="OPENING HOURS" StackPane.alignment="CENTER">
                                        <font>
                                           <Font name="System Bold" size="22.0" />
                                        </font>
@@ -135,7 +136,7 @@
                                     </Text>
                                  </children>
                               </StackPane>
-                              <AnchorPane layoutX="12.0" layoutY="46.2919921875" prefWidth="40.0" style="-fx-background-color: #222e40;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0">
+                              <AnchorPane layoutX="12.0" layoutY="46.2919921875" prefWidth="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="2.0">
                                  <children>
                                     <Text fill="WHITE" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="       DAY" wrappingWidth="158.20123291015625" AnchorPane.leftAnchor="0.0">
                                        <font>
@@ -149,40 +150,111 @@
                                     </Text>
                                  </children>
                               </AnchorPane>
-                              <Text fill="#222e40b2" layoutX="31.0" layoutY="99.56" strokeType="OUTSIDE" strokeWidth="0.0" text="MORNING">
+                              <Text fill="#ffffffb2" layoutX="31.0" layoutY="99.56" strokeType="OUTSIDE" strokeWidth="0.0" text="MORNING">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="31.0" layoutY="124.5" strokeType="OUTSIDE" strokeWidth="0.0" text="EVENING">
+                              <Text fill="#ffffffb2" layoutX="31.0" layoutY="124.5" strokeType="OUTSIDE" strokeWidth="0.0" text="EVENING">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="31.0" layoutY="152.56" strokeType="OUTSIDE" strokeWidth="0.0" text="SUNDAY">
+                              <Text fill="#ffffffb2" layoutX="31.0" layoutY="152.56" strokeType="OUTSIDE" strokeWidth="0.0" text="SUNDAY">
                                  <font>
                                     <Font name="System Bold" size="14.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="154.9326171875" layoutY="99.56" strokeType="OUTSIDE" strokeWidth="0.0" text="7:00 AM TO 11:00 AM" AnchorPane.rightAnchor="12.0">
+                              <Text fill="#ffffffb2" layoutX="154.9326171875" layoutY="99.56" strokeType="OUTSIDE" strokeWidth="0.0" text="7:00 AM TO 11:00 AM" AnchorPane.rightAnchor="12.0">
                                  <font>
                                     <Font name="System Bold" size="11.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="158.0" layoutY="124.56" strokeType="OUTSIDE" strokeWidth="0.0" text="2:45 PM TO 10:30 PM" AnchorPane.rightAnchor="12.0">
+                              <Text fill="#ffffffb2" layoutX="158.0" layoutY="124.56" strokeType="OUTSIDE" strokeWidth="0.0" text="2:45 PM TO 10:30 PM" AnchorPane.rightAnchor="12.0">
                                  <font>
                                     <Font name="System Bold" size="11.0" />
                                  </font>
                               </Text>
-                              <Text fill="#222e40b2" layoutX="158.0" layoutY="152.56" strokeType="OUTSIDE" strokeWidth="0.0" text="1:00 PM TO 7:00 PM" AnchorPane.rightAnchor="15.0">
+                              <Text fill="#ffffffb2" layoutX="158.0" layoutY="152.56" strokeType="OUTSIDE" strokeWidth="0.0" text="1:00 PM TO 7:00 PM" AnchorPane.rightAnchor="15.0">
                                  <font>
                                     <Font name="System Bold" size="11.0" />
                                  </font>
                               </Text>
-                              <Region layoutY="107.0" minWidth="301.0" prefHeight="1.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                              <Region layoutY="134.0" minWidth="301.0" prefHeight="1.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                              <Region layoutY="107.0" minWidth="301.0" prefHeight="1.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                              <Region layoutY="134.0" minWidth="301.0" prefHeight="1.0" style="-fx-background-color: #ffffff;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                            </children>
                         </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="770.0" prefHeight="596.0" prefWidth="1009.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <StackPane layoutX="110.0" layoutY="55.0" onMouseEntered="#beginnerPlanDetail" onMouseExited="#beginnerPlan" prefHeight="440.0" prefWidth="245.0" AnchorPane.leftAnchor="88.0">
+                           <children>
+                              <AnchorPane id="exploreBg" fx:id="beginnerP1" prefHeight="440.0" prefWidth="245.0" styleClass="card">
+                                 <children>
+                                    <Text fill="WHITE" layoutX="13.0" layoutY="118.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="This plan is perfect for those who are new to the gym and looking to get started on their fitness journey. It includes access to all of our cardio and weight training equipment, as well as a series of orientation sessions with a personal trainer to help you get familiar with the equipment and develop a workout plan that works for you." textAlignment="CENTER" wrappingWidth="220.0">
+                                       <font>
+                                          <Font name="System Italic" size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children></AnchorPane>
+                              <AnchorPane id="beginner" fx:id="beginnerP2" prefHeight="440.0" prefWidth="245.0" styleClass="card" StackPane.alignment="CENTER">
+                                 <children>
+                                    <Text fill="WHITE" layoutX="-80.0" layoutY="120.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BEGINNER PLAN">
+                                       <font>
+                                          <Font name="System Bold" size="22.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                                 <StackPane.margin>
+                                    <Insets />
+                                 </StackPane.margin></AnchorPane>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="355.0" layoutY="16.0" onMouseEntered="#proPlanDetail" onMouseExited="#proPlan" AnchorPane.leftAnchor="355.0" AnchorPane.rightAnchor="353.0">
+                           <children>
+                              <AnchorPane id="exploreBg" fx:id="proPane1" prefHeight="540.0" prefWidth="285.0" styleClass="card">
+                                 <children>
+                                    <Text fill="WHITE" layoutX="28.0" layoutY="183.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="This is our most comprehensive plan, designed for experienced gym-goers who are looking for the best resources to take their fitness to the extreme. In addition to everything in the beginner and starter plans, it includes unlimited access to personal training sessions and exclusive access to our advanced training equipment." textAlignment="CENTER" wrappingWidth="248.0">
+                                       <font>
+                                          <Font name="System Italic" size="14.0" />
+                                       </font>
+                                    </Text>
+                                 </children></AnchorPane>
+                              <AnchorPane id="pro" fx:id="proPane2" prefHeight="428.0" prefWidth="285.0" styleClass="card" StackPane.alignment="CENTER">
+                                 <children>
+                                    <Text layoutX="-43.0" layoutY="83.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRO PLAN">
+                                       <font>
+                                          <Font name="System Bold" size="22.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </StackPane>
+                        <StackPane layoutX="675.0" layoutY="55.0" onMouseEntered="#starterPlanDetail" onMouseExited="#starterPlan" prefHeight="440.0" prefWidth="245.0" AnchorPane.rightAnchor="88.0">
+                           <children>
+                              <AnchorPane id="exploreBg" fx:id="starterPane1" prefHeight="440.0" prefWidth="245.0" styleClass="card">
+                                 <StackPane.margin>
+                                    <Insets />
+                                 </StackPane.margin>
+                                 <children>
+                                    <Text fill="WHITE" layoutX="23.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="This plan is great for those who have been working out for a while and are looking to take their fitness to the next level. It includes everything in the beginner plan, as well as access to group fitness classes and a discount on personal training sessions." textAlignment="CENTER" wrappingWidth="200.0" AnchorPane.bottomAnchor="130.0" AnchorPane.topAnchor="130.0">
+                                       <font>
+                                          <Font name="System Italic" size="14.0" />
+                                       </font></Text>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane id="starter" fx:id="starterPane2" prefHeight="440.0" prefWidth="245.0" styleClass="card" StackPane.alignment="CENTER">
+                                 <children>
+                                    <Text fill="WHITE" layoutX="-80.0" layoutY="120.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STARTER PLAN">
+                                       <font>
+                                          <Font name="System Bold" size="22.0" />
+                                       </font>
+                                    </Text>
+                                 </children></AnchorPane>
+                           </children>
+                        </StackPane>
                      </children>
                   </AnchorPane>
                </children></AnchorPane>
