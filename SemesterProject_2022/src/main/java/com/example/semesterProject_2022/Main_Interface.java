@@ -22,6 +22,8 @@ public class Main_Interface implements Initializable {
 
     @FXML
     private Button maxBtn;
+    @FXML
+    private Button logout;
 
     @FXML
     private AnchorPane navPanel;
@@ -186,7 +188,8 @@ public class Main_Interface implements Initializable {
     }
     @FXML
     void logoutBtn(ActionEvent e) throws IOException {
-        new GeneralFunctions().switchScene(e,"LoginSignUp.fxml");
+        new GeneralFunctions().close(logout);
+        new GeneralFunctions().switchScene("LoginSignUp.fxml");
     }
 
     @FXML
