@@ -129,12 +129,12 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("""
-                    INSERT INTO expenses (id, title,created_date, amount, month, year, fk_employee_id, selected_date)
+                    INSERT INTO expenses (id, description,created_date, amount, month, year, fk_employee_id, selected_date)
                     VALUE (?,?,?,?,?,?,?,?)
                     """);
 
             queryStatement.setInt(1, expense.getId());
-            queryStatement.setString(2, expense.getTitle());
+            queryStatement.setString(2, expense.getDescription());
             queryStatement.setDate(3, CustomDate.getCurrentDate());
             queryStatement.setInt(4, expense.getAmount());
             queryStatement.setString(5, expense.getMonth());
@@ -200,7 +200,9 @@ public class DatabaseFunctions {
         PreparedStatement queryStatement = null;
 
         try {
-            queryStatement = dbConnection.prepareStatement("SELECT * FROM customers;");
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT id, first_name, last_name, email, phone_number, username, gender, weight, dob, monthly_plan, nic, is_active, address FROM customers;
+                    """);
             allDataRs = queryStatement.executeQuery();
 
         } catch (SQLException e) {
@@ -215,13 +217,29 @@ public class DatabaseFunctions {
         PreparedStatement queryStatement = null;
 
         try {
-            queryStatement = dbConnection.prepareStatement("SELECT * FROM employees;");
+            queryStatement = dbConnection.prepareStatement("SELECT id, first_name, last_name, designation, nic_number, salary, gender, phone_number, joining_date, username, access, email FROM employees;");
             allDataRs = queryStatement.executeQuery();
 
         } catch (SQLException e) {
             System.out.println("Error in getting ids: " + e);
         }
         return allDataRs;
+    }
+
+    public static ResultSet getAllExpenses() {
+
+        PreparedStatement queryStatement = null;
+        ResultSet expensesRs = null;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT id, description, amount, selected_date, month, year FROM expenses;
+                    """);
+            expensesRs = queryStatement.executeQuery();
+        } catch (SQLException e) {
+            System.out.println("Error : " + e);
+        }
+        return expensesRs;
     }
 
     public static ArrayList<String> getUserPassword(String customerUsernameEmail) {
