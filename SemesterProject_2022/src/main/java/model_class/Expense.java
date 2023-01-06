@@ -2,11 +2,9 @@ package model_class;
 
 import backend_functions.CustomDate;
 
-import java.util.Date;
-
 public class Expense {
 
-    private String title;
+    private String description;
     private int amount;
     private java.sql.Date selectedDate;
     private int id;
@@ -16,8 +14,8 @@ public class Expense {
     long systemCurrentTime = System.currentTimeMillis();
     private java.sql.Date createdDate;
 
-    public Expense(int id, String title, int amount, java.sql.Date selectedDate) {
-        this.title = title;
+    public Expense(int id, String description, int amount, java.sql.Date selectedDate) {
+        this.description = description;
         this.amount = amount;
         this.createdDate = new java.sql.Date(systemCurrentTime);
         this.id = id;
@@ -30,12 +28,12 @@ public class Expense {
     }
 
 
-    public String getTitle() {
-        return title;
+    public String getDescription() {
+        return description;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getAmount() {
