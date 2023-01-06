@@ -1,6 +1,7 @@
 package com.example.semesterProject_2022;
 
 import com.mailjet.client.MailjetClient;
+import database.DatabaseFunctions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,12 +15,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model_class.Expense;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 
@@ -42,6 +44,7 @@ public class RevenuePanel_Controller implements Initializable {
     private String descriptionOfExpense;
     private LocalDate expenseDate;
     private String expenseAmountToDb;
+    private int expenseAmnt;
 
     public void addExpenseButton() throws IOException {
         Stage stage = new Stage();
@@ -60,6 +63,7 @@ public class RevenuePanel_Controller implements Initializable {
          descriptionOfExpense = description.getText();
          expenseDate = dateOfExpense.getValue();
          expenseAmountToDb = expenseAmount.getText();
+         expenseAmnt = Integer.parseInt(expenseAmountToDb);
 
          if(descriptionOfExpense.isBlank() || descriptionOfExpense.isEmpty()){
              description.setStyle("-fx-border-color: #ff0000; -fx-border-width: 3px;");
@@ -68,9 +72,11 @@ public class RevenuePanel_Controller implements Initializable {
              expenseAmount.setStyle("-fx-border-color: #ff0000; -fx-border-width: 3px;");
          }
          else {
-             monthlyExpense += Integer.parseInt(expenseAmountToDb);
+
+             Expense expense = new Expense(DatabaseFunctions.generateId("expenses"), descriptionOfExpense, expenseAmnt, Date.valueOf(expenseDate));
+             DatabaseFunctions.saveToDb(expense, null);
+
              closeExpense();
-//             DashboardPanel_Controller.getMonthlyExpense().setText(String.valueOf(monthlyExpense));
 
              //Database function will be called here which will save expenses to Db.
              System.out.println(descriptionOfExpense);
@@ -85,9 +91,11 @@ public class RevenuePanel_Controller implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+/*
         Calendar cal = Calendar.getInstance();
         if ((cal.get(Calendar.DATE) == 30 || cal.get(Calendar.DATE) == 31) || (cal.get(Calendar.MONTH) == Calendar.FEBRUARY && (cal.get(Calendar.DATE) == 28 || cal.get(Calendar.DATE) == 29))){
          monthlyExpense = 0;
         }
+*/
     }
 }
