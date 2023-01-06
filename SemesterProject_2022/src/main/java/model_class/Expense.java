@@ -1,5 +1,7 @@
 package model_class;
 
+import backend_functions.CustomDate;
+
 import java.util.Date;
 
 public class Expense {
@@ -14,13 +16,19 @@ public class Expense {
     long systemCurrentTime = System.currentTimeMillis();
     private java.sql.Date createdDate;
 
-    public Expense(String title, int amount, java.sql.Date selectedDate, int id) {
+    public Expense(int id, String title, int amount, java.sql.Date selectedDate) {
         this.title = title;
         this.amount = amount;
         this.createdDate = new java.sql.Date(systemCurrentTime);
-        this.selectedDate = selectedDate;
         this.id = id;
+
+        CustomDate customDate = new CustomDate(selectedDate);
+
+        this.selectedDate = selectedDate;
+        this.month = customDate.getMonthName();
+        this.year = customDate.getYear();
     }
+
 
     public String getTitle() {
         return title;
@@ -77,4 +85,6 @@ public class Expense {
     public void setYear(String year) {
         this.year = year;
     }
+
+
 }

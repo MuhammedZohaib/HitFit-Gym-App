@@ -1,5 +1,6 @@
 package com.example.semesterProject_2022;
 
+import backend_functions.CustomDate;
 import backend_functions.Email;
 import backend_functions.Password;
 import backend_functions.Username;
@@ -301,13 +302,11 @@ public class SignUp_Controller {
             tempArr = Password.makeFinalPassword(userPassword);
             // for id generation, use "customer" for getting customer id
             // for id generation, use "transaction" for getting transaction id
-            long systemCurrentTime = System.currentTimeMillis();
-            java.sql.Date date = new java.sql.Date(systemCurrentTime);
 
             Customer customer = new Customer(firstName,lastName,emailField,gender,phoneNumber,userName, tempArr[1], nic,userAddress,dob.toString(),userWeight,monthlyPlan,DatabaseFunctions.generateId("customers"), tempArr[0]);
             DatabaseFunctions.saveToDb(customer);
 
-            Transaction transaction = new Transaction(DatabaseFunctions.generateId("transactions"), date , monthlyPlan, tilID, nameOfBank, userBankAccountName, customer.getCustomerId(), false);
+            Transaction transaction = new Transaction(DatabaseFunctions.generateId("transactions"), CustomDate.getCurrentDate(), monthlyPlan, tilID, nameOfBank, userBankAccountName, customer.getCustomerId(), false);
             DatabaseFunctions.saveToDb(transaction);
 
             Email newEmail = new Email();

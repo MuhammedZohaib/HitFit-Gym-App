@@ -1,5 +1,6 @@
 package database;
 
+import backend_functions.CustomDate;
 import backend_functions.Login;
 import model_class.*;
 
@@ -71,7 +72,7 @@ public class DatabaseFunctions {
                     VALUE (?,?,?,?,?,?,?,?);""");
 
             queryStatement.setInt(1, transaction.getTransactionId());
-            queryStatement.setDate(2, transaction.getCreatedDate());
+            queryStatement.setDate(2, CustomDate.getCurrentDate());
             queryStatement.setInt(3, transaction.getAmount());
             queryStatement.setString(4, transaction.getTransactionNumber());
             queryStatement.setString(5, transaction.getBankName());
@@ -105,7 +106,7 @@ public class DatabaseFunctions {
             queryStatement.setInt(6, employee.getSalary());
             queryStatement.setString(7, employee.getGender());
             queryStatement.setString(8, employee.getPhoneNumber());
-            queryStatement.setDate(9, employee.getJoiningDate());
+            queryStatement.setDate(9, CustomDate.getCurrentDate());
             queryStatement.setString(10, employee.getUserName());
             queryStatement.setString(11, employee.getPassword());
             queryStatement.setString(12, employee.getSalt());
@@ -122,22 +123,27 @@ public class DatabaseFunctions {
 
     }
 
-    public static boolean saveToDb(Expense expense) {
+    public static boolean saveToDb(Expense expense, Integer fkEmployeeId) {
 
         PreparedStatement queryStatement = null;
 
         try {
             queryStatement = dbConnection.prepareStatement("""
-                    INSERT INTO expenses (id, created_date, amount, month, year, fk_employee_id, selected_date)
-                    VALUE (?,?,?,?,?,?,?)
+                    INSERT INTO expenses (id, title,created_date, amount, month, year, fk_employee_id, selected_date)
+                    VALUE (?,?,?,?,?,?,?,?)
                     """);
 
             queryStatement.setInt(1, expense.getId());
-            queryStatement.setDate(2, expense.getCreatedDate());
-            queryStatement.setInt(3, expense.getAmount());
-            queryStatement.setString(4, expense.getMonth());
-            queryStatement.setString(5, expense.getYear());
-            queryStatement.setDate(7, expense.getSelectedDate());
+            queryStatement.setString(2, expense.getTitle());
+            queryStatement.setDate(3, CustomDate.getCurrentDate());
+            queryStatement.setInt(4, expense.getAmount());
+            queryStatement.setString(5, expense.getMonth());
+            queryStatement.setString(6, expense.getYear());
+            queryStatement.setObject(7, fkEmployeeId);
+            queryStatement.setDate(8, expense.getSelectedDate());
+
+            queryStatement.executeUpdate();
+
         } catch (SQLException e) {
             System.out.println("Error: " + e);
         }

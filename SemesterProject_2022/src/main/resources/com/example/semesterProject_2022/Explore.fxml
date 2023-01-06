@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
@@ -7,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
@@ -14,9 +16,9 @@
 
 <AnchorPane prefHeight="583.0" prefWidth="1024.0" stylesheets="@CSS/Main_App.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.Explore_Controller">
    <children>
-      <AnchorPane fx:id="stageBorderPane" prefHeight="35.0" prefWidth="1024.0" stylesheets="@CSS/Main_App.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <AnchorPane fx:id="stageBorderPane" layoutX="-1.0" prefHeight="34.0" prefWidth="799.0" stylesheets="@CSS/Main_App.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Button fx:id="closeBtn" layoutX="749.3333333333334" layoutY="0.0" mnemonicParsing="false" onAction="#close" prefHeight="35.0" prefWidth="50.0" stylesheets="@CSS/Main_App.css" AnchorPane.rightAnchor="0.0">
+            <Button fx:id="closeBtn" layoutX="749.3333333333334" layoutY="-1.0" mnemonicParsing="false" onAction="#close" prefHeight="35.0" prefWidth="50.0" stylesheets="@CSS/Main_App.css" AnchorPane.rightAnchor="0.0">
                <graphic>
                   <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -43,7 +45,19 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Text fill="WHITE" layoutX="11.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HITFIT" AnchorPane.leftAnchor="11.0">
+            <Button fx:id="back" layoutX="1.0" mnemonicParsing="false" onAction="#GoBackLogIn" prefHeight="35.0" prefWidth="52.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="0.0">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/icons8-go-back-30.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Button>
+            <Text fill="WHITE" layoutX="54.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HITFIT" AnchorPane.leftAnchor="54.0">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -52,7 +66,7 @@
       </AnchorPane>
       <ScrollPane fitToWidth="true" layoutY="31.0" minHeight="553.0" minWidth="1024.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="33.0">
         <content>
-          <AnchorPane minHeight="1988.0" minWidth="1003.0" prefHeight="0.0" prefWidth="0.0">
+          <AnchorPane minHeight="1950.0" minWidth="1003.0" prefHeight="0.0" prefWidth="0.0">
                <children>
                   <AnchorPane id="bg" layoutY="-10.0" minHeight="567.0" minWidth="1015.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                   <AnchorPane layoutY="568.0" prefHeight="233.0" prefWidth="1008.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="568.0">
@@ -192,15 +206,22 @@
                            <children>
                               <AnchorPane id="exploreBg" fx:id="beginnerP1" prefHeight="440.0" prefWidth="245.0" styleClass="card">
                                  <children>
-                                    <Text fill="WHITE" layoutX="13.0" layoutY="118.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="This plan is perfect for those who are new to the gym and looking to get started on their fitness journey. It includes access to all of our cardio and weight training equipment, as well as a series of orientation sessions with a personal trainer to help you get familiar with the equipment and develop a workout plan that works for you." textAlignment="CENTER" wrappingWidth="220.0">
+                                    <Text fill="WHITE" layoutX="13.0" layoutY="118.0" lineSpacing="1.3" strokeType="OUTSIDE" strokeWidth="0.0" text="This plan is perfect for those who are new to the gym and looking to get started on their fitness journey. It includes access to all of our cardio and weight training equipment, as well as a series of orientation sessions with a personal trainer to help you get familiar with the equipment and develop a workout plan that works for you." textAlignment="CENTER" wrappingWidth="220.0">
                                        <font>
                                           <Font name="System Italic" size="14.0" />
                                        </font>
                                     </Text>
+                                    <Button fx:id="beginnerButton" layoutX="66.0" layoutY="367.0" mnemonicParsing="false" onAction="#buyBeginner" prefHeight="30.0" prefWidth="120.0" text="Buy Now" textFill="WHITE">
+                                       <styleClass>
+                                          <String fx:value="curve" />
+                                          <String fx:value="buttoncolor" />
+                                          <String fx:value="onhover" />
+                                       </styleClass>
+                                    </Button>
                                  </children></AnchorPane>
                               <AnchorPane id="beginner" fx:id="beginnerP2" prefHeight="440.0" prefWidth="245.0" styleClass="card" StackPane.alignment="CENTER">
                                  <children>
-                                    <Text fill="WHITE" layoutX="-80.0" layoutY="120.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BEGINNER PLAN">
+                                    <Text fill="WHITE" layoutX="-80.0" layoutY="120.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BEGINNER PLAN" AnchorPane.leftAnchor="-80.0">
                                        <font>
                                           <Font name="System Bold" size="22.0" />
                                        </font>
@@ -215,15 +236,34 @@
                            <children>
                               <AnchorPane id="exploreBg" fx:id="proPane1" prefHeight="540.0" prefWidth="285.0" styleClass="card">
                                  <children>
-                                    <Text fill="WHITE" layoutX="28.0" layoutY="183.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="This is our most comprehensive plan, designed for experienced gym-goers who are looking for the best resources to take their fitness to the extreme. In addition to everything in the beginner and starter plans, it includes unlimited access to personal training sessions and exclusive access to our advanced training equipment." textAlignment="CENTER" wrappingWidth="248.0">
-                                       <font>
-                                          <Font name="System Italic" size="14.0" />
-                                       </font>
-                                    </Text>
+                                    <BorderPane layoutX="28.0" layoutY="169.0" prefHeight="300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <center>
+                                          <Text fill="WHITE" lineSpacing="1.3" strokeType="OUTSIDE" strokeWidth="0.0" text="This is our most comprehensive plan, designed for experienced gym-goers who are looking for the best resources to take their fitness to the extreme. In addition to everything in the beginner and starter plans, it includes unlimited access to personal training sessions and exclusive access to our advanced training equipment." textAlignment="CENTER" wrappingWidth="248.0" BorderPane.alignment="CENTER">
+                                             <font>
+                                                <Font name="System Italic" size="14.0" />
+                                             </font>
+                                          </Text>
+                                       </center>
+                                       <padding>
+                                          <Insets left="20.0" right="20.0" />
+                                       </padding>
+                                       <bottom>
+                                          <Button fx:id="proButton" mnemonicParsing="false" onAction="#buyPro" prefHeight="30.0" prefWidth="170.0" text="Buy Now" textFill="WHITE" BorderPane.alignment="CENTER">
+                                             <styleClass>
+                                                <String fx:value="curve" />
+                                                <String fx:value="buttoncolor" />
+                                                <String fx:value="onhover" />
+                                             </styleClass>
+                                             <BorderPane.margin>
+                                                <Insets top="60.0" />
+                                             </BorderPane.margin>
+                                          </Button>
+                                       </bottom>
+                                    </BorderPane>
                                  </children></AnchorPane>
                               <AnchorPane id="pro" fx:id="proPane2" prefHeight="428.0" prefWidth="285.0" styleClass="card" StackPane.alignment="CENTER">
                                  <children>
-                                    <Text layoutX="-43.0" layoutY="83.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRO PLAN">
+                                    <Text layoutX="-43.0" layoutY="83.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRO PLAN" AnchorPane.leftAnchor="-40.0">
                                        <font>
                                           <Font name="System Bold" size="22.0" />
                                        </font>
@@ -239,15 +279,22 @@
                                     <Insets />
                                  </StackPane.margin>
                                  <children>
-                                    <Text fill="WHITE" layoutX="23.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="This plan is great for those who have been working out for a while and are looking to take their fitness to the next level. It includes everything in the beginner plan, as well as access to group fitness classes and a discount on personal training sessions." textAlignment="CENTER" wrappingWidth="200.0" AnchorPane.bottomAnchor="130.0" AnchorPane.topAnchor="130.0">
+                                    <Text fill="WHITE" layoutX="23.0" layoutY="144.0" lineSpacing="1.3" strokeType="OUTSIDE" strokeWidth="0.0" text="This plan is great for those who have been working out for a while and are looking to take their fitness to the next level. It includes everything in the beginner plan, as well as access to group fitness classes and a discount on personal training sessions." textAlignment="CENTER" wrappingWidth="200.0" AnchorPane.bottomAnchor="130.0" AnchorPane.topAnchor="130.0">
                                        <font>
                                           <Font name="System Italic" size="14.0" />
                                        </font></Text>
+                                    <Button fx:id="starterButton" layoutX="66.0" layoutY="367.0" mnemonicParsing="false" onAction="#buyStarter" prefHeight="30.0" prefWidth="120.0" text="Buy Now" textFill="WHITE">
+                                       <styleClass>
+                                          <String fx:value="curve" />
+                                          <String fx:value="buttoncolor" />
+                                          <String fx:value="onhover" />
+                                       </styleClass>
+                                    </Button>
                                  </children>
                               </AnchorPane>
                               <AnchorPane id="starter" fx:id="starterPane2" prefHeight="440.0" prefWidth="245.0" styleClass="card" StackPane.alignment="CENTER">
                                  <children>
-                                    <Text fill="WHITE" layoutX="-80.0" layoutY="120.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STARTER PLAN">
+                                    <Text fill="WHITE" layoutX="-80.0" layoutY="120.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STARTER PLAN" AnchorPane.leftAnchor="-80.0">
                                        <font>
                                           <Font name="System Bold" size="22.0" />
                                        </font>
@@ -255,6 +302,82 @@
                                  </children></AnchorPane>
                            </children>
                         </StackPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutY="1361.0" prefHeight="362.0" prefWidth="1008.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <BorderPane layoutY="68.0" prefHeight="253.0" prefWidth="1008.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <center>
+                              <Text fill="#000000d9" strokeType="OUTSIDE" strokeWidth="0.0" text="At HITFIT Gym you get way more than you pay for! You can enjoy flexible memberships, unlimited classes and 24/7 access, but it's not just the stuff you'd expect from a gym, it's the extra value too. Think new friends, way more you time, friendly teams and a judgement-free space to workout and feel-good in. No wonder we're the Pakistan's favourite Gym." textAlignment="CENTER" wrappingWidth="968.0" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Italic" size="20.0" />
+                                 </font>
+                                 <BorderPane.margin>
+                                    <Insets bottom="10.0" top="20.0" />
+                                 </BorderPane.margin>
+                              </Text>
+                           </center>
+                           <top>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MORE THAN A GYM" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold Italic" size="24.0" />
+                                 </font>
+                              </Text>
+                           </top>
+                           <bottom>
+                              <AnchorPane prefHeight="117.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <BorderPane layoutY="-1.0" prefHeight="144.0" prefWidth="1008.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                       <center>
+                                          <Text fill="#000000d9" strokeType="OUTSIDE" strokeWidth="0.0" text="Already A Member?" textAlignment="CENTER" wrappingWidth="1007.59619140625" y="55.0" BorderPane.alignment="CENTER">
+                                             <font>
+                                                <Font name="System Italic" size="11.0" />
+                                             </font>
+                                          </Text>
+                                       </center>
+                                       <bottom>
+                                          <Button fx:id="exploreToLogin" maxWidth="250.0" minHeight="30.0" minWidth="200.0" mnemonicParsing="false" onAction="#customerLogin" text="LOGIN" textFill="#eef6ff" BorderPane.alignment="CENTER">
+                                             <styleClass>
+                                                <String fx:value="curve" />
+                                                <String fx:value="buttoncolor" />
+                                                <String fx:value="onhover" />
+                                             </styleClass>
+                                             <BorderPane.margin>
+                                                <Insets bottom="40.0" />
+                                             </BorderPane.margin>
+                                          </Button>
+                                       </bottom>
+                                       <top>
+                                          <Button fx:id="exploreToSignUp" maxWidth="250.0" minHeight="30.0" minWidth="200.0" mnemonicParsing="false" onAction="#signUp" text="SIGNUP NOW" textFill="#eef6ff" BorderPane.alignment="CENTER">
+                                             <styleClass>
+                                                <String fx:value="curve" />
+                                                <String fx:value="buttoncolor" />
+                                                <String fx:value="onhover" />
+                                             </styleClass>
+                                             <BorderPane.margin>
+                                                <Insets top="20.0" />
+                                             </BorderPane.margin>
+                                          </Button>
+                                       </top>
+                                    </BorderPane>
+                                 </children>
+                              </AnchorPane>
+                           </bottom>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="exploreBg" layoutY="1704.0" prefHeight="200.0" prefWidth="1008.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="791.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="50.0">
+                           <image>
+                              <Image url="@Images/Mask%20group.png" />
+                           </image>
+                        </ImageView>
+                        <Text fill="#eef6ff" layoutX="60.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Know Your Own Strength" AnchorPane.leftAnchor="60.0">
+                           <font>
+                              <Font name="System Bold Italic" size="28.0" />
+                           </font>
+                        </Text>
                      </children>
                   </AnchorPane>
                </children></AnchorPane>

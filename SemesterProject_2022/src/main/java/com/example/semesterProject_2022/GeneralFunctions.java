@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -25,6 +26,17 @@ public class GeneralFunctions {
         obj.stage.setScene(obj.scene);
         obj.stage.centerOnScreen();
         obj.stage.show();
+    }
+    //Overloaded switchScene for max screens to avoid disruptions of Stages
+    public void switchScene(String fxml) throws IOException {
+        Stage stage = new Stage() ;
+        Scene scene;
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml));
+        scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.show();
     }
     public void close(Button b){
         /*---DB-CLOSE FUNCTION (TO BE ADDED)----*/
