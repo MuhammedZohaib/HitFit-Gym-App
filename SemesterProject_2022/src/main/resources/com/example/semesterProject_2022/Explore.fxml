@@ -221,7 +221,7 @@
                                  </children></AnchorPane>
                               <AnchorPane id="beginner" fx:id="beginnerP2" prefHeight="440.0" prefWidth="245.0" styleClass="card" StackPane.alignment="CENTER">
                                  <children>
-                                    <Text fill="WHITE" layoutX="-80.0" layoutY="120.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BEGINNER PLAN">
+                                    <Text fill="WHITE" layoutX="-80.0" layoutY="120.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BEGINNER PLAN" AnchorPane.leftAnchor="-80.0">
                                        <font>
                                           <Font name="System Bold" size="22.0" />
                                        </font>
@@ -263,7 +263,7 @@
                                  </children></AnchorPane>
                               <AnchorPane id="pro" fx:id="proPane2" prefHeight="428.0" prefWidth="285.0" styleClass="card" StackPane.alignment="CENTER">
                                  <children>
-                                    <Text layoutX="-43.0" layoutY="83.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRO PLAN">
+                                    <Text layoutX="-43.0" layoutY="83.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PRO PLAN" AnchorPane.leftAnchor="-40.0">
                                        <font>
                                           <Font name="System Bold" size="22.0" />
                                        </font>
@@ -294,7 +294,7 @@
                               </AnchorPane>
                               <AnchorPane id="starter" fx:id="starterPane2" prefHeight="440.0" prefWidth="245.0" styleClass="card" StackPane.alignment="CENTER">
                                  <children>
-                                    <Text fill="WHITE" layoutX="-80.0" layoutY="120.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STARTER PLAN">
+                                    <Text fill="WHITE" layoutX="-80.0" layoutY="120.0" rotate="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STARTER PLAN" AnchorPane.leftAnchor="-80.0">
                                        <font>
                                           <Font name="System Bold" size="22.0" />
                                        </font>
