@@ -7,6 +7,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -37,6 +38,16 @@ public class GeneralFunctions {
         stage.centerOnScreen();
         stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
+    }
+    public void switchSceneModality(String fxml) throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(RevenuePanel_Controller.class.getResource(fxml));
+        stage.initModality(Modality.APPLICATION_MODAL);
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.initStyle(StageStyle.UNDECORATED);
+        stage.showAndWait();
     }
     public void close(Button b){
         /*---DB-CLOSE FUNCTION (TO BE ADDED)----*/

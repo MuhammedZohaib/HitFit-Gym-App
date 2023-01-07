@@ -21,7 +21,7 @@
             <Font size="10.0" />
          </font>
       </Text>
-      <Button fx:id="button1" layoutX="53.0" layoutY="122.0" mnemonicParsing="false" onAction="#switchToAdminLogin" prefHeight="26.0" prefWidth="243.0" text="Login As Admin">
+      <Button fx:id="button1" layoutX="53.0" layoutY="122.0" mnemonicParsing="false" onAction="#switchToAdminLogin" prefHeight="26.0" prefWidth="243.0" text="Login As Staff">
          <padding>
             <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
          </padding>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="344.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.ForgetPassword_Controller">
+   <children>
+      <AnchorPane fx:id="topBar" prefHeight="37.0" prefWidth="300.0" stylesheets="@CSS/pop_up.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0">
+         <children>
+            <Text fill="WHITE" layoutX="105.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" Verification" textAlignment="CENTER" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="99.0">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Text>
+            <Button fx:id="exit" layoutX="270.0" minWidth="28.0" mnemonicParsing="false" onAction="#close" prefHeight="30.0" prefWidth="28.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@Images/icons8-close-window-96.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="53.0" fitWidth="65.0" layoutX="125.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/icons8-sign-mail-128(-xxxhdpi).png" />
+         </image>
+      </ImageView>
+      <Text fill="#232f42" layoutX="98.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Verify its you.">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#8c94a1" layoutX="45.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your account email to reset your account password" textAlignment="CENTER" wrappingWidth="212.666015625" />
+      <TextField id="CodeField" fx:id="email" alignment="CENTER" layoutX="55.0" layoutY="178.0" onMouseClicked="#resetStyle1" prefHeight="34.0" prefWidth="198.0" promptText="Email" stylesheets="@CSS/pop_up.css" />
+      <Button id="verifyBtn" fx:id="sendCode" layoutX="111.0" layoutY="240.0" mnemonicParsing="false" onAction="#sendCodeToEmail" prefHeight="34.0" prefWidth="91.0" stylesheets="@CSS/pop_up.css" text="Send Code" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="21.0" fitWidth="19.0" layoutX="258.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="emailValidation" layoutX="30.0" layoutY="293.0">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
+   </children>
+</AnchorPane>
