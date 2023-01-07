@@ -22,7 +22,7 @@ public class Login {
             case "email" -> {
                 boolean tmp = Email.checkEmail(emailUsername);
                 if (tmp) {
-                    System.out.println("Email already exists");
+                    System.out.println("Email exists");
                     return false;
                 } else {
                     return true;
@@ -31,7 +31,7 @@ public class Login {
             case "username" -> {
                 boolean tmp1 = Username.checkUsername(emailUsername);
                 if (tmp1) {
-                    System.out.println("Username already exists");
+                    System.out.println("Username exists");
                     return false;
                 } else {
                     return true;
@@ -45,7 +45,6 @@ public class Login {
     public void checkPassword() {
 
         if (Password.verifyPassword(emailUsername, password)) {
-            System.out.println("Password matched");
             logInSuccessful = true;
         }
 

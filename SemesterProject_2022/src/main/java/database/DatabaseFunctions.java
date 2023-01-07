@@ -150,6 +150,7 @@ public class DatabaseFunctions {
 
         return true;
     }
+
     public static void updatePassword(String email, String[] password){
         PreparedStatement queryStatement = null;
         try{
@@ -396,6 +397,7 @@ public class DatabaseFunctions {
 
             while (allEmailsRs.next()) {
                 allEmails.add(allEmailsRs.getString(1));
+                customersListCount++;
             }
 
 
@@ -411,6 +413,7 @@ public class DatabaseFunctions {
 
             while (allEmailsRs.next()) {
                 allEmails.add(allEmailsRs.getString(1));
+                employeesListCount++;
             }
 
 
