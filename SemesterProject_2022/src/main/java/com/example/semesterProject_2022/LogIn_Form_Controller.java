@@ -124,6 +124,9 @@ public class LogIn_Form_Controller {
 
         }
     }
+    public void resetPassword() throws IOException {
+        new GeneralFunctions().switchSceneModality("SendCodeToEmail.fxml");
+    }
     public void clear(){
         epValidation.setText("");
         EmailField.setStyle(resetStyle);

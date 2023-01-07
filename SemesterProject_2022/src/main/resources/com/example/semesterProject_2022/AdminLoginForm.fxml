@@ -73,7 +73,7 @@
             <Image url="@Images/Mask%20group.png" />
          </image>
       </ImageView>
-      <Text fill="WHITE" layoutX="116.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADMIN LOGIN">
+      <Text fill="WHITE" layoutX="116.0" layoutY="85.0" strokeType="OUTSIDE" strokeWidth="0.0" text="STAFF LOGIN">
          <font>
             <Font name="System Bold" size="22.0" />
          </font>
@@ -102,9 +102,9 @@
          </font>
       </CheckBox>
       <Button fx:id="LogInButton" layoutX="46.0" layoutY="272.0" mnemonicParsing="false" onAction="#adminLogin" onMouseClicked="#loginBtn" prefHeight="25.0" prefWidth="251.0" text="Log In" />
-      <Text fill="#b5b5b5" layoutX="54.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Can't Sign In? Forgot Password ?" wrappingWidth="155.07769775390625">
+      <Text fill="#b5b5b5" layoutX="50.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Can't Sign In? Forgot Password ?" wrappingWidth="187.07769775390625">
          <font>
-            <Font name="Arial" size="8.0" />
+            <Font size="11.0" />
          </font>
       </Text>
       <Label fx:id="epValidation" layoutX="63.0" layoutY="166.0" onMouseClicked="#clear">
@@ -136,5 +136,6 @@
             </ImageView>
          </graphic>
       </Button>
+      <Button fx:id="resetPassword" layoutX="222.0" layoutY="358.0" mnemonicParsing="false" onAction="#resetPassword" prefHeight="24.0" prefWidth="126.0" style="-fx-background-color: transparent;" text="Reset Password" textFill="#0077ff" />
    </children>
 </AnchorPane>

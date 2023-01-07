@@ -1,5 +1,6 @@
 package backend_functions;
 
+import com.example.semesterProject_2022.ForgetPassword_Controller;
 import com.mailjet.client.ClientOptions;
 import com.mailjet.client.MailjetClient;
 import com.mailjet.client.errors.MailjetException;
@@ -93,6 +94,49 @@ public class Email {
                         <p>Your fitness journey begins here</p>
                         """)
                 .subject("Account Sign Up Confirmation")
+                .trackOpens(TrackOpens.ENABLED)
+                .header("test-header-key", "test-value")
+                .build();
+
+        SendEmailsRequest request = SendEmailsRequest
+                .builder()
+                .message(message1)
+                .build();
+
+        try {
+            SendEmailsResponse response = request.sendWith(client);
+        } catch (MailjetException e) {
+            System.out.println("Error in sending email: " + e);
+        }
+
+    }
+    public void sendPasswordResetEmail(String sendToEmail){
+        MailjetClient client = new MailjetClient(options);
+
+        TransactionalEmail message1 = TransactionalEmail
+                .builder()
+                .to(new SendContact(sendToEmail, "Customer"))
+                .from(new SendContact(sendFromEmail, sendFromName))
+                .htmlPart("""
+                        <br>
+                        <h1 style="text-align:center">Password Reset Verification!</h1>
+                        <br>
+                        <h4>Verify if its you</h4>
+                        <br>
+                        <p>Dear Customer,<br>
+                        <br>
+                            We have received a request to reset the password for your HITFIT Gym App account.<br> If you did not initiate this request, please let us know immediately by replying to this email.
+                           <br>
+                           To reset your password, please enter the provided code in the app
+                           <br>
+                           <br>
+                            """+ForgetPassword_Controller.verificationCode+"""
+                           <br>
+                           <br>
+                           Thank you for choosing HITFIT Gym App for your fitness needs. We hope to see you in the gym soon.
+                           </p>
+                        """)
+                .subject("Password Reset Verification")
                 .trackOpens(TrackOpens.ENABLED)
                 .header("test-header-key", "test-value")
                 .build();

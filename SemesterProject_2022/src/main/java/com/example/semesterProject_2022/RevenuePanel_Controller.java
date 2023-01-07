@@ -47,14 +47,7 @@ public class RevenuePanel_Controller implements Initializable {
     private int expenseAmnt;
 
     public void addExpenseButton() throws IOException {
-        Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(RevenuePanel_Controller.class.getResource("AddExpense.fxml"));
-        stage.initModality(Modality.APPLICATION_MODAL);
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.showAndWait();
+        new GeneralFunctions().switchSceneModality("AddExpense.fxml");
     }
     public void closeExpense(){
         new GeneralFunctions().close(exit);
