@@ -76,7 +76,7 @@
       <Text fx:id="weight" fill="WHITE" layoutX="97.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="80 kg" />
       <Text fx:id="address" fill="WHITE" layoutX="98.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XYZ XYZ XYZ XYZ XYZ XYZ " />
       <Text fx:id="email" fill="WHITE" layoutX="97.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saadfacebooks4567@gmail.com" />
-      <Text fx:id="username" fill="WHITE" layoutX="98.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ssulemans37" />
+      <Text fx:id="username" fill="WHITE" layoutX="109.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ssulemans37" />
       <Text fx:id="packagetype" fill="WHITE" layoutX="99.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starter" />
       <Text fx:id="packageprice" fill="WHITE" layoutX="99.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs. 4500" />
    </children>
