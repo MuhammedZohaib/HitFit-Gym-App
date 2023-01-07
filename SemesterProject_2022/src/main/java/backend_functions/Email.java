@@ -110,6 +110,7 @@ public class Email {
         }
 
     }
+
     public void sendPasswordResetEmail(String sendToEmail){
         MailjetClient client = new MailjetClient(options);
 
@@ -160,6 +161,9 @@ public class Email {
 
         int i = 0;
 
+        System.out.println(DatabaseFunctions.customersListCount);
+        System.out.println(DatabaseFunctions.employeesListCount);
+
         for (String e : allEmails) {
 
             if (e.equals(email)) {
@@ -170,6 +174,7 @@ public class Email {
                 } else if (i > DatabaseFunctions.employeesListCount) {
                     Password.isCustomerOrEmployee = "employee";
                     System.out.println("Employee Logging in");
+                    System.out.println("Error here");
                 }
                 return true;
             }
