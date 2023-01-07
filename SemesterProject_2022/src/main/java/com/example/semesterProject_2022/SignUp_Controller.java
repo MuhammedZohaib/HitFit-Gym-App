@@ -127,7 +127,7 @@ public class SignUp_Controller {
             apiResponse = validateEmail(emailField);
         }
 
-        if(firstName.isBlank()){
+        if(firstName.isBlank() || firstName.isEmpty()){
             fNameValidation.setText("! FirstName Cannot Be Empty");
             fName.setStyle(errorStyle);
         }
@@ -139,7 +139,7 @@ public class SignUp_Controller {
             fNameValidation.setText("! FirstName cannot contain letters");
             fName.setStyle(errorStyle);
         }
-        if(lastName.isBlank()){
+        if(lastName.isBlank() || lastName.isEmpty()){
             lNameValidation.setText("! LastName Cannot Be Empty");
             lName.setStyle(errorStyle);
         }
@@ -151,7 +151,7 @@ public class SignUp_Controller {
             lNameValidation.setText("! lastName cannot contain letters");
             lName.setStyle(errorStyle);
         }
-        if(userName.isBlank()){
+        if(userName.isBlank() || userName.isEmpty()){
             userNameValidation.setText("! UserName Cannot Be Empty");
             uName.setStyle(errorStyle);
         }
@@ -160,7 +160,7 @@ public class SignUp_Controller {
             userNameValidation.setText("! UserName Already Exists");
             uName.setStyle(errorStyle);
         }
-        if(emailField.isBlank()){
+        if(emailField.isBlank() || emailField.isEmpty()){
             emailValidation.setText("! Email Cannot Be Empty");
             email.setStyle(errorStyle);
         }
@@ -209,7 +209,7 @@ public class SignUp_Controller {
         if(userAddress.isEmpty()){
             userAddress = "-";
         }
-        if(phoneNumber.isBlank()){
+        if(phoneNumber.isBlank() || phoneNumber.isEmpty()){
             phoneNoValidation.setText("! PhoneNumber cannot be empty");
             pNumber.setStyle(errorStyle);
         }
@@ -238,7 +238,7 @@ public class SignUp_Controller {
             weightValidation.setText("! Invalid weight");
             weight.setStyle(errorStyle);
         }
-        else if (userWeight.isBlank()) {
+        else if (userWeight.isBlank() || userWeight.isEmpty()) {
             weightValidation.setText("! Weight Cannot Be empty");
             weight.setStyle(errorStyle);
         }

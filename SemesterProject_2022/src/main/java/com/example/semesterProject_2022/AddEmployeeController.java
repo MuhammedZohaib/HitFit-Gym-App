@@ -1,16 +1,17 @@
 package com.example.semesterProject_2022;
 
+import backend_functions.Email;
+import backend_functions.Username;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleGroup;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+
+import java.time.LocalDate;
+
+import static backend_functions.Email.validateEmail;
+
 
 public class AddEmployeeController {
 
@@ -81,48 +82,236 @@ public class AddEmployeeController {
     private TextField salaryfield;
 
     @FXML
+    private Label fNameValidation;
+    @FXML
+    private Label lNameValidation;
+    @FXML
+    private Label pNumberValidation;
+    @FXML
+    private Label cnicValidation;
+    @FXML
+    private Label dateValidation;
+
+    @FXML
+    private Label emailValidation;
+
+    @FXML
+    private Label designationValidation;
+    @FXML
+    private Label passwordValidation;
+    @FXML
+    private Label salaryValidation;
+    @FXML
+    private Label uNameValidation;
+    @FXML
+    private Button exit;
+    @FXML
     private StackPane stackpane;
-
+    private static String fName;
+    private static String lName;
+    private static String pNumber;
+    private static String cnic;
+    private static String gender;
+    private static LocalDate joiningDate;
+    private static String username;
+    private static String userEmail;
+    private static String password;
+    private static String salary;
+    private static String designation;
+    String errorStyle = "-fx-border-color: #ff0000; -fx-border-width: 3px; -fx-border-radius:10px";
+    String resetStyle = "-fx-border-color: transparent; -fx-border-width: 3px;  -fx-border-radius:10px";
+    String alphabetRegex = "^[a-zA-Z ]*$";
+    String numericRegex = "^[0-9]*$";
     @FXML
-    void addmemberactionbutton(ActionEvent event) {
+    void nextActionButton() {
+        fName = firstnamefield.getText();
+        lName = lastnamefield.getText();
+        pNumber = phonenofield.getText();
+        cnic = nicfield.getText();
+        joiningDate = joindatefield.getValue();
+
+
+        if(maleradiobutton.isSelected()){
+            gender = "male";
+        }
+        else if (femaleradiobutton.isSelected()){
+            gender = "female";
+        }
+
+        if(fName.isBlank() || fName.isEmpty()){
+            fNameValidation.setText("! FirstName Cannot Be Empty");
+            firstnamefield.setStyle(errorStyle);
+        }
+        else if(fName.length() < 3){
+            fNameValidation.setText("! FirstName Should Contain At-least Three Characters");
+            firstnamefield.setStyle(errorStyle);
+        }
+        else if (!fName.matches(alphabetRegex)) {
+            fNameValidation.setText("! FirstName cannot contain letters");
+            firstnamefield.setStyle(errorStyle);
+        }
+        if(lName.isBlank() || lName.isEmpty()){
+            lNameValidation.setText("! LastName Cannot Be Empty");
+            lastnamefield.setStyle(errorStyle);
+        }
+        else if(lName.length() < 3){
+            lNameValidation.setText("! LastName Should Contain At-least Three Characters");
+            lastnamefield.setStyle(errorStyle);
+        }
+        else if (!lName.matches(alphabetRegex)) {
+            lNameValidation.setText("! lastName cannot contain letters");
+            lastnamefield.setStyle(errorStyle);
+        }
+        if(pNumber.isBlank() || pNumber.isEmpty()){
+            pNumberValidation.setText("! PhoneNumber cannot be empty");
+            phonenofield.setStyle(errorStyle);
+        }
+        else if (!pNumber.matches(numericRegex)) {
+            pNumberValidation.setText("! PhoneNumber cannot contain letters");
+            phonenofield.setStyle(errorStyle);
+        }
+        else if(pNumber.length() != 11){
+            pNumberValidation.setText("! PhoneNumber must contain exactly 11 digits");
+            phonenofield.setStyle(errorStyle);
+        }
+
+        if(cnic.isBlank() || cnic.isEmpty()){
+            cnicValidation.setText("! NIC cannot be cannot be empty");
+            nicfield.setStyle(errorStyle);
+        }
+        else if(cnic.length() != 13){
+            cnicValidation.setText("! NIC must contain exactly 13 digits");
+            nicfield.setStyle(errorStyle);
+        }
+        else if (!cnic.matches(numericRegex)) {
+            cnicValidation.setText("! NIC cannot contain letters");
+            nicfield.setStyle(errorStyle);
+        }
+        try{
+            if(joiningDate.equals(null)){
+                dateValidation.setText("! Joining Date cannot be empty");
+                joindatefield.setStyle(errorStyle);
+            }
+        }
+        catch (NullPointerException e){
+            dateValidation.setText("!  Joining Date cannot be empty");
+        }
+        if(fNameValidation.getText().equals("") && lNameValidation.getText().equals("") && pNumberValidation.getText().equals("") && cnicValidation.getText().equals("") && dateValidation.getText().equals("")){
+            stackpane.getChildren().get(1).setVisible(false);
+            stackpane.getChildren().get(0).setVisible(true);
+        }
+    }
+    public void addEmployee(){
+        username = Usernamefield.getText();
+        userEmail = emailfield.getText();
+        password = passwordfield.getText();
+        salary = salaryfield.getText();
+        Boolean apiResponse = null;
+
+        if(!userEmail.isBlank() && !userEmail.isEmpty()){
+            apiResponse = validateEmail(userEmail);
+        }
+        if(username.isBlank()){
+            uNameValidation.setText("! UserName Cannot Be Empty");
+            Usernamefield.setStyle(errorStyle);
+        }
+        else if (Username.checkUsername(username)){
+            uNameValidation.setText("! UserName Already Exists");
+            Usernamefield.setStyle(errorStyle);
+        }
+        if(userEmail.isBlank()){
+            emailValidation.setText("! Email Cannot Be Empty");
+            emailfield.setStyle(errorStyle);
+        }
+        else if (Email.checkEmail(userEmail)){
+            emailValidation.setText("! Email Already Exists");
+            emailfield.setStyle(errorStyle);
+        }
+        else if(apiResponse.equals(false)){
+            emailValidation.setText("! Invalid Email");
+            emailfield.setStyle(errorStyle);
+        }
+        if(salary.isEmpty() || salary.isBlank()){
+            salaryValidation.setText("! Salary Cannot Be Empty");
+            salaryfield.setStyle(errorStyle);
+        }
+        else if(!salary.matches(numericRegex)){
+            salaryValidation.setText("! Salary Cannot be in Letters");
+            salaryfield.setStyle(errorStyle);
+        }
+        if(password.isBlank() || password.isEmpty()){
+            passwordValidation.setText("! Password cannot be empty");
+            passwordfield.setStyle(errorStyle);
+        }
+        else if(password.length() < 8){
+            passwordValidation.setText("! Password must contain at-least 8 letters");
+            passwordfield.setStyle(errorStyle);
+        }
+        if(designation == null){
+            designationValidation.setText("! Please select a designation");
+        }
+        else if(uNameValidation.getText().equals("") && emailValidation.getText().equals("") && passwordfield.getText().equals("") && salaryfield.getText().equals("") && designationValidation.getText().equals("")){
+            //send to Db function call here
+            close();
+        }
+    }
+    public void reset(){
+        fNameValidation.setText("");
+        lNameValidation.setText("");
+        pNumberValidation.setText("");
+        cnicValidation.setText("");
+        dateValidation.setText("");
+
+        firstnamefield.setStyle(resetStyle);
+        lastnamefield.setStyle(resetStyle);
+        phonenofield.setStyle(resetStyle);
+        nicfield.setStyle(resetStyle);
+        joindatefield.setStyle(resetStyle);
 
     }
+    public void reset2(){
+        uNameValidation.setText("");
+        emailValidation.setText("");
+        passwordValidation.setText("");
+        designationValidation.setText("");
+        salaryValidation.setText("");
 
+        Usernamefield.setStyle(resetStyle);
+        emailfield.setStyle(resetStyle);
+        passwordfield.setStyle(resetStyle);
+        salaryfield.setStyle(resetStyle);
+    }
+    public void close(){
+        new GeneralFunctions().close(exit);
+    }
     @FXML
-    void menuitem1actionbutton(ActionEvent event) {
+    void supervisor() {
+        designation = "Supervisor";
+        designationmenubutton.setText("Supervisor");
+    }
+    @FXML
+    void trainer() {
+        designation = "Trainer";
+        designationmenubutton.setText("Trainer");
+    }
+    @FXML
+    void stockManager() {
+        designation = "Stock Manager";
+        designationmenubutton.setText("Stock Manager");
 
     }
-
     @FXML
-    void menuitem2actionbutton(ActionEvent event) {
+    void cleaningStaff() {
+        designation = "Cleaning Staff";
+        designationmenubutton.setText("Cleaning Staff");
 
     }
-
     @FXML
-    void menuitem3actionbutton(ActionEvent event) {
-
+    void equipmentManager() {
+        designation = "Equipment Maintainer";
+        designationmenubutton.setText("Equipment Maintainer");
     }
 
-    @FXML
-    void menuitem4actionbutton(ActionEvent event) {
 
-    }
-
-    @FXML
-    void menuitem5actionbutton(ActionEvent event) {
-
-    }
-
-    @FXML
-    void nextactionbutton(ActionEvent event) {
-
-
-        // this is to switch the anchor pane in the stack pane (basically,
-        // when the user presses the next button this should hide the personal info pane,
-        // and display the account info pane)
-
-       stackpane.getChildren().get(1).setVisible(false);
-       stackpane.getChildren().get(0).setVisible(true);
-    }
 
 }

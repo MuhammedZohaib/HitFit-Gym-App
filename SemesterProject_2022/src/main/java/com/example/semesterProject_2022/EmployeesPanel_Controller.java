@@ -91,27 +91,10 @@ public class EmployeesPanel_Controller implements Initializable {
     public static ObservableList<Employee> employeeslist = FXCollections.observableArrayList();
     ResultSet resultSet = null;
 
-    private String fName;
-    private String lName;
-    private String pNumber;
-    private String cnic;
-
-    private boolean gender;
-    private LocalDate joiningDate;
-
-
-
 
     @FXML
-    void addEmployee(ActionEvent event) throws IOException {
-        Stage stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddEmployee.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
-        stage.initStyle(StageStyle.UNDECORATED);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.showAndWait();
-        stage.centerOnScreen();
+    void addEmployee() throws IOException {
+        new GeneralFunctions().switchSceneModality("AddEmployee.fxml");
     }
 
     @FXML
@@ -193,8 +176,6 @@ public class EmployeesPanel_Controller implements Initializable {
                 }
 
             });
-
-
             SortedList<Employee> sortedList = new SortedList<>(filteredList);
             sortedList.comparatorProperty().bind(employeesView.comparatorProperty());
             employeesView.setItems(sortedList);

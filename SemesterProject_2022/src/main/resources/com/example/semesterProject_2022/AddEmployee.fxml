@@ -71,25 +71,20 @@
                                 <Font size="10.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="Usernamefield" layoutX="14.0" layoutY="31.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <TextField fx:id="Usernamefield" layoutX="14.0" layoutY="31.0" onMouseClicked="#reset2" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
                         <Text fill="WHITE" layoutX="210.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
                             <font>
                                 <Font size="10.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="emailfield" layoutX="200.0" layoutY="31.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <TextField fx:id="emailfield" layoutX="200.0" layoutY="31.0" onMouseClicked="#reset2" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
                         <Text fill="WHITE" layoutX="24.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
                             <font>
                                 <Font size="10.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="passwordfield" layoutX="14.0" layoutY="94.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
-                        <Text fill="WHITE" layoutX="210.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC No.">
-                            <font>
-                                <Font size="10.0" />
-                            </font>
-                        </Text>
-                        <Text fill="WHITE" layoutX="207.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Designation">
+                        <TextField fx:id="passwordfield" layoutX="14.0" layoutY="94.0" onMouseClicked="#reset2" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <Text fill="WHITE" layoutX="210.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Designation">
                             <font>
                                 <Font size="10.0" />
                             </font>
@@ -99,23 +94,50 @@
                                 <Font size="10.0" />
                             </font>
                         </Label>
-                        <Button fx:id="addmember" layoutX="14.0" layoutY="213.0" mnemonicParsing="false" onAction="#addmemberactionbutton" prefHeight="25.0" prefWidth="99.0" text="Add" textFill="#031927">
+                        <Button fx:id="addmember" layoutX="14.0" layoutY="213.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="25.0" prefWidth="99.0" text="Add" textFill="#031927">
                             <styleClass>
                                 <String fx:value="onhover" />
                                 <String fx:value="CustomFields" />
                             </styleClass>
                         </Button>
-                        <TextField fx:id="salaryfield" layoutX="14.0" layoutY="159.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
-                        <MenuButton fx:id="designationmenubutton" layoutX="201.0" layoutY="159.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" styleClass="CustomFields" text="Designation">
+                        <TextField fx:id="salaryfield" layoutX="14.0" layoutY="159.0" onMouseClicked="#reset2" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <MenuButton fx:id="designationmenubutton" layoutX="200.0" layoutY="94.0" mnemonicParsing="false" onMouseClicked="#reset2" prefHeight="24.0" prefWidth="171.0" style="-fx-background-color: #ffffff;" styleClass="CustomFields" text="Designation">
                             <items>
-                                <MenuItem fx:id="menuitem1" mnemonicParsing="false" onAction="#menuitem1actionbutton" text="Supervisor" />
-                                <MenuItem fx:id="menuitem2" mnemonicParsing="false" onAction="#menuitem2actionbutton" text="Trainer" />
-                                <MenuItem fx:id="menuitem3" mnemonicParsing="false" onAction="#menuitem3actionbutton" text="Stock Manager" />
-                                <MenuItem fx:id="menuitem4" mnemonicParsing="false" onAction="#menuitem4actionbutton" text="Cleaning Staff" />
-                                <MenuItem fx:id="menuitem5" mnemonicParsing="false" onAction="#menuitem5actionbutton" text="Equipment maintainer" />
+                                <MenuItem fx:id="menuitem1" mnemonicParsing="false" onAction="#supervisor" text="Supervisor" />
+                                <MenuItem fx:id="menuitem2" mnemonicParsing="false" onAction="#trainer" text="Trainer" />
+                                <MenuItem fx:id="menuitem3" mnemonicParsing="false" onAction="#stockManager" text="Stock Manager" />
+                                <MenuItem fx:id="menuitem4" mnemonicParsing="false" onAction="#cleaningStaff" text="Cleaning Staff" />
+                                <MenuItem fx:id="menuitem5" mnemonicParsing="false" onAction="#equipmentManager" text="Equipment maintainer" />
                             </items>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
                         </MenuButton>
-                  <TextField fx:id="nicfield" layoutX="200.0" layoutY="94.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                  <Label fx:id="uNameValidation" layoutX="200.0" layoutY="160.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="5.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="emailValidation" layoutX="200.0" layoutY="177.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="5.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="passwordValidation" layoutX="200.0" layoutY="194.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="5.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="designationValidation" layoutX="200.0" layoutY="211.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="5.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="salaryValidation" layoutX="200.0" layoutY="228.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="5.0" />
+                     </font>
+                  </Label>
                     </children>
                 </AnchorPane>
                 <AnchorPane fx:id="personalInfo" prefHeight="289.0" prefWidth="405.0">
@@ -125,56 +147,90 @@
                                 <Font size="10.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="firstnamefield" layoutX="14.0" layoutY="31.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <TextField fx:id="firstnamefield" layoutX="14.0" layoutY="31.0" onMouseClicked="#reset" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
                         <Text fill="WHITE" layoutX="210.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
                             <font>
                                 <Font size="10.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="lastnamefield" layoutX="200.0" layoutY="31.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <TextField fx:id="lastnamefield" layoutX="200.0" layoutY="31.0" onMouseClicked="#reset" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
                         <Text fill="WHITE" layoutX="24.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone No.">
                             <font>
                                 <Font size="10.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="phonenofield" layoutX="14.0" layoutY="94.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <TextField fx:id="phonenofield" layoutX="14.0" layoutY="94.0" onMouseClicked="#reset" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
                         <Text fill="WHITE" layoutX="210.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC No.">
                             <font>
                                 <Font size="10.0" />
                             </font>
                         </Text>
-                        <TextField fx:id="nicfield" layoutX="200.0" layoutY="94.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
-                        <DatePicker fx:id="joindatefield" layoutX="200.0" layoutY="159.0" prefHeight="25.0" prefWidth="149.0" stylesheets="@CSS/Main_App.css">
+                        <TextField fx:id="nicfield" layoutX="200.0" layoutY="94.0" onMouseClicked="#reset" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <DatePicker fx:id="joindatefield" layoutX="200.0" layoutY="150.0" onMouseClicked="#reset" prefHeight="25.0" prefWidth="171.0" stylesheets="@CSS/Main_App.css">
                             <styleClass>
                                 <String fx:value=".date-picker" />
                                 <String fx:value="CustomFields" />
                             </styleClass>
                         </DatePicker>
-                        <Text fill="WHITE" layoutX="207.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Joining Date">
+                        <Text fill="WHITE" layoutX="207.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Joining Date">
                             <font>
                                 <Font size="10.0" />
                             </font>
                         </Text>
-                        <RadioButton fx:id="maleradiobutton" layoutX="15.0" layoutY="165.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="70.0" text="Male" textFill="WHITE">
+                        <RadioButton fx:id="maleradiobutton" layoutX="22.0" layoutY="150.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="70.0" text="Male" textFill="WHITE">
                             <toggleGroup>
                                 <ToggleGroup fx:id="Group1" />
                             </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="femaleradiobutton" layoutX="92.0" layoutY="164.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="79.0" text="Female" textFill="WHITE" toggleGroup="$Group1" />
-                        <Label layoutX="24.0" layoutY="138.0" text="Gender" textFill="WHITE">
-                            <font>
-                                <Font size="10.0" />
-                            </font>
-                        </Label>
-                        <Button fx:id="next" layoutX="14.0" layoutY="213.0" mnemonicParsing="false" onAction="#nextactionbutton" prefHeight="25.0" prefWidth="99.0" text="Next" textFill="#031927">
+                        <RadioButton fx:id="femaleradiobutton" layoutX="93.0" layoutY="150.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="79.0" text="Female" textFill="WHITE" toggleGroup="$Group1" />
+                        <Button fx:id="next" layoutX="14.0" layoutY="201.0" mnemonicParsing="false" onAction="#nextActionButton" prefHeight="25.0" prefWidth="99.0" text="Next" textFill="#031927">
                             <styleClass>
                                 <String fx:value="onhover" />
                                 <String fx:value="CustomFields" />
                             </styleClass>
                         </Button>
+                  <Text fill="WHITE" layoutX="24.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </Text>
+                  <Label fx:id="fNameValidation" layoutX="130.0" layoutY="180.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="5.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lNameValidation" layoutX="130.0" layoutY="197.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="5.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pNumberValidation" layoutX="130.0" layoutY="214.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="5.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="cnicValidation" layoutX="130.0" layoutY="231.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="5.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="dateValidation" layoutX="130.0" layoutY="248.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="5.0" />
+                     </font>
+                  </Label>
                     </children>
                 </AnchorPane>
             </children>
         </StackPane>
+      <Button fx:id="exit" layoutX="605.0" layoutY="-1.0" mnemonicParsing="false" onAction="#close" prefHeight="40.0" prefWidth="48.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/icons8-close-window-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
     </children>
 </AnchorPane>

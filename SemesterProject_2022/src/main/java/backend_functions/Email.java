@@ -90,17 +90,21 @@ public class Email {
                         <br>
                         <p>Dear valued member,
                         <br>   
-                           Congratulations on signing up for the HITFIT gym app! We are excited to have you join our community and help you achieve your fitness goals.
+                        <br>   
+                           Congratulations! On signing up for the HITFIT gym app! We are excited to have you join our community and help you achieve your fitness goals.
+                           <br>
                            <br>
                            As a new member, you will have access to a wide range of equipments including personalized workout plans, personal trainer, track of membership and access to our community of fitness enthusiasts.
                            <br>
                            We encourage you to take advantage of all that the app has to offer and to reach out to us with any questions or concerns. Our team is always here to support you and help you succeed.
                            <br>
+                           <br>
                            Thank you for choosing HITFIT. We can't wait to see your progress and help you achieve your fitness dreams.
                            <br>
-                           
-                           Best regards,\s
+                           <br>
+                           Best regards,<br>
                            HITFIT Team
+                           <br>
                            </p>
                         """)
                 .subject("HITFIT Signup Confirmation")
