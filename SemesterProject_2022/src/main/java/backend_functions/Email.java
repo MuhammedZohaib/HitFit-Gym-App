@@ -88,12 +88,22 @@ public class Email {
                         <br>
                         <h1 style="text-align:center">Sign Up Successful!</h1>
                         <br>
-                        <h4>Your account has been created successfully</h4>
-                        <br>
-                        <p>Dear user, welcome to Hit Fit. Thank you for signing up on our app.</p>
-                        <p>Your fitness journey begins here</p>
+                        <p>Dear valued member,
+                        <br>   
+                           Congratulations on signing up for the HITFIT gym app! We are excited to have you join our community and help you achieve your fitness goals.
+                           <br>
+                           As a new member, you will have access to a wide range of equipments including personalized workout plans, personal trainer, track of membership and access to our community of fitness enthusiasts.
+                           <br>
+                           We encourage you to take advantage of all that the app has to offer and to reach out to us with any questions or concerns. Our team is always here to support you and help you succeed.
+                           <br>
+                           Thank you for choosing HITFIT. We can't wait to see your progress and help you achieve your fitness dreams.
+                           <br>
+                           
+                           Best regards,\s
+                           HITFIT Team
+                           </p>
                         """)
-                .subject("Account Sign Up Confirmation")
+                .subject("HITFIT Signup Confirmation")
                 .trackOpens(TrackOpens.ENABLED)
                 .header("test-header-key", "test-value")
                 .build();

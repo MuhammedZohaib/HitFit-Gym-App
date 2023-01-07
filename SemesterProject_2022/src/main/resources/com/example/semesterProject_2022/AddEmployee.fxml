@@ -56,7 +56,7 @@
                 </LinearGradient>
             </fill>
         </Rectangle>
-        <Text fill="WHITE" layoutX="239.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD AN EMPLOYEE">
+        <Text fill="WHITE" layoutX="239.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD NEW EMPLOYEE">
             <font>
                 <Font name="System Bold Italic" size="20.0" />
             </font>
@@ -160,7 +160,7 @@
                                 <ToggleGroup fx:id="Group1" />
                             </toggleGroup>
                         </RadioButton>
-                        <RadioButton fx:id="femaleradiobutton" layoutX="92.0" layoutY="164.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="70.0" text="Female" textFill="WHITE" toggleGroup="$Group1" />
+                        <RadioButton fx:id="femaleradiobutton" layoutX="92.0" layoutY="164.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="79.0" text="Female" textFill="WHITE" toggleGroup="$Group1" />
                         <Label layoutX="24.0" layoutY="138.0" text="Gender" textFill="WHITE">
                             <font>
                                 <Font size="10.0" />

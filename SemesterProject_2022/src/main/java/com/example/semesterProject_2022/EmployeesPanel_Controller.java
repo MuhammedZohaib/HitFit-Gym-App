@@ -29,6 +29,7 @@ import java.net.URL;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.ResourceBundle;
 
@@ -89,6 +90,17 @@ public class EmployeesPanel_Controller implements Initializable {
 
     public static ObservableList<Employee> employeeslist = FXCollections.observableArrayList();
     ResultSet resultSet = null;
+
+    private String fName;
+    private String lName;
+    private String pNumber;
+    private String cnic;
+
+    private boolean gender;
+    private LocalDate joiningDate;
+
+
+
 
     @FXML
     void addEmployee(ActionEvent event) throws IOException {
