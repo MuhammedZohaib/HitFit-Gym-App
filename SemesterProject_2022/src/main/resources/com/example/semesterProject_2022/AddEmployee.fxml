@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="359.0" prefWidth="653.0" styleClass="background" stylesheets="@CSS/Main_App.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.AddEmployeeController">
+    <children>
+        <ImageView fitHeight="424.0" fitWidth="237.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@Images/daniel-apodaca-WdoQio6HPVA-unsplash%201.png" />
+            </image>
+        </ImageView>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" height="359.0" layoutX="196.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="456.0">
+            <fill>
+                <LinearGradient endX="1.0" endY="1.0" startY="1.0">
+                    <stops>
+                        <Stop>
+                            <color>
+                                <Color red="0.10249999910593033" green="0.17379166185855865" blue="0.25" opacity="0.9390863180160522" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                            <color>
+                                <Color red="0.10249999910593033" green="0.17379166185855865" blue="0.25" opacity="0.9390863180160522" />
+                            </color>
+                        </Stop>
+                        <Stop offset="0.44295302013422816">
+                            <color>
+                                <Color red="0.10588235408067703" green="0.18039216101169586" blue="0.2666666805744171" />
+                            </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                            <color>
+                                <Color red="0.2079000025987625" green="0.2506349980831146" blue="0.33000001311302185" opacity="0.2791878283023834" />
+                            </color>
+                        </Stop>
+                    </stops>
+                </LinearGradient>
+            </fill>
+        </Rectangle>
+        <Text fill="WHITE" layoutX="239.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADD AN EMPLOYEE">
+            <font>
+                <Font name="System Bold Italic" size="20.0" />
+            </font>
+        </Text>
+        <Line endX="241.0" endY="1.1444091796875E-5" layoutX="325.0" layoutY="54.0" startX="-100.0" stroke="#00c2ff" />
+        <StackPane fx:id="stackpane" layoutX="220.0" layoutY="70.0" prefHeight="281.0" prefWidth="401.0">
+            <children>
+                <AnchorPane fx:id="AccountInfopane" prefHeight="289.0" prefWidth="405.0" stylesheets="@CSS/Main_App.css" visible="false">
+                    <children>
+                        <Text fill="WHITE" layoutX="24.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="Usernamefield" layoutX="14.0" layoutY="31.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <Text fill="WHITE" layoutX="210.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="emailfield" layoutX="200.0" layoutY="31.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <Text fill="WHITE" layoutX="24.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="passwordfield" layoutX="14.0" layoutY="94.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <Text fill="WHITE" layoutX="210.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC No.">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="207.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Designation">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Text>
+                        <Label layoutX="24.0" layoutY="138.0" text="Salary" textFill="WHITE">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="addmember" layoutX="14.0" layoutY="213.0" mnemonicParsing="false" onAction="#addmemberactionbutton" prefHeight="25.0" prefWidth="99.0" text="Add" textFill="#031927">
+                            <styleClass>
+                                <String fx:value="onhover" />
+                                <String fx:value="CustomFields" />
+                            </styleClass>
+                        </Button>
+                        <TextField fx:id="salaryfield" layoutX="14.0" layoutY="159.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <MenuButton fx:id="designationmenubutton" layoutX="201.0" layoutY="159.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" styleClass="CustomFields" text="Designation">
+                            <items>
+                                <MenuItem fx:id="menuitem1" mnemonicParsing="false" onAction="#menuitem1actionbutton" text="Supervisor" />
+                                <MenuItem fx:id="menuitem2" mnemonicParsing="false" onAction="#menuitem2actionbutton" text="Trainer" />
+                                <MenuItem fx:id="menuitem3" mnemonicParsing="false" onAction="#menuitem3actionbutton" text="Stock Manager" />
+                                <MenuItem fx:id="menuitem4" mnemonicParsing="false" onAction="#menuitem4actionbutton" text="Cleaning Staff" />
+                                <MenuItem fx:id="menuitem5" mnemonicParsing="false" onAction="#menuitem5actionbutton" text="Equipment maintainer" />
+                            </items>
+                        </MenuButton>
+                  <TextField fx:id="nicfield" layoutX="200.0" layoutY="94.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="personalInfo" prefHeight="289.0" prefWidth="405.0">
+                    <children>
+                        <Text fill="WHITE" layoutX="24.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="firstnamefield" layoutX="14.0" layoutY="31.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <Text fill="WHITE" layoutX="210.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="lastnamefield" layoutX="200.0" layoutY="31.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <Text fill="WHITE" layoutX="24.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone No.">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="phonenofield" layoutX="14.0" layoutY="94.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <Text fill="WHITE" layoutX="210.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NIC No.">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="nicfield" layoutX="200.0" layoutY="94.0" styleClass="CustomFields" stylesheets="@CSS/Main_App.css" />
+                        <DatePicker fx:id="joindatefield" layoutX="200.0" layoutY="159.0" prefHeight="25.0" prefWidth="149.0" stylesheets="@CSS/Main_App.css">
+                            <styleClass>
+                                <String fx:value=".date-picker" />
+                                <String fx:value="CustomFields" />
+                            </styleClass>
+                        </DatePicker>
+                        <Text fill="WHITE" layoutX="207.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Joining Date">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Text>
+                        <RadioButton fx:id="maleradiobutton" layoutX="15.0" layoutY="165.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="70.0" text="Male" textFill="WHITE">
+                            <toggleGroup>
+                                <ToggleGroup fx:id="Group1" />
+                            </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="femaleradiobutton" layoutX="92.0" layoutY="164.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="70.0" text="Female" textFill="WHITE" toggleGroup="$Group1" />
+                        <Label layoutX="24.0" layoutY="138.0" text="Gender" textFill="WHITE">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </Label>
+                        <Button fx:id="next" layoutX="14.0" layoutY="213.0" mnemonicParsing="false" onAction="#nextactionbutton" prefHeight="25.0" prefWidth="99.0" text="Next" textFill="#031927">
+                            <styleClass>
+                                <String fx:value="onhover" />
+                                <String fx:value="CustomFields" />
+                            </styleClass>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </children>
+        </StackPane>
+    </children>
+</AnchorPane>

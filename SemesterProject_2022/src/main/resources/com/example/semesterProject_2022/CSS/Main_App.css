@@ -248,8 +248,27 @@
     -fx-background-color: rgba(129, 129, 129, 0.81);
     -fx-cursor: hand;
 }
+#next,#next1
+{
+    -fx-background-color: #00c2ff;
+}
+#next:hover,next1:hover
+{
+    -fx-cursor: hand;
+    -fx-background-color: #FFA400 ;
+}
 .onhover:hover
 {
     -fx-background-color: #FFA400; ;
     -fx-cursor: hand;
+}
+.CustomFields
+{
+  -fx-background-radius: 12px;
+}
+.date-picker .text-field {
+    -fx-background-radius: 10 0 0 10;
+}
+.date-picker .arrow-button {
+    -fx-background-radius: 0 10 10 0;
 }
