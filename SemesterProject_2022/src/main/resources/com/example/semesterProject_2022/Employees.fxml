@@ -53,10 +53,13 @@
                                         <TableColumn fx:id="Salary" minWidth="0.0" prefWidth="120.0" text="Salary" />
                                         <TableColumn fx:id="phone" minWidth="0.0" prefWidth="120.0" text="Phone No" />
                               <TableColumn fx:id="Designation" prefWidth="75.0" text="Desigation" />
+                              <TableColumn fx:id="SelectedDate" prefWidth="150.0" text="Joining Date" />
+                              <TableColumn fx:id="JoiningMonth" prefWidth="150.0" text="Joining Month" />
+                              <TableColumn fx:id="joiningYear" prefWidth="150.0" text="Joining Year" />
                                         <TableColumn fx:id="action" minWidth="0.0" prefWidth="120.0" text="Action" />
                                     </columns>
                                 </TableView>
-                                <Pagination fx:id="pagination" pageCount="10" prefHeight="299.0" prefWidth="836.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="0.0" />
+                                <Pagination fx:id="pagination" pageCount="10" prefHeight="299.0" prefWidth="840.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0" />
                             </children>
                         </AnchorPane>
                     </center>

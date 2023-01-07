@@ -5,7 +5,36 @@ import javafx.scene.control.MenuButton;
 public class CustomMenuButton extends MenuButton {
 
     private int ButtonId;
-    private String FullName,weight,Address,Email,Username,PackageType,PackagePrice;
+    private String FullName,weight,Address,Email,Username,PackageType,PackagePrice,designation;
+    private double salary;
+
+
+    // constructor for employees
+    public CustomMenuButton(String s, int buttonId, String fullName, String email, String username, String designation, double salary) {
+        super(s);
+        ButtonId = buttonId;
+        FullName = fullName;
+        Email = email;
+        Username = username;
+        this.designation = designation;
+        this.salary = salary;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
 
     public int getButtonId() {
         return ButtonId;
@@ -71,6 +100,7 @@ public class CustomMenuButton extends MenuButton {
         PackagePrice = packagePrice;
     }
 
+    // constructor for Members
     public CustomMenuButton(int ButtonId, String s, String fullName, String weight, String address, String email, String username,String packagePrice) {
         super(s);
         FullName = fullName;

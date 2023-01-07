@@ -272,3 +272,11 @@
 .date-picker .arrow-button {
     -fx-background-radius: 0 10 10 0;
 }
+
+#employeesView .table-column {
+    -fx-alignment: CENTER;
+}
+
+#membersView .table-column {
+    -fx-alignment: CENTER;
+}
