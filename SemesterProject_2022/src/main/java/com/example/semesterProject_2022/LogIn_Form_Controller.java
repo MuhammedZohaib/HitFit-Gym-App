@@ -86,7 +86,7 @@ public class LogIn_Form_Controller {
         }
 
         else if (!newLogin.checkUsernameEmail() && newLogin.userLoggedInStatus() && epValidation.getText().equals("") && passwordValidation.getText().equals("")) {
-            new GeneralFunctions().switchScene(e, "Customer_Dashboard.fxml", screenBounds.getWidth(), screenBounds.getHeight());
+            new GeneralFunctions().switchSceneFXHelper(e, "Customer_Dashboard.fxml");
 
         }
 
@@ -120,7 +120,7 @@ public class LogIn_Form_Controller {
         }
 
         else if (email.equals("AyaanAli@9921") && password.equals("L3tM31n_121") && epValidation.getText().equals("") && passwordValidation.getText().equals("")) {
-            new GeneralFunctions().switchScene(e, "DashBoard.fxml", screenBounds.getWidth(), screenBounds.getHeight());
+            new GeneralFunctions().switchSceneFXHelper(e, "DashBoard.fxml");
 
         }
     }

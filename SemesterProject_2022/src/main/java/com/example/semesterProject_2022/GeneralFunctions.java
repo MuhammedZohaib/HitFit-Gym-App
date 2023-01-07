@@ -1,5 +1,6 @@
 package com.example.semesterProject_2022;
 
+import com.ResizeHelper.FXResizeHelper;
 import com.ResizeHelper.ResizeHelper;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
@@ -56,14 +57,14 @@ public class GeneralFunctions {
     }
 
     /*----Overloaded SwitchScene Method because of Resize Helper Class-----*/
-    public void switchScene(Event e, String fxml, double maxWidth, double maxHeight) throws IOException {
+    public void switchSceneFXHelper(Event e, String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml));
         obj.stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
         obj.scene = new Scene(fxmlLoader.load());
         obj.stage.setScene(obj.scene);
 
         /*---------Using the Undecorated Stage we can't resize through native functionalities so here is the function to resize and drag the undecorated stage----------------*/
-        ResizeHelper.addResizeListener(obj.stage,1024,600,maxWidth,maxHeight);
+        FXResizeHelper fxResizeHelper = new FXResizeHelper(obj.stage, 10, 10);
         obj.stage.show();
         obj.stage.centerOnScreen();
     }
