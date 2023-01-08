@@ -21,7 +21,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="359.0" prefWidth="653.0" styleClass="background" stylesheets="@CSS/Main_App.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.AddEmployeeController">
+<AnchorPane fx:id="Main" onMouseDragged="#dragWindow" onMousePressed="#pressedWindow" prefHeight="359.0" prefWidth="653.0" styleClass="background" stylesheets="@CSS/Main_App.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.AddEmployeeController">
     <children>
         <ImageView fitHeight="424.0" fitWidth="237.0" pickOnBounds="true" preserveRatio="true">
             <image>

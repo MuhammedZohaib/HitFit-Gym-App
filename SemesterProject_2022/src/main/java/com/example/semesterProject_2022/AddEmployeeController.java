@@ -5,8 +5,10 @@ import backend_functions.Username;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 import java.time.LocalDate;
 
@@ -14,7 +16,8 @@ import static backend_functions.Email.validateEmail;
 
 
 public class AddEmployeeController {
-
+    @FXML
+    private AnchorPane Main;
     @FXML
     private AnchorPane AccountInfopane;
 
@@ -118,6 +121,10 @@ public class AddEmployeeController {
     private static String password;
     private static String salary;
     private static String designation;
+
+    private double x=0 ,y = 0;
+    GeneralFunctions generalFunctions = new GeneralFunctions();
+
     String errorStyle = "-fx-border-color: #ff0000; -fx-border-width: 3px; -fx-border-radius:10px";
     String resetStyle = "-fx-border-color: transparent; -fx-border-width: 3px;  -fx-border-radius:10px";
     String alphabetRegex = "^[a-zA-Z ]*$";
@@ -311,7 +318,20 @@ public class AddEmployeeController {
         designation = "Equipment Maintainer";
         designationmenubutton.setText("Equipment Maintainer");
     }
+    public void dragWindow(MouseEvent e)
+    {
+       generalFunctions.stage = (Stage) Main.getScene().getWindow();
 
+        generalFunctions.stage.setX(e.getScreenX()-x);
+
+        generalFunctions.stage.setY(e.getScreenY()-y);
+    }
+
+    public void pressedWindow(MouseEvent e)
+    {
+        x = e.getSceneX();
+        y= e.getSceneY();
+    }
 
 
 }

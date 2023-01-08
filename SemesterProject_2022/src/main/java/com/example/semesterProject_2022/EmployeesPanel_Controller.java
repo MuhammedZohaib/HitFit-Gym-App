@@ -74,10 +74,7 @@ public class EmployeesPanel_Controller implements Initializable {
 
     @FXML
     private TableColumn<Employee, String> phone;
-    @FXML
-    private TableColumn<Employee, String> JoiningMonth;
-    @FXML
-    private TableColumn<Employee, String> joiningYear;
+
 
     @FXML
     private Button refreshButton;
@@ -152,13 +149,6 @@ public class EmployeesPanel_Controller implements Initializable {
                 {
                     return true;
                 }
-                else if(employee.getMonth().toLowerCase().indexOf(searchkeyword) > -1)
-                {
-                    return true;
-                } else if(employee.getYear().toLowerCase().indexOf(searchkeyword) > -1)
-                {
-                    return true;
-                }
                 else if(employee.getDesignation().toLowerCase().indexOf(searchkeyword) > -1)
                 {
                     return true;
@@ -223,8 +213,6 @@ public class EmployeesPanel_Controller implements Initializable {
         action.setCellValueFactory(new PropertyValueFactory<>("actionbtn"));
         Designation.setCellValueFactory(new PropertyValueFactory<>("designation"));
         SelectedDate.setCellValueFactory(new PropertyValueFactory<>("joiningDate"));
-        JoiningMonth.setCellValueFactory(new PropertyValueFactory<>("month"));
-        joiningYear.setCellValueFactory(new PropertyValueFactory<>("year"));
     }
 
     private void showrecords() {

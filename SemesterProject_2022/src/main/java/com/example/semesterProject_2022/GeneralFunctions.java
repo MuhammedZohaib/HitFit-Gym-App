@@ -16,6 +16,7 @@ import javafx.stage.StageStyle;
 import java.io.IOException;
 
 public class GeneralFunctions {
+    public Stage stage;
     LoadingScreen_Controller obj = new LoadingScreen_Controller();
     private static int Nan_counter=0;
     Rectangle2D dim = Screen.getPrimary().getVisualBounds();
@@ -41,7 +42,7 @@ public class GeneralFunctions {
         stage.show();
     }
     public void switchSceneModality(String fxml) throws IOException {
-        Stage stage = new Stage();
+        stage = new Stage();
         FXMLLoader fxmlLoader = new FXMLLoader(RevenuePanel_Controller.class.getResource(fxml));
         stage.initModality(Modality.APPLICATION_MODAL);
         Scene scene = new Scene(fxmlLoader.load());
