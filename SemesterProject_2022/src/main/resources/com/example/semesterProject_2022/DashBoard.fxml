@@ -152,11 +152,11 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="memberships" graphicTextGap="0.0" mnemonicParsing="false" onAction="#MembershipsBtn" prefHeight="25.0" prefWidth="186.0" text="Memberships">
+                  <Button fx:id="memberships" graphicTextGap="0.0" mnemonicParsing="false" onAction="#MembershipsBtn" prefHeight="25.0" prefWidth="186.0" text="Transactions">
                      <graphic>
-                        <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" translateX="-18.0">
+                        <ImageView fitHeight="24.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true" translateX="-18.0">
                            <image>
-                              <Image url="@BorderIcons/Memberships.png" />
+                              <Image url="@BorderIcons/icons8-transaction-96.png" />
                            </image>
                         </ImageView>
                      </graphic>

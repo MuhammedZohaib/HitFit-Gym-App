@@ -111,7 +111,9 @@ public class EmployeesPanel_Controller implements Initializable {
         employeeslist.sort(Comparator.comparing(Employee::getId, Comparator.naturalOrder()));
         employeesView.setItems(employeeslist);
     }
-
+    public static void view() throws IOException {
+        new GeneralFunctions().switchSceneModality("employeesDetailCard.fxml");
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         pagination.setPageFactory(this::createPage);
@@ -222,7 +224,7 @@ public class EmployeesPanel_Controller implements Initializable {
 
 
             while (resultSet.next()) {
-                employeeslist.add(new Employee(resultSet.getDate("joining_date"), resultSet.getString("first_name"),resultSet.getString("last_name"),resultSet.getString("email"),resultSet.getString("phone_number"),resultSet.getString("nic_number"),resultSet.getString("designation"),resultSet.getInt("salary"),resultSet.getInt("id"),new CustomMenuButton("Action",resultSet.getInt("id") , resultSet.getString("first_name")+resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("username"), resultSet.getString("designation"), resultSet.getDouble("salary"))));
+                employeeslist.add(new Employee(resultSet.getDate("joining_date"), resultSet.getString("first_name"),resultSet.getString("last_name"),resultSet.getString("email"),resultSet.getString("phone_number"),resultSet.getString("nic_number"),resultSet.getString("designation"),resultSet.getInt("salary"),resultSet.getInt("id"),new CustomMenuButton("Action",resultSet.getInt("id") , resultSet.getString("first_name")+resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("username"), resultSet.getString("designation"), resultSet.getDouble("salary"), resultSet.getString("gender"),resultSet.getString("phone_number"))));
             }
         }
 

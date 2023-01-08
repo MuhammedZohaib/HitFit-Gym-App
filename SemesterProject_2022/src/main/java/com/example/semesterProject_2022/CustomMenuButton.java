@@ -5,13 +5,30 @@ import javafx.scene.control.MenuButton;
 public class CustomMenuButton extends MenuButton {
 
     private int ButtonId;
-    private String FullName,weight,Address,Email,Username,PackageType,PackagePrice,designation;
+    private String FullName,weight,Address,Email,Username,PackageType,PackagePrice,designation,gender,phone;
     private double salary;
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     // constructor for employees
-    public CustomMenuButton(String s, int buttonId, String fullName, String email, String username, String designation, double salary) {
+    public CustomMenuButton(String s, int buttonId, String fullName, String email, String username, String designation, double salary,String gender,String phone) {
         super(s);
+        this.phone = phone;
+        this.gender = gender;
         ButtonId = buttonId;
         FullName = fullName;
         Email = email;

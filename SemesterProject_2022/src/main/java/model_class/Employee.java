@@ -2,9 +2,12 @@ package model_class;
 
 import backend_functions.CustomDate;
 import com.example.semesterProject_2022.CustomMenuButton;
+import com.example.semesterProject_2022.EmployeesDetailCard_Controller;
+import com.example.semesterProject_2022.EmployeesPanel_Controller;
 import javafx.scene.control.MenuItem;
 import javafx.scene.paint.Paint;
 
+import java.io.IOException;
 import java.util.Date;
 
 public class Employee extends Person {
@@ -45,7 +48,22 @@ public class Employee extends Person {
         this.actionbtn.setStyle("-fx-background-color: #00C2FF; -fx-background-radius: 12px;");
         this.actionbtn.setTextFill(Paint.valueOf("White"));
         actionbtn.getItems().addAll(item1,item2);
+        item1.setOnAction(event ->
+        {
+            EmployeesDetailCard_Controller.FullName=actionbtn.getFullName();
+            EmployeesDetailCard_Controller.Phone=actionbtn.getPhone();
+            EmployeesDetailCard_Controller.Gender=actionbtn.getGender();
+            EmployeesDetailCard_Controller.Emails=actionbtn.getEmail();
+            EmployeesDetailCard_Controller.Username=actionbtn.getUsername();
+            EmployeesDetailCard_Controller.Designation=actionbtn.getDesignation();
+            EmployeesDetailCard_Controller.Salary="Rs. "+String.valueOf(actionbtn.getSalary());
+            try {
+                EmployeesPanel_Controller.view();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
+        });
         customDate = new CustomDate(joiningDate);
 
         this.month = customDate.getMonthName();

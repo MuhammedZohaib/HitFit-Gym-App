@@ -126,7 +126,7 @@ public class Main_Interface implements Initializable {
         // created  a class named change fxml and called its function which loads up a new fxml file and makes it the children of stack pane
         dashboardPanel.getfxml("DashboardPanel.fxml");
         membersPanel.getfxml("MembersPanel.fxml");
-        membershipsPanel.getfxml("MembershipsPanel.fxml");
+        membershipsPanel.getfxml("TransactionPanel.fxml");
         enquiriesPanel.getfxml("QueriesPanel.fxml");
         equipmentsPanel.getfxml("EquipmentsPanel.fxml");
         revenuePanel.getfxml("RevenuePanel.fxml");
