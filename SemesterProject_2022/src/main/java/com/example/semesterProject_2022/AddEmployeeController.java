@@ -110,16 +110,16 @@ public class AddEmployeeController {
     private Button exit;
     @FXML
     private StackPane stackpane;
-    private static String fName;
-    private static String lName;
-    private static String pNumber;
-    private static String cnic;
-    private static String gender;
-    private static LocalDate joiningDate;
-    private static String username;
-    private static String userEmail;
-    private static String password;
-    private static String salary;
+    private  String fName;
+    private  String lName;
+    private  String pNumber;
+    private  String cnic;
+    private  String gender;
+    private  LocalDate joiningDate;
+    private  String username;
+    private  String userEmail;
+    private  String password;
+    private  String salary;
     private static String designation;
 
     private double x=0 ,y = 0;
@@ -204,6 +204,8 @@ public class AddEmployeeController {
             dateValidation.setText("!  Joining Date cannot be empty");
         }
         if(fNameValidation.getText().equals("") && lNameValidation.getText().equals("") && pNumberValidation.getText().equals("") && cnicValidation.getText().equals("") && dateValidation.getText().equals("")){
+            AccountInfopane.toBack();
+            personalInfo.toFront();
             stackpane.getChildren().get(1).setVisible(false);
             stackpane.getChildren().get(0).setVisible(true);
         }
@@ -238,6 +240,9 @@ public class AddEmployeeController {
             emailValidation.setText("! Invalid Email");
             emailfield.setStyle(errorStyle);
         }
+        if(designation == null){
+            designationValidation.setText("! Please select a designation");
+        }
         if(salary.isEmpty() || salary.isBlank()){
             salaryValidation.setText("! Salary Cannot Be Empty");
             salaryfield.setStyle(errorStyle);
@@ -250,17 +255,23 @@ public class AddEmployeeController {
             passwordValidation.setText("! Password cannot be empty");
             passwordfield.setStyle(errorStyle);
         }
-        else if(password.length() < 8){
+        if(password.length() < 8){
             passwordValidation.setText("! Password must contain at-least 8 letters");
             passwordfield.setStyle(errorStyle);
         }
-        if(designation == null){
-            designationValidation.setText("! Please select a designation");
-        }
-        else if(uNameValidation.getText().equals("") && emailValidation.getText().equals("") && passwordfield.getText().equals("") && salaryfield.getText().equals("") && designationValidation.getText().equals("")){
-            //send to Db function call here
+        if(uNameValidation.getText().equals("") && emailValidation.getText().equals("") && passwordValidation.getText().equals("") && salaryValidation.getText().equals("") && designationValidation.getText().equals("") && Boolean.TRUE.equals(apiResponse)){
             close();
+            System.out.println(fName);
+            System.out.println(lName);
+            System.out.println(salary);
+            System.out.println(userEmail);
+            System.out.println(username);
+            System.out.println(password);
+            System.out.println(pNumber);
+            //send to Db function call here
         }
+        emailValidation.setText("");
+
     }
     public void reset(){
         fNameValidation.setText("");
@@ -274,7 +285,6 @@ public class AddEmployeeController {
         phonenofield.setStyle(resetStyle);
         nicfield.setStyle(resetStyle);
         joindatefield.setStyle(resetStyle);
-
     }
     public void reset2(){
         uNameValidation.setText("");
@@ -288,8 +298,9 @@ public class AddEmployeeController {
         passwordfield.setStyle(resetStyle);
         salaryfield.setStyle(resetStyle);
     }
+
     public void close(){
-        new GeneralFunctions().close(exit);
+        new GeneralFunctions().modalityClose(exit);
     }
     @FXML
     void supervisor() {

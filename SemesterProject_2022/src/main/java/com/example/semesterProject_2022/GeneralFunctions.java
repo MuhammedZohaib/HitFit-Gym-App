@@ -42,13 +42,13 @@ public class GeneralFunctions {
         stage.show();
     }
     public void switchSceneModality(String fxml) throws IOException {
-        stage = new Stage();
-        FXMLLoader fxmlLoader = new FXMLLoader(RevenuePanel_Controller.class.getResource(fxml));
-        stage.initModality(Modality.APPLICATION_MODAL);
+        Stage stage = new Stage();
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setScene(scene);
         stage.centerOnScreen();
+        stage.initModality(Modality.APPLICATION_MODAL);
         stage.initStyle(StageStyle.UNDECORATED);
+        stage.setScene(scene);
         stage.showAndWait();
     }
     public void close(Button b){
@@ -56,7 +56,10 @@ public class GeneralFunctions {
         obj.stage = (Stage) b.getScene().getWindow();
         obj.stage.close();
     }
-
+    public void modalityClose(Button b){
+        Stage stage = (Stage) b.getScene().getWindow();
+        stage.close();
+    }
     /*----Overloaded SwitchScene Method because of Resize Helper Class-----*/
     public void switchSceneFXHelper(Event e, String fxml) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(fxml));

@@ -56,7 +56,13 @@ public class RevenuePanel_Controller implements Initializable {
          descriptionOfExpense = description.getText();
          expenseDate = dateOfExpense.getValue();
          expenseAmountToDb = expenseAmount.getText();
-         expenseAmnt = Integer.parseInt(expenseAmountToDb);
+         try{
+             expenseAmnt = Integer.parseInt(expenseAmountToDb);
+         }
+         catch (NullPointerException exception)
+         {
+             System.out.println(exception);
+         }
 
          if(descriptionOfExpense.isBlank() || descriptionOfExpense.isEmpty()){
              description.setStyle("-fx-border-color: #ff0000; -fx-border-width: 3px;");
