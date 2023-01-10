@@ -114,8 +114,10 @@ public class ForgetPassword_Controller {
             String[] hashedPassword;
             hashedPassword = Password.makeFinalPassword(password);
             DatabaseFunctions.updatePassword(userEmail,hashedPassword);
+/*
             System.out.println(userEmail);
             System.out.println(password);
+*/
             close();
         }
     }

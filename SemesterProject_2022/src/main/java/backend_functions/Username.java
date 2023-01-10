@@ -22,7 +22,6 @@ public class Username {
                     return true;
                 } else if (i > DatabaseFunctions.employeesListCount) {
                     Password.isCustomerOrEmployee = "employee";
-                    System.out.println("Employee Logging in");
                 }
 
             }

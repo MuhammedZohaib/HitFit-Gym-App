@@ -4,6 +4,7 @@
     import com.example.semesterProject_2022.CustomMenuButton;
     import com.example.semesterProject_2022.MembersDetailCard_Controller;
     import com.example.semesterProject_2022.MembersPanel_Controller;
+    import database.DatabaseFunctions;
     import javafx.collections.FXCollections;
     import javafx.event.ActionEvent;
     import javafx.event.EventHandler;
@@ -85,6 +86,7 @@
             item2.setOnAction(event ->
             {
               MembersPanel_Controller.deletingId=actionBtn.getButtonId();
+              DatabaseFunctions.deleteData("customers", MembersPanel_Controller.deletingId);
             }) ;
 
 

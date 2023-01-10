@@ -1,7 +1,9 @@
 package com.example.semesterProject_2022;
 
 import backend_functions.Email;
+import backend_functions.Password;
 import backend_functions.Username;
+import database.DatabaseFunctions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -9,7 +11,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import model_class.Employee;
 
+import java.sql.Date;
 import java.time.LocalDate;
 
 import static backend_functions.Email.validateEmail;
@@ -268,7 +272,13 @@ public class AddEmployeeController {
             System.out.println(username);
             System.out.println(password);
             System.out.println(pNumber);
-            //send to Db function call here
+
+            String[] tempArr;
+            tempArr = Password.makeFinalPassword(password);
+
+            Employee employee = new Employee(Date.valueOf(joiningDate), fName, lName, userEmail, pNumber, cnic, designation, Integer.parseInt(salary), DatabaseFunctions.generateId("employees"), gender, username, tempArr[1], tempArr[0]);
+            DatabaseFunctions.saveToDb(employee);
+
         }
         emailValidation.setText("");
 

@@ -151,16 +151,16 @@ public class DatabaseFunctions {
         return true;
     }
 
-    public static void updatePassword(String email, String[] password){
+    public static void updatePassword(String email, String[] password) {
         PreparedStatement queryStatement = null;
-        try{
+        try {
             queryStatement = dbConnection.prepareStatement("UPDATE customers SET password = ?, salt = ? WHERE email = ?");
-            queryStatement.setString(1,password[1]);
-            queryStatement.setString(2,password[0]);
-            queryStatement.setString(3,email);
+            queryStatement.setString(1, password[1]);
+            queryStatement.setString(2, password[0]);
+            queryStatement.setString(3, email);
             queryStatement.executeUpdate();
         } catch (Exception e) {
-            System.out.println("Error: " +e);
+            System.out.println("Error: " + e);
         }
     }
 
@@ -214,7 +214,8 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("""
-                    SELECT id, first_name, last_name, email, phone_number, username, gender, weight, dob, monthly_plan, nic, is_active, address FROM customers;
+                    SELECT id, first_name, last_name, email, phone_number, username, gender, weight, dob, monthly_plan, nic, is_active, address FROM customers
+                    WHERE current_status = true;
                     """);
             allDataRs = queryStatement.executeQuery();
 
@@ -230,7 +231,9 @@ public class DatabaseFunctions {
         PreparedStatement queryStatement = null;
 
         try {
-            queryStatement = dbConnection.prepareStatement("SELECT id, first_name, last_name, designation, nic_number, salary, gender, phone_number, joining_date, username, access, email FROM employees;");
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT id, first_name, last_name, designation, nic_number, salary, gender, phone_number, joining_date, username, access, email FROM employees
+                    WHERE current_status = true;""");
             allDataRs = queryStatement.executeQuery();
 
         } catch (SQLException e) {
@@ -246,8 +249,8 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("""
-                    SELECT id, description, amount, selected_date, month, year FROM expenses;
-                    """);
+                    SELECT id, description, amount, selected_date, month, year FROM expenses
+                    WHERE current_status = true;""");
             expensesRs = queryStatement.executeQuery();
         } catch (SQLException e) {
             System.out.println("Error : " + e);
@@ -350,7 +353,8 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("""
-                    SELECT username FROM customers;""");
+                    SELECT username FROM customers
+                    WHERE current_status = true;""");
 
             allUsernamesRs = queryStatement.executeQuery();
 
@@ -365,7 +369,8 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("""
-                    SELECT username FROM employees;""");
+                    SELECT username FROM employees
+                    WHERE current_status = true;""");
 
             allUsernamesRs = queryStatement.executeQuery();
 
@@ -391,7 +396,8 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("""
-                    SELECT email FROM customers;""");
+                    SELECT email FROM customers
+                    WHERE current_status = true;""");
 
             allEmailsRs = queryStatement.executeQuery();
 
@@ -407,7 +413,8 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("""
-                    SELECT email FROM employees;""");
+                    SELECT email FROM employees
+                    WHERE current_status = true;""");
 
             allEmailsRs = queryStatement.executeQuery();
 
@@ -433,8 +440,8 @@ public class DatabaseFunctions {
         try {
             queryStatement = dbConnection.prepareStatement("""
                     SELECT COUNT(id)
-                    FROM customers;
-                    """);
+                    FROM customers
+                    WHERE current_status = true;""");
 
             ResultSet customersRs = queryStatement.executeQuery();
 
@@ -454,6 +461,27 @@ public class DatabaseFunctions {
         totalList = customersListCount + employeesListCount;
         return totalList;
 
+    }
+
+    public static boolean deleteData(String tableName, int id) {
+
+        PreparedStatement queryStatement = null;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    CALL delete_data(?,?);""");
+
+            queryStatement.setString(1, tableName);
+            queryStatement.setInt(2, id);
+
+            queryStatement.executeUpdate();
+
+            return true;
+        } catch (SQLException e) {
+            System.out.println("error in deleting: " + e);
+        }
+
+        return false;
     }
 
     public static int generateId(String choice) {

@@ -70,18 +70,33 @@ public class Employee extends Person {
         this.year = customDate.getYear();
     }
 
-    public Employee(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String nicNumber, String designation, java.sql.Date joiningDate, int salary, int id, String salt, int access) {
-        super(firstName, lastName, email, gender, phoneNumber, userName, password, nicNumber);
+    public Employee( java.sql.Date joiningDate,String firstName, String lastName, String email, String phoneNumber, String nicNumber, String designation, int salary, int id, String gender, String username, String password, String salt) {
+        super(firstName, lastName, email, gender, phoneNumber, username, password, nicNumber);
         this.designation = designation;
         this.joiningDate = joiningDate;
         this.salary = salary;
         this.id = id;
         this.salt = salt;
-        this.access = access;
+
+        customDate = new CustomDate(joiningDate);
+
+        this.month = customDate.getMonthName();
+        this.year = customDate.getYear();
     }
 
-    public Employee() {
-    }
+//    public Employee(String firstName, String lastName, String email, String gender, String phoneNumber, String userName, String password, String nicNumber, String designation, java.sql.Date joiningDate, int salary, int id, String salt, int access) {
+//        super(firstName, lastName, email, gender, phoneNumber, userName, password, nicNumber);
+//        this.designation = designation;
+//        this.joiningDate = joiningDate;
+//        this.salary = salary;
+//        this.id = id;
+//        this.salt = salt;
+//        this.access = access;
+//
+//    }
+
+    public Employee() { }
+
     public String getYear() {
         return year;
     }
