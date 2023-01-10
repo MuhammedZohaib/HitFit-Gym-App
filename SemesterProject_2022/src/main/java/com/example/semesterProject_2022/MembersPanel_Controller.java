@@ -170,7 +170,12 @@ public class MembersPanel_Controller implements Initializable {
         }
         int fromIndex = pageIndex * rowsPerPage;
         int toIndex = Math.min(fromIndex+rowsPerPage, memberslist.size());
-        membersView.setItems(FXCollections.observableList(memberslist.subList(fromIndex, toIndex)));
+        try{
+            membersView.setItems(FXCollections.observableList(memberslist.subList(fromIndex, toIndex)));
+        }
+        catch (Exception e){
+            System.out.println("Not Enough Entries");
+        }
         return membersView;
     }
 

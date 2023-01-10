@@ -151,10 +151,22 @@ public class DatabaseFunctions {
         return true;
     }
 
-    public static void updatePassword(String email, String[] password) {
+    public static void updateCustomerPassword(String email, String[] password) {
         PreparedStatement queryStatement = null;
         try {
             queryStatement = dbConnection.prepareStatement("UPDATE customers SET password = ?, salt = ? WHERE email = ?");
+            queryStatement.setString(1, password[1]);
+            queryStatement.setString(2, password[0]);
+            queryStatement.setString(3, email);
+            queryStatement.executeUpdate();
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+    public static void updateEmployeePassword(String email, String[] password) {
+        PreparedStatement queryStatement = null;
+        try {
+            queryStatement = dbConnection.prepareStatement("UPDATE employees SET password = ?, salt = ? WHERE email = ?");
             queryStatement.setString(1, password[1]);
             queryStatement.setString(2, password[0]);
             queryStatement.setString(3, email);
