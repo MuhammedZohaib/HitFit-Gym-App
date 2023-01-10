@@ -228,7 +228,7 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </Button>
-                  <Button fx:id="enquiries" graphicTextGap="0.0" mnemonicParsing="false" onAction="#QueriesBtn" prefHeight="25.0" prefWidth="186.0" text="Enquiries">
+                  <Button fx:id="enquiries" graphicTextGap="0.0" mnemonicParsing="false" onAction="#QueriesBtn" prefHeight="25.0" prefWidth="186.0" text="Queries">
                      <graphic>
                         <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true" translateX="-27.0">
                            <image>

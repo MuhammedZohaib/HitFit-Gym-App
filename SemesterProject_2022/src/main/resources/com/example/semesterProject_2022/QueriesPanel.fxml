@@ -38,22 +38,22 @@
          <center>
             <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <center>
-                  <AnchorPane prefHeight="344.0" prefWidth="761.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="322.0" prefWidth="778.0" BorderPane.alignment="CENTER">
                      <BorderPane.margin>
                         <Insets bottom="20.0" left="150.0" right="110.0" top="-50.0" />
                      </BorderPane.margin>
                      <children>
-                        <TableView fx:id="queriesView" fixedCellSize="0.0" layoutX="-1.0" prefHeight="208.0" prefWidth="801.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="queriesView" fixedCellSize="0.0" layoutX="-1.0" prefHeight="210.0" prefWidth="701.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="132.0" AnchorPane.topAnchor="0.0">
                            <columns>
                               <TableColumn id="firstcol" fx:id="Id" prefWidth="40.0" text="Id" />
                               <TableColumn id="firstcol" fx:id="username" prefWidth="120.0" text="Username" />
                               <TableColumn fx:id="email" prefWidth="250.0" text="Email" />
-                              <TableColumn fx:id="heading" minWidth="0.0" prefWidth="120.0" text="Heading" />
-                              <TableColumn fx:id="description" prefWidth="150.0" text="Description" />
-                              <TableColumn fx:id="action" minWidth="0.0" prefWidth="120.0" text="Action" />
+                              <TableColumn fx:id="heading" minWidth="0.0" prefWidth="150.0" text="Heading" />
+                              <TableColumn fx:id="description" prefWidth="200.0" text="Description" />
+                              <TableColumn fx:id="action" minWidth="0.0" prefWidth="180.0" text="Action" />
                            </columns>
                         </TableView>
-                        <Pagination fx:id="pagination" pageCount="10" prefHeight="299.0" prefWidth="840.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0" />
+                        <Pagination fx:id="pagination" pageCount="10" prefHeight="287.0" prefWidth="724.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="109.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
                </center>
