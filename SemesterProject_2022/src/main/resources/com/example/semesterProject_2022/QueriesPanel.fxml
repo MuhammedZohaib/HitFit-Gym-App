@@ -3,146 +3,171 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.shape.Line?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="583.0" prefWidth="1044.0" stylesheets="@CSS/QueryPanel.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.QueriesPanel_Controller">
-    <children>
-        <BorderPane layoutX="85.0" layoutY="-28.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-            <top>
-                <BorderPane prefHeight="52.0" prefWidth="600.0" styleClass="borderName" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER">
-                    <center>
-                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Queries" BorderPane.alignment="CENTER">
-                            <font>
-                                <Font name="System Bold" size="23.0" />
-                            </font>
-                            <BorderPane.margin>
-                                <Insets right="60.0" />
-                            </BorderPane.margin>
-                        </Text>
-                    </center>
-                </BorderPane>
-            </top>
-            <center>
-                <AnchorPane prefHeight="583.0" prefWidth="840.0" BorderPane.alignment="CENTER">
-               <children>
-                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="79.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@BorderIcons/Queries.png" />
-                     </image>
-                  </ImageView>
-                  <Text layoutX="129.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="Select A Query To Send A Response" AnchorPane.leftAnchor="129.0" AnchorPane.rightAnchor="681.15234375" />
-                  <BorderPane fx:id="main" layoutX="59.0" layoutY="88.0" prefHeight="409.0" prefWidth="963.0">
-                     <center>
-                        <AnchorPane fx:id="queries" prefHeight="342.0" prefWidth="859.0" BorderPane.alignment="CENTER">
-                           <children>
-                              <Line endX="721.0" layoutX="140.0" layoutY="60.0" startX="-100.0" />
-                              <Line endX="721.0" layoutX="140.0" layoutY="120.0" startX="-100.0" />
-                              <Line endX="721.0" layoutX="140.0" layoutY="180.0" startX="-100.0" />
-                              <Line endX="721.0" layoutX="140.0" layoutY="240.0" startX="-100.0" />
-                              <Line endX="721.0" layoutX="140.0" layoutY="300.0" startX="-100.0" />
-                              <Line endX="204.81565856933594" endY="12.935341835021973" layoutX="60.0" layoutY="160.0" rotate="90.0" startX="-107.54031372070312" startY="13.59643268585205" />
-                              <Line endX="204.81565856933594" endY="12.935341835021973" layoutX="200.0" layoutY="160.0" rotate="90.0" startX="-107.54031372070312" startY="13.59643268585205" />
-                              <Line endX="204.81565856933594" endY="12.935341835021973" layoutX="340.0" layoutY="160.0" rotate="90.0" startX="-107.54031372070312" startY="13.59643268585205" />
-                              <Line endX="204.81565856933594" endY="12.935341835021973" layoutX="480.0" layoutY="160.0" rotate="90.0" startX="-107.54031372070312" startY="13.59643268585205" />
-                              <Line endX="204.81565856933594" endY="12.935341835021973" layoutX="620.0" layoutY="160.0" rotate="90.0" startX="-107.54031372070312" startY="13.59643268585205" />
-                              <Label layoutX="130.0" layoutY="31.0" styleClass="text" text="Full Name">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="287.0" layoutY="31.0" styleClass="text" text="Heading">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="417.0" layoutY="32.0" styleClass="text" text="Member ID">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="575.0" layoutY="31.0" styleClass="text" text="Status">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="719.0" layoutY="32.0" styleClass="text" text="Action">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                              <Line endX="204.81565856933594" endY="12.935341835021973" layoutX="760.0" layoutY="160.0" rotate="90.0" startX="-107.54031372070312" startY="13.59643268585205" />
-                              <Label layoutX="60.0" layoutY="32.0" styleClass="text" text="#">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                              </Label>
-                              <Label layoutX="60.0" layoutY="80.0" text="1." />
-                              <Label layoutX="60.0" layoutY="260.0" text="4." />
-                              <Label layoutX="60.0" layoutY="200.0" text="3." />
-                              <Label layoutX="60.0" layoutY="140.0" text="2." />
-                              <Button layoutX="690.0" layoutY="80.0" prefWidth="100.0" text="Reply">
-                                 <styleClass>
-                                    <String fx:value="buttons" />
-                                    <String fx:value="text" />
-                                 </styleClass>
-                              </Button>
-                              <Button layoutX="690.0" layoutY="260.0" prefWidth="100.0" text="Reply">
-                                 <styleClass>
-                                    <String fx:value="buttons" />
-                                    <String fx:value="text" />
-                                 </styleClass>
-                              </Button>
-                              <Button layoutX="690.0" layoutY="200.0" prefWidth="100.0" text="Reply">
-                                 <styleClass>
-                                    <String fx:value="buttons" />
-                                    <String fx:value="text" />
-                                 </styleClass>
-                              </Button>
-                              <Button layoutX="690.0" layoutY="140.0" prefWidth="100.0" text="Reply">
-                                 <styleClass>
-                                    <String fx:value="buttons" />
-                                    <String fx:value="text" />
-                                 </styleClass>
-                              </Button>
-                              <Label layoutX="159.0" layoutY="84.0" text="Label" />
-                              <Label layoutX="159.0" layoutY="148.0" text="Label" />
-                              <Label layoutX="159.0" layoutY="208.0" text="Label" />
-                              <Label layoutX="159.0" layoutY="264.0" text="Label" />
-                              <Label layoutX="300.0" layoutY="83.0" text="Label" />
-                              <Label layoutX="300.0" layoutY="147.0" text="Label" />
-                              <Label layoutX="300.0" layoutY="207.0" text="Label" />
-                              <Label layoutX="300.0" layoutY="263.0" text="Label" />
-                              <Label layoutX="433.0" layoutY="83.0" text="Label" />
-                              <Label layoutX="433.0" layoutY="147.0" text="Label" />
-                              <Label layoutX="433.0" layoutY="207.0" text="Label" />
-                              <Label layoutX="433.0" layoutY="263.0" text="Label" />
-                              <Label layoutX="581.0" layoutY="82.0" text="Label" />
-                              <Label layoutX="581.0" layoutY="146.0" text="Label" />
-                              <Label layoutX="581.0" layoutY="206.0" text="Label" />
-                              <Label layoutX="581.0" layoutY="262.0" text="Label" />
-                           </children>
-                        </AnchorPane>
-                     </center>
-                     <top>
-                        <AnchorPane fx:id="topborder" prefHeight="67.0" prefWidth="800.0" BorderPane.alignment="CENTER">
-                           <BorderPane.margin>
-                              <Insets left="60.0" />
-                           </BorderPane.margin></AnchorPane>
-                     </top>
-                  </BorderPane>
-               </children>
+<AnchorPane prefHeight="583.0" prefWidth="1044.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.QueriesPanel_Controller">
+   <children>
+      <BorderPane layoutX="85.0" layoutY="-28.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <BorderPane prefHeight="52.0" prefWidth="600.0" styleClass="borderName" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER">
+               <center>
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Queries" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets left="40.0" right="60.0" />
+                     </BorderPane.margin>
+                  </Text>
+               </center>
                <BorderPane.margin>
                   <Insets />
                </BorderPane.margin>
-                </AnchorPane>
-            </center>
-        </BorderPane>
-    </children>
+            </BorderPane>
+         </top>
+         <center>
+            <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <center>
+                  <AnchorPane prefHeight="344.0" prefWidth="761.0" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="20.0" left="150.0" right="110.0" top="-50.0" />
+                     </BorderPane.margin>
+                     <children>
+                        <TableView fx:id="queriesView" fixedCellSize="0.0" layoutX="-1.0" prefHeight="208.0" prefWidth="801.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="0.0">
+                           <columns>
+                              <TableColumn id="firstcol" fx:id="Id" prefWidth="40.0" text="Id" />
+                              <TableColumn id="firstcol" fx:id="username" prefWidth="120.0" text="Username" />
+                              <TableColumn fx:id="email" prefWidth="250.0" text="Email" />
+                              <TableColumn fx:id="heading" minWidth="0.0" prefWidth="120.0" text="Heading" />
+                              <TableColumn fx:id="description" prefWidth="150.0" text="Description" />
+                              <TableColumn fx:id="action" minWidth="0.0" prefWidth="120.0" text="Action" />
+                           </columns>
+                        </TableView>
+                        <Pagination fx:id="pagination" pageCount="10" prefHeight="299.0" prefWidth="840.0" AnchorPane.bottomAnchor="35.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-8.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </center>
+               <top>
+                  <AnchorPane prefHeight="175.0" prefWidth="697.0" styleClass="searchpane" stylesheets="@CSS/Main_App.css" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets bottom="20.0" left="163.0" right="140.0" />
+                     </BorderPane.margin>
+                     <children>
+                        <BorderPane layoutX="270.0" layoutY="-12.0" prefHeight="188.0" prefWidth="740.6666666666666" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <top>
+                              <BorderPane prefHeight="197.0" prefWidth="741.0" BorderPane.alignment="CENTER">
+                                 <bottom>
+                                    <FlowPane prefHeight="126.0" prefWidth="741.0" BorderPane.alignment="CENTER">
+                                       <BorderPane.margin>
+                                          <Insets top="-100.0" />
+                                       </BorderPane.margin>
+                                       <children>
+                                          <Button fx:id="sortButton" mnemonicParsing="false" onAction="#sortBtn" prefHeight="17.0" prefWidth="88.0" stylesheets="@CSS/Main_App.css" text="(A-Z)" textFill="WHITE">
+                                             <FlowPane.margin>
+                                                <Insets bottom="45.0" left="20.0" top="35.0" />
+                                             </FlowPane.margin>
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="curve" />
+                                                <String fx:value="buttoncolor" />
+                                                <String fx:value="onhover" />
+                                             </styleClass>
+                                          </Button>
+                                          <Button fx:id="sortButton1" mnemonicParsing="false" onAction="#sortbtn1" prefHeight="17.0" prefWidth="88.0" stylesheets="@CSS/Main_App.css" text="(1-N)" textFill="WHITE">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                             <styleClass>
+                                                <String fx:value="curve" />
+                                                <String fx:value="buttoncolor" />
+                                                <String fx:value="onhover" />
+                                             </styleClass>
+                                             <FlowPane.margin>
+                                                <Insets bottom="40.0" left="30.0" top="30.0" />
+                                             </FlowPane.margin>
+                                          </Button>
+                                          <TextField fx:id="keyword" prefHeight="25.0" prefWidth="170.0" promptText="Keyword..." styleClass="curve">
+                                             <FlowPane.margin>
+                                                <Insets left="30.0" top="-10.0" />
+                                             </FlowPane.margin>
+                                          </TextField>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sort by Name">
+                                             <FlowPane.margin>
+                                                <Insets bottom="65.0" left="-400.0" right="45.0" />
+                                             </FlowPane.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sort by Id">
+                                             <FlowPane.margin>
+                                                <Insets bottom="65.0" right="65.0" />
+                                             </FlowPane.margin>
+                                          </Text>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Search By keyword">
+                                             <FlowPane.margin>
+                                                <Insets bottom="65.0" />
+                                             </FlowPane.margin>
+                                          </Text>
+                                          <Button fx:id="refreshButton" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#refreshBtn" prefHeight="18.0" prefWidth="34.0" style="-fx-background-color: transparent;" stylesheets="@CSS/Main_App.css" text="Button">
+                                             <FlowPane.margin>
+                                                <Insets left="80.0" top="-10.0" />
+                                             </FlowPane.margin>
+                                             <graphic>
+                                                <ImageView fitHeight="21.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@BorderIcons/icons8-update-left-rotation-128(-xxxhdpi).png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Refresh Queries">
+                                             <FlowPane.margin>
+                                                <Insets bottom="65.0" left="-60.0" />
+                                             </FlowPane.margin>
+                                          </Text>
+                                       </children>
+                                    </FlowPane>
+                                 </bottom>
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                                 <center>
+                                    <AnchorPane prefHeight="79.0" prefWidth="789.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Text layoutX="70.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text" text="All the Queries of the gym members is displayed below. You can reply, delete or view the information about the asked queries" wrappingWidth="549.8750152587891" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="169.12498474121094" AnchorPane.topAnchor="35.0">
+                                             <font>
+                                                <Font name="System Italic" size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <ImageView fitHeight="69.0" fitWidth="32.0" layoutX="30.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="28.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="727.0" AnchorPane.topAnchor="37.0">
+                                             <image>
+                                                <Image url="@BorderIcons/Queries.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                       <BorderPane.margin>
+                                          <Insets bottom="90.0" />
+                                       </BorderPane.margin>
+                                    </AnchorPane>
+                                 </center>
+                              </BorderPane>
+                           </top>
+                        </BorderPane>
+                     </children>
+                  </AnchorPane>
+               </top>
+            </BorderPane>
+         </center>
+      </BorderPane>
+   </children>
 </AnchorPane>

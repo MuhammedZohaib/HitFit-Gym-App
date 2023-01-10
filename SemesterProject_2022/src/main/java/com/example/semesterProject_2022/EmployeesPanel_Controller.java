@@ -7,29 +7,19 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Pagination;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import model_class.Customer;
 import model_class.Employee;
-
 import java.io.IOException;
-import java.net.Inet4Address;
 import java.net.URL;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.ResourceBundle;
 
@@ -202,7 +192,11 @@ public class EmployeesPanel_Controller implements Initializable {
         }
         int fromIndex = pageIndex * rowsPerPage;
         int toIndex = Math.min(fromIndex+rowsPerPage, employeeslist.size());
-        employeesView.setItems(FXCollections.observableList(employeeslist.subList(fromIndex, toIndex)));
+        try{
+            employeesView.setItems(FXCollections.observableList(employeeslist.subList(fromIndex, toIndex)));
+        }catch (Exception e){
+            System.out.println("Not Enough Entries");
+        }
         return employeesView;
     }
 

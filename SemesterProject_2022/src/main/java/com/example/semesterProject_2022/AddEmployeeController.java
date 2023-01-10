@@ -221,26 +221,36 @@ public class AddEmployeeController {
         salary = salaryfield.getText();
         Boolean apiResponse = null;
 
-        if(!userEmail.isBlank() && !userEmail.isEmpty()){
+        if(!userEmail.isBlank() && !userEmail.isEmpty() && DatabaseFunctions.makeConnection() == true){
             apiResponse = validateEmail(userEmail);
         }
         if(username.isBlank()){
             uNameValidation.setText("! UserName Cannot Be Empty");
             Usernamefield.setStyle(errorStyle);
         }
-        else if (Username.checkUsername(username)){
-            uNameValidation.setText("! UserName Already Exists");
-            Usernamefield.setStyle(errorStyle);
+        try{
+                if (Username.checkUsername(username)){
+                uNameValidation.setText("! UserName Already Exists");
+                Usernamefield.setStyle(errorStyle);
+            }
+        }catch (Exception e){
+            System.out.println("No Connection");
         }
+
         if(userEmail.isBlank()){
             emailValidation.setText("! Email Cannot Be Empty");
             emailfield.setStyle(errorStyle);
+        }try{
+            if (Email.checkEmail(userEmail)){
+                emailValidation.setText("! Email Already Exists");
+                emailfield.setStyle(errorStyle);
+            }
         }
-        else if (Email.checkEmail(userEmail)){
-            emailValidation.setText("! Email Already Exists");
-            emailfield.setStyle(errorStyle);
+        catch (Exception e){
+            System.out.println("No Connection to check email validation");
         }
-        else if(apiResponse.equals(false)){
+
+        if(apiResponse.equals(false)){
             emailValidation.setText("! Invalid Email");
             emailfield.setStyle(errorStyle);
         }
@@ -265,19 +275,16 @@ public class AddEmployeeController {
         }
         if(uNameValidation.getText().equals("") && emailValidation.getText().equals("") && passwordValidation.getText().equals("") && salaryValidation.getText().equals("") && designationValidation.getText().equals("") && Boolean.TRUE.equals(apiResponse)){
             close();
-            System.out.println(fName);
-            System.out.println(lName);
-            System.out.println(salary);
-            System.out.println(userEmail);
-            System.out.println(username);
-            System.out.println(password);
-            System.out.println(pNumber);
-
             String[] tempArr;
             tempArr = Password.makeFinalPassword(password);
 
             Employee employee = new Employee(Date.valueOf(joiningDate), fName, lName, userEmail, pNumber, cnic, designation, Integer.parseInt(salary), DatabaseFunctions.generateId("employees"), gender, username, tempArr[1], tempArr[0]);
-            DatabaseFunctions.saveToDb(employee);
+            try{
+                DatabaseFunctions.saveToDb(employee);
+            }
+            catch (Exception e){
+                System.out.println("No Connection to Database, Data Not Saved");
+            }
 
         }
         emailValidation.setText("");

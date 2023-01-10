@@ -12,7 +12,6 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.security.SecureRandom;
-import java.sql.Struct;
 
 public class ForgetPassword_Controller {
 
@@ -76,7 +75,7 @@ public class ForgetPassword_Controller {
         try{
             code1 = Integer.parseInt(userEnteredCode);
             if (code1 == verificationCode){
-                new GeneralFunctions().switchScene(e,"SetNewPassword.fxml");
+                new GeneralFunctions().switchScene(e,"SetNewCustomerPassword.fxml");
             }
             else {
                 codeValidation.setText("Code Doesn't Match");
@@ -91,7 +90,7 @@ public class ForgetPassword_Controller {
         }
 
     }
-    public void resetPassword(){
+    public void resetCustomerPassword(){
         String password = resetPassword.getText();
         String cPassword = cResetPassword.getText();
 
@@ -113,11 +112,36 @@ public class ForgetPassword_Controller {
         else if (resetPasswordValidation.getText().equals("")) {
             String[] hashedPassword;
             hashedPassword = Password.makeFinalPassword(password);
-            DatabaseFunctions.updatePassword(userEmail,hashedPassword);
+            DatabaseFunctions.updateCustomerPassword(userEmail,hashedPassword);
 /*
             System.out.println(userEmail);
             System.out.println(password);
 */
+            close();
+        }
+    }public void resetEmployeePassword(){
+        String password = resetPassword.getText();
+        String cPassword = cResetPassword.getText();
+
+        if(password.isBlank() || password.isEmpty()){
+            resetPasswordValidation.setText("Password Field cannot be empty");
+            resetPassword.setStyle(errorStyle);
+            cResetPassword.setStyle(errorStyle);
+        }
+        else if(password.length()<8 ){
+            resetPasswordValidation.setText("Password must contain at-least 8 characters");
+            resetPassword.setStyle(errorStyle);
+            cResetPassword.setStyle(errorStyle);
+        }
+        else if(!password.equals(cPassword)){
+            resetPasswordValidation.setText("Password Doesn't Match");
+            resetPassword.setStyle(errorStyle);
+            cResetPassword.setStyle(errorStyle);
+        }
+        else if (resetPasswordValidation.getText().equals("")) {
+            String[] hashedPassword;
+            hashedPassword = Password.makeFinalPassword(password);
+            DatabaseFunctions.updateEmployeePassword(userEmail,hashedPassword);
             close();
         }
     }
