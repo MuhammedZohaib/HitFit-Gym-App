@@ -4,6 +4,8 @@ import backend_functions.CustomDate;
 import com.example.semesterProject_2022.CustomMenuButton;
 import com.example.semesterProject_2022.EmployeesDetailCard_Controller;
 import com.example.semesterProject_2022.EmployeesPanel_Controller;
+import com.example.semesterProject_2022.MembersPanel_Controller;
+import database.DatabaseFunctions;
 import javafx.scene.control.MenuItem;
 import javafx.scene.paint.Paint;
 
@@ -63,6 +65,12 @@ public class Employee extends Person {
                 throw new RuntimeException(e);
             }
 
+        });
+        item2.setOnAction(event ->
+        {
+
+            EmployeesPanel_Controller.deletingId=actionbtn.getButtonId();
+            DatabaseFunctions.deleteData("employees", EmployeesPanel_Controller.deletingId);
         });
         customDate = new CustomDate(joiningDate);
 

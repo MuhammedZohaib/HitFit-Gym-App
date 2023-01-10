@@ -30,6 +30,7 @@ import java.sql.*;
 import java.util.*;
 
 public class MembersPanel_Controller implements Initializable {
+
     // Making the field public so, it can be accessible without getter setters
     public static int deletingId=-1;
 
@@ -90,6 +91,7 @@ public class MembersPanel_Controller implements Initializable {
 
         keyword.textProperty().addListener((observable,oldvalue,newvalue) ->
         {
+
             filteredList.setPredicate(customer -> {
                 if(newvalue.isEmpty() || newvalue.isBlank() || newvalue==null)
                 {
@@ -142,6 +144,7 @@ public class MembersPanel_Controller implements Initializable {
 
         memberslist.sort(Comparator.comparing(Customer::tolowerfirstname, Comparator.naturalOrder()));
         membersView.setItems(memberslist);
+
     }
     private Node createPage(int pageIndex) {
         if(memberslist.size()>0 && memberslist.size()<=10) {
@@ -202,7 +205,7 @@ public class MembersPanel_Controller implements Initializable {
              while (resultSet.next()) {
                  memberslist.add(new Customer(resultSet.getInt("id"),resultSet.getString("first_name"), resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("phone_number"), resultSet.getString("nic"), Integer.parseInt(resultSet.getString("monthly_plan")), new CustomMenuButton(resultSet.getInt("id"), "Action", resultSet.getString("first_name")+" "+resultSet.getString("last_name"),resultSet.getString("weight"),"XYZ",resultSet.getString("email"),resultSet.getString("username"),resultSet.getString("monthly_plan"))));
 
-                 // membersView.setItems(memberslist);
+                 membersView.setItems(memberslist);
              }
          }
 
@@ -214,14 +217,15 @@ public class MembersPanel_Controller implements Initializable {
     void sortbtn1(ActionEvent event) {
         memberslist.sort(Comparator.comparing(Customer::getId, Comparator.naturalOrder()));
         membersView.setItems(memberslist);
+
     }
 
     @FXML
     void refreshbtn(ActionEvent event) throws SQLException {
-        loadData();
+
+            keyword.setText("");
+            showrecords();
+
     }
-    public void deleterow(ActionEvent event)
-    {
-        int selectedID = deletingId;
-    }
+
 }

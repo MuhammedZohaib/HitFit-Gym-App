@@ -34,6 +34,9 @@ import java.util.Comparator;
 import java.util.ResourceBundle;
 
 public class EmployeesPanel_Controller implements Initializable {
+
+    // Making the field public so, it can be accessible without getter setters
+    public static int deletingId=-1;
     private final static int rowsPerPage = 10;
     @FXML
     private TableColumn<Employee, String> Designation;
@@ -96,6 +99,7 @@ public class EmployeesPanel_Controller implements Initializable {
 
     @FXML
     void refreshbtn(ActionEvent event) {
+        keyword.setText("");
         loadData();
     }
 
@@ -225,7 +229,8 @@ public class EmployeesPanel_Controller implements Initializable {
 
             while (resultSet.next()) {
                 employeeslist.add(new Employee(resultSet.getDate("joining_date"), resultSet.getString("first_name"),resultSet.getString("last_name"),resultSet.getString("email"),resultSet.getString("phone_number"),resultSet.getString("nic_number"),resultSet.getString("designation"),resultSet.getInt("salary"),resultSet.getInt("id"),new CustomMenuButton("Action",resultSet.getInt("id") , resultSet.getString("first_name")+resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("username"), resultSet.getString("designation"), resultSet.getDouble("salary"), resultSet.getString("gender"),resultSet.getString("phone_number"))));
-            }
+                employeesView.setItems(employeeslist);
+                 }
         }
 
         catch (NullPointerException e){

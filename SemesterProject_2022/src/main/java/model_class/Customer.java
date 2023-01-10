@@ -85,6 +85,7 @@
             });
             item2.setOnAction(event ->
             {
+
               MembersPanel_Controller.deletingId=actionBtn.getButtonId();
               DatabaseFunctions.deleteData("customers", MembersPanel_Controller.deletingId);
             }) ;
