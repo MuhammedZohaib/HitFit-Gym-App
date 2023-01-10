@@ -72,12 +72,12 @@
                 <String fx:value="buttoncolor" />
                 <String fx:value="onhover" />
             </styleClass></Button>
-        <Text fx:id="fullName" fill="WHITE" layoutX="97.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saad Suleman" />
+        <Text fx:id="fullName" fill="WHITE" layoutX="112.0" layoutY="102.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saad Suleman" />
         <Text fx:id="gender" fill="WHITE" layoutX="97.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="80 kg" />
-        <Text fx:id="phone" fill="WHITE" layoutX="98.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XYZ XYZ XYZ XYZ XYZ XYZ " />
-        <Text fx:id="email" fill="WHITE" layoutX="108.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saadfacebooks4567@gmail.com" />
+        <Text fx:id="phone" fill="WHITE" layoutX="111.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="XYZ XYZ XYZ XYZ XYZ XYZ " />
+        <Text fx:id="email" fill="WHITE" layoutX="83.0" layoutY="247.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saadfacebooks4567@gmail.com" />
         <Text fx:id="username" fill="WHITE" layoutX="109.0" layoutY="275.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ssulemans37" />
-        <Text fx:id="designation" fill="WHITE" layoutX="117.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starter" />
+        <Text fx:id="designation" fill="WHITE" layoutX="126.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Starter" />
         <Text fx:id="salary" fill="WHITE" layoutX="119.0" layoutY="394.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs. 4500" />
     </children>
 </AnchorPane>

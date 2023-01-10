@@ -1,21 +1,17 @@
 package com.example.semesterProject_2022;
 
-import database.DatabaseFunctions;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
 import javafx.scene.control.Pagination;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model_class.Employee;
 import model_class.Queries;
 
 import java.io.IOException;
@@ -51,29 +47,22 @@ public class QueriesPanel_Controller implements Initializable {
     private TableColumn<Queries, String> username;
     @FXML
     private Pagination pagination;
-    @FXML
-    private Button refreshButton;
-    @FXML
-    private Button sortButton;
-    @FXML
-    private Button sortButton1;
-
     public static ObservableList<Queries> queriesList = FXCollections.observableArrayList();
     ResultSet resultSet = null;
 
     @FXML
-    void refreshBtn(ActionEvent event) {
+    void refreshBtn() {
         loadData();
     }
 
     @FXML
-    void sortBtn(ActionEvent event) {
+    void sortBtn() {
         queriesList.sort(Comparator.comparing(Queries::getLowerUserName, Comparator.naturalOrder()));
         queriesView.setItems(queriesList);
     }
 
     @FXML
-    void sortbtn1(ActionEvent event) {
+    void sortbtn1() {
 
         queriesList.sort(Comparator.comparing(Queries::getId, Comparator.naturalOrder()));
         queriesView.setItems(queriesList);
@@ -154,10 +143,10 @@ public class QueriesPanel_Controller implements Initializable {
     private void loadData() {
         showRecords();
         Id.setCellValueFactory(new PropertyValueFactory<>("id"));
-        description.setCellValueFactory(new PropertyValueFactory<>("id"));
+        description.setCellValueFactory(new PropertyValueFactory<>("description"));
         email.setCellValueFactory(new PropertyValueFactory<>("email"));
-        heading.setCellValueFactory(new PropertyValueFactory<>("actionBtn"));
-        username.setCellValueFactory(new PropertyValueFactory<>("actionBtn"));
+        heading.setCellValueFactory(new PropertyValueFactory<>("heading"));
+        username.setCellValueFactory(new PropertyValueFactory<>("username"));
         action.setCellValueFactory(new PropertyValueFactory<>("actionBtn"));
     }
 
@@ -173,7 +162,7 @@ public class QueriesPanel_Controller implements Initializable {
         }
 
         catch (NullPointerException e){
-            System.out.println("Connection to Database Cannot Be Established");
+            System.out.print(e);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
