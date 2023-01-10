@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.AccontSettingsPanel_Controller">
+<AnchorPane prefHeight="700.0" prefWidth="600.0" stylesheets="@CSS/Main_App.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.AccontSettingsPanel_Controller">
     <children>
         <BorderPane layoutX="85.0" layoutY="-28.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
@@ -26,10 +32,242 @@
             </top>
             <center>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                    <children>
-                        <Text fx:id="texttbchanged" layoutX="232.0" layoutY="114.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-                        <Button layoutX="217.0" layoutY="174.0" mnemonicParsing="false" onAction="#changetxt" text="Button" />
-                    </children>
+               <children>
+                  <BorderPane prefHeight="348.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <top>
+                        <BorderPane prefHeight="81.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                           <center>
+                              <AnchorPane prefHeight="81.0" prefWidth="471.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <AnchorPane layoutX="161.0" layoutY="44.0" prefHeight="300.0" prefWidth="412.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="44.0">
+                                       <children>
+                                          <ImageView fitHeight="27.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="-60.0" AnchorPane.rightAnchor="322.0" AnchorPane.topAnchor="-5.0">
+                                             <image>
+                                                <Image url="@BorderIcons/AccountSettings.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Text layoutX="10.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can change all the information about the account here." wrappingWidth="402.16209411621094">
+                                             <font>
+                                                <Font name="System Italic" size="15.0" />
+                                             </font>
+                                          </Text>
+                                          <ScrollPane hbarPolicy="NEVER" layoutX="106.0" layoutY="30.0" prefHeight="517.0" prefWidth="534.0" AnchorPane.bottomAnchor="-247.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-121.0" AnchorPane.topAnchor="30.0">
+                                             <content>
+                                                <FlowPane prefHeight="716.0" prefWidth="667.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="General Info.">
+                                                         <font>
+                                                            <Font name="System Bold" size="18.0" />
+                                                         </font>
+                                                         <FlowPane.margin>
+                                                            <Insets left="10.0" />
+                                                         </FlowPane.margin>
+                                                      </Text>
+                                                      <Line endX="800.0" startX="-100.0" stroke="#00c2ff" strokeWidth="2.0">
+                                                         <FlowPane.margin>
+                                                            <Insets right="100.0" top="10.0" />
+                                                         </FlowPane.margin>
+                                                      </Line>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                         <FlowPane.margin>
+                                                            <Insets left="15.0" top="20.0" />
+                                                         </FlowPane.margin>
+                                                      </Text>
+                                                      <Text fx:id="nameField" fill="#4a4a4a" strokeType="OUTSIDE" strokeWidth="0.0" text="Ayaan Ali">
+                                                         <FlowPane.margin>
+                                                            <Insets left="50.0" top="20.0" />
+                                                         </FlowPane.margin>
+                                                         <font>
+                                                            <Font size="13.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#editNameButton" prefHeight="30.0" prefWidth="87.0" stylesheets="@CSS/Main_App.css" text="Edit" textFill="WHITE">
+                                                         <FlowPane.margin>
+                                                            <Insets bottom="-100.0" left="-58.0" />
+                                                         </FlowPane.margin>
+                                                         <styleClass>
+                                                            <String fx:value="curve" />
+                                                            <String fx:value="buttoncolor" />
+                                                            <String fx:value="onhover" />
+                                                         </styleClass>
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="24.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" translateX="20.0">
+                                                               <image>
+                                                                  <Image url="@BorderIcons/icons8-edit-96.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                      </Button>
+                                                      <Line endX="950.0" startX="66.8529052734375" startY="-3.3137948513031006" stroke="#9a9a9a">
+                                                         <FlowPane.margin>
+                                                            <Insets left="10.0" top="80.0" />
+                                                         </FlowPane.margin>
+                                                      </Line>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Phone No.">
+                                                         <FlowPane.margin>
+                                                            <Insets left="15.0" top="25.0" />
+                                                         </FlowPane.margin>
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Text>
+                                                      <Text fx:id="phoneField" fill="#4a4a4a" strokeType="OUTSIDE" strokeWidth="0.0" text="03354586083">
+                                                         <font>
+                                                            <Font size="13.0" />
+                                                         </font>
+                                                         <FlowPane.margin>
+                                                            <Insets left="20.0" top="25.0" />
+                                                         </FlowPane.margin>
+                                                      </Text>
+                                                      <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#editPhoneButton" prefHeight="30.0" prefWidth="87.0" stylesheets="@CSS/Main_App.css" text="Edit" textFill="WHITE">
+                                                         <styleClass>
+                                                            <String fx:value="curve" />
+                                                            <String fx:value="buttoncolor" />
+                                                            <String fx:value="onhover" />
+                                                         </styleClass>
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="24.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" translateX="20.0">
+                                                               <image>
+                                                                  <Image url="@BorderIcons/icons8-edit-96.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <FlowPane.margin>
+                                                            <Insets bottom="-110.0" left="-80.0" />
+                                                         </FlowPane.margin>
+                                                      </Button>
+                                                      <Line endX="950.0" startX="66.8529052734375" startY="-3.3137948513031006" stroke="#9a9a9a">
+                                                         <FlowPane.margin>
+                                                            <Insets left="10.0" top="80.0" />
+                                                         </FlowPane.margin>
+                                                      </Line>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Account Info.">
+                                                         <font>
+                                                            <Font name="System Bold" size="18.0" />
+                                                         </font>
+                                                         <FlowPane.margin>
+                                                            <Insets left="15.0" top="20.0" />
+                                                         </FlowPane.margin>
+                                                      </Text>
+                                                      <Line endX="800.0" startX="-100.0" stroke="#00c2ff" strokeWidth="2.0">
+                                                         <FlowPane.margin>
+                                                            <Insets top="15.0" />
+                                                         </FlowPane.margin>
+                                                      </Line>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                         <FlowPane.margin>
+                                                            <Insets left="15.0" top="30.0" />
+                                                         </FlowPane.margin>
+                                                      </Text>
+                                                      <Text fx:id="emailField" fill="#4a4a4a" strokeType="OUTSIDE" strokeWidth="0.0" text="Saadfacebooks4563@gmail.com">
+                                                         <font>
+                                                            <Font size="13.0" />
+                                                         </font>
+                                                         <FlowPane.margin>
+                                                            <Insets left="50.0" top="30.0" />
+                                                         </FlowPane.margin>
+                                                      </Text>
+                                                      <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#editEmailButton" prefHeight="30.0" prefWidth="87.0" stylesheets="@CSS/Main_App.css" text="Edit" textFill="WHITE">
+                                                         <styleClass>
+                                                            <String fx:value="curve" />
+                                                            <String fx:value="buttoncolor" />
+                                                            <String fx:value="onhover" />
+                                                         </styleClass>
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="24.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" translateX="20.0">
+                                                               <image>
+                                                                  <Image url="@BorderIcons/icons8-edit-96.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <FlowPane.margin>
+                                                            <Insets bottom="-110.0" left="-180.0" />
+                                                         </FlowPane.margin>
+                                                      </Button>
+                                                      <Line endX="950.0" startX="66.8529052734375" startY="-3.3137948513031006" stroke="#9a9a9a">
+                                                         <FlowPane.margin>
+                                                            <Insets left="10.0" top="80.0" />
+                                                         </FlowPane.margin>
+                                                      </Line>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                         <FlowPane.margin>
+                                                            <Insets left="15.0" top="20.0" />
+                                                         </FlowPane.margin>
+                                                      </Text>
+                                                      <Text fx:id="emailField1" fill="#4a4a4a" strokeType="OUTSIDE" strokeWidth="0.0" text="Press the button to change the password">
+                                                         <font>
+                                                            <Font size="13.0" />
+                                                         </font>
+                                                         <FlowPane.margin>
+                                                            <Insets left="25.0" top="20.0" />
+                                                         </FlowPane.margin>
+                                                      </Text>
+                                                      <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#updatePasswordButton" prefHeight="32.0" prefWidth="103.0" stylesheets="@CSS/Main_App.css" text="Update" textFill="WHITE">
+                                                         <styleClass>
+                                                            <String fx:value="curve" />
+                                                            <String fx:value="buttoncolor" />
+                                                            <String fx:value="onhover" />
+                                                         </styleClass>
+                                                         <font>
+                                                            <Font name="System Bold" size="13.0" />
+                                                         </font>
+                                                         <graphic>
+                                                            <ImageView fitHeight="24.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" translateX="20.0">
+                                                               <image>
+                                                                  <Image url="@BorderIcons/icons8-edit-96.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                         </graphic>
+                                                         <FlowPane.margin>
+                                                            <Insets bottom="-110.0" left="-230.0" />
+                                                         </FlowPane.margin>
+                                                      </Button>
+                                                      <Text fx:id="emailField11" fill="#4a4a4a" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Created @ HitFit Gym App">
+                                                         <font>
+                                                            <Font size="13.0" />
+                                                         </font>
+                                                         <FlowPane.margin>
+                                                            <Insets bottom="-300.0" left="-100.0" />
+                                                         </FlowPane.margin>
+                                                      </Text>
+                                                   </children>
+                                                </FlowPane>
+                                             </content>
+                                          </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                           </center>
+                           <left>
+                              <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                                 <BorderPane.margin>
+                                    <Insets />
+                                 </BorderPane.margin>
+                              </ImageView>
+                           </left>
+                        </BorderPane>
+                     </top>
+                  </BorderPane>
+               </children>
                 </AnchorPane>
             </center>
         </BorderPane>
