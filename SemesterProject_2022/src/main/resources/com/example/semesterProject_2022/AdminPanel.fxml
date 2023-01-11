@@ -72,7 +72,7 @@
                   <Font size="9.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="75.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name" AnchorPane.bottomAnchor="480.0" AnchorPane.topAnchor="70.0">
+            <Text fx:id="Username" fill="WHITE" layoutX="75.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Name" AnchorPane.bottomAnchor="480.0" AnchorPane.topAnchor="70.0">
                <font>
                   <Font name="System Bold" size="11.0" />
                </font>

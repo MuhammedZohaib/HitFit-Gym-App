@@ -169,7 +169,7 @@
                                                       <Font name="System Bold" size="24.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="monthlyprofit1" fill="#232f42" layoutX="77.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100000" wrappingWidth="112.78466796875" AnchorPane.leftAnchor="77.45133463541667" AnchorPane.rightAnchor="49.21533203125">
+                                                <Text fx:id="monthlyRevenue" fill="#232f42" layoutX="77.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="100000" wrappingWidth="112.78466796875" AnchorPane.leftAnchor="77.45133463541667" AnchorPane.rightAnchor="49.21533203125">
                                                    <font>
                                                       <Font name="System Bold" size="24.0" />
                                                    </font>

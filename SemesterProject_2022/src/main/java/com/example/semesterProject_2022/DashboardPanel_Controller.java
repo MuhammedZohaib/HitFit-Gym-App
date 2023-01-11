@@ -53,14 +53,11 @@ public class DashboardPanel_Controller implements Initializable {
     @FXML
     public ScrollPane scrollpanedashboard = new ScrollPane();
     @FXML
-    public static Text monthlyExpense;
+    private Text monthlyExpense;
 
     @FXML
     private Text monthlyMembers;
 
-    public static Text getMonthlyExpense() {
-        return monthlyExpense;
-    }
 
     @FXML
     private Text monthlyRevenue;
@@ -194,6 +191,13 @@ public class DashboardPanel_Controller implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //TODO Get sum of All packages of one month and set here
+        monthlyRevenue.setText("1000");
+        //TODO Get sum of All expenses of one month and set here
+        monthlyExpense.setText("1000");
+        //TODO Difference of monthly packages and monthly expense will be set here
+        monthlyprofit.setText("20000");
+
 
         /*--Members card--*/
         for(int i =1; i<3;i++)
