@@ -1,14 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.semesterProject_2022.FAQPanel_Controller"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="583.0" prefWidth="1044.0" stylesheets="@CSS/Main_App.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.semesterProject_2022.FAQ_Controller">
+   <children>
+      <BorderPane layoutX="271.0" layoutY="183.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0" />
+      <BorderPane layoutX="10.0" layoutY="60.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+         <top>
+            <Text fill="#1b2e44" strokeType="OUTSIDE" strokeWidth="0.0" text="Here Are Some of Our Frequently asked Questions and Answers" wrappingWidth="538.0029296875" BorderPane.alignment="CENTER_LEFT">
+               <BorderPane.margin>
+                  <Insets left="130.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Text>
+         </top>
+         <center>
+            <FlowPane alignment="CENTER" hgap="25.0" prefHeight="451.0" prefWidth="1044.0" vgap="20.0" BorderPane.alignment="CENTER">
+               <children>
+                  <StackPane alignment="TOP_LEFT" onMouseEntered="#q1" onMouseExited="#q1Ans" prefHeight="200.0" prefWidth="250.0">
+                     <children>
+                        <AnchorPane fx:id="P1" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Text fill="#eef6ff" layoutX="30.0" layoutY="85.0" lineSpacing="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SHOULD I WARM UP BEFORE WORKOUT AT GYM?" textAlignment="CENTER" wrappingWidth="200.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <styleClass>
+                              <String fx:value="background" />
+                              <String fx:value="card" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane fx:id="P2" prefHeight="100.0" prefWidth="200.0" styleClass="card" visible="false">
+                           <children>
+                              <Text fill="#eef6ffcc" layoutX="30.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Each workout should begin with a warm-up. A warm-up should include 5 to 10 minutes of exercise such as walking, slow jogging, knee lifts, arm circles, and/or trunk rotations. Warming up is important to help prevent injury. It also helps to maximize benefits from exercise" textAlignment="CENTER" wrappingWidth="200.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </StackPane>
+                  <StackPane alignment="TOP_LEFT" maxWidth="400.0" minWidth="250.0" onMouseEntered="#q2" onMouseExited="#q2Ans" prefHeight="200.0">
+                     <children>
+                        <AnchorPane fx:id="P3" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text fill="#eef6ff" layoutX="36.0" layoutY="85.0" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DO SWEAT AND CARDIO BURN BODY FAT?" textAlignment="CENTER" wrappingWidth="180.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <styleClass>
+                              <String fx:value="background" />
+                              <String fx:value="card" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane fx:id="P4" prefHeight="200.0" prefWidth="200.0" styleClass="card" visible="false">
+                           <children>
+                              <Text fill="#eef6ffcc" layoutX="30.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The amount you sweat is indicative of your body's ability to maintain its normal body temperature. You sweat when your body starts to store heat so you can experience cooling via evaporation of that sweat. So it doesn't correlate to how much energy, or calories, is being expended.&quot;" textAlignment="CENTER" wrappingWidth="200.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </StackPane>
+                  <StackPane alignment="TOP_LEFT" onMouseEntered="#q3" onMouseExited="#q3Ans" prefHeight="200.0" prefWidth="250.0">
+                     <children>
+                        <AnchorPane fx:id="P5" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text fill="#eef6ff" layoutX="30.0" layoutY="85.0" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOW MANY MINIMUM WORKOUTS PER WEEK ARE RECOMMENDED?" textAlignment="CENTER" wrappingWidth="200.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <styleClass>
+                              <String fx:value="background" />
+                              <String fx:value="card" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane fx:id="P6" prefHeight="200.0" prefWidth="200.0" styleClass="card" visible="false">
+                           <children>
+                              <Text fill="#eef6ffcc" layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency, duration, intensity, and what kinds of exercises you do should be determined by what you are trying to accomplish. Your goals, your present fitness level, age, health, skills, interests, and convenience are among the factors you should consider. Still, you can reach your fitness goals in as little as three workouts per week!" textAlignment="CENTER" wrappingWidth="230.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <padding>
+                        <Insets top="10.0" />
+                     </padding>
+                  </StackPane>
+                  <StackPane alignment="TOP_LEFT" layoutX="550.0" layoutY="10.0" prefHeight="200.0" prefWidth="250.0">
+                     <children>
+                        <AnchorPane fx:id="P51" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text fill="#eef6ff" layoutX="30.0" layoutY="85.0" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOW MANY MINIMUM WORKOUTS PER WEEK ARE RECOMMENDED?" textAlignment="CENTER" wrappingWidth="200.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <styleClass>
+                              <String fx:value="background" />
+                              <String fx:value="card" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane fx:id="P61" prefHeight="200.0" prefWidth="200.0" styleClass="card" visible="false">
+                           <children>
+                              <Text fill="#eef6ffcc" layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency, duration, intensity, and what kinds of exercises you do should be determined by what you are trying to accomplish. Your goals, your present fitness level, age, health, skills, interests, and convenience are among the factors you should consider. Still, you can reach your fitness goals in as little as three workouts per week!" textAlignment="CENTER" wrappingWidth="230.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </StackPane>
+                  <StackPane alignment="TOP_LEFT" layoutX="10.0" layoutY="210.0" prefHeight="200.0" prefWidth="250.0">
+                     <children>
+                        <AnchorPane fx:id="P511" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text fill="#eef6ff" layoutX="30.0" layoutY="85.0" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOW MANY MINIMUM WORKOUTS PER WEEK ARE RECOMMENDED?" textAlignment="CENTER" wrappingWidth="200.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <styleClass>
+                              <String fx:value="background" />
+                              <String fx:value="card" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane fx:id="P611" prefHeight="200.0" prefWidth="200.0" styleClass="card" visible="false">
+                           <children>
+                              <Text fill="#eef6ffcc" layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency, duration, intensity, and what kinds of exercises you do should be determined by what you are trying to accomplish. Your goals, your present fitness level, age, health, skills, interests, and convenience are among the factors you should consider. Still, you can reach your fitness goals in as little as three workouts per week!" textAlignment="CENTER" wrappingWidth="230.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </StackPane>
+                  <StackPane alignment="TOP_LEFT" layoutX="280.0" layoutY="210.0" prefHeight="200.0" prefWidth="250.0">
+                     <children>
+                        <AnchorPane fx:id="P5111" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Text fill="#eef6ff" layoutX="30.0" layoutY="85.0" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="HOW MANY MINIMUM WORKOUTS PER WEEK ARE RECOMMENDED?" textAlignment="CENTER" wrappingWidth="200.0">
+                                 <font>
+                                    <Font name="System Bold" size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                           <styleClass>
+                              <String fx:value="background" />
+                              <String fx:value="card" />
+                           </styleClass>
+                        </AnchorPane>
+                        <AnchorPane fx:id="P6111" prefHeight="200.0" prefWidth="200.0" styleClass="card" visible="false">
+                           <children>
+                              <Text fill="#eef6ffcc" layoutX="10.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Frequency, duration, intensity, and what kinds of exercises you do should be determined by what you are trying to accomplish. Your goals, your present fitness level, age, health, skills, interests, and convenience are among the factors you should consider. Still, you can reach your fitness goals in as little as three workouts per week!" textAlignment="CENTER" wrappingWidth="230.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </StackPane>
+               </children>
+               <BorderPane.margin>
+                  <Insets left="20.0" right="20.0" top="30.0" />
+               </BorderPane.margin>
+            </FlowPane>
+         </center>
+      </BorderPane>
+   </children>
 </AnchorPane>
