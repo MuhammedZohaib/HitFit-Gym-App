@@ -31,6 +31,7 @@
         private boolean isActive;
         private String passwordSalt;
         private String Fullname;
+        private BMI CustomerBMI;
 
         private int Id;
 
@@ -46,7 +47,6 @@
         private CustomMenuButton actionBtn;
         private MenuItem item1 = new MenuItem("View");
         private MenuItem item2 = new MenuItem("Remove");
-
         /**/
 
         public CustomMenuButton getActionBtn() {

@@ -77,14 +77,14 @@ public class CustomerPanel_Controller implements Initializable {
             translateTransition.setToX(0);
             translateTransition.play();
 
-            // for stack pane
+//            // for stack pane
             TranslateTransition translateTransition1 = new TranslateTransition();
             translateTransition1.setDuration(Duration.millis(400));
             translateTransition1.setNode(stackPane);
-            translateTransition1.setToX(-135);
+            translateTransition1.setToX(-80);
             translateTransition1.play();
 
-            stackPane.setTranslateX(-200);
+            stackPane.setTranslateX(-80);
             navPanel.setTranslateX(-186);
             Menu_Counter=1;
         } else if(Menu_Counter==1)
@@ -101,15 +101,15 @@ public class CustomerPanel_Controller implements Initializable {
             translateTransition1.setNode(stackPane);
             translateTransition1.setToX(-186);
             translateTransition1.play();
-
-            TranslateTransition translateTransition2 = new TranslateTransition();
-            translateTransition2.setDuration(Duration.millis(400));
-            translateTransition2.setNode(dashboardPanel_controller.scrollpanedashboard);
-            translateTransition2.setToX(-100);
-
-            stackPane.setTranslateX(0);
-            navPanel.setTranslateX(0);
-            dashboardPanel_controller.scrollpanedashboard.setTranslateX(0);
+//
+//            TranslateTransition translateTransition2 = new TranslateTransition();
+//            translateTransition2.setDuration(Duration.millis(400));
+//            translateTransition2.setNode(dashboardPanel_controller.scrollpanedashboard);
+//            translateTransition2.setToX(-100);
+//
+//            stackPane.setTranslateX(0);
+//            navPanel.setTranslateX(0);
+//            dashboardPanel_controller.scrollpanedashboard.setTranslateX(0);
 
             Menu_Counter=0;
         }
@@ -158,57 +158,100 @@ public class CustomerPanel_Controller implements Initializable {
 
 
 
+
         /*---nav pane animation code starts here--*/
         if(Menu_Counter==0) {
             navPanel.setTranslateX(-186);
-            stackPane.setTranslateX(-186);
+           stackPane.setTranslateX(-186);
         }
         if(Menu_Counter==1)
         {
-            dashboardPanel_controller.scrollpanedashboard.setTranslateX(-100);
+
             navPanel.setTranslateX(0);
-            stackPane.setTranslateX(0);
+            // stackPane.setTranslateX(0);
         }
 
     }
     /*---All the menu button actions are handled here---*/
-    @FXML
-    void AccountSettingsBtn() {
 
-        new animatefx.animation.FadeIn(stackPane).play();
-    }
     @FXML
     void logoutBtn(ActionEvent e) throws IOException {
         new GeneralFunctions().close(logout);
         new GeneralFunctions().switchScene("LoginSignUp.fxml");
     }
+    @FXML
+    void AccountSettingsBtn() {
+        stackPane.getChildren().get(0).setVisible(true);
+        for(int i=1;i<6;i++)
+        {
+            stackPane.getChildren().get(i).setVisible(false);
+        }
+        new animatefx.animation.FadeIn(stackPane).play();
+    }
 
     @FXML
     void DashboardBtn() {
 
-      // Customer Side Dashboard
+        stackPane.getChildren().get(5).setVisible(true);
+        for(int i=0;i<5;i++)
+        {
+                stackPane.getChildren().get(i).setVisible(false);
+        }
+        new animatefx.animation.FadeIn(stackPane).play();
     }
 
     @FXML
     void BMIBtn() {
 
-
+        stackPane.getChildren().get(1).setVisible(true);
+        for(int i=0;i<6;i++)
+        {
+            if(i!=1)
+            {
+                stackPane.getChildren().get(i).setVisible(false);
+            }
+        }
         new animatefx.animation.FadeIn(stackPane).play();
     }
 
     @FXML
     void EquipmentsBtn() {
+        stackPane.getChildren().get(3).setVisible(true);
 
+        for(int i=0; i<6;i++)
+        {
+            if(i!=3)
+            {
+                stackPane.getChildren().get(i).setVisible(false);
+            }
+        }
+        new animatefx.animation.FadeIn(stackPane).play();
     }
 
     @FXML
     void FaqBtn() {
-        // FAQ PANE here
+        stackPane.getChildren().get(4).setVisible(true);
+
+        for(int i=0; i<6;i++)
+        {
+            if(i!=4)
+            {
+                stackPane.getChildren().get(i).setVisible(false);
+            }
+        }
+        new animatefx.animation.FadeIn(stackPane).play();
     }
 
     @FXML
     void QueriesBtn() {
-
+        stackPane.getChildren().get(2).setVisible(true);
+        for(int i = 0; i<6; i++)
+        {
+            if(i!=2)
+            {
+                stackPane.getChildren().get(i).setVisible(false);
+            }
+        }
         new animatefx.animation.FadeIn(stackPane).play();
     }
 

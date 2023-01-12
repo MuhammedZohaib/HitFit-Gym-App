@@ -280,3 +280,18 @@
 #membersView .table-column {
     -fx-alignment: CENTER;
 }
+
+
+.text-area .scroll-pane {
+    -fx-background-color: transparent;
+}
+.text-area .scroll-pane .viewport{
+    -fx-background-color: transparent;
+}
+.text-area .scroll-pane .content{
+    -fx-background-color: transparent;
+}
+.text-area
+{
+    -fx-background-radius: 10px;
+}
