@@ -46,7 +46,7 @@ public class LogIn_Form_Controller {
     /*For Resolution relative to every screen we will get the dimensions of the screen*/
     Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
     String errorStyle = "-fx-border-color: #ff0000; -fx-border-width: 3px; -fx-border-radius:12px";
-    String resetStyle = "-fx-border-color: transparent; -fx-border-width: 3px; -fx-border-radius:12px";
+    String resetStyle = "-fx-border-color: transparent; -fx-border-radius:12px";
 
     @FXML
     void loginBtn(MouseEvent e) throws IOException {
@@ -119,7 +119,7 @@ public class LogIn_Form_Controller {
             PassField.setText("");
         }
 
-        else if (email.equals("AyaanAli@9921") && password.equals("L3tM31n_121") && epValidation.getText().equals("") && passwordValidation.getText().equals("")) {
+            else if (email.equals("AyaanAli@9921") && password.equals("L3tM31n_121") && epValidation.getText().equals("") && passwordValidation.getText().equals("")) {
             new GeneralFunctions().switchSceneFXHelper(e, "AdminPanel.fxml");
 
         }
