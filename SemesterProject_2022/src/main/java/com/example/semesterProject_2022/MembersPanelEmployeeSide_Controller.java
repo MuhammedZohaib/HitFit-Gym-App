@@ -29,7 +29,7 @@ import java.net.URL;
 import java.sql.*;
 import java.util.*;
 
-public class MembersPanel_Controller implements Initializable {
+public class MembersPanelEmployeeSide_Controller implements Initializable {
 
     // Making the field public so, it can be accessible without getter setters
     public static int deletingId=-1;
@@ -47,13 +47,13 @@ public class MembersPanel_Controller implements Initializable {
     @FXML
     private TableColumn<Customer, Integer> Id;
     @FXML
-    private TableColumn<Customer, MenuButton> action;
+    private TableColumn<Customer, CustomMenuButton> action;
 
     @FXML
     private TableColumn<Customer, String> email;
 
     @FXML
-    public TableView<Customer> membersView;
+    public TableView<Customer> membersView1;
 
     @FXML
     private TableColumn<Customer, String> FirstName;
@@ -107,43 +107,44 @@ public class MembersPanel_Controller implements Initializable {
                 {
                     return true;
                 } else if (customer.getLastName().toLowerCase().indexOf(searchkeyword) > -1)
-            {
+                {
                     return true;
-            } else if(customer.getPhoneNumber().toLowerCase().indexOf(searchkeyword) > -1)
-            {
-                return true;
-            } else if(customer.getNicNumber().toLowerCase().indexOf(searchkeyword) > -1)
-            {
-                return true;
-            } else if(String.valueOf(customer.getId()).indexOf(searchkeyword) > -1)
-            {
-                return true;
-            } else if((String.valueOf(customer.getMonthlyPlan()).toLowerCase().indexOf(searchkeyword) > -1))
-            {
-                return true;
-            }  else if (customer.getEmail().toLowerCase().indexOf(searchkeyword) > -1)
-            {
-                return true;
-            } else
-            {
-                return false;
-            }
+                } else if(customer.getPhoneNumber().toLowerCase().indexOf(searchkeyword) > -1)
+                {
+                    return true;
+                } else if(customer.getNicNumber().toLowerCase().indexOf(searchkeyword) > -1)
+                {
+                    return true;
+                } else if(String.valueOf(customer.getId()).indexOf(searchkeyword) > -1)
+                {
+                    return true;
+                } else if((String.valueOf(customer.getMonthlyPlan()).toLowerCase().indexOf(searchkeyword) > -1))
+                {
+                    return true;
+                }  else if (customer.getEmail().toLowerCase().indexOf(searchkeyword) > -1)
+                {
+                    return true;
+                } else
+                {
+                    return false;
+                }
 
             });
 
 
             SortedList<Customer> sortedList = new SortedList<>(filteredList);
-            sortedList.comparatorProperty().bind(membersView.comparatorProperty());
-            membersView.setItems(sortedList);
+            sortedList.comparatorProperty().bind(membersView1.comparatorProperty());
+            membersView1.setItems(sortedList);
         });
         /*----Search with Keyword Logic Ends HERE---------*/
 
     }
+
     @FXML
     void sortbtn(ActionEvent event) {
 
         memberslist.sort(Comparator.comparing(Customer::tolowerfirstname, Comparator.naturalOrder()));
-        membersView.setItems(memberslist);
+        membersView1.setItems(memberslist);
 
     }
     private Node createPage(int pageIndex) {
@@ -171,12 +172,12 @@ public class MembersPanel_Controller implements Initializable {
         int fromIndex = pageIndex * rowsPerPage;
         int toIndex = Math.min(fromIndex+rowsPerPage, memberslist.size());
         try{
-            membersView.setItems(FXCollections.observableList(memberslist.subList(fromIndex, toIndex)));
+            membersView1.setItems(FXCollections.observableList(memberslist.subList(fromIndex, toIndex)));
         }
         catch (Exception e){
             System.out.println("Not Enough Entries");
         }
-        return membersView;
+        return membersView1;
     }
 
     public void view() throws IOException {
@@ -201,36 +202,37 @@ public class MembersPanel_Controller implements Initializable {
         action.setCellValueFactory(new PropertyValueFactory<>("actionBtn"));
     }
 
-     void showrecords() throws SQLException {
+    void showrecords() throws SQLException {
         memberslist.clear();
-         try {
-             resultSet = DatabaseFunctions.getAllCustomers();
+        try {
+            resultSet = DatabaseFunctions.getAllCustomers();
 
+            System.out.println(resultSet);
+            while (resultSet.next()) {
+                memberslist.add(new Customer(false,resultSet.getInt("id"),resultSet.getString("first_name"), resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("phone_number"), resultSet.getString("nic"), Integer.parseInt(resultSet.getString("monthly_plan")), new CustomMenuButton(resultSet.getInt("id"), "Action", resultSet.getString("first_name")+" "+resultSet.getString("last_name"),resultSet.getString("weight"),"XYZ",resultSet.getString("email"),resultSet.getString("username"),resultSet.getString("monthly_plan"))));
 
-             while (resultSet.next()) {
-                 memberslist.add(new Customer(true,resultSet.getInt("id"),resultSet.getString("first_name"), resultSet.getString("last_name"), resultSet.getString("email"), resultSet.getString("phone_number"), resultSet.getString("nic"), Integer.parseInt(resultSet.getString("monthly_plan")), new CustomMenuButton(resultSet.getInt("id"), "Action", resultSet.getString("first_name")+" "+resultSet.getString("last_name"),resultSet.getString("weight"),"XYZ",resultSet.getString("email"),resultSet.getString("username"),resultSet.getString("monthly_plan"))));
+                membersView1.setItems(memberslist);
+            }
+        }
 
-                 membersView.setItems(memberslist);
-             }
-         }
-
-         catch (NullPointerException e){
-                 System.out.println("Connection to Database Cannot Be Established");
-             }
+        catch (NullPointerException e){
+            System.out.println("Connection to Database Cannot Be Established");
+        }
     }
     @FXML
     void sortbtn1(ActionEvent event) {
         memberslist.sort(Comparator.comparing(Customer::getId, Comparator.naturalOrder()));
-        membersView.setItems(memberslist);
+        membersView1.setItems(memberslist);
 
     }
 
     @FXML
     void refreshbtn(ActionEvent event) throws SQLException {
 
-            keyword.setText("");
-            showrecords();
+        keyword.setText("");
+        showrecords();
 
     }
+
 
 }
