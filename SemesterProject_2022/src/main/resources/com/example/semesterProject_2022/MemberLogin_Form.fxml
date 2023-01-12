@@ -98,7 +98,7 @@
          </font>
       </Text>
       <PasswordField fx:id="PassField" layoutX="46.0" layoutY="224.0" onMouseClicked="#clear" prefHeight="25.0" prefWidth="251.0" />
-      <CheckBox layoutX="54.0" layoutY="322.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="167.0" text="Keep Me Logged In" textFill="#c3c3c3">
+      <CheckBox fx:id="response" layoutX="54.0" layoutY="322.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="167.0" text="Keep Me Logged In" textFill="#c3c3c3">
          <font>
             <Font size="10.0" />
          </font>

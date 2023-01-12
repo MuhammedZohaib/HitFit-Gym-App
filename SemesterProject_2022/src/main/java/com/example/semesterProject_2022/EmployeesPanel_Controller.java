@@ -110,9 +110,10 @@ public class EmployeesPanel_Controller implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        pagination.setPageFactory(this::createPage);
-        loadData();
+        try{
 
+            pagination.setPageFactory(this::createPage);
+            loadData();
 
         /*------Searching With Keryword Logic----------*/
         FilteredList<Employee> filteredList = new FilteredList<>(employeeslist, b -> true);
@@ -165,7 +166,11 @@ public class EmployeesPanel_Controller implements Initializable {
             SortedList<Employee> sortedList = new SortedList<>(filteredList);
             sortedList.comparatorProperty().bind(employeesView.comparatorProperty());
             employeesView.setItems(sortedList);
-        });
+        });}
+              catch (Exception e){
+            System.out.println(e);
+        }
+
     }
 
     private Node createPage(int pageIndex) {

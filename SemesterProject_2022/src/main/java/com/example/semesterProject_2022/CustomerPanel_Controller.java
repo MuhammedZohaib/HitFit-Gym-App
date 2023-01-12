@@ -9,6 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -178,6 +179,10 @@ public class CustomerPanel_Controller implements Initializable {
     void logoutBtn(ActionEvent e) throws IOException {
         new GeneralFunctions().close(logout);
         new GeneralFunctions().switchScene("LoginSignUp.fxml");
+        File file = new File("credentials.properties");
+        if(file.exists()){
+            file.delete();
+        }
     }
     @FXML
     void AccountSettingsBtn() {

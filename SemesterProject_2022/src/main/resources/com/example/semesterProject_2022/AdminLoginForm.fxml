@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
@@ -96,11 +95,6 @@
          </font>
       </Text>
       <PasswordField fx:id="PassField" layoutX="46.0" layoutY="224.0" onMouseClicked="#clear" prefHeight="25.0" prefWidth="251.0" />
-      <CheckBox layoutX="54.0" layoutY="322.0" mnemonicParsing="false" prefHeight="22.0" prefWidth="167.0" text="Keep Me Logged In" textFill="#c3c3c3">
-         <font>
-            <Font size="10.0" />
-         </font>
-      </CheckBox>
       <Button fx:id="LogInButton" layoutX="46.0" layoutY="272.0" mnemonicParsing="false" onAction="#adminLogin" onMouseClicked="#loginBtn" prefHeight="25.0" prefWidth="251.0" text="Log In" />
       <Text fill="#b5b5b5" layoutX="50.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Can't Sign In? Forgot Password ?" wrappingWidth="187.07769775390625">
          <font>
