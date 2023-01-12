@@ -1,5 +1,6 @@
 package com.example.semesterProject_2022;
 
+import backend_functions.CustomDate;
 import com.mailjet.client.MailjetClient;
 import database.DatabaseFunctions;
 import javafx.event.ActionEvent;
@@ -13,6 +14,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import model_class.Expense;
+import model_class.Revenue;
 
 import java.io.IOException;
 import java.net.URL;
@@ -103,8 +105,12 @@ public class RevenuePanel_Controller implements Initializable {
          else {
 
              try{
+
                  Expense expense = new Expense(DatabaseFunctions.generateId("expenses"), descriptionOfExpense, expenseAmnt, Date.valueOf(expenseDate));
                  DatabaseFunctions.saveToDb(expense, null);
+                 Revenue revenue = new Revenue(DatabaseFunctions.generateId("revenues"), expense.getMonth(), expense.getYear(), -expense.getAmount());
+                 DatabaseFunctions.saveUpdateToDb(revenue);
+
              }catch (Exception error){
                  System.out.println("Connection not established and Data not saved");
              }

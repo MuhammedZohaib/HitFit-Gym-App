@@ -23,6 +23,9 @@ public class CustomDate {
     public static String getCurrentMonth() {
         return new SimpleDateFormat("MMMM").format(date);
     }
+    public static String getCurrentYear() {
+        return new SimpleDateFormat("yyyy").format(date);
+    }
 
     public String getMonthName() {
 
