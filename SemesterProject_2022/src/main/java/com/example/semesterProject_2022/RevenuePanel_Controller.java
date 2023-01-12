@@ -132,25 +132,35 @@ public class RevenuePanel_Controller implements Initializable {
 
 */
         try {
+
+            int[] numberOfMemberships = new int[3];
+            numberOfMemberships = DatabaseFunctions.getNumberOfMemberships();
+
+            int beginnerMemberships = numberOfMemberships[0];
+            int starterMemberships = numberOfMemberships[1];
+            int proMemberships = numberOfMemberships[2];
+
+            int totalCurrentExpense = DatabaseFunctions.getCurrentMonthExpense();
+
             //TODO number of beginner db will set here
-            noOfBegMemberships.setText("20");
+            noOfBegMemberships.setText(String.valueOf(beginnerMemberships));
             //TODO number of starter db will set here
-            noOfStarterMemberships.setText("30");
+            noOfStarterMemberships.setText(String.valueOf(starterMemberships));
             //TODO number of pro db will set here
-            noOfProMemberships.setText("30");
+            noOfProMemberships.setText(String.valueOf(proMemberships));
             //TODO replace 20 with number of beginner db
-            int beginnerRevenue = 20 * 2000;
+            int beginnerRevenue = beginnerMemberships * 2000;
             multBegginer.setText(String.valueOf(beginnerRevenue));
             //TODO replace 30 with number of starter db
-            int starterRevenue = 30 * 3000;
+            int starterRevenue = starterMemberships * 3000;
             multStarter.setText(String.valueOf(starterRevenue));
             //TODO replace 30 with number of pro db
-            int proRevenue = 30 * 4500;
+            int proRevenue = proMemberships * 4500;
             multPro.setText(String.valueOf(proRevenue));
             int totalRevenue = beginnerRevenue + starterRevenue + proRevenue;
             totalMonthlyRevenue.setText(String.valueOf(totalRevenue));
             //TODO set Monthly expense from db here
-            totalMonthlyExpense.setText("20000");
+            totalMonthlyExpense.setText(String.valueOf(totalCurrentExpense));
         }
         catch (Exception e){
             System.out.println(e);

@@ -19,6 +19,11 @@ public class DatabaseFunctions {
     public static int employeesListCount;
     public static int totalList;
 
+    public static void initFunction() {
+        makeConnection();
+
+    }
+
     public static boolean makeConnection() {
         try {
             dbConnection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
@@ -151,6 +156,32 @@ public class DatabaseFunctions {
         return true;
     }
 
+    public static boolean saveToDb(Queries query) {
+
+        PreparedStatement queryStatement = null;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    INSERT INTO queries (id, heading, email, description, created_date, username)
+                    VALUE (?,?,?,?,?,?)""");
+
+            queryStatement.setInt(1, query.getId());
+            queryStatement.setString(2, query.getHeading());
+            queryStatement.setString(3, query.getUsername());
+            queryStatement.setString(4, query.getDescription());
+            queryStatement.setDate(5, query.getCurrent_date());
+            queryStatement.setString(6, query.getUsername());
+
+            queryStatement.executeUpdate();
+
+            return true;
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+        return false;
+    }
+
     public static void updateCustomerPassword(String email, String[] password) {
         PreparedStatement queryStatement = null;
         try {
@@ -163,6 +194,7 @@ public class DatabaseFunctions {
             System.out.println("Error: " + e);
         }
     }
+
     public static void updateEmployeePassword(String email, String[] password) {
         PreparedStatement queryStatement = null;
         try {
@@ -238,6 +270,49 @@ public class DatabaseFunctions {
         return allDataRs;
     }
 
+    public static int[] getNumberOfMemberships() {
+
+        ResultSet resultSet = null;
+        PreparedStatement queryStatement = null;
+        ArrayList<Integer> tempArr = new ArrayList<>();
+        int[] allMemberships = new int[3];
+
+        Package1 package1 = new Package1();
+        Package2 package2 = new Package2();
+        Package3 package3 = new Package3();
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT monthly_plan
+                    FROM customers
+                    ORDER BY monthly_plan ASC;
+                    """);
+
+            resultSet = queryStatement.executeQuery();
+
+            while (resultSet.next()) {
+
+                tempArr.add(resultSet.getInt(1));
+
+            }
+
+            for (int i : tempArr) {
+                if (i == package1.getAmount()) {
+                    allMemberships[0] += 1;
+                } else if (i == package2.getAmount()) {
+                    allMemberships[1] += 1;
+                } else if (i == package3.getAmount()) {
+                    allMemberships[2] += 1;
+                }
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error in getting memberships: " + e);
+        }
+
+        return allMemberships;
+    }
+
     public static ResultSet getAllEmployees() {
         ResultSet allDataRs = null;
         PreparedStatement queryStatement = null;
@@ -268,6 +343,50 @@ public class DatabaseFunctions {
             System.out.println("Error : " + e);
         }
         return expensesRs;
+    }
+
+    public static ResultSet getAllQueries() {
+
+        PreparedStatement queryStatement = null;
+        ResultSet expensesRs = null;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT * FROM queries;
+                    """);
+            expensesRs = queryStatement.executeQuery();
+        } catch (SQLException e) {
+            System.out.println("Error : " + e);
+        }
+        return expensesRs;
+
+    }
+
+    public static int getCurrentMonthExpense() {
+
+        PreparedStatement queryStatement = null;
+        ResultSet allExpensesRs = null;
+        int totalMonthlyExpense = 0;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT amount FROM expenses
+                    WHERE month = ?;""");
+
+            queryStatement.setString(1, CustomDate.getCurrentMonth());
+            allExpensesRs = queryStatement.executeQuery();
+
+            while (allExpensesRs.next()) {
+
+                totalMonthlyExpense += allExpensesRs.getInt(1);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+
+        System.out.println(totalMonthlyExpense);
+        return totalMonthlyExpense;
     }
 
     public static ArrayList<String> getUserPassword(String customerUsernameEmail) {

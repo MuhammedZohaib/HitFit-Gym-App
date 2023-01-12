@@ -20,6 +20,10 @@ public class CustomDate {
         return date;
     }
 
+    public static String getCurrentMonth() {
+        return new SimpleDateFormat("MMMM").format(date);
+    }
+
     public String getMonthName() {
 
         monthName = new SimpleDateFormat("MMMM").format(inpDate);
