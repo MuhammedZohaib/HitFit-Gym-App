@@ -280,7 +280,9 @@
     -fx-alignment: CENTER;
 }
 
-
+#membersView1 .table-column {
+    -fx-alignment: CENTER;
+}
 .text-area .scroll-pane {
     -fx-background-color: transparent;
 }

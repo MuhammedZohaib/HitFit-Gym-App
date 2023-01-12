@@ -32,7 +32,7 @@
         private String passwordSalt;
         private String Fullname;
         private BMI CustomerBMI;
-
+        private Boolean AdminAcces;
         private int Id;
 
         public String getFullname() {
@@ -45,9 +45,11 @@
 
         /*--------*/
         private CustomMenuButton actionBtn;
+
         private MenuItem item1 = new MenuItem("View");
         private MenuItem item2 = new MenuItem("Remove");
         /**/
+
 
         public CustomMenuButton getActionBtn() {
             return actionBtn;
@@ -57,16 +59,26 @@
             this.actionBtn = actionBtn;
         }
 
-        public Customer(int Id,String firstName, String lastName, String email, String phoneNumber,String nicNumber, int monthlyPlan, CustomMenuButton customMenuButton) {
+        public Customer(Boolean AdminAccess, int Id,String firstName, String lastName, String email, String phoneNumber,String nicNumber, int monthlyPlan, CustomMenuButton customMenuButton) {
             super(firstName, lastName, email, "gender", phoneNumber, "userName", "password", nicNumber);
             this.Id = Id;
             this.monthlyPlan = monthlyPlan;
             Fullname=firstName+lastName;
+            this.AdminAcces=AdminAccess;
+
+
             /*Action Button Stuff*/
             this.actionBtn = customMenuButton;
             this.actionBtn.setStyle("-fx-background-color: #00C2FF; -fx-background-radius: 12px;");
             this.actionBtn.setTextFill(Paint.valueOf("White"));
-            actionBtn.getItems().addAll(item1,item2);
+            if(this.AdminAcces==true)
+            {
+                actionBtn.getItems().addAll(item1,item2);
+            } else
+            {
+                actionBtn.getItems().addAll(item1);
+            }
+
             item1.setOnAction(event ->
             {
                 MembersDetailCard_Controller.FullName = actionBtn.getFullName();
@@ -91,7 +103,9 @@
             }) ;
 
 
-            /**/
+
+
+
         }
 
 
