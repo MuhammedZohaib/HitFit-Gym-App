@@ -45,13 +45,12 @@
                             <children>
                                 <TableView fx:id="transactionView" fixedCellSize="0.0" prefHeight="218.0" prefWidth="811.0" stylesheets="@CSS/Main_App.css" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="0.0">
                                     <columns>
-                                        <TableColumn id="firstcol" fx:id="Id" prefWidth="40.0" text="Id" />
-                                        <TableColumn id="firstcol" fx:id="FirstName" prefWidth="120.0" text="First Name" />
-                                        <TableColumn fx:id="LastName" prefWidth="120.0" text="Last Name" />
-                                        <TableColumn fx:id="nic" prefWidth="120.0" styleClass="transparent_col" text="NIC" />
-                                        <TableColumn fx:id="email" prefWidth="250.0" text="Email" />
-                                        <TableColumn fx:id="plan" minWidth="0.0" prefWidth="120.0" text="Monthly Plan" />
-                                        <TableColumn fx:id="phone" minWidth="0.0" prefWidth="120.0" text="Phone No" />
+                                        <TableColumn id="firstcol" fx:id="TransactionId" prefWidth="145.33335876464844" text="Transaction Id" />
+                                        <TableColumn id="firstcol" fx:id="BankOwnerName" prefWidth="130.0" text="Bank Owner Name" />
+                                        <TableColumn fx:id="BankName" prefWidth="270.0" text="Bank Name" />
+                                        <TableColumn fx:id="Amount" styleClass="transparent_col" text="Amount" />
+                                        <TableColumn fx:id="TransactionDate" prefWidth="250.0" text="Transaction Date" />
+                              <TableColumn fx:id="Status" prefWidth="120.0" text="Status" />
                                         <TableColumn fx:id="action" minWidth="0.0" prefWidth="120.0" text="Action" />
                                     </columns>
                                 </TableView>

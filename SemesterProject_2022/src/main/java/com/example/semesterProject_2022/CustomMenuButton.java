@@ -8,6 +8,14 @@ public class CustomMenuButton extends MenuButton {
     private String FullName,weight,Address,Email,Username,PackageType,PackagePrice,designation,gender,phone;
     private double salary;
 
+    // *FOR TRANSACTIONS
+
+    public CustomMenuButton(String s, int buttonId) {
+        super(s);
+        ButtonId = buttonId;
+    }
+
+    //
     public String getGender() {
         return gender;
     }
