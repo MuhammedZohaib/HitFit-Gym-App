@@ -182,6 +182,31 @@ public class DatabaseFunctions {
         return false;
     }
 
+    public static boolean saveToDb(BMI bmi, int fk_customer_id) {
+
+        PreparedStatement queryStatement = null;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    INSERT INTO defaultdb.bmi (id, weight, recorded_date, fk_customer_id, recorded_month)
+                    VALUES (?,?,?,?,?);
+                    """);
+
+            queryStatement.setInt(1, bmi.getId());
+            queryStatement.setDouble(2, bmi.getWeight());
+            queryStatement.setDate(3, bmi.getRecordedDate());
+            queryStatement.setInt(4, fk_customer_id);
+            queryStatement.setString(5, bmi.getRecordedMonth());
+
+            queryStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println("Error : " + e);
+        }
+
+        return true;
+    }
+
     public static boolean saveUpdateToDb(Revenue revenue) {
 
         PreparedStatement queryStatement = null;
@@ -224,7 +249,6 @@ public class DatabaseFunctions {
                         WHERE for_month = ? AND for_year = ?;
                         """);
 
-                System.out.println("here");
 
                 queryStatement.setInt(1, amountNew + revenue.getAmount());
                 queryStatement.setString(2, revenue.getForMonth());
@@ -323,6 +347,38 @@ public class DatabaseFunctions {
             System.out.println("Error! Could not run query: " + e);
             return false;
         }
+    }
+
+    public static boolean updateSalaryStatus(int employeeId) {
+
+        PreparedStatement queryStatement = null;
+        ResultSet salaryRs = null;
+        int employeeSalary = 0;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT salary FROM employees
+                    WHERE id = ?
+                    """);
+
+            queryStatement.setInt(1, employeeId);
+
+            salaryRs = queryStatement.executeQuery();
+
+            while (salaryRs.next()) {
+                employeeSalary = salaryRs.getInt("salary");
+            }
+
+
+            Revenue revenue = new Revenue(DatabaseFunctions.generateId("revenues"), CustomDate.getCurrentMonth(), CustomDate.getCurrentYear(), -employeeSalary);
+            DatabaseFunctions.saveUpdateToDb(revenue);
+
+        } catch (SQLException e) {
+            System.out.println("error: " + e);
+        }
+
+        return true;
+
     }
 
     public static ResultSet getAllCustomers() {
@@ -433,6 +489,31 @@ public class DatabaseFunctions {
             System.out.println("Error : " + e);
         }
         return expensesRs;
+
+    }
+
+    public static ResultSet getAllBmiInfo() {
+
+        PreparedStatement queryStatement = null;
+        ResultSet bmiRs = null;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT * FROM bmi;
+                    """);
+            bmiRs = queryStatement.executeQuery();
+
+            while (bmiRs.next()){
+                System.out.println(bmiRs.getInt(1));
+                System.out.println(bmiRs.getString(2));
+                System.out.println(bmiRs.getString(3));
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error : " + e);
+        }
+
+        return bmiRs;
 
     }
 

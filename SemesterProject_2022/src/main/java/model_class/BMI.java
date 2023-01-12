@@ -1,5 +1,7 @@
 package model_class;
 
+import backend_functions.CustomDate;
+
 import java.sql.Date;
 
 public class BMI {
@@ -11,6 +13,24 @@ public class BMI {
     private double Height;
     private java.sql.Date RecordedDate;
     private String RecordedMonth;
+    private int id;
+
+    public BMI(double weight, Date recordedDate, int id) {
+        Weight = weight;
+        RecordedDate = recordedDate;
+        this.id = id;
+
+        CustomDate customDate = new CustomDate(recordedDate);
+        this.RecordedMonth = customDate.getMonthName();
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public double getBMI() {
         return BMI;
