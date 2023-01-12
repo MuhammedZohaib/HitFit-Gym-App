@@ -182,6 +182,63 @@ public class DatabaseFunctions {
         return false;
     }
 
+    public static boolean saveUpdateToDb(Revenue revenue) {
+
+        PreparedStatement queryStatement = null;
+        ResultSet revenueRs = null;
+        int amountNew = 0;
+
+        try {
+
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT * FROM revenues WHERE for_month = ? AND for_year = ?;
+                    """);
+
+            queryStatement.setString(1, revenue.getForMonth());
+            queryStatement.setString(2, revenue.getForYear());
+
+            revenueRs = queryStatement.executeQuery();
+
+            while (revenueRs.next()) {
+                amountNew = revenueRs.getInt("amount");
+            }
+
+            if (amountNew == 0) {
+
+                queryStatement = dbConnection.prepareStatement("""
+                        INSERT INTO revenues (id, for_month, for_year, updated_date, amount)
+                        VALUES (?,?,?,?,?);
+                        """);
+                queryStatement.setInt(1, revenue.getId());
+                queryStatement.setString(2, revenue.getForMonth());
+                queryStatement.setString(3, revenue.getForYear());
+                queryStatement.setDate(4, CustomDate.getCurrentDate());
+                queryStatement.setInt(5, revenue.getAmount());
+
+                queryStatement.executeUpdate();
+
+            } else {
+                queryStatement = dbConnection.prepareStatement("""
+                        UPDATE revenues
+                        SET amount = ?
+                        WHERE for_month = ? AND for_year = ?;
+                        """);
+
+                System.out.println("here");
+
+                queryStatement.setInt(1, amountNew + revenue.getAmount());
+                queryStatement.setString(2, revenue.getForMonth());
+                queryStatement.setString(3, revenue.getForYear());
+                queryStatement.executeUpdate();
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error: " + e);
+        }
+
+        return true;
+    }
+
     public static void updateCustomerPassword(String email, String[] password) {
         PreparedStatement queryStatement = null;
         try {
@@ -213,6 +270,7 @@ public class DatabaseFunctions {
         PreparedStatement queryStatement = null;
         PreparedStatement queryStatement2 = null;
         int fkCustomerId = 0;
+        int transactionAmount = 0;
 
         try {
             queryStatement = dbConnection.prepareStatement("""
@@ -243,6 +301,22 @@ public class DatabaseFunctions {
 
             queryStatement2.setInt(1, fkCustomerId);
             queryStatement2.executeUpdate();
+
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT amount FROM transactions
+                    WHERE fk_customer_id = ?;
+                    """);
+            queryStatement.setInt(1, fkCustomerId);
+
+            ResultSet transactionAmountRs = queryStatement.executeQuery();
+
+            while (transactionAmountRs.next()) {
+                transactionAmount = transactionAmountRs.getInt(1);
+            }
+
+            Revenue revenue = new Revenue(DatabaseFunctions.generateId("revenues"), CustomDate.getCurrentMonth(), CustomDate.getCurrentYear(), transactionAmount);
+            DatabaseFunctions.saveUpdateToDb(revenue);
+
             return true;
 
         } catch (SQLException e) {
