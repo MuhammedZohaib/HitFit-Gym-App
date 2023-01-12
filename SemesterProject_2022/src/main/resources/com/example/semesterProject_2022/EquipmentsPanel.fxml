@@ -29,7 +29,7 @@
             <center>
                 <AnchorPane prefHeight="200.0" style="-fx-background-color: ffffff;" BorderPane.alignment="CENTER">
                <children>
-                  <ScrollPane hbarPolicy="NEVER" prefWidth="1300.0" style="-fx-background-color: ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                  <ScrollPane hbarPolicy="NEVER" prefWidth="1300.0" style="-fx-background-color: ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="120.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
                     <content>
                       <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="900.0" prefHeight="800.0" style="-fx-background-color: ffffff;">
                            <children>
@@ -37,7 +37,7 @@
                                  <center>
                                     <ScrollPane fitToWidth="true" pannable="true" prefHeight="200.0" prefWidth="1300.0" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
                                       <content>
-                                        <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="1400.0" prefHeight="200.0" style="-fx-background-color: ffffff;">
+                                        <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="1500.0" prefHeight="200.0" style="-fx-background-color: ffffff;">
                                              <children>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -88,7 +88,7 @@
                                  <center>
                                     <ScrollPane fitToWidth="true" minWidth="800.0" prefHeight="200.0" prefWidth="1300.0" style="-fx-background-color: ffffff;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
                                        <content>
-                                          <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="1400.0" prefHeight="200.0" style="-fx-background-color: ffffff;">
+                                          <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="1500.0" prefHeight="200.0" style="-fx-background-color: ffffff;">
                                              <children>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>
@@ -139,7 +139,7 @@
                                  <center>
                                     <ScrollPane fitToWidth="true" minWidth="800.0" prefHeight="200.0" prefWidth="1300.0" style="-fx-background-color: ffffff;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
                                        <content>
-                                          <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="1400.0" prefHeight="180.0" style="-fx-background-color: ffffff;">
+                                          <AnchorPane maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="1500.0" prefHeight="180.0" style="-fx-background-color: ffffff;">
                                              <children>
                                                 <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                                                    <image>

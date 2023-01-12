@@ -4,18 +4,20 @@ import backend_functions.Login;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Rectangle2D;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Properties;
 
 public class LogIn_Form_Controller {
+
 
     @FXML
     private TextField EmailField;
@@ -38,6 +40,9 @@ public class LogIn_Form_Controller {
     /*---------Local Variable------------*/
     private String email;
     private String password;
+
+    @FXML
+    private CheckBox response;
     private double x = 0;
     private double y = 0;
     /*------*/
@@ -50,8 +55,6 @@ public class LogIn_Form_Controller {
 
     @FXML
     void loginBtn(MouseEvent e) throws IOException {
-
-
         Login newLogin = new Login();
 
         email = EmailField.getText();
@@ -86,11 +89,21 @@ public class LogIn_Form_Controller {
         }
 
         else if (!newLogin.checkUsernameEmail() && newLogin.userLoggedInStatus() && epValidation.getText().equals("") && passwordValidation.getText().equals("")) {
+            if(response.isSelected()){
+                Properties properties = new Properties();
+                properties.setProperty("Username",email);
+                properties.setProperty("password",password);
+
+                try(OutputStream outputStream = new FileOutputStream("credentials.properties")){
+                    properties.store(outputStream, null);
+                }
+                catch (Exception error){
+                    System.out.println(error);
+                }
+            }
             new GeneralFunctions().switchSceneFXHelper(e, "CustomerPanel.fxml");
 
         }
-
-
     }
     public void adminLogin(ActionEvent e) throws IOException {
         email = EmailField.getText();
@@ -122,6 +135,15 @@ public class LogIn_Form_Controller {
             else if (email.equals("AyaanAli@9921") && password.equals("L3tM31n_121") && epValidation.getText().equals("") && passwordValidation.getText().equals("")) {
             new GeneralFunctions().switchSceneFXHelper(e, "AdminPanel.fxml");
 
+        }
+    }
+
+    public void login(String userName, String Password) throws IOException {
+        Login newLogin = new Login();
+        newLogin.setEmailUsername(userName);
+        newLogin.setPassword(Password);
+        if(!newLogin.checkUsernameEmail() && newLogin.userLoggedInStatus()){
+            new GeneralFunctions().switchScene("CustomerPanel.fxml");
         }
     }
     public void resetPassword() throws IOException {
