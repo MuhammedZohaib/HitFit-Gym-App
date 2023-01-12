@@ -1,9 +1,11 @@
 package model_class;
 
+import backend_functions.CustomDate;
 import com.example.semesterProject_2022.*;
 import javafx.scene.control.MenuItem;
 
 import java.io.IOException;
+import java.sql.Date;
 
 public class Queries {
     private int id;
@@ -11,6 +13,8 @@ public class Queries {
     private String email;
     private String heading;
     private String description;
+    private Boolean status;
+    private Date current_date;
 
     private QueryMenuButton actionBtn;
     private MenuItem item1 = new MenuItem("View");
@@ -64,6 +68,22 @@ public class Queries {
         this.actionBtn = actionBtn;
     }
 
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    public Date getCurrent_date() {
+        return current_date;
+    }
+
+    public void setCurrent_date(Date current_date) {
+        this.current_date = current_date;
+    }
+
     public Queries(int id, String username, String email, String heading, String description, QueryMenuButton actionBtn) {
         this.id = id;
         this.username = username;
@@ -86,6 +106,17 @@ public class Queries {
             }
 
         });
+
+    }
+
+    public Queries(int id, String username, String email, String heading, String description, Boolean status){
+        this.id = id;
+        this.description = description;
+        this.email = email;
+        this.username = username;
+        this.heading = heading;
+        this.status = status;
+        this.current_date = CustomDate.getCurrentDate();
 
     }
 

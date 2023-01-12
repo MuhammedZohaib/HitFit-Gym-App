@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 import javafx.util.Duration;
 
 import java.io.IOException;
@@ -30,6 +31,9 @@ public class Main_Interface implements Initializable {
 
     @FXML
     private Button restoreBtn;
+
+    @FXML
+    private Text Username;
     DashboardPanel_Controller dashboardPanel_controller = new DashboardPanel_Controller();
 
     private static int Menu_Counter = 0;
@@ -122,6 +126,8 @@ public class Main_Interface implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //TODO Get admin username or name from db to set here
+        Username.setText(" ");
 
         // created  a class named change fxml and called its function which loads up a new fxml file and makes it the children of stack pane
         dashboardPanel.getfxml("DashboardPanel.fxml");

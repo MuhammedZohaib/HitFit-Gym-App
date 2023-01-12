@@ -149,7 +149,7 @@
                            </font>
                         </Text>
                         <Line endX="200.0" layoutX="509.0" layoutY="194.0" />
-                        <Label fx:id="totalRevenue" layoutX="511.0" layoutY="176.0" text="After Adding Upper Multiplications">
+                        <Label fx:id="totalMonthlyRevenue" layoutX="511.0" layoutY="176.0" text="After Adding Upper Multiplications">
                            <font>
                               <Font size="12.0" />
                            </font>
@@ -176,7 +176,7 @@
                               <String fx:value="buttoncolor" />
                            </styleClass>
                         </Button>
-                        <Label fx:id="totalRevenue1" layoutX="331.0" layoutY="217.0" text="Total Expense Here">
+                        <Label fx:id="totalMonthlyExpense" layoutX="331.0" layoutY="217.0" text="Total Expense Here">
                            <font>
                               <Font size="12.0" />
                            </font>

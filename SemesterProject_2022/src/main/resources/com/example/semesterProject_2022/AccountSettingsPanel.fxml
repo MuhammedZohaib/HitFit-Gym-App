@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -36,170 +37,198 @@
                      <top>
                         <BorderPane prefHeight="81.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                            <center>
-                              <AnchorPane prefHeight="81.0" prefWidth="471.0" BorderPane.alignment="CENTER">
+                              <AnchorPane minHeight="81.0" prefWidth="471.0" BorderPane.alignment="CENTER">
                                  <children>
-                                    <AnchorPane layoutX="161.0" layoutY="44.0" prefHeight="300.0" prefWidth="414.0" AnchorPane.leftAnchor="186.0" AnchorPane.rightAnchor="190.0" AnchorPane.topAnchor="44.0">
-                                       <children>
-                                          <ImageView fitHeight="27.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="-60.0" AnchorPane.rightAnchor="322.0" AnchorPane.topAnchor="-5.0">
-                                             <image>
-                                                <Image url="@BorderIcons/AccountSettings.png" />
-                                             </image>
-                                          </ImageView>
-                                          <Text layoutX="10.0" layoutY="16.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can change all the information about the account here." wrappingWidth="402.16209411621094">
-                                             <font>
-                                                <Font name="System Italic" size="15.0" />
-                                             </font>
-                                          </Text>
-                                          <ScrollPane hbarPolicy="NEVER" hmax="0.0" layoutX="106.0" layoutY="30.0" prefHeight="517.0" prefWidth="534.0" AnchorPane.bottomAnchor="-247.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-121.0" AnchorPane.topAnchor="30.0">
-                                             <content>
-                                                <AnchorPane>
-                                                   <children>
-                                                      <Text layoutX="10.0" strokeType="OUTSIDE" strokeWidth="0.0" text="General Info.">
-                                                         <font>
-                                                            <Font name="System Bold" size="18.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Line endX="800.0" layoutY="34.0" startX="-100.0" stroke="#00c2ff" strokeWidth="2.0" />
-                                                      <Text layoutX="15.333333015441895" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
-                                                         <font>
-                                                            <Font size="16.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text fx:id="nameField" fill="#4a4a4a" layoutX="108.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ayaan Ali">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="104.0" layoutY="96.0" mnemonicParsing="false" onAction="#editNameButton" prefHeight="30.0" prefWidth="87.0" stylesheets="@CSS/Main_App.css" text="Edit" textFill="WHITE">
-                                                         <styleClass>
-                                                            <String fx:value="curve" />
-                                                            <String fx:value="buttoncolor" />
-                                                            <String fx:value="onhover" />
-                                                         </styleClass>
-                                                         <font>
-                                                            <Font name="System Bold" size="13.0" />
-                                                         </font>
-                                                         <graphic>
-                                                            <ImageView fitHeight="24.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" translateX="20.0">
-                                                               <image>
-                                                                  <Image url="@BorderIcons/icons8-edit-96.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                      </Button>
-                                                      <Line endX="950.0" layoutX="10.0" layoutY="157.3333282470703" startX="66.8529052734375" startY="-3.3137948513031006" stroke="#9a9a9a" />
-                                                      <Text layoutX="15.333333015441895" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone No.">
-                                                         <font>
-                                                            <Font size="16.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text fx:id="phoneField" fill="#4a4a4a" layoutX="110.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="03354586083">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="107.33333587646484" layoutY="225.3333282470703" mnemonicParsing="false" onAction="#editPhoneButton" prefHeight="30.0" prefWidth="87.0" stylesheets="@CSS/Main_App.css" text="Edit" textFill="WHITE">
-                                                         <styleClass>
-                                                            <String fx:value="curve" />
-                                                            <String fx:value="buttoncolor" />
-                                                            <String fx:value="onhover" />
-                                                         </styleClass>
-                                                         <font>
-                                                            <Font name="System Bold" size="13.0" />
-                                                         </font>
-                                                         <graphic>
-                                                            <ImageView fitHeight="24.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" translateX="20.0">
-                                                               <image>
-                                                                  <Image url="@BorderIcons/icons8-edit-96.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                      </Button>
-                                                      <Line endX="950.0" layoutX="10.0" layoutY="289.3333435058594" startX="66.8529052734375" startY="-3.3137948513031006" stroke="#9a9a9a" />
-                                                      <Text layoutX="15.333333015441895" layoutY="314.6666564941406" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Info.">
-                                                         <font>
-                                                            <Font name="System Bold" size="18.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Line endX="800.0" layoutY="354.0" startX="-100.0" stroke="#00c2ff" strokeWidth="2.0" />
-                                                      <Text layoutX="15.333333015441895" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
-                                                         <font>
-                                                            <Font size="16.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text fx:id="emailField" fill="#4a4a4a" layoutX="103.33333587646484" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saadfacebooks4563@gmail.com">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="109.33333587646484" layoutY="420.6666564941406" mnemonicParsing="false" onAction="#editEmailButton" prefHeight="30.0" prefWidth="87.0" stylesheets="@CSS/Main_App.css" text="Edit" textFill="WHITE">
-                                                         <styleClass>
-                                                            <String fx:value="curve" />
-                                                            <String fx:value="buttoncolor" />
-                                                            <String fx:value="onhover" />
-                                                         </styleClass>
-                                                         <font>
-                                                            <Font name="System Bold" size="13.0" />
-                                                         </font>
-                                                         <graphic>
-                                                            <ImageView fitHeight="24.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" translateX="20.0">
-                                                               <image>
-                                                                  <Image url="@BorderIcons/icons8-edit-96.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                      </Button>
-                                                      <Line endX="950.0" layoutX="10.0" layoutY="487.3333435058594" startX="66.8529052734375" startY="-3.3137948513031006" stroke="#9a9a9a" />
-                                                      <Text layoutX="15.333333015441895" layoutY="512.6666870117188" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
-                                                         <font>
-                                                            <Font size="16.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Text fx:id="emailField1" fill="#4a4a4a" layoutX="107.33333587646484" layoutY="514.6666870117188" strokeType="OUTSIDE" strokeWidth="0.0" text="Press the button to change the password">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                      </Text>
-                                                      <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="112.66666412353516" layoutY="552.0" mnemonicParsing="false" onAction="#updatePasswordButton" prefHeight="32.0" prefWidth="103.0" stylesheets="@CSS/Main_App.css" text="Update" textFill="WHITE">
-                                                         <styleClass>
-                                                            <String fx:value="curve" />
-                                                            <String fx:value="buttoncolor" />
-                                                            <String fx:value="onhover" />
-                                                         </styleClass>
-                                                         <font>
-                                                            <Font name="System Bold" size="13.0" />
-                                                         </font>
-                                                         <graphic>
-                                                            <ImageView fitHeight="24.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" translateX="20.0">
-                                                               <image>
-                                                                  <Image url="@BorderIcons/icons8-edit-96.png" />
-                                                               </image>
-                                                            </ImageView>
-                                                         </graphic>
-                                                      </Button>
-                                                      <Text fx:id="emailField11" fill="#4a4a4a" layoutX="116.0" layoutY="654.6666870117188" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Created @ HitFit Gym App">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                      </Text>
-                                                   </children>
-                                                </AnchorPane>
-                                             </content>
-                                          </ScrollPane>
-                                       </children>
-                                    </AnchorPane>
+                                    <ImageView fitHeight="27.0" fitWidth="31.0" layoutX="202.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="657.0" AnchorPane.topAnchor="25.0">
+                                       <image>
+                                          <Image url="@BorderIcons/AccountSettings.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Text layoutX="235.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You can change all the information about the account here." wrappingWidth="500.0">
+                                       <font>
+                                          <Font name="System Italic" size="15.0" />
+                                       </font>
+                                    </Text>
                                  </children>
                               </AnchorPane>
                            </center>
-                           <left>
-                              <ImageView fitHeight="32.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
-                                 <BorderPane.margin>
-                                    <Insets />
-                                 </BorderPane.margin>
-                              </ImageView>
-                           </left>
                         </BorderPane>
                      </top>
+                     <center>
+                        <AnchorPane minHeight="400.0" prefWidth="700.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ScrollPane hbarPolicy="NEVER" hmax="0.0" layoutX="106.0" layoutY="30.0" prefHeight="270.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="170.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="30.0">
+                                 <content>
+                                    <AnchorPane prefHeight="800.0">
+                                       <children>
+                                          <Text layoutX="16.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="General Info.">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <Line endX="800.0" layoutY="34.0" stroke="#00c2ff" strokeWidth="2.0" AnchorPane.leftAnchor="0.0" />
+                                          <Text layoutX="15.333333015441895" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="nameField" fill="#4a4a4a" layoutX="108.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ayaan Ali">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="editName" layoutX="100.0" layoutY="49.0" onKeyPressed="#setData" promptText="Enter New Name" visible="false" />
+                                          <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="100.0" layoutY="96.0" mnemonicParsing="false" onAction="#editNameButton" prefHeight="30.0" prefWidth="87.0" stylesheets="@CSS/Main_App.css" text="Edit" textFill="WHITE">
+                                             <styleClass>
+                                                <String fx:value="curve" />
+                                                <String fx:value="buttoncolor" />
+                                                <String fx:value="onhover" />
+                                             </styleClass>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@BorderIcons/icons8-edit-96.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </Button>
+                                          <Line endX="750.0" layoutY="157.3333282470703" startX="66.8529052734375" startY="-3.3137948513031006" stroke="#9a9a9a" AnchorPane.leftAnchor="0.0" />
+                                          <Text layoutX="15.333333015441895" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Phone No.">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="phoneField" fill="#4a4a4a" layoutX="110.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="03354586083">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="100.0" layoutY="225.3333282470703" mnemonicParsing="false" onAction="#editPhoneButton" prefHeight="30.0" prefWidth="87.0" stylesheets="@CSS/Main_App.css" text="Edit" textFill="WHITE">
+                                             <styleClass>
+                                                <String fx:value="curve" />
+                                                <String fx:value="buttoncolor" />
+                                                <String fx:value="onhover" />
+                                             </styleClass>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@BorderIcons/icons8-edit-96.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </Button>
+                                          <Line endX="750.0" layoutX="10.0" layoutY="289.3333435058594" startX="66.8529052734375" startY="-3.3137948513031006" stroke="#9a9a9a" AnchorPane.leftAnchor="0.0" />
+                                          <Text layoutX="15.333333015441895" layoutY="337.6666564941406" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Info.">
+                                             <font>
+                                                <Font name="System Bold" size="18.0" />
+                                             </font>
+                                          </Text>
+                                          <Line endX="800.0" layoutY="354.0" stroke="#00c2ff" strokeWidth="2.0" AnchorPane.leftAnchor="0.0" />
+                                          <Text layoutX="15.333333015441895" layoutY="386.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fx:id="emailField" fill="#4a4a4a" layoutX="100.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Saadfacebooks4563@gmail.com">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="100.0" layoutY="420.6666564941406" mnemonicParsing="false" onAction="#editEmailButton" prefHeight="30.0" prefWidth="87.0" stylesheets="@CSS/Main_App.css" text="Edit" textFill="WHITE">
+                                             <styleClass>
+                                                <String fx:value="curve" />
+                                                <String fx:value="buttoncolor" />
+                                                <String fx:value="onhover" />
+                                             </styleClass>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@BorderIcons/icons8-edit-96.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </Button>
+                                          <Line endX="750.0" layoutX="10.0" layoutY="487.3333435058594" startX="66.8529052734375" startY="-3.3137948513031006" stroke="#9a9a9a" AnchorPane.leftAnchor="0.0" />
+                                          <Text layoutX="15.333333015441895" layoutY="524.6666870117188" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                                             <font>
+                                                <Font size="16.0" />
+                                             </font>
+                                          </Text>
+                                          <Text fill="#4a4a4a" layoutX="107.33333587646484" layoutY="526.6666870117188" strokeType="OUTSIDE" strokeWidth="0.0" text="Press the button to change the password">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <Button alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="100.0" layoutY="570.0" mnemonicParsing="false" onAction="#updatePasswordButton" prefHeight="32.0" prefWidth="103.0" stylesheets="@CSS/Main_App.css" text="Update" textFill="WHITE">
+                                             <styleClass>
+                                                <String fx:value="curve" />
+                                                <String fx:value="buttoncolor" />
+                                                <String fx:value="onhover" />
+                                             </styleClass>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                             <graphic>
+                                                <ImageView fitHeight="24.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@BorderIcons/icons8-edit-96.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <padding>
+                                                <Insets left="20.0" />
+                                             </padding>
+                                          </Button>
+                                          <Text fill="#4a4a4a" layoutX="201.0" layoutY="725.6666870117188" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Created @ HitFit Gym App">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Text>
+                                          <Line endX="750.0" layoutX="-66.14579772949219" layoutY="629.0" startX="66.8529052734375" startY="-3.3137948513031006" stroke="#9a9a9a" AnchorPane.leftAnchor="0.0" />
+                                          <TextField fx:id="editEmail" layoutX="100.0" layoutY="370.0" onKeyPressed="#setData" prefWidth="220.0" visible="false" />
+                                          <TextField fx:id="editPassword" layoutX="100.0" layoutY="535.0" onKeyPressed="#setData" prefWidth="220.0" promptText="Enter New Password" visible="false" />
+                                          <TextField fx:id="editPhoneNumber" layoutX="100.0" layoutY="170.0" onKeyPressed="#setData" visible="false" />
+                                          <Button fx:id="save" alignment="BASELINE_LEFT" contentDisplay="RIGHT" layoutX="440.0" layoutY="641.0" mnemonicParsing="false" onAction="#Save" prefHeight="32.0" prefWidth="103.0" stylesheets="@CSS/Main_App.css" text="Save" textFill="WHITE">
+                                             <styleClass>
+                                                <String fx:value="curve" />
+                                                <String fx:value="buttoncolor" />
+                                                <String fx:value="onhover" />
+                                             </styleClass>
+                                             <font>
+                                                <Font name="System Bold" size="13.0" />
+                                             </font>
+                                             <padding>
+                                                <Insets left="30.0" />
+                                             </padding>
+                                          </Button>
+                                       </children>
+                                       <padding>
+                                          <Insets left="-120.0" />
+                                       </padding>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                     </center>
                   </BorderPane>
                </children>
                 </AnchorPane>
