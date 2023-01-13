@@ -2,6 +2,7 @@ package model_class;
 
 import backend_functions.CustomDate;
 import com.example.semesterProject_2022.*;
+import javafx.css.StyleConverter;
 import javafx.scene.control.MenuItem;
 import javafx.scene.paint.Paint;
 
@@ -15,11 +16,19 @@ public class Queries {
     private String heading;
     private String description;
     private Boolean status;
+    private String StatusString;
     private Date current_date;
 
     private QueryMenuButton actionBtn;
     private MenuItem item1 = new MenuItem("View");
 
+    public String getStatusString() {
+        return StatusString;
+    }
+
+    public void setStatusString(String statusString) {
+        StatusString = statusString;
+    }
 
     public int getId() {
         return id;
@@ -85,13 +94,20 @@ public class Queries {
         this.current_date = current_date;
     }
 
-    public Queries(int id, String username, String email, String heading, String description, QueryMenuButton actionBtn) {
+    public Queries(Boolean status, int id, String username, String email, String heading, String description, QueryMenuButton actionBtn) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.heading = heading;
         this.description = description;
-
+        this.status = status;
+        if(status==true)
+        {
+            StatusString="Completed";
+        } else
+        {
+            StatusString= "Pending";
+        }
         this.actionBtn = actionBtn;
         this.actionBtn.setStyle("-fx-background-color: #00C2FF; -fx-background-radius: 12px;");
         this.actionBtn.setTextFill(Paint.valueOf("White"));
@@ -113,7 +129,12 @@ public class Queries {
 
         item3.setOnAction(event ->
         {
-            // TODO reply query
+            QueriesReply_Controller.Id=actionBtn.getButtonId();
+            try {
+                new GeneralFunctions().switchSceneModality("QueryReplyForm.fxml");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         });
 
     }

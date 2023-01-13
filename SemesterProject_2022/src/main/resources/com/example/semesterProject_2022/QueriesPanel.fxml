@@ -50,6 +50,7 @@
                               <TableColumn fx:id="email" prefWidth="250.0" text="Email" />
                               <TableColumn fx:id="heading" minWidth="0.0" prefWidth="150.0" text="Heading" />
                               <TableColumn fx:id="description" prefWidth="200.0" text="Description" />
+                              <TableColumn fx:id="Status" prefWidth="200.0" text="Status" />
                               <TableColumn fx:id="action" minWidth="0.0" prefWidth="180.0" text="Action" />
                            </columns>
                         </TableView>

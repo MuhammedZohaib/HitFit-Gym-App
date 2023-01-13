@@ -41,7 +41,8 @@ public class QueriesPanel_Controller implements Initializable {
 
     @FXML
     private TableColumn<Queries, String> email;
-
+    @FXML
+    private TableColumn<Queries, String> Status;
     @FXML
     private TableColumn<Queries, String> heading;
     @FXML
@@ -149,6 +150,7 @@ public class QueriesPanel_Controller implements Initializable {
         heading.setCellValueFactory(new PropertyValueFactory<>("heading"));
         username.setCellValueFactory(new PropertyValueFactory<>("username"));
         action.setCellValueFactory(new PropertyValueFactory<>("actionBtn"));
+        Status.setCellValueFactory(new PropertyValueFactory<>("StatusString"));
     }
 
     private void showRecords() {
@@ -158,7 +160,7 @@ public class QueriesPanel_Controller implements Initializable {
 
 
             while (resultSet.next()) {
-                queriesList.add(new Queries(resultSet.getInt(1),resultSet.getString(7),resultSet.getString(3),resultSet.getString(2),resultSet.getString(4),new QueryMenuButton("Action",resultSet.getInt(1),resultSet.getString(7),resultSet.getString(3),resultSet.getString(2),resultSet.getString(4))));
+                queriesList.add(new Queries(resultSet.getBoolean(5),resultSet.getInt(1),resultSet.getString(7),resultSet.getString(3),resultSet.getString(2),resultSet.getString(4),new QueryMenuButton("Action",resultSet.getInt(1),resultSet.getString(7),resultSet.getString(3),resultSet.getString(2),resultSet.getString(4))));
                 queriesView.setItems(queriesList);
             }
         }
