@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.util.Duration;
+import model_class.Customer;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,6 +17,9 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class CustomerPanel_Controller implements Initializable {
+
+    public static Customer Customer = new Customer();
+
     @FXML
     private StackPane stackPane;
     @FXML
