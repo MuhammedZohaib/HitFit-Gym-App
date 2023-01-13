@@ -211,7 +211,7 @@ public class DatabaseFunctions {
         return true;
     }
 
-    public static boolean saveToDb(String reply, int id){
+    public static boolean saveToDb(String reply, int id) {
 
         PreparedStatement queryStatement = null;
 
@@ -225,7 +225,7 @@ public class DatabaseFunctions {
             queryStatement.setInt(2, id);
             queryStatement.executeUpdate();
 
-        } catch (SQLException e){
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return true;
@@ -465,6 +465,27 @@ public class DatabaseFunctions {
         }
 
         return allMemberships;
+    }
+
+    public static ResultSet getQuery(String username) {
+
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            preparedStatement = dbConnection.prepareStatement("""
+                    SELECT * FROM queries WHERE  username = ?
+                    """);
+
+            preparedStatement.setString(1, username);
+            resultSet = preparedStatement.executeQuery();
+            return resultSet;
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        return resultSet;
     }
 
     public static ResultSet getAllEmployees() {
