@@ -287,6 +287,10 @@
 {
     -fx-alignment: CENTER;
 }
+#RevenueView .table-column
+{
+    -fx-alignment: CENTER;
+}
 .text-area .scroll-pane {
     -fx-background-color: transparent;
 }

@@ -508,6 +508,23 @@ public class DatabaseFunctions {
 
     }
 
+    public static ResultSet getAllRevenues() {
+
+        PreparedStatement queryStatement = null;
+        ResultSet expensesRs = null;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT * FROM revenues;
+                    """);
+            expensesRs = queryStatement.executeQuery();
+        } catch (SQLException e) {
+            System.out.println("Error : " + e);
+        }
+        return expensesRs;
+
+    }
+
     public static ResultSet getAllBmiInfo() {
 
         PreparedStatement queryStatement = null;
