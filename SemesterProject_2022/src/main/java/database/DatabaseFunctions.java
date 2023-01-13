@@ -211,6 +211,26 @@ public class DatabaseFunctions {
         return true;
     }
 
+    public static boolean saveToDb(String reply, int id){
+
+        PreparedStatement queryStatement = null;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    UPDATE queries
+                    SET reply = ?
+                    WHERE id = ?
+                    """);
+            queryStatement.setString(1, reply);
+            queryStatement.setInt(2, id);
+            queryStatement.executeUpdate();
+
+        } catch (SQLException e){
+            System.out.println(e);
+        }
+        return true;
+    }
+
     public static boolean saveUpdateToDb(Revenue revenue) {
 
         PreparedStatement queryStatement = null;

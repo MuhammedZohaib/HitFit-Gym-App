@@ -1,5 +1,7 @@
 package backend_functions;
 
+import database.DatabaseFunctions;
+
 import java.util.ArrayList;
 
 public class Login {
@@ -56,6 +58,7 @@ public class Login {
 
         if (logInSuccessful) {
             System.out.println("User logged in successfully");
+            DatabaseFunctions.getLoggedInCustomer(emailUsername);
             return true;
         } else {
             return false;
