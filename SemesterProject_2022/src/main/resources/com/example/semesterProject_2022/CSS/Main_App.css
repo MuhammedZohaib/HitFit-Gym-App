@@ -283,6 +283,10 @@
 #membersView1 .table-column {
     -fx-alignment: CENTER;
 }
+#transactionView .table-column
+{
+    -fx-alignment: CENTER;
+}
 .text-area .scroll-pane {
     -fx-background-color: transparent;
 }

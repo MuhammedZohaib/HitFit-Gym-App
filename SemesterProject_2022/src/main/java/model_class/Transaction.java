@@ -61,7 +61,10 @@ public class Transaction {
 
     }
 
-
+    public String getLowerCaseName()
+    {
+        return getAccountOwnerName().toLowerCase();
+    }
 
     public Transaction(int transactionId, Date createdDate, int amount, String transactionNumber, String bankName, String accountOwnerName) {
         this.transactionId = transactionId;

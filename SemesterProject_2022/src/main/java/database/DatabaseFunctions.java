@@ -491,6 +491,22 @@ public class DatabaseFunctions {
         return expensesRs;
 
     }
+    public static ResultSet getAllTransactions() {
+
+        PreparedStatement queryStatement = null;
+        ResultSet expensesRs = null;
+
+        try {
+            queryStatement = dbConnection.prepareStatement("""
+                    SELECT * FROM transactions;
+                    """);
+            expensesRs = queryStatement.executeQuery();
+        } catch (SQLException e) {
+            System.out.println("Error : " + e);
+        }
+        return expensesRs;
+
+    }
 
     public static ResultSet getAllBmiInfo() {
 
