@@ -46,6 +46,7 @@ public class Main_Interface implements Initializable {
     Changefxml equipmentsPanel = new Changefxml();
     Changefxml revenuePanel = new Changefxml();
     Changefxml enquiriesPanel = new Changefxml();
+    Changefxml revenueTablePanel = new Changefxml();
 
     ArrayList<Changefxml> panels = new ArrayList<>();
 
@@ -138,7 +139,7 @@ public class Main_Interface implements Initializable {
         revenuePanel.getfxml("RevenuePanel.fxml");
         accountSettingsPanel.getfxml("AccountSettingsPanel.fxml");
         employeesPanel.getfxml("Employees.fxml");
-
+        revenueTablePanel.getfxml("RevenueTable.fxml");
 
         /*--Adding to Arraylist of panels--*/
         panels.add(0, accountSettingsPanel);
@@ -149,19 +150,21 @@ public class Main_Interface implements Initializable {
         panels.add(5, revenuePanel);
         panels.add(6, enquiriesPanel);
         panels.add(7,dashboardPanel);
+        panels.add(8,revenueTablePanel);
         /*--Adding Ends here--*/
 
         /*--Adding FXML stored in panes to Children of stack pane--*/
-        for(int i=0; i<8;i++)
+        for(int i=0; i<9;i++)
         {
             stackPane.getChildren().add(i,panels.get(i).pane);
         }
         /*--Adding of Children end here--*/
 
         /*--Initially only the Dashboard will be displayed so, turning the visibility of other panes off--*/
-        for(int i=0; i<7;i++)
-        {
-            stackPane.getChildren().get(i).setVisible(false);
+        for(int i=0; i<9;i++) {
+            if (i != 7) {
+                stackPane.getChildren().get(i).setVisible(false);
+            }
         }
         /*-Visibility Block End here-*/
         /*-- added a library called "aniamtefx" ver 1.2.0 from Maven library ( -Saad S. )--*/
@@ -185,7 +188,7 @@ public class Main_Interface implements Initializable {
     /*---All the menu button actions are handled here---*/
     @FXML
     void AccountSettingsBtn() {
-        for(int i= 1; i<8;i++)
+        for(int i= 1; i<9;i++)
         {
             stackPane.getChildren().get(i).setVisible(false);
         }
@@ -201,8 +204,9 @@ public class Main_Interface implements Initializable {
     @FXML
     void DashboardBtn() {
 
-        for(int i=0; i<7;i++)
+        for(int i=0; i<9;i++)
         {
+            if(i!=7)
             stackPane.getChildren().get(i).setVisible(false);
         }
         stackPane.getChildren().get(7).setVisible(true);
@@ -212,7 +216,7 @@ public class Main_Interface implements Initializable {
     @FXML
     void EmployeesBtn() {
 
-        for(int i=0; i<8;i++)
+        for(int i=0; i<9;i++)
         {
             if(i!=4)
             {
@@ -225,7 +229,7 @@ public class Main_Interface implements Initializable {
 
     @FXML
     void EquipmentsBtn() {
-        for(int i=0; i<8;i++)
+        for(int i=0; i<9;i++)
         {
             if(i!=3)
             {
@@ -238,7 +242,7 @@ public class Main_Interface implements Initializable {
 
     @FXML
     void MembersBtn() {
-        for(int i=0; i<8;i++)
+        for(int i=0; i<9;i++)
         {
             if(i!=1)
             {
@@ -251,7 +255,7 @@ public class Main_Interface implements Initializable {
 
     @FXML
     void MembershipsBtn() {
-        for(int i=0; i<8;i++)
+        for(int i=0; i<9;i++)
         {
             if(i!=2)
             {
@@ -264,7 +268,7 @@ public class Main_Interface implements Initializable {
 
     @FXML
     void QueriesBtn() {
-        for(int i=0; i<8;i++)
+        for(int i=0; i<9;i++)
         {
             if(i!=6)
             {
@@ -277,7 +281,7 @@ public class Main_Interface implements Initializable {
 
     @FXML
     void RevenueBtn() {
-        for(int i=0; i<8;i++)
+        for(int i=0; i<9;i++)
         {
             if(i!=5)
             {
@@ -287,6 +291,14 @@ public class Main_Interface implements Initializable {
         stackPane.getChildren().get(5).setVisible(true);
         new animatefx.animation.FadeIn(stackPane).play();
     }
-
+    @FXML
+    void RevenueTableBtn(ActionEvent event) {
+        stackPane.getChildren().get(8).setVisible(true);
+        for(int i=0; i<8;i++)
+        {
+            stackPane.getChildren().get(i).setVisible(false);
+        }
+        new animatefx.animation.FadeIn(stackPane).play();
+    }
     /*--------------------------------------------------*/
 }

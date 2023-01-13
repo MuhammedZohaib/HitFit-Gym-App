@@ -3,6 +3,7 @@ package model_class;
 import backend_functions.CustomDate;
 import com.example.semesterProject_2022.*;
 import javafx.scene.control.MenuItem;
+import javafx.scene.paint.Paint;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -18,7 +19,7 @@ public class Queries {
 
     private QueryMenuButton actionBtn;
     private MenuItem item1 = new MenuItem("View");
-    private MenuItem item2 = new MenuItem("Remove");
+    private MenuItem item2 = new MenuItem("Delete");
 
     public int getId() {
         return id;
@@ -90,7 +91,10 @@ public class Queries {
         this.email = email;
         this.heading = heading;
         this.description = description;
+
         this.actionBtn = actionBtn;
+        this.actionBtn.setStyle("-fx-background-color: #00C2FF; -fx-background-radius: 12px;");
+        this.actionBtn.setTextFill(Paint.valueOf("White"));
 
         actionBtn.getItems().addAll(item1,item2,item3);
         item1.setOnAction(event ->
@@ -105,6 +109,11 @@ public class Queries {
                 throw new RuntimeException(e);
             }
 
+        });
+
+        item2.setOnAction(event ->
+        {
+            
         });
 
     }
