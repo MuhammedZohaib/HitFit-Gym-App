@@ -3,6 +3,7 @@ package com.example.semesterProject_2022;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
@@ -37,6 +38,12 @@ public class QueryView implements Initializable{
             headingTxt.setText(heading);
             descriptionTxt.setText(description);
         }
+
+    public void dragWindow(MouseEvent event) {
     }
+
+    public void pressedWindow(MouseEvent event) {
+    }
+}
 
 

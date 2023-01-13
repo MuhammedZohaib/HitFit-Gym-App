@@ -5,7 +5,15 @@ import javafx.scene.control.MenuButton;
 public class QueryMenuButton extends MenuButton {
     private int ButtonId;
     private String username, email, heading, description;
+    private Boolean status;
 
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
 
     public int getButtonId() {
         return ButtonId;

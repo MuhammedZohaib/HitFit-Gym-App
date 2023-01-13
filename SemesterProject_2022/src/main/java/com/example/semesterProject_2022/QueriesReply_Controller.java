@@ -1,5 +1,6 @@
 package com.example.semesterProject_2022;
 
+import database.DatabaseFunctions;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -9,12 +10,15 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import javax.security.auth.Destroyable;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class QueriesReply_Controller implements Initializable {
+
+    public static Integer Id=0;
 
     @FXML
     private Text Heading;
@@ -33,7 +37,11 @@ public class QueriesReply_Controller implements Initializable {
 
         reply = ReplyBox.getText();
 
+        DatabaseFunctions.saveToDb(reply,Id);
 
+        Stage stage = (Stage) exitButton.getScene().getWindow();
+
+        stage.close();
     }
 
     @FXML
