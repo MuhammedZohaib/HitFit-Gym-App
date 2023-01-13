@@ -19,7 +19,7 @@ public class Queries {
 
     private QueryMenuButton actionBtn;
     private MenuItem item1 = new MenuItem("View");
-    private MenuItem item2 = new MenuItem("Delete");
+
 
     public int getId() {
         return id;
@@ -96,7 +96,7 @@ public class Queries {
         this.actionBtn.setStyle("-fx-background-color: #00C2FF; -fx-background-radius: 12px;");
         this.actionBtn.setTextFill(Paint.valueOf("White"));
 
-        actionBtn.getItems().addAll(item1,item2,item3);
+        actionBtn.getItems().addAll(item1,item3);
         item1.setOnAction(event ->
         {
             QueryView.username = actionBtn.getUsername();
@@ -111,9 +111,9 @@ public class Queries {
 
         });
 
-        item2.setOnAction(event ->
+        item3.setOnAction(event ->
         {
-            
+            // TODO reply query
         });
 
     }
