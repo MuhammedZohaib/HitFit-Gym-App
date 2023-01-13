@@ -15,10 +15,12 @@ public class BMI {
     private String RecordedMonth;
     private int id;
 
-    public BMI(double weight, Date recordedDate, int id) {
+    public BMI(double weight, Date recordedDate, int id, double bmi, double height) {
         Weight = weight;
         RecordedDate = recordedDate;
         this.id = id;
+        this.Height = height;
+        this.BMI = bmi;
 
         CustomDate customDate = new CustomDate(recordedDate);
         this.RecordedMonth = customDate.getMonthName();

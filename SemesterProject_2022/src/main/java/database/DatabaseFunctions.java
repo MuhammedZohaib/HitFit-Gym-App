@@ -2,10 +2,12 @@ package database;
 
 import backend_functions.CustomDate;
 import backend_functions.Login;
+import com.example.semesterProject_2022.CustomerPanel_Controller;
 import model_class.*;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class DatabaseFunctions {
 
@@ -188,8 +190,8 @@ public class DatabaseFunctions {
 
         try {
             queryStatement = dbConnection.prepareStatement("""
-                    INSERT INTO defaultdb.bmi (id, weight, recorded_date, fk_customer_id, recorded_month)
-                    VALUES (?,?,?,?,?);
+                    INSERT INTO defaultdb.bmi (id, weight, recorded_date, fk_customer_id, recorded_month, height, bmi_value)
+                    VALUES (?,?,?,?,?,?,?);
                     """);
 
             queryStatement.setInt(1, bmi.getId());
@@ -197,6 +199,8 @@ public class DatabaseFunctions {
             queryStatement.setDate(3, bmi.getRecordedDate());
             queryStatement.setInt(4, fk_customer_id);
             queryStatement.setString(5, bmi.getRecordedMonth());
+            queryStatement.setDouble(6, bmi.getHeight());
+            queryStatement.setDouble(7, bmi.getBMI());
 
             queryStatement.executeUpdate();
 
@@ -349,7 +353,7 @@ public class DatabaseFunctions {
         }
     }
 
-    public static boolean updateSalaryStatus(int employeeId) {
+    public static boolean updateSalaryStatus(int employeeId, String email) {
 
         PreparedStatement queryStatement = null;
         ResultSet salaryRs = null;
@@ -491,6 +495,7 @@ public class DatabaseFunctions {
         return expensesRs;
 
     }
+
     public static ResultSet getAllTransactions() {
 
         PreparedStatement queryStatement = null;
@@ -519,7 +524,7 @@ public class DatabaseFunctions {
                     """);
             bmiRs = queryStatement.executeQuery();
 
-            while (bmiRs.next()){
+            while (bmiRs.next()) {
                 System.out.println(bmiRs.getInt(1));
                 System.out.println(bmiRs.getString(2));
                 System.out.println(bmiRs.getString(3));
@@ -567,7 +572,7 @@ public class DatabaseFunctions {
         switch (Login.queryOption) {
             case "username" -> {
                 try {
-                    PreparedStatement queryStatement = dbConnection.prepareStatement("SELECT * FROM customers WHERE username = ?");
+                    PreparedStatement queryStatement = dbConnection.prepareStatement("SELECT * FROM customers WHERE current_status = true AND username = ?");
                     queryStatement.setString(1, customerUsernameEmail);
                     ResultSet resultSet = queryStatement.executeQuery();
 
@@ -583,7 +588,7 @@ public class DatabaseFunctions {
 
             case "email" -> {
                 try {
-                    PreparedStatement queryStatement = dbConnection.prepareStatement("SELECT * FROM customers WHERE email = ?");
+                    PreparedStatement queryStatement = dbConnection.prepareStatement("SELECT * FROM customers WHERE current_status = true AND email = ?");
                     queryStatement.setString(1, customerUsernameEmail);
                     ResultSet resultSet = queryStatement.executeQuery();
 
@@ -763,6 +768,76 @@ public class DatabaseFunctions {
         totalList = customersListCount + employeesListCount;
         return totalList;
 
+    }
+
+    public static void getLoggedInCustomer(String usernameEmail) {
+
+        ResultSet allDataRs = null;
+        PreparedStatement queryStatement = null;
+
+        if (Login.queryOption.equals("email")) {
+
+            try {
+                queryStatement = dbConnection.prepareStatement("""
+                        SELECT id, first_name, last_name, email, phone_number, username, gender, weight, dob, monthly_plan, nic, is_active, address FROM customers
+                        WHERE email = ? AND current_status = true;
+                        """);
+                queryStatement.setString(1, usernameEmail);
+                allDataRs = queryStatement.executeQuery();
+
+                while (allDataRs.next()) {
+
+                    CustomerPanel_Controller.Customer.setFirstName(allDataRs.getString("first_name"));
+                    CustomerPanel_Controller.Customer.setLastName(allDataRs.getString("last_name"));
+                    CustomerPanel_Controller.Customer.setCustomerId(allDataRs.getInt("id"));
+                    CustomerPanel_Controller.Customer.setEmail(allDataRs.getString("email"));
+                    CustomerPanel_Controller.Customer.setPhoneNumber(allDataRs.getString("phone_number"));
+                    CustomerPanel_Controller.Customer.setUserName(allDataRs.getString("username"));
+                    CustomerPanel_Controller.Customer.setGender(allDataRs.getString("gender"));
+                    CustomerPanel_Controller.Customer.setWeight(allDataRs.getString("weight"));
+                    CustomerPanel_Controller.Customer.setDob(allDataRs.getString("dob"));
+                    CustomerPanel_Controller.Customer.setMonthlyPlan(allDataRs.getInt("monthly_plan"));
+                    CustomerPanel_Controller.Customer.setNicNumber(allDataRs.getString("nic"));
+                    CustomerPanel_Controller.Customer.setAddress(allDataRs.getString("address"));
+
+                }
+
+            } catch (SQLException e) {
+                System.out.println("Error in getting ids: " + e);
+            }
+
+        } else if (Login.queryOption.equals("username")) {
+
+            try {
+                queryStatement = dbConnection.prepareStatement("""
+                        SELECT id, first_name, last_name, email, phone_number, username, gender, weight, dob, monthly_plan, nic, is_active, address FROM customers
+                        WHERE username = ? AND current_status = true;
+                        """);
+                queryStatement.setString(1, usernameEmail);
+                allDataRs = queryStatement.executeQuery();
+
+                while (allDataRs.next()) {
+
+                    CustomerPanel_Controller.Customer.setFirstName(allDataRs.getString("first_name"));
+                    CustomerPanel_Controller.Customer.setLastName(allDataRs.getString("last_name"));
+                    CustomerPanel_Controller.Customer.setCustomerId(allDataRs.getInt("id"));
+                    CustomerPanel_Controller.Customer.setEmail(allDataRs.getString("email"));
+                    CustomerPanel_Controller.Customer.setPhoneNumber(allDataRs.getString("phone_number"));
+                    CustomerPanel_Controller.Customer.setUserName(allDataRs.getString("username"));
+                    CustomerPanel_Controller.Customer.setGender(allDataRs.getString("gender"));
+                    CustomerPanel_Controller.Customer.setWeight(allDataRs.getString("weight"));
+                    CustomerPanel_Controller.Customer.setDob(allDataRs.getString("dob"));
+                    CustomerPanel_Controller.Customer.setMonthlyPlan(allDataRs.getInt("monthly_plan"));
+                    CustomerPanel_Controller.Customer.setNicNumber(allDataRs.getString("nic"));
+                    CustomerPanel_Controller.Customer.setAddress(allDataRs.getString("address"));
+
+                }
+
+            } catch (SQLException e) {
+                System.out.println("Error in getting ids: " + e);
+            }
+
+        }
     }
 
     public static boolean deleteData(String tableName, int id) {
