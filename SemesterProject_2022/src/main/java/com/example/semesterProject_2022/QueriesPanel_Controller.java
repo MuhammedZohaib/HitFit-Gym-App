@@ -1,5 +1,6 @@
 package com.example.semesterProject_2022;
 
+import database.DatabaseFunctions;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -153,11 +154,12 @@ public class QueriesPanel_Controller implements Initializable {
     private void showRecords() {
         queriesList.clear();
         try {
-//            resultSet = DatabaseFunctions.getAllEmployees();
+           resultSet = DatabaseFunctions.getAllQueries();
 
 
             while (resultSet.next()) {
-                //TODO Database Function which get all queries in ResultSet
+                queriesList.add(new Queries(resultSet.getInt(1),resultSet.getString(7),resultSet.getString(3),resultSet.getString(2),resultSet.getString(4),new QueryMenuButton("Action",resultSet.getInt(1),resultSet.getString(7),resultSet.getString(3),resultSet.getString(2),resultSet.getString(4))));
+                queriesView.setItems(queriesList);
             }
         }
 

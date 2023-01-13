@@ -291,6 +291,10 @@
 {
     -fx-alignment: CENTER;
 }
+#queriesView .table-column
+{
+    -fx-alignment: CENTER;
+}
 .text-area .scroll-pane {
     -fx-background-color: transparent;
 }
