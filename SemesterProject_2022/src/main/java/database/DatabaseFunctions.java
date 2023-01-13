@@ -219,7 +219,7 @@ public class DatabaseFunctions {
         try {
             queryStatement = dbConnection.prepareStatement("""
                     UPDATE queries
-                    SET reply = ?
+                    SET reply = ? AND status = true
                     WHERE id = ?
                     """);
             queryStatement.setString(1, reply);
