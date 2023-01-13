@@ -27,6 +27,9 @@ public class EmployeesPanel_Controller implements Initializable {
 
     // Making the field public so, it can be accessible without getter setters
     public static int deletingId=-1;
+
+    public static Employee employee = new Employee();
+
     private final static int rowsPerPage = 10;
     @FXML
     private TableColumn<Employee, String> Designation;
