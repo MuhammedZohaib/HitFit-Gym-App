@@ -58,7 +58,13 @@ public class Login {
 
         if (logInSuccessful) {
             System.out.println("User logged in successfully");
-            DatabaseFunctions.getLoggedInCustomer(emailUsername);
+
+            if (Password.isCustomerOrEmployee.equals("customer")) {
+                DatabaseFunctions.getLoggedInCustomer(emailUsername);
+            } else if (Password.isCustomerOrEmployee.equals("employee")) {
+                DatabaseFunctions.getLoggedInEmployee(emailUsername);
+            }
+
             return true;
         } else {
             return false;

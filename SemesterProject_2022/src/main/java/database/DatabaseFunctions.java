@@ -3,6 +3,7 @@ package database;
 import backend_functions.CustomDate;
 import backend_functions.Login;
 import com.example.semesterProject_2022.CustomerPanel_Controller;
+import com.example.semesterProject_2022.EmployeesPanel_Controller;
 import model_class.*;
 
 import java.sql.*;
@@ -211,7 +212,7 @@ public class DatabaseFunctions {
         return true;
     }
 
-    public static boolean saveToDb(String reply, int id){
+    public static boolean saveToDb(String reply, int id) {
 
         PreparedStatement queryStatement = null;
 
@@ -225,7 +226,7 @@ public class DatabaseFunctions {
             queryStatement.setInt(2, id);
             queryStatement.executeUpdate();
 
-        } catch (SQLException e){
+        } catch (SQLException e) {
             System.out.println(e);
         }
         return true;
@@ -465,6 +466,27 @@ public class DatabaseFunctions {
         }
 
         return allMemberships;
+    }
+
+    public static ResultSet getQuery(String username) {
+
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            preparedStatement = dbConnection.prepareStatement("""
+                    SELECT * FROM queries WHERE  username = ?
+                    """);
+
+            preparedStatement.setString(1, username);
+            resultSet = preparedStatement.executeQuery();
+            return resultSet;
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+        return resultSet;
     }
 
     public static ResultSet getAllEmployees() {
@@ -867,6 +889,72 @@ public class DatabaseFunctions {
                     CustomerPanel_Controller.Customer.setMonthlyPlan(allDataRs.getInt("monthly_plan"));
                     CustomerPanel_Controller.Customer.setNicNumber(allDataRs.getString("nic"));
                     CustomerPanel_Controller.Customer.setAddress(allDataRs.getString("address"));
+
+                }
+
+            } catch (SQLException e) {
+                System.out.println("Error in getting ids: " + e);
+            }
+
+        }
+    }
+
+    public static void getLoggedInEmployee(String usernameEmail) {
+
+        ResultSet allDataRs = null;
+        PreparedStatement queryStatement = null;
+
+        if (Login.queryOption.equals("email")) {
+
+            try {
+                queryStatement = dbConnection.prepareStatement("""
+                    SELECT id, first_name, last_name, designation, nic_number, salary, gender, phone_number, joining_date, username, access, email FROM employees
+                    WHERE email = ? AND current_status = true;""");
+
+                queryStatement.setString(1, usernameEmail);
+                allDataRs = queryStatement.executeQuery();
+
+                while (allDataRs.next()) {
+
+                    EmployeesPanel_Controller.employee.setId(allDataRs.getInt("id"));
+                    EmployeesPanel_Controller.employee.setFirstName(allDataRs.getString("first_name"));
+                    EmployeesPanel_Controller.employee.setLastName(allDataRs.getString("last_name"));
+                    EmployeesPanel_Controller.employee.setDesignation(allDataRs.getString("designation"));
+                    EmployeesPanel_Controller.employee.setNicNumber(allDataRs.getString("nic_number"));
+                    EmployeesPanel_Controller.employee.setSalary(allDataRs.getInt("salary"));
+                    EmployeesPanel_Controller.employee.setGender(allDataRs.getString("gender"));
+                    EmployeesPanel_Controller.employee.setPhoneNumber(allDataRs.getString("phone_number"));
+                    EmployeesPanel_Controller.employee.setUserName(allDataRs.getString("username"));
+                    EmployeesPanel_Controller.employee.setEmail(allDataRs.getString("email"));
+
+                }
+
+            } catch (SQLException e) {
+                System.out.println("Error in getting ids: " + e);
+            }
+
+        } else if (Login.queryOption.equals("username")) {
+
+            try {
+                queryStatement = dbConnection.prepareStatement("""
+                        SELECT id, first_name, last_name, email, phone_number, username, gender, weight, dob, monthly_plan, nic, is_active, address FROM customers
+                        WHERE username = ? AND current_status = true;
+                        """);
+                queryStatement.setString(1, usernameEmail);
+                allDataRs = queryStatement.executeQuery();
+
+                while (allDataRs.next()) {
+
+                    EmployeesPanel_Controller.employee.setId(allDataRs.getInt("id"));
+                    EmployeesPanel_Controller.employee.setFirstName(allDataRs.getString("first_name"));
+                    EmployeesPanel_Controller.employee.setLastName(allDataRs.getString("last_name"));
+                    EmployeesPanel_Controller.employee.setDesignation(allDataRs.getString("designation"));
+                    EmployeesPanel_Controller.employee.setNicNumber(allDataRs.getString("nic_number"));
+                    EmployeesPanel_Controller.employee.setSalary(allDataRs.getInt("salary"));
+                    EmployeesPanel_Controller.employee.setGender(allDataRs.getString("gender"));
+                    EmployeesPanel_Controller.employee.setPhoneNumber(allDataRs.getString("phone_number"));
+                    EmployeesPanel_Controller.employee.setUserName(allDataRs.getString("username"));
+                    EmployeesPanel_Controller.employee.setEmail(allDataRs.getString("email"));
 
                 }
 
