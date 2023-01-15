@@ -180,6 +180,9 @@ See the [open issues](https://github.com/codefolk/Semester-Project-2022/issues) 
 [Syed Ayaan Ali](https://github.com/Scr1pt-K1ddie)</br>
 [Muhammad Zohaib](https://github.com/codefolk)
 
+## Supervisor
+[Dr. Aksam Iftikhar](https://github.com/aksamiftikhar)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
