@@ -178,7 +178,7 @@ See the [open issues](https://github.com/codefolk/Semester-Project-2022/issues) 
 ## Team Members
 [Muhammad Saad Suleman](https://github.com/SAADSULEMAN053)</br>
 [Syed Ayaan Ali](https://github.com/Scr1pt-K1ddie)</br>
-[Muhammad Zohaib](https://github.com/codefolk)
+[Muhammad Zohaib](https://github.com/MuhammedZohaib)
 
 ## Supervisor
 [Dr. Aksam Iftikhar](https://github.com/aksamiftikhar)
