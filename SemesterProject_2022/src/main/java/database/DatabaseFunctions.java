@@ -12,9 +12,9 @@ import java.util.Objects;
 
 public class DatabaseFunctions {
 
-    private static final String dbUrl = "jdbc:mysql://doadmin:AVNS_BEoqT0_xVRrXV9Y5PS8@db-mysql-nyc1-56612-do-user-13046066-0.b.db.ondigitalocean.com:25060/defaultdb?ssl-mode=REQUIRED";
-    private static final String dbUsername = "doadmin";
-    private static final String dbPassword = "AVNS_BEoqT0_xVRrXV9Y5PS8";
+    private static final String dbUrl = ""; //Add your db url here
+    private static final String dbUsername = ""; //Add your db username here
+    private static final String dbPassword = ""; //Add your db password here
 
     private static Connection dbConnection = null;
 
