@@ -19,10 +19,10 @@ import java.util.ArrayList;
 
 public class Email {
 
-    protected final String keyPublic = "007a3211a19074225dabac679933c055";
-    protected final String keyPrivate = "eba382894a93bb2779ce07b3cd390445";
-    protected final String sendFromEmail = "hitfitgymapp@gmail.com";
-    protected final String sendFromName = "Hit Fit Gym";
+    protected final String keyPublic = ""; //Add your public key here
+    protected final String keyPrivate = ""; //Add your private key here
+    protected final String sendFromEmail = ""; //Add your email id from which the email will be sent
+    protected final String sendFromName = "Hit Fit Gym"; //Senders Name
 
     private ArrayList<String> allEmails = new ArrayList<>();
 
@@ -33,7 +33,7 @@ public class Email {
 
     public static boolean validateEmail(String email) {
 
-        String key = "e32208c4e0f145c3bea410b96929c34b";
+        String key = ""; //Mail jet api key here
         String ip = " "; //ip address can be blank
         String targetURL = "https://api.zerobounce.net/v2/validate?api_key=" + key + "&email=" + email + "&ip_address=" + ip;
         HttpURLConnection connection = null;
